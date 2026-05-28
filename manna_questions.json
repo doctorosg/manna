@@ -97611,5 +97611,4975 @@
     "correct": "Isaiah",
     "explanation": "",
     "id": "be9f460a4154"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "How long did God take to create everything and rest?",
+    "options": [
+      "7 days total",
+      "1 day",
+      "10 days",
+      "6 days total"
+    ],
+    "correct": "7 days total",
+    "explanation": "",
+    "id": "696d6ac3d31a"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What was the very first thing God created?",
+    "options": [
+      "Earth",
+      "Light",
+      "Water",
+      "Animals"
+    ],
+    "correct": "Light",
+    "explanation": "",
+    "id": "e7da2439a48e"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What did God do on the seventh day?",
+    "options": [
+      "He created the sea",
+      "He rested",
+      "He created humans",
+      "He created the sun"
+    ],
+    "correct": "He rested",
+    "explanation": "",
+    "id": "a4dc6e8544e9"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "Where did Adam and Eve live before they sinned?",
+    "options": [
+      "The Garden of Eden",
+      "The city of Babylon",
+      "Mount Sinai",
+      "The land of Canaan"
+    ],
+    "correct": "The Garden of Eden",
+    "explanation": "",
+    "id": "6e1f7412ddd8"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "Who tempted Eve to eat the forbidden fruit?",
+    "options": [
+      "The serpent",
+      "Adam",
+      "A lion",
+      "An angel"
+    ],
+    "correct": "The serpent",
+    "explanation": "",
+    "id": "13e9a5200c37"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What happened after Adam and Eve ate the fruit?",
+    "options": [
+      "They became angels",
+      "They fell asleep",
+      "Nothing changed",
+      "They were sent out of the Garden"
+    ],
+    "correct": "They were sent out of the Garden",
+    "explanation": "",
+    "id": "dc18e07dbcee"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "Why did God send the great flood?",
+    "options": [
+      "People had become very wicked",
+      "To test Noah",
+      "To water the crops",
+      "To fill the oceans"
+    ],
+    "correct": "People had become very wicked",
+    "explanation": "",
+    "id": "4e812857ea4e"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "How many people were on Noah's ark?",
+    "options": [
+      "12",
+      "20",
+      "8",
+      "2"
+    ],
+    "correct": "8",
+    "explanation": "",
+    "id": "cb5df558fcc8"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What was the rainbow a sign of?",
+    "options": [
+      "A new creation",
+      "Good weather",
+      "The end of winter",
+      "God's promise never to flood the whole earth again"
+    ],
+    "correct": "God's promise never to flood the whole earth again",
+    "explanation": "",
+    "id": "fab20a74da52"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What did people try to build at the Tower of Babel?",
+    "options": [
+      "A tower to reach heaven",
+      "A palace",
+      "A bridge",
+      "A wall"
+    ],
+    "correct": "A tower to reach heaven",
+    "explanation": "",
+    "id": "cb09e54e8bf3"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "Why did God scatter the people at Babel?",
+    "options": [
+      "They built too slowly",
+      "They ran out of bricks",
+      "They were too proud and united against God",
+      "An earthquake happened"
+    ],
+    "correct": "They were too proud and united against God",
+    "explanation": "",
+    "id": "ad2becd89182"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "Who did God call to leave his homeland and go to a new land?",
+    "options": [
+      "David",
+      "Noah",
+      "Moses",
+      "Abraham"
+    ],
+    "correct": "Abraham",
+    "explanation": "",
+    "id": "0a10fc1fe360"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What did God promise Abraham?",
+    "options": [
+      "Descendants as many as the stars",
+      "Eternal youth",
+      "A mighty army",
+      "A golden palace"
+    ],
+    "correct": "Descendants as many as the stars",
+    "explanation": "",
+    "id": "9208d2885f29"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "Why did Abraham almost sacrifice Isaac?",
+    "options": [
+      "It was a local custom",
+      "Sarah told him to",
+      "Isaac had sinned",
+      "God was testing his faith"
+    ],
+    "correct": "God was testing his faith",
+    "explanation": "",
+    "id": "c8461e7e34c0"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What did God provide instead of Isaac?",
+    "options": [
+      "Nothing \u2014 He stopped the sacrifice",
+      "A lamb from the flock",
+      "A dove",
+      "A ram caught in a thicket"
+    ],
+    "correct": "A ram caught in a thicket",
+    "explanation": "",
+    "id": "d2b624cc8e97"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "Why was Joseph's coat special?",
+    "options": [
+      "It was made of gold",
+      "It was invisible",
+      "It was armor",
+      "It was a coat of many colors given by his father"
+    ],
+    "correct": "It was a coat of many colors given by his father",
+    "explanation": "",
+    "id": "7a1f89fd14ca"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "Where did Joseph end up after his brothers sold him?",
+    "options": [
+      "Canaan",
+      "Babylon",
+      "Rome",
+      "Egypt"
+    ],
+    "correct": "Egypt",
+    "explanation": "",
+    "id": "f0220116b812"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What special ability did Joseph have?",
+    "options": [
+      "He could heal the sick",
+      "He could speak all languages",
+      "He could interpret dreams",
+      "He could fly"
+    ],
+    "correct": "He could interpret dreams",
+    "explanation": "",
+    "id": "e13217b2b73c"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What did Joseph become in Egypt?",
+    "options": [
+      "A priest",
+      "A soldier",
+      "Second in command to Pharaoh",
+      "A slave forever"
+    ],
+    "correct": "Second in command to Pharaoh",
+    "explanation": "",
+    "id": "4a9b0bd99ae4"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "Did Joseph forgive his brothers?",
+    "options": [
+      "No \u2014 he imprisoned them",
+      "He never saw them again",
+      "Yes \u2014 he said God meant it for good",
+      "He punished them"
+    ],
+    "correct": "Yes \u2014 he said God meant it for good",
+    "explanation": "",
+    "id": "946aa1f562bf"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "Who was the twin brother of Jacob?",
+    "options": [
+      "Judah",
+      "Esau",
+      "Reuben",
+      "Joseph"
+    ],
+    "correct": "Esau",
+    "explanation": "",
+    "id": "2adaa01ccdd0"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What did Jacob dream about at Bethel?",
+    "options": [
+      "A stairway/ladder reaching to heaven with angels",
+      "A burning bush",
+      "A talking animal",
+      "A golden city"
+    ],
+    "correct": "A stairway/ladder reaching to heaven with angels",
+    "explanation": "",
+    "id": "f0d1724cfebd"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "How many sons did Jacob have?",
+    "options": [
+      "3",
+      "12",
+      "7",
+      "10"
+    ],
+    "correct": "12",
+    "explanation": "",
+    "id": "85f04fb9e2dd"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What happened to Sodom and Gomorrah?",
+    "options": [
+      "Nothing",
+      "God destroyed them with fire and brimstone",
+      "They became great cities",
+      "They were flooded"
+    ],
+    "correct": "God destroyed them with fire and brimstone",
+    "explanation": "",
+    "id": "5ce17c6d3e1d"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "Why was baby Moses put in a basket on the river?",
+    "options": [
+      "His parents were traveling",
+      "The river was holy",
+      "He needed a bath",
+      "Pharaoh ordered all Hebrew baby boys to be killed"
+    ],
+    "correct": "Pharaoh ordered all Hebrew baby boys to be killed",
+    "explanation": "",
+    "id": "49ff4d6486bb"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "Who found baby Moses in the basket?",
+    "options": [
+      "A fisherman",
+      "A shepherd",
+      "Pharaoh's daughter",
+      "Moses' aunt"
+    ],
+    "correct": "Pharaoh's daughter",
+    "explanation": "",
+    "id": "0cfc2d4b01fe"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "What did God appear as when He spoke to Moses?",
+    "options": [
+      "A talking animal",
+      "A bright star",
+      "A burning bush that didn't burn up",
+      "A cloud"
+    ],
+    "correct": "A burning bush that didn't burn up",
+    "explanation": "",
+    "id": "fe3d51094181"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "What did God tell Moses to do?",
+    "options": [
+      "Go to war",
+      "Write the Psalms",
+      "Go to Pharaoh and demand he free the Israelites",
+      "Build an ark"
+    ],
+    "correct": "Go to Pharaoh and demand he free the Israelites",
+    "explanation": "",
+    "id": "17e1dcd23f9d"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "What excuse did Moses give God?",
+    "options": [
+      "He was too young",
+      "He was too old",
+      "He said he was not a good speaker",
+      "He didn't know the way"
+    ],
+    "correct": "He said he was not a good speaker",
+    "explanation": "",
+    "id": "46ef66f74070"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "Who helped Moses speak to Pharaoh?",
+    "options": [
+      "His wife Zipporah",
+      "His brother Aaron",
+      "Caleb",
+      "Joshua"
+    ],
+    "correct": "His brother Aaron",
+    "explanation": "",
+    "id": "23fd822486be"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "What was the very last plague God sent on Egypt?",
+    "options": [
+      "Locusts",
+      "Hail",
+      "Death of every firstborn son",
+      "Darkness"
+    ],
+    "correct": "Death of every firstborn son",
+    "explanation": "",
+    "id": "88973c160653"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "What did the Israelites put on their doorposts to be safe?",
+    "options": [
+      "Water",
+      "Flour",
+      "Lamb's blood",
+      "Oil"
+    ],
+    "correct": "Lamb's blood",
+    "explanation": "",
+    "id": "7d5f8dabcb3c"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "What did God give the Israelites to eat in the desert?",
+    "options": [
+      "Pizza",
+      "Fish",
+      "Bread from Egypt",
+      "Manna from heaven"
+    ],
+    "correct": "Manna from heaven",
+    "explanation": "",
+    "id": "82dff4eb2487"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "What appeared on the stone tablets God gave Moses?",
+    "options": [
+      "A map to the Promised Land",
+      "A list of names",
+      "A drawing of the Temple",
+      "The Ten Commandments"
+    ],
+    "correct": "The Ten Commandments",
+    "explanation": "",
+    "id": "c5f8a18f1d73"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "Why did Moses break the stone tablets?",
+    "options": [
+      "He was angry because the people were worshiping a golden calf",
+      "He tripped",
+      "God told him to",
+      "They were too heavy"
+    ],
+    "correct": "He was angry because the people were worshiping a golden calf",
+    "explanation": "",
+    "id": "029c005d4eaa"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "How long did the Israelites wander in the wilderness?",
+    "options": [
+      "40 years",
+      "7 years",
+      "100 years",
+      "10 years"
+    ],
+    "correct": "40 years",
+    "explanation": "",
+    "id": "d50d61df414e"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "What led the Israelites through the wilderness by day?",
+    "options": [
+      "A compass",
+      "A map",
+      "An angel on a horse",
+      "A pillar of cloud"
+    ],
+    "correct": "A pillar of cloud",
+    "explanation": "",
+    "id": "95b6da7666e6"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "What led them at night?",
+    "options": [
+      "Stars",
+      "A pillar of fire",
+      "A lantern",
+      "The moon"
+    ],
+    "correct": "A pillar of fire",
+    "explanation": "",
+    "id": "eee9d115aa3d"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "What did the people worship while Moses was on the mountain?",
+    "options": [
+      "A golden calf",
+      "A bronze snake",
+      "A wooden statue",
+      "A stone idol"
+    ],
+    "correct": "A golden calf",
+    "explanation": "",
+    "id": "61e061af63fa"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "Who took over as leader after Moses died?",
+    "options": [
+      "Caleb",
+      "Aaron",
+      "Joshua",
+      "Miriam"
+    ],
+    "correct": "Joshua",
+    "explanation": "",
+    "id": "0ad6f7a240e0"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "Where did Moses see the Promised Land from?",
+    "options": [
+      "Mount Everest",
+      "Mount Nebo",
+      "Mount Ararat",
+      "Mount Sinai"
+    ],
+    "correct": "Mount Nebo",
+    "explanation": "",
+    "id": "32528e3f6ce7"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "What was the first plague God sent on Egypt?",
+    "options": [
+      "The Nile River turned to blood",
+      "Total darkness",
+      "Locusts",
+      "Frogs everywhere"
+    ],
+    "correct": "The Nile River turned to blood",
+    "explanation": "",
+    "id": "0b3e8aa37051"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Where was Jesus laid after He was born?",
+    "options": [
+      "In a palace",
+      "In a hospital",
+      "In a synagogue",
+      "In a manger"
+    ],
+    "correct": "In a manger",
+    "explanation": "",
+    "id": "a486a1207199"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Who visited Jesus on the night He was born?",
+    "options": [
+      "Shepherds",
+      "Priests",
+      "Soldiers",
+      "Kings"
+    ],
+    "correct": "Shepherds",
+    "explanation": "",
+    "id": "959e931bf7d5"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What gifts did the wise men bring?",
+    "options": [
+      "Food, water, and wine",
+      "Gold, frankincense, and myrrh",
+      "Silver, bronze, and iron",
+      "Clothes, blankets, and toys"
+    ],
+    "correct": "Gold, frankincense, and myrrh",
+    "explanation": "",
+    "id": "29611f063b82"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Who wanted to kill baby Jesus?",
+    "options": [
+      "Caesar",
+      "Pontius Pilate",
+      "King Herod",
+      "Pharaoh"
+    ],
+    "correct": "King Herod",
+    "explanation": "",
+    "id": "f6d8f6a54cfa"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What was Joseph's (Jesus' earthly father's) job?",
+    "options": [
+      "Fisherman",
+      "Farmer",
+      "Carpenter",
+      "Priest"
+    ],
+    "correct": "Carpenter",
+    "explanation": "",
+    "id": "c435d9bfd546"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "How long did Jesus fast in the desert?",
+    "options": [
+      "3 days",
+      "100 days",
+      "7 days",
+      "40 days"
+    ],
+    "correct": "40 days",
+    "explanation": "",
+    "id": "cef292002b06"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Who tempted Jesus in the desert?",
+    "options": [
+      "A pharisee",
+      "A serpent",
+      "Satan",
+      "An angel"
+    ],
+    "correct": "Satan",
+    "explanation": "",
+    "id": "2240c75b9f4c"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "How many disciples did Jesus choose?",
+    "options": [
+      "7",
+      "12",
+      "10",
+      "3"
+    ],
+    "correct": "12",
+    "explanation": "",
+    "id": "f9d1d72aebc9"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What did Jesus feed 5,000 people with?",
+    "options": [
+      "Manna from heaven",
+      "A huge feast",
+      "5 loaves of bread and 2 fish",
+      "Nothing \u2014 they fasted"
+    ],
+    "correct": "5 loaves of bread and 2 fish",
+    "explanation": "",
+    "id": "d1d4b4f45eb5"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What did Jesus do during a storm on the sea?",
+    "options": [
+      "He calmed the wind and waves by speaking to them",
+      "He swam to shore",
+      "He prayed until it stopped",
+      "He slept through it"
+    ],
+    "correct": "He calmed the wind and waves by speaking to them",
+    "explanation": "",
+    "id": "6a8b2fd3b189"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Who walked on water with Jesus?",
+    "options": [
+      "John",
+      "Peter",
+      "James",
+      "Andrew"
+    ],
+    "correct": "Peter",
+    "explanation": "",
+    "id": "6016a9f437a1"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What happened to Peter on the water?",
+    "options": [
+      "He started sinking when he lost faith",
+      "He flew",
+      "He swam instead",
+      "He walked perfectly"
+    ],
+    "correct": "He started sinking when he lost faith",
+    "explanation": "",
+    "id": "9710ac2100b5"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Who did Jesus raise from the dead?",
+    "options": [
+      "Lazarus",
+      "Abraham",
+      "Peter",
+      "Moses"
+    ],
+    "correct": "Lazarus",
+    "explanation": "",
+    "id": "f1de638e99ce"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What did the crowd wave when Jesus entered Jerusalem?",
+    "options": [
+      "Flowers",
+      "Flags",
+      "Swords",
+      "Palm branches"
+    ],
+    "correct": "Palm branches",
+    "explanation": "",
+    "id": "09e23e791cc9"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What did Jesus do at the Last Supper?",
+    "options": [
+      "He performed a miracle",
+      "He preached a sermon",
+      "He sang songs",
+      "He shared bread and wine with His disciples"
+    ],
+    "correct": "He shared bread and wine with His disciples",
+    "explanation": "",
+    "id": "517bf9683cc3"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "How much was Jesus betrayed for?",
+    "options": [
+      "10 pieces of silver",
+      "100 gold coins",
+      "30 pieces of silver",
+      "Nothing"
+    ],
+    "correct": "30 pieces of silver",
+    "explanation": "",
+    "id": "133740b1e75d"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "How did Judas identify Jesus to the soldiers?",
+    "options": [
+      "He called His name",
+      "He kissed Him",
+      "He pointed at Him",
+      "He described His clothes"
+    ],
+    "correct": "He kissed Him",
+    "explanation": "",
+    "id": "85074b609e07"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What animal crowed after Peter's denial?",
+    "options": [
+      "A dove",
+      "An eagle",
+      "A crow",
+      "A rooster"
+    ],
+    "correct": "A rooster",
+    "explanation": "",
+    "id": "abf423be3370"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Who was the first person to see Jesus alive after the resurrection?",
+    "options": [
+      "Thomas",
+      "John",
+      "Mary Magdalene",
+      "Peter"
+    ],
+    "correct": "Mary Magdalene",
+    "explanation": "",
+    "id": "62b57ebba66c"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What did Jesus tell His followers to do before He ascended?",
+    "options": [
+      "Build a church",
+      "Stay in Jerusalem forever",
+      "Go and make disciples of all nations",
+      "Write the Bible"
+    ],
+    "correct": "Go and make disciples of all nations",
+    "explanation": "",
+    "id": "6d7531243938"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "How did Jesus leave earth after the resurrection?",
+    "options": [
+      "He ascended into heaven",
+      "He disappeared",
+      "He sailed away",
+      "He walked away"
+    ],
+    "correct": "He ascended into heaven",
+    "explanation": "",
+    "id": "86aa6fb3b91c"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What did Thomas say when he doubted the resurrection?",
+    "options": [
+      "He left the group",
+      "He wouldn't believe until he saw Jesus' wounds",
+      "He said it was a dream",
+      "He called it a lie"
+    ],
+    "correct": "He wouldn't believe until he saw Jesus' wounds",
+    "explanation": "",
+    "id": "a8a88ece0bf3"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What famous prayer did Jesus teach His disciples?",
+    "options": [
+      "The Beatitudes",
+      "Psalm 23",
+      "The Lord's Prayer (Our Father)",
+      "The Shema"
+    ],
+    "correct": "The Lord's Prayer (Our Father)",
+    "explanation": "",
+    "id": "02f6633ca9c2"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What did Jesus say is the greatest commandment?",
+    "options": [
+      "Honor your parents",
+      "Keep the Sabbath",
+      "Love God with all your heart, soul, and mind",
+      "Do not steal"
+    ],
+    "correct": "Love God with all your heart, soul, and mind",
+    "explanation": "",
+    "id": "347b1f994969"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What did Jesus say is the second greatest commandment?",
+    "options": [
+      "Do not murder",
+      "Do not lie",
+      "Give to the poor",
+      "Love your neighbor as yourself"
+    ],
+    "correct": "Love your neighbor as yourself",
+    "explanation": "",
+    "id": "ccc3e658bd4d"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Who did Jesus say is our 'neighbor' in the Good Samaritan story?",
+    "options": [
+      "Anyone in need \u2014 even our enemies",
+      "Only our friends",
+      "Only our family",
+      "Only people from our town"
+    ],
+    "correct": "Anyone in need \u2014 even our enemies",
+    "explanation": "",
+    "id": "77da2249c0b1"
+  },
+  {
+    "category": "Battles & Wars",
+    "difficulty": "Layperson",
+    "question": "How did David kill the giant Goliath?",
+    "options": [
+      "With a sling and a stone to the forehead",
+      "With a spear",
+      "With his bare hands",
+      "With a sword"
+    ],
+    "correct": "With a sling and a stone to the forehead",
+    "explanation": "",
+    "id": "3ac93e5fabe0"
+  },
+  {
+    "category": "Battles & Wars",
+    "difficulty": "Layperson",
+    "question": "What did David take to face Goliath?",
+    "options": [
+      "Five smooth stones and a sling",
+      "A spear",
+      "A sword and shield",
+      "A bow and arrows"
+    ],
+    "correct": "Five smooth stones and a sling",
+    "explanation": "",
+    "id": "85ed4f692b45"
+  },
+  {
+    "category": "Battles & Wars",
+    "difficulty": "Layperson",
+    "question": "What fell down when the Israelites marched around Jericho?",
+    "options": [
+      "The army",
+      "The tower",
+      "The gate",
+      "The walls of the city"
+    ],
+    "correct": "The walls of the city",
+    "explanation": "",
+    "id": "f4904f6588cf"
+  },
+  {
+    "category": "Battles & Wars",
+    "difficulty": "Layperson",
+    "question": "What did the Israelites blow while marching around Jericho?",
+    "options": [
+      "Nothing",
+      "Trumpets",
+      "Drums",
+      "Flutes"
+    ],
+    "correct": "Trumpets",
+    "explanation": "",
+    "id": "2d20cd61fbd6"
+  },
+  {
+    "category": "Battles & Wars",
+    "difficulty": "Layperson",
+    "question": "What was Samson's source of strength?",
+    "options": [
+      "A magic ring",
+      "His hair \u2014 he was under a Nazirite vow",
+      "His diet",
+      "His muscles"
+    ],
+    "correct": "His hair \u2014 he was under a Nazirite vow",
+    "explanation": "",
+    "id": "816ed3b6a354"
+  },
+  {
+    "category": "Battles & Wars",
+    "difficulty": "Layperson",
+    "question": "Who tricked Samson into revealing his secret?",
+    "options": [
+      "Jezebel",
+      "Bathsheba",
+      "Delilah",
+      "Ruth"
+    ],
+    "correct": "Delilah",
+    "explanation": "",
+    "id": "4a2837299599"
+  },
+  {
+    "category": "Battles & Wars",
+    "difficulty": "Layperson",
+    "question": "Who fought with an army of only 300 men and won?",
+    "options": [
+      "Samson",
+      "David",
+      "Gideon",
+      "Joshua"
+    ],
+    "correct": "Gideon",
+    "explanation": "",
+    "id": "9d2a801dca90"
+  },
+  {
+    "category": "Battles & Wars",
+    "difficulty": "Layperson",
+    "question": "What unusual weapons did Gideon's men use?",
+    "options": [
+      "Swords",
+      "Slings",
+      "Bows",
+      "Trumpets, clay jars, and torches"
+    ],
+    "correct": "Trumpets, clay jars, and torches",
+    "explanation": "",
+    "id": "3a8978328027"
+  },
+  {
+    "category": "Battles & Wars",
+    "difficulty": "Layperson",
+    "question": "Who was the female judge who led Israel to victory?",
+    "options": [
+      "Deborah",
+      "Miriam",
+      "Esther",
+      "Ruth"
+    ],
+    "correct": "Deborah",
+    "explanation": "",
+    "id": "4d549358657a"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "Who was the greatest king of Israel?",
+    "options": [
+      "Hezekiah",
+      "Saul",
+      "Solomon",
+      "David"
+    ],
+    "correct": "David",
+    "explanation": "",
+    "id": "ee7892b104e3"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "What instrument did King David play?",
+    "options": [
+      "The trumpet",
+      "The flute",
+      "The drum",
+      "The harp"
+    ],
+    "correct": "The harp",
+    "explanation": "",
+    "id": "215574638060"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "What famous building did Solomon construct?",
+    "options": [
+      "Noah's Ark",
+      "The Temple in Jerusalem",
+      "The Tower of Babel",
+      "The walls of Jericho"
+    ],
+    "correct": "The Temple in Jerusalem",
+    "explanation": "",
+    "id": "b9159cde9fff"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "How did Solomon prove his wisdom with two women and a baby?",
+    "options": [
+      "He used a lie detector",
+      "He prayed for an answer",
+      "He asked the baby",
+      "He threatened to cut the baby in half \u2014 the real mother gave it up"
+    ],
+    "correct": "He threatened to cut the baby in half \u2014 the real mother gave it up",
+    "explanation": "",
+    "id": "93a8ad248172"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "What evil queen promoted false gods in Israel?",
+    "options": [
+      "Esther",
+      "Jezebel",
+      "Delilah",
+      "Bathsheba"
+    ],
+    "correct": "Jezebel",
+    "explanation": "",
+    "id": "322ddaf0f6a3"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "What prophet called fire from heaven to defeat false prophets?",
+    "options": [
+      "Elijah",
+      "Moses",
+      "Isaiah",
+      "Elisha"
+    ],
+    "correct": "Elijah",
+    "explanation": "",
+    "id": "9bf64d9ee26c"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "Who took over from Saul as king?",
+    "options": [
+      "Samuel",
+      "Solomon",
+      "Jonathan",
+      "David"
+    ],
+    "correct": "David",
+    "explanation": "",
+    "id": "dfd7d3e5e142"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "What sin did King David commit?",
+    "options": [
+      "Adultery with Bathsheba and murder of her husband",
+      "Idol worship",
+      "Fleeing from battle",
+      "Stealing from the Temple"
+    ],
+    "correct": "Adultery with Bathsheba and murder of her husband",
+    "explanation": "",
+    "id": "54066056a0b7"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "What happened when the kingdom split after Solomon?",
+    "options": [
+      "It became two kingdoms \u2014 Israel in the north and Judah in the south",
+      "It became three kingdoms",
+      "Nothing happened",
+      "Egypt took over"
+    ],
+    "correct": "It became two kingdoms \u2014 Israel in the north and Judah in the south",
+    "explanation": "",
+    "id": "f48111bb9929"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "Which empire destroyed Jerusalem and took the people into exile?",
+    "options": [
+      "Egypt",
+      "Rome",
+      "Babylon",
+      "Persia"
+    ],
+    "correct": "Babylon",
+    "explanation": "",
+    "id": "6ffad73a238f"
+  },
+  {
+    "category": "Prophets",
+    "difficulty": "Layperson",
+    "question": "How many days was Jonah inside the fish?",
+    "options": [
+      "7 days",
+      "3 days",
+      "1 day",
+      "40 days"
+    ],
+    "correct": "3 days",
+    "explanation": "",
+    "id": "d6eedb3d3ac4"
+  },
+  {
+    "category": "Prophets",
+    "difficulty": "Layperson",
+    "question": "Where did God want Jonah to go?",
+    "options": [
+      "Jerusalem",
+      "Nineveh",
+      "Egypt",
+      "Rome"
+    ],
+    "correct": "Nineveh",
+    "explanation": "",
+    "id": "80fe45700766"
+  },
+  {
+    "category": "Prophets",
+    "difficulty": "Layperson",
+    "question": "Did the people of Nineveh listen to Jonah?",
+    "options": [
+      "They killed him",
+      "Yes \u2014 the whole city repented",
+      "They laughed at him",
+      "No \u2014 they ignored him"
+    ],
+    "correct": "Yes \u2014 the whole city repented",
+    "explanation": "",
+    "id": "d75a047a8269"
+  },
+  {
+    "category": "Prophets",
+    "difficulty": "Layperson",
+    "question": "Who was thrown into a den of lions?",
+    "options": [
+      "David",
+      "Jonah",
+      "Daniel",
+      "Moses"
+    ],
+    "correct": "Daniel",
+    "explanation": "",
+    "id": "7ddc5ff9e520"
+  },
+  {
+    "category": "Prophets",
+    "difficulty": "Layperson",
+    "question": "Who were Daniel's three friends thrown into a furnace?",
+    "options": [
+      "Abraham, Isaac, and Jacob",
+      "Moses, Aaron, and Joshua",
+      "Peter, James, and John",
+      "Shadrach, Meshach, and Abednego"
+    ],
+    "correct": "Shadrach, Meshach, and Abednego",
+    "explanation": "",
+    "id": "888d2f62b2ff"
+  },
+  {
+    "category": "Prophets",
+    "difficulty": "Layperson",
+    "question": "What prophet saw a valley of dry bones come to life?",
+    "options": [
+      "Isaiah",
+      "Daniel",
+      "Ezekiel",
+      "Jeremiah"
+    ],
+    "correct": "Ezekiel",
+    "explanation": "",
+    "id": "e1bdbd4af6c0"
+  },
+  {
+    "category": "Prophets",
+    "difficulty": "Layperson",
+    "question": "What prophet is called 'the weeping prophet'?",
+    "options": [
+      "Jeremiah",
+      "Isaiah",
+      "Ezekiel",
+      "Amos"
+    ],
+    "correct": "Jeremiah",
+    "explanation": "",
+    "id": "b01e69c30526"
+  },
+  {
+    "category": "Prophets",
+    "difficulty": "Layperson",
+    "question": "Which prophet predicted Jesus would be born in Bethlehem?",
+    "options": [
+      "Jeremiah",
+      "Micah",
+      "Daniel",
+      "Isaiah"
+    ],
+    "correct": "Micah",
+    "explanation": "",
+    "id": "b9f480fcff5a"
+  },
+  {
+    "category": "Prophets",
+    "difficulty": "Layperson",
+    "question": "Which prophet wrote about a 'suffering servant'?",
+    "options": [
+      "Isaiah",
+      "Jeremiah",
+      "Malachi",
+      "Ezekiel"
+    ],
+    "correct": "Isaiah",
+    "explanation": "",
+    "id": "c49b1f50545c"
+  },
+  {
+    "category": "The Apostles",
+    "difficulty": "Layperson",
+    "question": "Who was the first Christian to be killed for his faith?",
+    "options": [
+      "Stephen",
+      "Peter",
+      "Paul",
+      "James"
+    ],
+    "correct": "Stephen",
+    "explanation": "",
+    "id": "33ccfae6338b"
+  },
+  {
+    "category": "The Apostles",
+    "difficulty": "Layperson",
+    "question": "How did Stephen die?",
+    "options": [
+      "He was crucified",
+      "He drowned",
+      "He was beheaded",
+      "He was stoned to death"
+    ],
+    "correct": "He was stoned to death",
+    "explanation": "",
+    "id": "e0ba9faed547"
+  },
+  {
+    "category": "The Apostles",
+    "difficulty": "Layperson",
+    "question": "Who held the coats of those who stoned Stephen?",
+    "options": [
+      "Barnabas",
+      "John",
+      "Saul (later called Paul)",
+      "Peter"
+    ],
+    "correct": "Saul (later called Paul)",
+    "explanation": "",
+    "id": "6ba41b58c99c"
+  },
+  {
+    "category": "The Apostles",
+    "difficulty": "Layperson",
+    "question": "How many people believed after Peter's first sermon?",
+    "options": [
+      "About 3,000",
+      "About 100",
+      "About 12",
+      "About 500"
+    ],
+    "correct": "About 3,000",
+    "explanation": "",
+    "id": "d21f9fcc44ab"
+  },
+  {
+    "category": "The Apostles",
+    "difficulty": "Layperson",
+    "question": "Which apostle was known as 'the doubter'?",
+    "options": [
+      "Peter",
+      "Andrew",
+      "Judas",
+      "Thomas"
+    ],
+    "correct": "Thomas",
+    "explanation": "",
+    "id": "9080c6f11ba3"
+  },
+  {
+    "category": "The Apostles",
+    "difficulty": "Layperson",
+    "question": "What were most of the apostles before following Jesus?",
+    "options": [
+      "Farmers",
+      "Fishermen",
+      "Priests",
+      "Soldiers"
+    ],
+    "correct": "Fishermen",
+    "explanation": "",
+    "id": "0fe3004bb936"
+  },
+  {
+    "category": "The Apostles",
+    "difficulty": "Layperson",
+    "question": "Who was Jesus' closest inner circle of three?",
+    "options": [
+      "Peter, James, and John",
+      "Judas, Simon, and Thaddaeus",
+      "Matthew, Mark, and Luke",
+      "Andrew, Philip, and Thomas"
+    ],
+    "correct": "Peter, James, and John",
+    "explanation": "",
+    "id": "2ce5d0960b0d"
+  },
+  {
+    "category": "Paul & His Letters",
+    "difficulty": "Layperson",
+    "question": "What was Paul's name before he became a Christian?",
+    "options": [
+      "Silas",
+      "Simon",
+      "Saul",
+      "Stephen"
+    ],
+    "correct": "Saul",
+    "explanation": "",
+    "id": "05e7d937330e"
+  },
+  {
+    "category": "Paul & His Letters",
+    "difficulty": "Layperson",
+    "question": "Was Paul one of the original 12 apostles?",
+    "options": [
+      "Yes \u2014 he replaced Judas",
+      "Yes \u2014 he was the leader",
+      "Yes \u2014 he was the youngest",
+      "No \u2014 he was called later"
+    ],
+    "correct": "No \u2014 he was called later",
+    "explanation": "",
+    "id": "9b4acce5b44f"
+  },
+  {
+    "category": "Paul & His Letters",
+    "difficulty": "Layperson",
+    "question": "What famous chapter about love did Paul write?",
+    "options": [
+      "John 3",
+      "Psalm 23",
+      "1 Corinthians 13",
+      "Romans 8"
+    ],
+    "correct": "1 Corinthians 13",
+    "explanation": "",
+    "id": "9351205a970f"
+  },
+  {
+    "category": "Paul & His Letters",
+    "difficulty": "Layperson",
+    "question": "What did Paul say is the greatest of faith, hope, and love?",
+    "options": [
+      "Hope",
+      "Faith",
+      "All are equal",
+      "Love"
+    ],
+    "correct": "Love",
+    "explanation": "",
+    "id": "7fcc9b74913b"
+  },
+  {
+    "category": "Paul & His Letters",
+    "difficulty": "Layperson",
+    "question": "How did Paul often write his letters?",
+    "options": [
+      "From prison",
+      "From the Temple",
+      "From a palace",
+      "From a boat"
+    ],
+    "correct": "From prison",
+    "explanation": "",
+    "id": "808dcd08bfba"
+  },
+  {
+    "category": "Paul & His Letters",
+    "difficulty": "Layperson",
+    "question": "What did Paul do for work besides preaching?",
+    "options": [
+      "He was a fisherman",
+      "He was a tentmaker",
+      "He was a farmer",
+      "He was a soldier"
+    ],
+    "correct": "He was a tentmaker",
+    "explanation": "",
+    "id": "edbf3c625352"
+  },
+  {
+    "category": "Paul & His Letters",
+    "difficulty": "Layperson",
+    "question": "How did Paul escape from Damascus after his conversion?",
+    "options": [
+      "He was lowered over the wall in a basket",
+      "He walked out the gate",
+      "He disguised himself",
+      "An angel freed him"
+    ],
+    "correct": "He was lowered over the wall in a basket",
+    "explanation": "",
+    "id": "0034961cf3ea"
+  },
+  {
+    "category": "Paul & His Letters",
+    "difficulty": "Layperson",
+    "question": "What happened to Paul and Silas in jail at Philippi?",
+    "options": [
+      "They were executed",
+      "An earthquake opened the doors and the jailer believed",
+      "Nothing happened",
+      "They escaped"
+    ],
+    "correct": "An earthquake opened the doors and the jailer believed",
+    "explanation": "",
+    "id": "66e1cdecfc52"
+  },
+  {
+    "category": "Paul & His Letters",
+    "difficulty": "Layperson",
+    "question": "What verse says 'I can do all things through Christ'?",
+    "options": [
+      "Psalm 23:1",
+      "John 3:16",
+      "Philippians 4:13",
+      "Romans 8:28"
+    ],
+    "correct": "Philippians 4:13",
+    "explanation": "",
+    "id": "2556b759df2c"
+  },
+  {
+    "category": "Women of the Bible",
+    "difficulty": "Layperson",
+    "question": "Who was the first woman?",
+    "options": [
+      "Eve",
+      "Ruth",
+      "Sarah",
+      "Mary"
+    ],
+    "correct": "Eve",
+    "explanation": "",
+    "id": "a42cdfc366b2"
+  },
+  {
+    "category": "Women of the Bible",
+    "difficulty": "Layperson",
+    "question": "What loyal woman said 'Where you go, I will go'?",
+    "options": [
+      "Ruth",
+      "Esther",
+      "Mary",
+      "Martha"
+    ],
+    "correct": "Ruth",
+    "explanation": "",
+    "id": "8bf968617b31"
+  },
+  {
+    "category": "Women of the Bible",
+    "difficulty": "Layperson",
+    "question": "Who was the queen that saved the Jewish people in Persia?",
+    "options": [
+      "Jezebel",
+      "Ruth",
+      "Deborah",
+      "Esther"
+    ],
+    "correct": "Esther",
+    "explanation": "",
+    "id": "d3b46508397b"
+  },
+  {
+    "category": "Women of the Bible",
+    "difficulty": "Layperson",
+    "question": "What did Hannah pray for?",
+    "options": [
+      "Health",
+      "A son",
+      "A husband",
+      "Wealth"
+    ],
+    "correct": "A son",
+    "explanation": "",
+    "id": "3a7abc9bb583"
+  },
+  {
+    "category": "Women of the Bible",
+    "difficulty": "Layperson",
+    "question": "Who was the judge and leader of Israel?",
+    "options": [
+      "Miriam",
+      "Esther",
+      "Ruth",
+      "Deborah"
+    ],
+    "correct": "Deborah",
+    "explanation": "",
+    "id": "c3c99a67331d"
+  },
+  {
+    "category": "Women of the Bible",
+    "difficulty": "Layperson",
+    "question": "Who was Jesus' friend who loved to sit at His feet and listen?",
+    "options": [
+      "Martha",
+      "Mary Magdalene",
+      "Elizabeth",
+      "Mary of Bethany"
+    ],
+    "correct": "Mary of Bethany",
+    "explanation": "",
+    "id": "6c3b7019fb71"
+  },
+  {
+    "category": "Women of the Bible",
+    "difficulty": "Layperson",
+    "question": "Who was the first person to see Jesus alive after Easter?",
+    "options": [
+      "Mary Magdalene",
+      "Peter",
+      "Thomas",
+      "John"
+    ],
+    "correct": "Mary Magdalene",
+    "explanation": "",
+    "id": "48baa0430c6a"
+  },
+  {
+    "category": "Women of the Bible",
+    "difficulty": "Layperson",
+    "question": "Which woman had a strong faith and betrayed Samson?",
+    "options": [
+      "Esther",
+      "Deborah",
+      "Delilah tricked him \u2014 she did not have faith",
+      "Ruth"
+    ],
+    "correct": "Delilah tricked him \u2014 she did not have faith",
+    "explanation": "",
+    "id": "194e0965dc54"
+  },
+  {
+    "category": "Women of the Bible",
+    "difficulty": "Layperson",
+    "question": "What relative of Mary was the mother of John the Baptist?",
+    "options": [
+      "Martha",
+      "Joanna",
+      "Elizabeth",
+      "Anna"
+    ],
+    "correct": "Elizabeth",
+    "explanation": "",
+    "id": "21274ceaeee1"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "Who told parables?",
+    "options": [
+      "Moses",
+      "Jesus",
+      "Paul",
+      "David"
+    ],
+    "correct": "Jesus",
+    "explanation": "",
+    "id": "e433b5db5f62"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "In the Good Samaritan, who helped the injured man?",
+    "options": [
+      "A priest",
+      "A Samaritan \u2014 an unlikely hero",
+      "A soldier",
+      "A Levite"
+    ],
+    "correct": "A Samaritan \u2014 an unlikely hero",
+    "explanation": "",
+    "id": "dd00f934c106"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "What is the lesson of the Good Samaritan?",
+    "options": [
+      "Love and help everyone, even strangers and enemies",
+      "Avoid dangerous roads",
+      "Only help your friends",
+      "Call for help"
+    ],
+    "correct": "Love and help everyone, even strangers and enemies",
+    "explanation": "",
+    "id": "564e0182ebc4"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "In the Prodigal Son, what did the younger son waste?",
+    "options": [
+      "His inheritance on wild living",
+      "The family farm",
+      "His brother's money",
+      "His father's tools"
+    ],
+    "correct": "His inheritance on wild living",
+    "explanation": "",
+    "id": "493f26042a13"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "What did the father do when the Prodigal Son came home?",
+    "options": [
+      "Ran to him, hugged him, and threw a party",
+      "Turned him away",
+      "Made him work as a servant",
+      "Punished him"
+    ],
+    "correct": "Ran to him, hugged him, and threw a party",
+    "explanation": "",
+    "id": "30027696e8c7"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "What is the lesson of the Prodigal Son?",
+    "options": [
+      "God welcomes back anyone who repents",
+      "Stay home",
+      "Don't waste money",
+      "Never forgive"
+    ],
+    "correct": "God welcomes back anyone who repents",
+    "explanation": "",
+    "id": "a292490a6646"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "In the Sower parable, where did the best seeds grow?",
+    "options": [
+      "In good soil",
+      "On rocky ground",
+      "Among thorns",
+      "On the path"
+    ],
+    "correct": "In good soil",
+    "explanation": "",
+    "id": "59c05aad3ccd"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "What does the good soil represent?",
+    "options": [
+      "A garden",
+      "A farmer",
+      "A person who hears God's word and lives by it",
+      "A priest"
+    ],
+    "correct": "A person who hears God's word and lives by it",
+    "explanation": "",
+    "id": "446a8256f885"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "What is the lesson of the Mustard Seed?",
+    "options": [
+      "Small things don't matter",
+      "Farming is holy",
+      "God's kingdom starts small but grows very large",
+      "Plant more seeds"
+    ],
+    "correct": "God's kingdom starts small but grows very large",
+    "explanation": "",
+    "id": "b41600511ead"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "What did the wise man build his house on?",
+    "options": [
+      "Clay",
+      "Sand",
+      "Wood",
+      "Rock"
+    ],
+    "correct": "Rock",
+    "explanation": "",
+    "id": "748f7e7b8104"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "What happened to the foolish man's house built on sand?",
+    "options": [
+      "It floated away",
+      "It fell down when the storm came",
+      "It stood strong",
+      "It caught fire"
+    ],
+    "correct": "It fell down when the storm came",
+    "explanation": "",
+    "id": "0b046a0f8d35"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "In the Lost Sheep parable, how many sheep were lost?",
+    "options": [
+      "50 out of 100",
+      "1 out of 100",
+      "99 out of 100",
+      "10 out of 100"
+    ],
+    "correct": "1 out of 100",
+    "explanation": "",
+    "id": "7d92f9441303"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "What does the shepherd do when he finds the lost sheep?",
+    "options": [
+      "Leaves it",
+      "Sells it",
+      "Celebrates and carries it home on his shoulders",
+      "Punishes it"
+    ],
+    "correct": "Celebrates and carries it home on his shoulders",
+    "explanation": "",
+    "id": "4447e653d454"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "What is the lesson of the Lost Sheep?",
+    "options": [
+      "Shepherds work hard",
+      "God searches for every lost person and rejoices when they return",
+      "Sheep are valuable",
+      "Don't wander off"
+    ],
+    "correct": "God searches for every lost person and rejoices when they return",
+    "explanation": "",
+    "id": "961a7bcc7a83"
+  },
+  {
+    "category": "Miracles",
+    "difficulty": "Layperson",
+    "question": "Where did Jesus turn water into wine?",
+    "options": [
+      "At a funeral",
+      "At a wedding in Cana",
+      "At the Temple",
+      "In the desert"
+    ],
+    "correct": "At a wedding in Cana",
+    "explanation": "",
+    "id": "276a9f8432f2"
+  },
+  {
+    "category": "Miracles",
+    "difficulty": "Layperson",
+    "question": "How many people did Jesus feed with a boy's lunch?",
+    "options": [
+      "1,000",
+      "500",
+      "About 5,000 men plus women and children",
+      "100"
+    ],
+    "correct": "About 5,000 men plus women and children",
+    "explanation": "",
+    "id": "91bd26d10e77"
+  },
+  {
+    "category": "Miracles",
+    "difficulty": "Layperson",
+    "question": "What food did the boy have?",
+    "options": [
+      "Bread and butter",
+      "Fruit and cheese",
+      "5 loaves and 2 fish",
+      "Rice and beans"
+    ],
+    "correct": "5 loaves and 2 fish",
+    "explanation": "",
+    "id": "4f1b69bc67e3"
+  },
+  {
+    "category": "Miracles",
+    "difficulty": "Layperson",
+    "question": "How many baskets of leftovers were there?",
+    "options": [
+      "12",
+      "7",
+      "5",
+      "0"
+    ],
+    "correct": "12",
+    "explanation": "",
+    "id": "5f9692ac3b74"
+  },
+  {
+    "category": "Miracles",
+    "difficulty": "Layperson",
+    "question": "Who did Jesus bring back to life after 4 days?",
+    "options": [
+      "Paul",
+      "Lazarus",
+      "Peter",
+      "Moses"
+    ],
+    "correct": "Lazarus",
+    "explanation": "",
+    "id": "fefd1f6c540e"
+  },
+  {
+    "category": "Miracles",
+    "difficulty": "Layperson",
+    "question": "What did Jesus say to the storm on the sea?",
+    "options": [
+      "'Calm down!'",
+      "'Go away!'",
+      "'Stop now!'",
+      "'Peace, be still!'"
+    ],
+    "correct": "'Peace, be still!'",
+    "explanation": "",
+    "id": "5ec3dd8e86c8"
+  },
+  {
+    "category": "Miracles",
+    "difficulty": "Layperson",
+    "question": "How did Jesus heal the blind man in John 9?",
+    "options": [
+      "He touched his head",
+      "He made mud and put it on his eyes",
+      "He used medicine",
+      "He prayed from far away"
+    ],
+    "correct": "He made mud and put it on his eyes",
+    "explanation": "",
+    "id": "2072c1dae6bd"
+  },
+  {
+    "category": "Miracles",
+    "difficulty": "Layperson",
+    "question": "What miracle did Elijah perform on Mount Carmel?",
+    "options": [
+      "God sent fire from heaven to burn the sacrifice",
+      "He parted the sea",
+      "He raised the dead",
+      "He healed a leper"
+    ],
+    "correct": "God sent fire from heaven to burn the sacrifice",
+    "explanation": "",
+    "id": "51c0e281eccb"
+  },
+  {
+    "category": "Miracles",
+    "difficulty": "Layperson",
+    "question": "Who was healed of leprosy by washing in the Jordan River?",
+    "options": [
+      "Moses",
+      "Naaman",
+      "Elijah",
+      "David"
+    ],
+    "correct": "Naaman",
+    "explanation": "",
+    "id": "48b106d720e5"
+  },
+  {
+    "category": "Miracles",
+    "difficulty": "Layperson",
+    "question": "What happened to Peter's mother-in-law when Jesus visited?",
+    "options": [
+      "She was sleeping",
+      "She cooked dinner",
+      "She was already well",
+      "She was healed of a fever"
+    ],
+    "correct": "She was healed of a fever",
+    "explanation": "",
+    "id": "bf22e8b23771"
+  },
+  {
+    "category": "Psalms & Proverbs",
+    "difficulty": "Layperson",
+    "question": "What Psalm says 'The LORD is my shepherd'?",
+    "options": [
+      "Psalm 119",
+      "Psalm 100",
+      "Psalm 1",
+      "Psalm 23"
+    ],
+    "correct": "Psalm 23",
+    "explanation": "",
+    "id": "567443ef2720"
+  },
+  {
+    "category": "Psalms & Proverbs",
+    "difficulty": "Layperson",
+    "question": "What does Psalm 23 promise?",
+    "options": [
+      "We will be rich",
+      "God cares for us like a shepherd cares for sheep",
+      "Life will be easy",
+      "We will never suffer"
+    ],
+    "correct": "God cares for us like a shepherd cares for sheep",
+    "explanation": "",
+    "id": "d2dd5e14f7c9"
+  },
+  {
+    "category": "Psalms & Proverbs",
+    "difficulty": "Layperson",
+    "question": "Who wrote most of the Proverbs?",
+    "options": [
+      "David",
+      "Moses",
+      "Solomon",
+      "Abraham"
+    ],
+    "correct": "Solomon",
+    "explanation": "",
+    "id": "b7732dda7c16"
+  },
+  {
+    "category": "Psalms & Proverbs",
+    "difficulty": "Layperson",
+    "question": "What Psalm says 'Make a joyful noise to the Lord'?",
+    "options": [
+      "Psalm 150",
+      "Psalm 23",
+      "Psalm 1",
+      "Psalm 100"
+    ],
+    "correct": "Psalm 100",
+    "explanation": "",
+    "id": "7be121a84db9"
+  },
+  {
+    "category": "Psalms & Proverbs",
+    "difficulty": "Layperson",
+    "question": "What is the shortest verse in the Bible?",
+    "options": [
+      "'God is love'",
+      "'Jesus wept' (John 11:35)",
+      "'Amen'",
+      "'Pray always'"
+    ],
+    "correct": "'Jesus wept' (John 11:35)",
+    "explanation": "",
+    "id": "f8fed8b6f58c"
+  },
+  {
+    "category": "Psalms & Proverbs",
+    "difficulty": "Layperson",
+    "question": "What does 'The Lord is my shepherd, I shall not want' mean?",
+    "options": [
+      "Shepherds are holy",
+      "God provides everything we need",
+      "We should own sheep",
+      "We will never be hungry"
+    ],
+    "correct": "God provides everything we need",
+    "explanation": "",
+    "id": "8f02b6a29da8"
+  },
+  {
+    "category": "Psalms & Proverbs",
+    "difficulty": "Layperson",
+    "question": "What book says 'To everything there is a season'?",
+    "options": [
+      "Psalms",
+      "Ecclesiastes",
+      "Proverbs",
+      "Job"
+    ],
+    "correct": "Ecclesiastes",
+    "explanation": "",
+    "id": "9d7ef4e3b683"
+  },
+  {
+    "category": "Psalms & Proverbs",
+    "difficulty": "Layperson",
+    "question": "What book tells the story of a man who suffered but kept faith in God?",
+    "options": [
+      "Jonah",
+      "Joel",
+      "Jeremiah",
+      "Job"
+    ],
+    "correct": "Job",
+    "explanation": "",
+    "id": "d29467424c8f"
+  },
+  {
+    "category": "Revelation & End Times",
+    "difficulty": "Layperson",
+    "question": "What is the book of Revelation about?",
+    "options": [
+      "The life of Jesus",
+      "Paul's journeys",
+      "The history of Israel",
+      "Visions of the end times and God's ultimate victory"
+    ],
+    "correct": "Visions of the end times and God's ultimate victory",
+    "explanation": "",
+    "id": "7b58079d4194"
+  },
+  {
+    "category": "Revelation & End Times",
+    "difficulty": "Layperson",
+    "question": "What number is associated with the Beast?",
+    "options": [
+      "333",
+      "999",
+      "666",
+      "777"
+    ],
+    "correct": "666",
+    "explanation": "",
+    "id": "fa5d23a1d57a"
+  },
+  {
+    "category": "Revelation & End Times",
+    "difficulty": "Layperson",
+    "question": "What is the final battle called?",
+    "options": [
+      "Armageddon",
+      "Megiddo",
+      "Jericho",
+      "Babel"
+    ],
+    "correct": "Armageddon",
+    "explanation": "",
+    "id": "006f970851b9"
+  },
+  {
+    "category": "Revelation & End Times",
+    "difficulty": "Layperson",
+    "question": "What will there be none of in heaven?",
+    "options": [
+      "No more angels",
+      "No more food",
+      "No more tears, death, mourning, or pain",
+      "No more music"
+    ],
+    "correct": "No more tears, death, mourning, or pain",
+    "explanation": "",
+    "id": "f66d85d15682"
+  },
+  {
+    "category": "Angels & Demons",
+    "difficulty": "Layperson",
+    "question": "Which angel told Mary she would have a baby?",
+    "options": [
+      "Raphael",
+      "Michael",
+      "Uriel",
+      "Gabriel"
+    ],
+    "correct": "Gabriel",
+    "explanation": "",
+    "id": "c844a06275f6"
+  },
+  {
+    "category": "Angels & Demons",
+    "difficulty": "Layperson",
+    "question": "What did the angels tell the shepherds on Christmas?",
+    "options": [
+      "Stay with your sheep",
+      "The Savior has been born in Bethlehem",
+      "Go to Jerusalem",
+      "Run and hide"
+    ],
+    "correct": "The Savior has been born in Bethlehem",
+    "explanation": "",
+    "id": "e901e65bae62"
+  },
+  {
+    "category": "Angels & Demons",
+    "difficulty": "Layperson",
+    "question": "Who is the main enemy of God in the Bible?",
+    "options": [
+      "Pharaoh",
+      "Herod",
+      "Satan (the devil)",
+      "Goliath"
+    ],
+    "correct": "Satan (the devil)",
+    "explanation": "",
+    "id": "9f7bee0cb30b"
+  },
+  {
+    "category": "Angels & Demons",
+    "difficulty": "Layperson",
+    "question": "What did Satan do in the Garden of Eden?",
+    "options": [
+      "Tempted Eve to eat the forbidden fruit",
+      "Created the garden",
+      "Killed an animal",
+      "Planted a tree"
+    ],
+    "correct": "Tempted Eve to eat the forbidden fruit",
+    "explanation": "",
+    "id": "a445acbf11da"
+  },
+  {
+    "category": "Angels & Demons",
+    "difficulty": "Layperson",
+    "question": "What does the Bible say about angels?",
+    "options": [
+      "They are imaginary",
+      "They only appear in dreams",
+      "They are dead people",
+      "They are God's messengers and servants"
+    ],
+    "correct": "They are God's messengers and servants",
+    "explanation": "",
+    "id": "0dc1508de405"
+  },
+  {
+    "category": "Angels & Demons",
+    "difficulty": "Layperson",
+    "question": "What angel is described as an archangel?",
+    "options": [
+      "Michael",
+      "Raphael",
+      "Uriel",
+      "Gabriel"
+    ],
+    "correct": "Michael",
+    "explanation": "",
+    "id": "5bb8f469087a"
+  },
+  {
+    "category": "Laws & Commandments",
+    "difficulty": "Layperson",
+    "question": "Which commandment says to honor your parents?",
+    "options": [
+      "The first",
+      "The seventh",
+      "The fifth",
+      "The tenth"
+    ],
+    "correct": "The fifth",
+    "explanation": "",
+    "id": "3d3e7a6ce13e"
+  },
+  {
+    "category": "Laws & Commandments",
+    "difficulty": "Layperson",
+    "question": "What did Jesus say was the most important commandment?",
+    "options": [
+      "Give to the poor",
+      "Love God with all your heart, soul, and mind",
+      "Do not murder",
+      "Keep the Sabbath"
+    ],
+    "correct": "Love God with all your heart, soul, and mind",
+    "explanation": "",
+    "id": "4613861bf277"
+  },
+  {
+    "category": "Laws & Commandments",
+    "difficulty": "Layperson",
+    "question": "Where did God give the Ten Commandments?",
+    "options": [
+      "Jerusalem",
+      "Mount Everest",
+      "Mount Sinai",
+      "The Garden of Eden"
+    ],
+    "correct": "Mount Sinai",
+    "explanation": "",
+    "id": "205d9681e9a0"
+  },
+  {
+    "category": "Laws & Commandments",
+    "difficulty": "Layperson",
+    "question": "What were the commandments written on?",
+    "options": [
+      "A golden plate",
+      "Paper",
+      "Two stone tablets",
+      "A scroll"
+    ],
+    "correct": "Two stone tablets",
+    "explanation": "",
+    "id": "04d38df4ac02"
+  },
+  {
+    "category": "Places & Lands",
+    "difficulty": "Layperson",
+    "question": "What city is called 'the Holy City'?",
+    "options": [
+      "Rome",
+      "Athens",
+      "Jerusalem",
+      "Bethlehem"
+    ],
+    "correct": "Jerusalem",
+    "explanation": "",
+    "id": "0ed988cfcd9f"
+  },
+  {
+    "category": "Places & Lands",
+    "difficulty": "Layperson",
+    "question": "What country were the Israelites slaves in?",
+    "options": [
+      "Persia",
+      "Egypt",
+      "Rome",
+      "Babylon"
+    ],
+    "correct": "Egypt",
+    "explanation": "",
+    "id": "498e7e9c1f9e"
+  },
+  {
+    "category": "Places & Lands",
+    "difficulty": "Layperson",
+    "question": "What river was Jesus baptized in?",
+    "options": [
+      "The Nile",
+      "The Red Sea",
+      "The Euphrates",
+      "The Jordan River"
+    ],
+    "correct": "The Jordan River",
+    "explanation": "",
+    "id": "094934fe91f6"
+  },
+  {
+    "category": "Places & Lands",
+    "difficulty": "Layperson",
+    "question": "Where did Jonah NOT want to go?",
+    "options": [
+      "Jerusalem",
+      "Egypt",
+      "Tarshish",
+      "Nineveh"
+    ],
+    "correct": "Nineveh",
+    "explanation": "",
+    "id": "5a7d0d2be3bf"
+  },
+  {
+    "category": "Places & Lands",
+    "difficulty": "Layperson",
+    "question": "What sea did Moses part?",
+    "options": [
+      "The Mediterranean",
+      "The Sea of Galilee",
+      "The Red Sea",
+      "The Dead Sea"
+    ],
+    "correct": "The Red Sea",
+    "explanation": "",
+    "id": "9b8f6bdbe128"
+  },
+  {
+    "category": "Places & Lands",
+    "difficulty": "Layperson",
+    "question": "What land did God promise to Abraham?",
+    "options": [
+      "Babylon",
+      "Canaan (the Promised Land)",
+      "Egypt",
+      "Rome"
+    ],
+    "correct": "Canaan (the Promised Land)",
+    "explanation": "",
+    "id": "ae629780cd19"
+  },
+  {
+    "category": "Food, Feasts & Offerings",
+    "difficulty": "Layperson",
+    "question": "What bread-like food did God send from heaven?",
+    "options": [
+      "Pizza",
+      "Cake",
+      "Crackers",
+      "Manna"
+    ],
+    "correct": "Manna",
+    "explanation": "",
+    "id": "baabdf77777b"
+  },
+  {
+    "category": "Food, Feasts & Offerings",
+    "difficulty": "Layperson",
+    "question": "What meal do Christians share to remember Jesus' death?",
+    "options": [
+      "Communion / the Lord's Supper",
+      "A feast",
+      "Passover only",
+      "Breakfast"
+    ],
+    "correct": "Communion / the Lord's Supper",
+    "explanation": "",
+    "id": "cfd8ce53f960"
+  },
+  {
+    "category": "Food, Feasts & Offerings",
+    "difficulty": "Layperson",
+    "question": "What does the bread represent in communion?",
+    "options": [
+      "Jesus' body",
+      "Heaven",
+      "God's creation",
+      "The Law"
+    ],
+    "correct": "Jesus' body",
+    "explanation": "",
+    "id": "f9a237ba3591"
+  },
+  {
+    "category": "Food, Feasts & Offerings",
+    "difficulty": "Layperson",
+    "question": "What does the wine represent in communion?",
+    "options": [
+      "Joy",
+      "The Spirit",
+      "Jesus' blood",
+      "Water"
+    ],
+    "correct": "Jesus' blood",
+    "explanation": "",
+    "id": "2a420b6c3a62"
+  },
+  {
+    "category": "Food, Feasts & Offerings",
+    "difficulty": "Layperson",
+    "question": "What holiday remembers Israel's escape from Egypt?",
+    "options": [
+      "Easter",
+      "Passover",
+      "Hanukkah",
+      "Christmas"
+    ],
+    "correct": "Passover",
+    "explanation": "",
+    "id": "809b406237d0"
+  },
+  {
+    "category": "Food, Feasts & Offerings",
+    "difficulty": "Layperson",
+    "question": "What food did Esau trade his birthright for?",
+    "options": [
+      "Fish",
+      "Bread",
+      "Fruit",
+      "A bowl of stew"
+    ],
+    "correct": "A bowl of stew",
+    "explanation": "",
+    "id": "3de377ce1e45"
+  },
+  {
+    "category": "Food, Feasts & Offerings",
+    "difficulty": "Layperson",
+    "question": "What did Jesus multiply to feed thousands?",
+    "options": [
+      "Figs and dates",
+      "Manna",
+      "Bread and wine",
+      "Loaves and fish"
+    ],
+    "correct": "Loaves and fish",
+    "explanation": "",
+    "id": "a1bc0adf5ac3"
+  },
+  {
+    "category": "Numbers & Genealogies",
+    "difficulty": "Layperson",
+    "question": "How many books are in the Bible?",
+    "options": [
+      "50",
+      "72",
+      "66",
+      "100"
+    ],
+    "correct": "66",
+    "explanation": "",
+    "id": "c55b704ce95b"
+  },
+  {
+    "category": "Numbers & Genealogies",
+    "difficulty": "Layperson",
+    "question": "How many commandments did God give?",
+    "options": [
+      "12",
+      "10",
+      "5",
+      "7"
+    ],
+    "correct": "10",
+    "explanation": "",
+    "id": "86514bd687fc"
+  },
+  {
+    "category": "Numbers & Genealogies",
+    "difficulty": "Layperson",
+    "question": "How many plagues hit Egypt?",
+    "options": [
+      "10",
+      "12",
+      "3",
+      "7"
+    ],
+    "correct": "10",
+    "explanation": "",
+    "id": "b6c35d088a14"
+  },
+  {
+    "category": "Numbers & Genealogies",
+    "difficulty": "Layperson",
+    "question": "How many days was Jonah in the fish?",
+    "options": [
+      "3",
+      "7",
+      "40",
+      "1"
+    ],
+    "correct": "3",
+    "explanation": "",
+    "id": "7aeb0d146e9a"
+  },
+  {
+    "category": "Dreams & Visions",
+    "difficulty": "Layperson",
+    "question": "Who interpreted Pharaoh's dreams about cows and grain?",
+    "options": [
+      "Aaron",
+      "Daniel",
+      "Moses",
+      "Joseph"
+    ],
+    "correct": "Joseph",
+    "explanation": "",
+    "id": "486ee908d4d8"
+  },
+  {
+    "category": "Dreams & Visions",
+    "difficulty": "Layperson",
+    "question": "What did Pharaoh's dream of seven fat cows mean?",
+    "options": [
+      "Seven plagues",
+      "Seven nations",
+      "Seven years of plenty",
+      "Seven kings"
+    ],
+    "correct": "Seven years of plenty",
+    "explanation": "",
+    "id": "adb2d517479d"
+  },
+  {
+    "category": "Dreams & Visions",
+    "difficulty": "Layperson",
+    "question": "Who had dreams that his family would bow down to him?",
+    "options": [
+      "Moses",
+      "Solomon",
+      "Joseph",
+      "David"
+    ],
+    "correct": "Joseph",
+    "explanation": "",
+    "id": "53f6a659824e"
+  },
+  {
+    "category": "Dreams & Visions",
+    "difficulty": "Layperson",
+    "question": "What did God tell Joseph (Mary's husband) in a dream?",
+    "options": [
+      "Name the baby John",
+      "Don't be afraid to marry Mary \u2014 her baby is from God",
+      "Go to Egypt",
+      "Build a temple"
+    ],
+    "correct": "Don't be afraid to marry Mary \u2014 her baby is from God",
+    "explanation": "",
+    "id": "9101e65cf9d5"
+  },
+  {
+    "category": "Dreams & Visions",
+    "difficulty": "Layperson",
+    "question": "Who had a vision of dry bones coming to life?",
+    "options": [
+      "Daniel",
+      "Jeremiah",
+      "Ezekiel",
+      "Isaiah"
+    ],
+    "correct": "Ezekiel",
+    "explanation": "",
+    "id": "db057d5b550c"
+  },
+  {
+    "category": "Dreams & Visions",
+    "difficulty": "Layperson",
+    "question": "Who was called by God's voice at night as a boy?",
+    "options": [
+      "Samuel",
+      "David",
+      "Moses",
+      "Joseph"
+    ],
+    "correct": "Samuel",
+    "explanation": "",
+    "id": "c5d4129738cc"
+  },
+  {
+    "category": "Dreams & Visions",
+    "difficulty": "Layperson",
+    "question": "What did the wise men dream about after visiting Jesus?",
+    "options": [
+      "To bring more gifts",
+      "Not to go back to King Herod",
+      "To stay in Bethlehem",
+      "To tell everyone"
+    ],
+    "correct": "Not to go back to King Herod",
+    "explanation": "",
+    "id": "1df450aa17b8"
+  },
+  {
+    "category": "Prophecy & Fulfillment",
+    "difficulty": "Layperson",
+    "question": "Did the Old Testament predict Jesus' birth?",
+    "options": [
+      "Only His death",
+      "No",
+      "Only vaguely",
+      "Yes \u2014 hundreds of years before"
+    ],
+    "correct": "Yes \u2014 hundreds of years before",
+    "explanation": "",
+    "id": "3b41a7624147"
+  },
+  {
+    "category": "Prophecy & Fulfillment",
+    "difficulty": "Layperson",
+    "question": "Which prophet said a virgin would have a son?",
+    "options": [
+      "David",
+      "Moses",
+      "Isaiah",
+      "Jeremiah"
+    ],
+    "correct": "Isaiah",
+    "explanation": "",
+    "id": "7985fff426ae"
+  },
+  {
+    "category": "Prophecy & Fulfillment",
+    "difficulty": "Layperson",
+    "question": "What name did Isaiah say the child would be called?",
+    "options": [
+      "Jesus",
+      "Immanuel \u2014 meaning 'God with us'",
+      "King",
+      "Messiah"
+    ],
+    "correct": "Immanuel \u2014 meaning 'God with us'",
+    "explanation": "",
+    "id": "64b2c819b4c8"
+  },
+  {
+    "category": "Prophecy & Fulfillment",
+    "difficulty": "Layperson",
+    "question": "What does 'Messiah' or 'Christ' mean?",
+    "options": [
+      "A teacher",
+      "A prophet only",
+      "The Anointed One \u2014 God's chosen savior",
+      "A king only"
+    ],
+    "correct": "The Anointed One \u2014 God's chosen savior",
+    "explanation": "",
+    "id": "5ce2855015ce"
+  },
+  {
+    "category": "Prophecy & Fulfillment",
+    "difficulty": "Layperson",
+    "question": "Did Jesus fulfill Old Testament prophecies?",
+    "options": [
+      "No",
+      "Only a few",
+      "We don't know",
+      "Yes \u2014 He fulfilled hundreds of them"
+    ],
+    "correct": "Yes \u2014 He fulfilled hundreds of them",
+    "explanation": "",
+    "id": "25814c9001f7"
+  },
+  {
+    "category": "Words of Jesus & OT Roots",
+    "difficulty": "Layperson",
+    "question": "What did Jesus say about Himself: 'I am the ___ of life'?",
+    "options": [
+      "Bread",
+      "Way",
+      "Water",
+      "Light"
+    ],
+    "correct": "Bread",
+    "explanation": "",
+    "id": "1c9a0484c6c3"
+  },
+  {
+    "category": "Words of Jesus & OT Roots",
+    "difficulty": "Layperson",
+    "question": "What did Jesus call Himself: 'I am the good ___'?",
+    "options": [
+      "Shepherd",
+      "Friend",
+      "King",
+      "Teacher"
+    ],
+    "correct": "Shepherd",
+    "explanation": "",
+    "id": "de1b9393ef7c"
+  },
+  {
+    "category": "Words of Jesus & OT Roots",
+    "difficulty": "Layperson",
+    "question": "What did Jesus say: 'I am the ___, the truth, and the life'?",
+    "options": [
+      "Bread",
+      "Door",
+      "Light",
+      "Way"
+    ],
+    "correct": "Way",
+    "explanation": "",
+    "id": "d7ea05ec967e"
+  },
+  {
+    "category": "Words of Jesus & OT Roots",
+    "difficulty": "Layperson",
+    "question": "Where did Jesus get many of His teachings from?",
+    "options": [
+      "The Old Testament",
+      "His own new ideas",
+      "Greek philosophy",
+      "Roman law"
+    ],
+    "correct": "The Old Testament",
+    "explanation": "",
+    "id": "fff13257c10a"
+  },
+  {
+    "category": "Words of Jesus & OT Roots",
+    "difficulty": "Layperson",
+    "question": "When Jesus was tempted, He answered Satan with quotes from which book?",
+    "options": [
+      "Genesis",
+      "Deuteronomy",
+      "Psalms",
+      "Isaiah"
+    ],
+    "correct": "Deuteronomy",
+    "explanation": "",
+    "id": "49373bba4d7f"
+  },
+  {
+    "category": "Words of Jesus & OT Roots",
+    "difficulty": "Layperson",
+    "question": "What did Jesus say on the cross from Psalm 22?",
+    "options": [
+      "'Into your hands I commit my spirit'",
+      "'Father, forgive them'",
+      "'My God, my God, why have you forsaken me?'",
+      "'It is finished'"
+    ],
+    "correct": "'My God, my God, why have you forsaken me?'",
+    "explanation": "",
+    "id": "3324767b525e"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Complete the verse: 'Jesus said, I am the way, the ___, and the life.'",
+    "options": [
+      "love",
+      "truth",
+      "light",
+      "hope"
+    ],
+    "correct": "truth",
+    "explanation": "",
+    "id": "57fa6b62fd84"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Complete the verse: 'Ask, and it shall be ___ to you.'",
+    "options": [
+      "shown",
+      "sent",
+      "given",
+      "told"
+    ],
+    "correct": "given",
+    "explanation": "",
+    "id": "791d8695cdf6"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Complete the verse: 'Let he who is without ___ cast the first stone.'",
+    "options": [
+      "fault",
+      "sin",
+      "blame",
+      "guilt"
+    ],
+    "correct": "sin",
+    "explanation": "",
+    "id": "2a38bb895ca2"
+  },
+  {
+    "category": "Psalms & Proverbs",
+    "difficulty": "Layperson",
+    "question": "Complete the verse: 'Be still, and know that I am ___.'",
+    "options": [
+      "God",
+      "here",
+      "watching",
+      "near"
+    ],
+    "correct": "God",
+    "explanation": "",
+    "id": "5c82fea0be67"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Complete the verse: 'Come to me, all you who are ___ and burdened, and I will give you rest.'",
+    "options": [
+      "lost",
+      "weary",
+      "sinful",
+      "poor"
+    ],
+    "correct": "weary",
+    "explanation": "",
+    "id": "1b407be6b9d8"
+  },
+  {
+    "category": "Psalms & Proverbs",
+    "difficulty": "Layperson",
+    "question": "Complete the verse: 'Trust in the LORD with all your ___.'",
+    "options": [
+      "strength",
+      "soul",
+      "heart",
+      "mind"
+    ],
+    "correct": "heart",
+    "explanation": "",
+    "id": "59d47384b4b9"
+  },
+  {
+    "category": "Paul & His Letters",
+    "difficulty": "Layperson",
+    "question": "Complete the verse: 'For the wages of sin is ___.'",
+    "options": [
+      "pain",
+      "shame",
+      "poverty",
+      "death"
+    ],
+    "correct": "death",
+    "explanation": "",
+    "id": "ea84625ad6c9"
+  },
+  {
+    "category": "Paul & His Letters",
+    "difficulty": "Layperson",
+    "question": "Complete the verse: 'And now these three remain: faith, hope, and ___.'",
+    "options": [
+      "peace",
+      "love",
+      "joy",
+      "grace"
+    ],
+    "correct": "love",
+    "explanation": "",
+    "id": "bc337a1f1a34"
+  },
+  {
+    "category": "Psalms & Proverbs",
+    "difficulty": "Layperson",
+    "question": "Complete the verse: 'Thy ___ is a lamp unto my feet.'",
+    "options": [
+      "word",
+      "truth",
+      "light",
+      "love"
+    ],
+    "correct": "word",
+    "explanation": "",
+    "id": "8bf5b80428ae"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "Complete the verse: 'Let my ___ go!' said Moses to Pharaoh.",
+    "options": [
+      "children",
+      "nation",
+      "people",
+      "brothers"
+    ],
+    "correct": "people",
+    "explanation": "",
+    "id": "ba5580be2dee"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Complete the verse: 'Love your ___ as yourself.'",
+    "options": [
+      "neighbor",
+      "brother",
+      "family",
+      "friend"
+    ],
+    "correct": "neighbor",
+    "explanation": "",
+    "id": "e0d28282ad91"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Complete the verse: 'I am the ___ of the world.'",
+    "options": [
+      "bread",
+      "king",
+      "light",
+      "hope"
+    ],
+    "correct": "light",
+    "explanation": "",
+    "id": "6e34ccc25b74"
+  },
+  {
+    "category": "Paul & His Letters",
+    "difficulty": "Layperson",
+    "question": "Complete the verse: 'By ___ you have been saved, through faith.'",
+    "options": [
+      "prayer",
+      "law",
+      "grace",
+      "works"
+    ],
+    "correct": "grace",
+    "explanation": "",
+    "id": "8bc3568f03a1"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Complete the verse: 'Go and make ___ of all nations.'",
+    "options": [
+      "churches",
+      "laws",
+      "friends",
+      "disciples"
+    ],
+    "correct": "disciples",
+    "explanation": "",
+    "id": "cdceb361e573"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Who is the Son of God?",
+    "options": [
+      "Moses",
+      "David",
+      "Paul",
+      "Jesus"
+    ],
+    "correct": "Jesus",
+    "explanation": "",
+    "id": "a5cc600ab64d"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "Who was the first man?",
+    "options": [
+      "Adam",
+      "Moses",
+      "Noah",
+      "Abraham"
+    ],
+    "correct": "Adam",
+    "explanation": "",
+    "id": "31871f1892b9"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "Who parted the Red Sea?",
+    "options": [
+      "Noah",
+      "Elijah",
+      "Moses",
+      "Joshua"
+    ],
+    "correct": "Moses",
+    "explanation": "",
+    "id": "b882567c9d25"
+  },
+  {
+    "category": "Prophets",
+    "difficulty": "Layperson",
+    "question": "Who was swallowed by a big fish?",
+    "options": [
+      "Jonah",
+      "Noah",
+      "Daniel",
+      "Moses"
+    ],
+    "correct": "Jonah",
+    "explanation": "",
+    "id": "ce9cc218a454"
+  },
+  {
+    "category": "Prophets",
+    "difficulty": "Layperson",
+    "question": "Who survived the lion's den?",
+    "options": [
+      "Daniel",
+      "Moses",
+      "David",
+      "Samson"
+    ],
+    "correct": "Daniel",
+    "explanation": "",
+    "id": "d7929e8ed069"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "Who was sold by his brothers into slavery?",
+    "options": [
+      "David",
+      "Joseph",
+      "Moses",
+      "Benjamin"
+    ],
+    "correct": "Joseph",
+    "explanation": "",
+    "id": "3cc76dd48736"
+  },
+  {
+    "category": "The Apostles",
+    "difficulty": "Layperson",
+    "question": "Who denied Jesus three times?",
+    "options": [
+      "John",
+      "Judas",
+      "Peter",
+      "Thomas"
+    ],
+    "correct": "Peter",
+    "explanation": "",
+    "id": "bcbbd8a02ecc"
+  },
+  {
+    "category": "The Apostles",
+    "difficulty": "Layperson",
+    "question": "Who betrayed Jesus for silver?",
+    "options": [
+      "Judas Iscariot",
+      "Thomas",
+      "Peter",
+      "Andrew"
+    ],
+    "correct": "Judas Iscariot",
+    "explanation": "",
+    "id": "885d58d230fc"
+  },
+  {
+    "category": "Women of the Bible",
+    "difficulty": "Layperson",
+    "question": "Who saved the Jews in Persia?",
+    "options": [
+      "Ruth",
+      "Deborah",
+      "Esther",
+      "Miriam"
+    ],
+    "correct": "Esther",
+    "explanation": "",
+    "id": "46826b2734cc"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Who carried Jesus' cross?",
+    "options": [
+      "Paul",
+      "Simon of Cyrene",
+      "John",
+      "Peter"
+    ],
+    "correct": "Simon of Cyrene",
+    "explanation": "",
+    "id": "d316363465b3"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What did God make Adam from?",
+    "options": [
+      "Dust from the ground",
+      "Clay",
+      "Water",
+      "Light"
+    ],
+    "correct": "Dust from the ground",
+    "explanation": "",
+    "id": "4c05f6ec837b"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What job did God give Adam in Eden?",
+    "options": [
+      "To cook food",
+      "To take care of the garden and name the animals",
+      "To build a house",
+      "To write songs"
+    ],
+    "correct": "To take care of the garden and name the animals",
+    "explanation": "",
+    "id": "8da545e691bf"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "How did Adam and Eve try to hide from God?",
+    "options": [
+      "They covered their eyes",
+      "They ran away",
+      "They hid behind trees",
+      "They dug a hole"
+    ],
+    "correct": "They hid behind trees",
+    "explanation": "",
+    "id": "48c891f4849a"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What did God make to clothe Adam and Eve?",
+    "options": [
+      "Nothing",
+      "Animal skin garments",
+      "Leaves",
+      "Cotton robes"
+    ],
+    "correct": "Animal skin garments",
+    "explanation": "",
+    "id": "da049cc5b82b"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What mark did God put on Cain?",
+    "options": [
+      "A tattoo",
+      "A scar",
+      "A mark to protect him so no one would kill him",
+      "A brand"
+    ],
+    "correct": "A mark to protect him so no one would kill him",
+    "explanation": "",
+    "id": "3880792c74c1"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "How old was Noah when the flood started?",
+    "options": [
+      "40 years old",
+      "100 years old",
+      "600 years old",
+      "300 years old"
+    ],
+    "correct": "600 years old",
+    "explanation": "",
+    "id": "3535a6af2a65"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "How many floors/decks did Noah's ark have?",
+    "options": [
+      "3",
+      "5",
+      "1",
+      "2"
+    ],
+    "correct": "3",
+    "explanation": "",
+    "id": "60c1adb99541"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What did Noah do after leaving the ark?",
+    "options": [
+      "Went to sleep",
+      "Built a house",
+      "Built an altar and thanked God",
+      "Planted wheat"
+    ],
+    "correct": "Built an altar and thanked God",
+    "explanation": "",
+    "id": "61a03c84a519"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What was Abraham's original name?",
+    "options": [
+      "Moses",
+      "Abram",
+      "Abraham was always his name",
+      "Isaac"
+    ],
+    "correct": "Abram",
+    "explanation": "",
+    "id": "35dcbe15fd20"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What was Sarah's original name?",
+    "options": [
+      "Rachel",
+      "Sarah was always her name",
+      "Sarai",
+      "Rebecca"
+    ],
+    "correct": "Sarai",
+    "explanation": "",
+    "id": "56a53065923d"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "What color was Moses' hand when God showed him a sign?",
+    "options": [
+      "Red",
+      "Gold",
+      "White as snow (leprous)",
+      "Blue"
+    ],
+    "correct": "White as snow (leprous)",
+    "explanation": "",
+    "id": "713bdacd46c1"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "How old was Moses when God called him at the burning bush?",
+    "options": [
+      "80 years old",
+      "20 years old",
+      "60 years old",
+      "40 years old"
+    ],
+    "correct": "80 years old",
+    "explanation": "",
+    "id": "e534840ae6d8"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "What excuse did Moses give about speaking?",
+    "options": [
+      "He said he was slow of speech",
+      "He was deaf",
+      "He was too young",
+      "He couldn't read"
+    ],
+    "correct": "He said he was slow of speech",
+    "explanation": "",
+    "id": "f1a72f59aaa4"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "What did the Israelites take with them from Egypt?",
+    "options": [
+      "Gold, silver, and clothing from the Egyptians",
+      "Nothing",
+      "Weapons",
+      "Chariots"
+    ],
+    "correct": "Gold, silver, and clothing from the Egyptians",
+    "explanation": "",
+    "id": "02893aa0f46b"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "What did manna look like?",
+    "options": [
+      "Green leaves",
+      "Small white flakes like frost on the ground",
+      "Large loaves",
+      "Brown seeds"
+    ],
+    "correct": "Small white flakes like frost on the ground",
+    "explanation": "",
+    "id": "9ad3febe10aa"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "Could the Israelites store manna overnight?",
+    "options": [
+      "Yes \u2014 it lasted forever",
+      "Yes \u2014 in special jars",
+      "Yes \u2014 for one week",
+      "No \u2014 it would rot (except before the Sabbath)"
+    ],
+    "correct": "No \u2014 it would rot (except before the Sabbath)",
+    "explanation": "",
+    "id": "7a5523a6d780"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "How old was Jesus when He began teaching publicly?",
+    "options": [
+      "12",
+      "20",
+      "40",
+      "About 30"
+    ],
+    "correct": "About 30",
+    "explanation": "",
+    "id": "0fd75cda1ab0"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What did Jesus do for a living before preaching?",
+    "options": [
+      "He was a farmer",
+      "He was a fisherman",
+      "He was a carpenter like Joseph",
+      "He was a priest"
+    ],
+    "correct": "He was a carpenter like Joseph",
+    "explanation": "",
+    "id": "a154dd68987f"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "How many days was Jesus tempted in the desert?",
+    "options": [
+      "7",
+      "3",
+      "10",
+      "40"
+    ],
+    "correct": "40",
+    "explanation": "",
+    "id": "4753520d9fe1"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What was the name of the sea where Jesus calmed the storm?",
+    "options": [
+      "The Sea of Galilee",
+      "The Red Sea",
+      "The Mediterranean",
+      "The Dead Sea"
+    ],
+    "correct": "The Sea of Galilee",
+    "explanation": "",
+    "id": "e1f967c2f7b1"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What did Jesus say to the paralyzed man?",
+    "options": [
+      "'Wait and see'",
+      "'Pray more'",
+      "'Go home'",
+      "'Your sins are forgiven' and 'Get up and walk'"
+    ],
+    "correct": "'Your sins are forgiven' and 'Get up and walk'",
+    "explanation": "",
+    "id": "93eb63098f77"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What happened to the curtain in the Temple when Jesus died?",
+    "options": [
+      "Nothing",
+      "It caught fire",
+      "It tore in two from top to bottom",
+      "It fell down"
+    ],
+    "correct": "It tore in two from top to bottom",
+    "explanation": "",
+    "id": "32cc43af138b"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Who helped bury Jesus?",
+    "options": [
+      "Peter",
+      "Joseph of Arimathea",
+      "Paul",
+      "John"
+    ],
+    "correct": "Joseph of Arimathea",
+    "explanation": "",
+    "id": "d0cd8881d02d"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What was rolled in front of Jesus' tomb?",
+    "options": [
+      "A wooden door",
+      "A curtain",
+      "A metal gate",
+      "A large stone"
+    ],
+    "correct": "A large stone",
+    "explanation": "",
+    "id": "245f51dd27a9"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "How long was Jesus on earth after rising from the dead?",
+    "options": [
+      "1 day",
+      "7 days",
+      "3 days",
+      "40 days"
+    ],
+    "correct": "40 days",
+    "explanation": "",
+    "id": "2d322b2298e1"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "What did young David do before becoming king?",
+    "options": [
+      "He was a soldier",
+      "He was a priest",
+      "He was a shepherd who protected sheep from lions and bears",
+      "He was a prince"
+    ],
+    "correct": "He was a shepherd who protected sheep from lions and bears",
+    "explanation": "",
+    "id": "1427bdbc556e"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "How did David meet King Saul?",
+    "options": [
+      "At a feast",
+      "He played the harp to soothe Saul's troubled spirit",
+      "In battle",
+      "At the Temple"
+    ],
+    "correct": "He played the harp to soothe Saul's troubled spirit",
+    "explanation": "",
+    "id": "69426ce16d7a"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "Who was David's best friend?",
+    "options": [
+      "Solomon",
+      "Jonathan, Saul's son",
+      "Joab",
+      "Nathan"
+    ],
+    "correct": "Jonathan, Saul's son",
+    "explanation": "",
+    "id": "c4b86bff39e5"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "How did Elijah go to heaven?",
+    "options": [
+      "He disappeared",
+      "He walked up a mountain",
+      "In a chariot of fire with horses of fire",
+      "He died normally"
+    ],
+    "correct": "In a chariot of fire with horses of fire",
+    "explanation": "",
+    "id": "4639209a78a8"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "Who took over Elijah's job as prophet?",
+    "options": [
+      "Isaiah",
+      "Elisha",
+      "Samuel",
+      "Nathan"
+    ],
+    "correct": "Elisha",
+    "explanation": "",
+    "id": "b4e532044031"
+  },
+  {
+    "category": "Prophets",
+    "difficulty": "Layperson",
+    "question": "What was inside the fiery furnace with the three men?",
+    "options": [
+      "A fourth person who looked like a son of the gods",
+      "An angel with wings",
+      "Nothing special",
+      "Fire that couldn't burn"
+    ],
+    "correct": "A fourth person who looked like a son of the gods",
+    "explanation": "",
+    "id": "e9ac72ebdabb"
+  },
+  {
+    "category": "Prophets",
+    "difficulty": "Layperson",
+    "question": "What did the king see written on the wall at his feast?",
+    "options": [
+      "A map",
+      "A picture",
+      "A face",
+      "Mysterious words written by a hand"
+    ],
+    "correct": "Mysterious words written by a hand",
+    "explanation": "",
+    "id": "b6c7c5ce44f0"
+  },
+  {
+    "category": "Prophets",
+    "difficulty": "Layperson",
+    "question": "Who explained the writing on the wall?",
+    "options": [
+      "Ezekiel",
+      "Jeremiah",
+      "Daniel",
+      "Isaiah"
+    ],
+    "correct": "Daniel",
+    "explanation": "",
+    "id": "fa3b70c74060"
+  },
+  {
+    "category": "The Apostles",
+    "difficulty": "Layperson",
+    "question": "What did Jesus tell Peter he would be?",
+    "options": [
+      "A priest",
+      "A fisher of men",
+      "A builder",
+      "A king"
+    ],
+    "correct": "A fisher of men",
+    "explanation": "",
+    "id": "120ae0eb2b54"
+  },
+  {
+    "category": "The Apostles",
+    "difficulty": "Layperson",
+    "question": "What languages did the disciples speak at Pentecost?",
+    "options": [
+      "Only Hebrew",
+      "Languages from all over the world",
+      "Only Aramaic",
+      "Only Greek"
+    ],
+    "correct": "Languages from all over the world",
+    "explanation": "",
+    "id": "ef67394ed066"
+  },
+  {
+    "category": "The Apostles",
+    "difficulty": "Layperson",
+    "question": "What happened to the jailer when Paul and Silas sang in prison?",
+    "options": [
+      "Nothing",
+      "They escaped",
+      "An earthquake opened the doors, and the jailer believed in Jesus",
+      "The jailer fell asleep"
+    ],
+    "correct": "An earthquake opened the doors, and the jailer believed in Jesus",
+    "explanation": "",
+    "id": "80c276c3f3b7"
+  },
+  {
+    "category": "Women of the Bible",
+    "difficulty": "Layperson",
+    "question": "What did Ruth do in Boaz's fields?",
+    "options": [
+      "She gathered leftover grain (gleaning)",
+      "She sold bread",
+      "She tended animals",
+      "She planted seeds"
+    ],
+    "correct": "She gathered leftover grain (gleaning)",
+    "explanation": "",
+    "id": "d2e8376fca76"
+  },
+  {
+    "category": "Women of the Bible",
+    "difficulty": "Layperson",
+    "question": "Who was Ruth's famous great-grandson?",
+    "options": [
+      "Abraham",
+      "Moses",
+      "King David",
+      "King Solomon"
+    ],
+    "correct": "King David",
+    "explanation": "",
+    "id": "6172b9711e75"
+  },
+  {
+    "category": "Women of the Bible",
+    "difficulty": "Layperson",
+    "question": "What did baby Moses' sister do when he was in the basket?",
+    "options": [
+      "She hid",
+      "She watched from a distance to see what would happen",
+      "She cried",
+      "She told Pharaoh"
+    ],
+    "correct": "She watched from a distance to see what would happen",
+    "explanation": "",
+    "id": "8ceab712dbac"
+  },
+  {
+    "category": "Women of the Bible",
+    "difficulty": "Layperson",
+    "question": "Who suggested Moses' own mother as his nurse?",
+    "options": [
+      "A servant",
+      "Pharaoh's wife",
+      "His sister Miriam",
+      "An angel"
+    ],
+    "correct": "His sister Miriam",
+    "explanation": "",
+    "id": "05fb6062052d"
+  },
+  {
+    "category": "Miracles",
+    "difficulty": "Layperson",
+    "question": "What did Jesus do before feeding the 5,000?",
+    "options": [
+      "He gave thanks and broke the bread",
+      "He sent the disciples to buy food",
+      "He prayed for an hour",
+      "He fasted"
+    ],
+    "correct": "He gave thanks and broke the bread",
+    "explanation": "",
+    "id": "52a33f3bbe0b"
+  },
+  {
+    "category": "Miracles",
+    "difficulty": "Layperson",
+    "question": "What happened when Jesus touched a leper?",
+    "options": [
+      "The crowd ran away",
+      "Jesus got sick",
+      "Nothing happened",
+      "The leper was healed instantly"
+    ],
+    "correct": "The leper was healed instantly",
+    "explanation": "",
+    "id": "a3fc6552dff5"
+  },
+  {
+    "category": "Miracles",
+    "difficulty": "Layperson",
+    "question": "What did Jesus say to the dead girl?",
+    "options": [
+      "'Wake up!'",
+      "'Rise and shine!'",
+      "'Come back!'",
+      "'Little girl, get up!'"
+    ],
+    "correct": "'Little girl, get up!'",
+    "explanation": "",
+    "id": "9c736a428050"
+  },
+  {
+    "category": "Miracles",
+    "difficulty": "Layperson",
+    "question": "What happened when Jesus healed 10 lepers?",
+    "options": [
+      "None came back",
+      "All 10 came back",
+      "5 came back",
+      "Only 1 came back to say thank you"
+    ],
+    "correct": "Only 1 came back to say thank you",
+    "explanation": "",
+    "id": "2dfe4361a2dd"
+  },
+  {
+    "category": "Angels & Demons",
+    "difficulty": "Layperson",
+    "question": "What did the angel say to Mary about her baby?",
+    "options": [
+      "'He will be a king of Israel only'",
+      "'He will be a normal child'",
+      "'He will be great and will be called the Son of the Most High'",
+      "'He will be a priest'"
+    ],
+    "correct": "'He will be great and will be called the Son of the Most High'",
+    "explanation": "",
+    "id": "d99cf611d1c9"
+  },
+  {
+    "category": "Angels & Demons",
+    "difficulty": "Layperson",
+    "question": "What did the angels sing on Christmas night?",
+    "options": [
+      "'Glory to God in the highest, and on earth peace'",
+      "'Amen'",
+      "'Hallelujah'",
+      "'Holy, holy, holy'"
+    ],
+    "correct": "'Glory to God in the highest, and on earth peace'",
+    "explanation": "",
+    "id": "381e40f49efb"
+  },
+  {
+    "category": "Angels & Demons",
+    "difficulty": "Layperson",
+    "question": "How did an angel help Peter escape prison?",
+    "options": [
+      "Led him past the guards and through locked gates",
+      "Carried him over the wall",
+      "Broke down the wall",
+      "Made him invisible"
+    ],
+    "correct": "Led him past the guards and through locked gates",
+    "explanation": "",
+    "id": "22a96a2b6706"
+  },
+  {
+    "category": "Laws & Commandments",
+    "difficulty": "Layperson",
+    "question": "What does 'Do not covet' mean?",
+    "options": [
+      "Don't lie",
+      "Don't be jealous of what others have",
+      "Don't eat certain foods",
+      "Don't steal"
+    ],
+    "correct": "Don't be jealous of what others have",
+    "explanation": "",
+    "id": "410bd988ec93"
+  },
+  {
+    "category": "Laws & Commandments",
+    "difficulty": "Layperson",
+    "question": "What day is the Sabbath?",
+    "options": [
+      "Every day",
+      "The first day",
+      "The tenth day",
+      "The seventh day \u2014 a day of rest"
+    ],
+    "correct": "The seventh day \u2014 a day of rest",
+    "explanation": "",
+    "id": "6251862ffb28"
+  },
+  {
+    "category": "Laws & Commandments",
+    "difficulty": "Layperson",
+    "question": "What is the 'Golden Rule' Jesus taught?",
+    "options": [
+      "Always tell the truth",
+      "An eye for an eye",
+      "Give money to the poor",
+      "Do to others what you would have them do to you"
+    ],
+    "correct": "Do to others what you would have them do to you",
+    "explanation": "",
+    "id": "61fcf7ca50f7"
+  },
+  {
+    "category": "Places & Lands",
+    "difficulty": "Layperson",
+    "question": "What sea did the Israelites cross to escape Egypt?",
+    "options": [
+      "The Red Sea",
+      "The Mediterranean Sea",
+      "The Sea of Galilee",
+      "The Dead Sea"
+    ],
+    "correct": "The Red Sea",
+    "explanation": "",
+    "id": "f4616532bd60"
+  },
+  {
+    "category": "Places & Lands",
+    "difficulty": "Layperson",
+    "question": "What river did the Israelites cross to enter the Promised Land?",
+    "options": [
+      "The Jordan River",
+      "The Nile",
+      "The Euphrates",
+      "The Red Sea"
+    ],
+    "correct": "The Jordan River",
+    "explanation": "",
+    "id": "f48a170250f2"
+  },
+  {
+    "category": "Places & Lands",
+    "difficulty": "Layperson",
+    "question": "Where did Jesus go to pray the night before He died?",
+    "options": [
+      "The Temple",
+      "Mount Sinai",
+      "The Garden of Gethsemane",
+      "The wilderness"
+    ],
+    "correct": "The Garden of Gethsemane",
+    "explanation": "",
+    "id": "1cb78947c688"
+  },
+  {
+    "category": "Places & Lands",
+    "difficulty": "Layperson",
+    "question": "What mountain did Moses climb to get the Ten Commandments?",
+    "options": [
+      "Mount Zion",
+      "Mount Sinai",
+      "Mount Everest",
+      "Mount Ararat"
+    ],
+    "correct": "Mount Sinai",
+    "explanation": "",
+    "id": "d4dc97445173"
+  },
+  {
+    "category": "Food, Feasts & Offerings",
+    "difficulty": "Layperson",
+    "question": "What did God give the Israelites to eat besides manna?",
+    "options": [
+      "Quail (birds)",
+      "Fish",
+      "Bread",
+      "Lamb"
+    ],
+    "correct": "Quail (birds)",
+    "explanation": "",
+    "id": "3f95c117e0a0"
+  },
+  {
+    "category": "Food, Feasts & Offerings",
+    "difficulty": "Layperson",
+    "question": "What did Jesus eat with His disciples at the Last Supper?",
+    "options": [
+      "Bread and wine",
+      "Lamb only",
+      "Nothing \u2014 they fasted",
+      "Fish and chips"
+    ],
+    "correct": "Bread and wine",
+    "explanation": "",
+    "id": "fefee12cb922"
+  },
+  {
+    "category": "Food, Feasts & Offerings",
+    "difficulty": "Layperson",
+    "question": "What fruit did Eve eat in the garden?",
+    "options": [
+      "An apple",
+      "A fig",
+      "The Bible just says 'fruit' \u2014 it doesn't say what kind",
+      "A grape"
+    ],
+    "correct": "The Bible just says 'fruit' \u2014 it doesn't say what kind",
+    "explanation": "",
+    "id": "1fbb424f1655"
+  },
+  {
+    "category": "Dreams & Visions",
+    "difficulty": "Layperson",
+    "question": "What did Joseph dream his brothers' wheat bundles did?",
+    "options": [
+      "They caught fire",
+      "They bowed down to his bundle",
+      "They turned to gold",
+      "They flew away"
+    ],
+    "correct": "They bowed down to his bundle",
+    "explanation": "",
+    "id": "41ebbe5f461a"
+  },
+  {
+    "category": "Dreams & Visions",
+    "difficulty": "Layperson",
+    "question": "What did Pharaoh dream about?",
+    "options": [
+      "Flying horses",
+      "A great flood",
+      "A huge tree",
+      "Seven fat cows eaten by seven thin cows"
+    ],
+    "correct": "Seven fat cows eaten by seven thin cows",
+    "explanation": "",
+    "id": "39dc49cdf4b3"
+  },
+  {
+    "category": "Dreams & Visions",
+    "difficulty": "Layperson",
+    "question": "What did an angel tell Joseph (Mary's husband) in a dream?",
+    "options": [
+      "Flee to Egypt because Herod wants to kill the baby",
+      "Name the baby John",
+      "Stay in Nazareth",
+      "Go to Bethlehem"
+    ],
+    "correct": "Flee to Egypt because Herod wants to kill the baby",
+    "explanation": "",
+    "id": "f909f09b7090"
+  },
+  {
+    "category": "Revelation & End Times",
+    "difficulty": "Layperson",
+    "question": "What does Revelation say about the end of the story?",
+    "options": [
+      "God wins, evil is defeated, and everything is made new",
+      "Nothing changes",
+      "The story never ends",
+      "Evil wins"
+    ],
+    "correct": "God wins, evil is defeated, and everything is made new",
+    "explanation": "",
+    "id": "a71e40eb2561"
+  },
+  {
+    "category": "Revelation & End Times",
+    "difficulty": "Layperson",
+    "question": "What will God wipe away in the new heaven?",
+    "options": [
+      "Every sin only",
+      "Every person",
+      "Every memory",
+      "Every tear from our eyes"
+    ],
+    "correct": "Every tear from our eyes",
+    "explanation": "",
+    "id": "7b3d62fddcdf"
+  },
+  {
+    "category": "Prophecy & Fulfillment",
+    "difficulty": "Layperson",
+    "question": "What star led the wise men to Jesus?",
+    "options": [
+      "A special star that appeared in the east",
+      "The sun",
+      "A comet",
+      "The North Star"
+    ],
+    "correct": "A special star that appeared in the east",
+    "explanation": "",
+    "id": "e074572d1e03"
+  },
+  {
+    "category": "Prophecy & Fulfillment",
+    "difficulty": "Layperson",
+    "question": "Hundreds of years before Jesus, prophets predicted He would be born in which town?",
+    "options": [
+      "Nazareth",
+      "Jerusalem",
+      "Jericho",
+      "Bethlehem"
+    ],
+    "correct": "Bethlehem",
+    "explanation": "",
+    "id": "01fcefb7d6aa"
+  },
+  {
+    "category": "Prophecy & Fulfillment",
+    "difficulty": "Layperson",
+    "question": "The prophets said the Messiah would come from the family line of which king?",
+    "options": [
+      "David",
+      "Saul",
+      "Hezekiah",
+      "Solomon"
+    ],
+    "correct": "David",
+    "explanation": "",
+    "id": "5828aee2b2c2"
+  },
+  {
+    "category": "Numbers & Genealogies",
+    "difficulty": "Layperson",
+    "question": "How many sons did Jacob have who became the 12 tribes?",
+    "options": [
+      "12",
+      "10",
+      "7",
+      "14"
+    ],
+    "correct": "12",
+    "explanation": "",
+    "id": "d44aa1969d70"
+  },
+  {
+    "category": "Numbers & Genealogies",
+    "difficulty": "Layperson",
+    "question": "How many Gospels (stories of Jesus' life) are in the Bible?",
+    "options": [
+      "2",
+      "4",
+      "3",
+      "5"
+    ],
+    "correct": "4",
+    "explanation": "",
+    "id": "bf8a18e1be0f"
+  },
+  {
+    "category": "Numbers & Genealogies",
+    "difficulty": "Layperson",
+    "question": "How many days and nights did it rain during Noah's flood?",
+    "options": [
+      "3",
+      "40",
+      "7",
+      "100"
+    ],
+    "correct": "40",
+    "explanation": "",
+    "id": "4ec1b6a6d530"
+  },
+  {
+    "category": "Numbers & Genealogies",
+    "difficulty": "Layperson",
+    "question": "How many silver coins was Jesus betrayed for?",
+    "options": [
+      "100",
+      "20",
+      "50",
+      "30"
+    ],
+    "correct": "30",
+    "explanation": "",
+    "id": "99e438193db2"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "What does a parable teach?",
+    "options": [
+      "Science",
+      "Math",
+      "A spiritual truth through a simple story",
+      "History"
+    ],
+    "correct": "A spiritual truth through a simple story",
+    "explanation": "",
+    "id": "fca7a17842d5"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "In Jesus' story, what did the good Samaritan do for the hurt man?",
+    "options": [
+      "Bandaged his wounds, took him to an inn, and paid for his care",
+      "Walked past him",
+      "Prayed for him and left",
+      "Called for help"
+    ],
+    "correct": "Bandaged his wounds, took him to an inn, and paid for his care",
+    "explanation": "",
+    "id": "75597fdc167b"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "What happened to the seeds that fell on good soil?",
+    "options": [
+      "They grew strong and produced lots of fruit",
+      "They dried up",
+      "They died",
+      "They were eaten by birds"
+    ],
+    "correct": "They grew strong and produced lots of fruit",
+    "explanation": "",
+    "id": "051384dd48b1"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "How many talents did the lazy servant bury?",
+    "options": [
+      "2",
+      "1",
+      "5",
+      "10"
+    ],
+    "correct": "1",
+    "explanation": "",
+    "id": "a57033f89476"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "What did the master say to the servants who invested wisely?",
+    "options": [
+      "'Well done, good and faithful servant!'",
+      "'Not bad'",
+      "'Give it all to me'",
+      "'You could have done more'"
+    ],
+    "correct": "'Well done, good and faithful servant!'",
+    "explanation": "",
+    "id": "09c93224b6a8"
+  },
+  {
+    "category": "Words of Jesus & OT Roots",
+    "difficulty": "Layperson",
+    "question": "When Jesus said 'Man shall not live by bread alone,' where was He quoting from?",
+    "options": [
+      "His own new teaching",
+      "The Old Testament (Deuteronomy)",
+      "A Roman proverb",
+      "A Greek philosopher"
+    ],
+    "correct": "The Old Testament (Deuteronomy)",
+    "explanation": "",
+    "id": "6a8235b0f781"
+  },
+  {
+    "category": "Words of Jesus & OT Roots",
+    "difficulty": "Layperson",
+    "question": "Jesus often quoted which part of the Bible?",
+    "options": [
+      "Greek literature",
+      "The Old Testament \u2014 especially Psalms, Isaiah, and Deuteronomy",
+      "The New Testament",
+      "Roman law"
+    ],
+    "correct": "The Old Testament \u2014 especially Psalms, Isaiah, and Deuteronomy",
+    "explanation": "",
+    "id": "8adae27111e7"
+  },
+  {
+    "category": "Words of Jesus & OT Roots",
+    "difficulty": "Layperson",
+    "question": "When Jesus said 'It is written,' what was He referring to?",
+    "options": [
+      "The Hebrew Scriptures (Old Testament)",
+      "A scroll He carried",
+      "The commandments only",
+      "A letter He wrote"
+    ],
+    "correct": "The Hebrew Scriptures (Old Testament)",
+    "explanation": "",
+    "id": "d458c0247f0a"
+  },
+  {
+    "category": "Numbers & Genealogies",
+    "difficulty": "Layperson",
+    "question": "What is the longest book of the Bible by chapters?",
+    "options": [
+      "Psalms (150 chapters)",
+      "Isaiah (66 chapters)",
+      "Jeremiah (52 chapters)",
+      "Genesis (50 chapters)"
+    ],
+    "correct": "Psalms (150 chapters)",
+    "explanation": "",
+    "id": "2cadadc0bdee"
+  },
+  {
+    "category": "Numbers & Genealogies",
+    "difficulty": "Layperson",
+    "question": "What is the shortest book of the Old Testament?",
+    "options": [
+      "Nahum",
+      "Haggai",
+      "Jonah",
+      "Obadiah"
+    ],
+    "correct": "Obadiah",
+    "explanation": "",
+    "id": "5fba1c75e59d"
+  },
+  {
+    "category": "Numbers & Genealogies",
+    "difficulty": "Layperson",
+    "question": "How many brothers did Jesus have?",
+    "options": [
+      "At least 4",
+      "2",
+      "1",
+      "None"
+    ],
+    "correct": "At least 4",
+    "explanation": "",
+    "id": "4025f56ce9b7"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Did Jesus ever cry?",
+    "options": [
+      "Only at the cross",
+      "No \u2014 He was always strong",
+      "Only as a baby",
+      "Yes \u2014 He wept at the death of His friend Lazarus"
+    ],
+    "correct": "Yes \u2014 He wept at the death of His friend Lazarus",
+    "explanation": "",
+    "id": "0ca05e490769"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Did Jesus ever get angry?",
+    "options": [
+      "Only once at Satan",
+      "No \u2014 He was always calm",
+      "Only at Judas",
+      "Yes \u2014 He overturned tables in the Temple"
+    ],
+    "correct": "Yes \u2014 He overturned tables in the Temple",
+    "explanation": "",
+    "id": "89d8e5c3e65a"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Could Jesus read and write?",
+    "options": [
+      "Only Hebrew",
+      "Yes \u2014 He read from Isaiah in the synagogue",
+      "No",
+      "We don't know"
+    ],
+    "correct": "Yes \u2014 He read from Isaiah in the synagogue",
+    "explanation": "",
+    "id": "83660b9394ac"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "Did it rain before the great flood?",
+    "options": [
+      "Yes \u2014 it rained every day",
+      "Yes \u2014 but only a little",
+      "We don't know",
+      "The Bible suggests it may not have rained before"
+    ],
+    "correct": "The Bible suggests it may not have rained before",
+    "explanation": "",
+    "id": "e0cf6661772c"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What animals were present at Jesus' birth?",
+    "options": [
+      "The Bible doesn't actually say \u2014 tradition added them",
+      "Only a donkey",
+      "Sheep and cows",
+      "A camel"
+    ],
+    "correct": "The Bible doesn't actually say \u2014 tradition added them",
+    "explanation": "",
+    "id": "83499fa323fa"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "How many wise men visited Jesus?",
+    "options": [
+      "7",
+      "The Bible doesn't say \u2014 tradition says 3 because of the 3 gifts",
+      "12",
+      "Exactly 3"
+    ],
+    "correct": "The Bible doesn't say \u2014 tradition says 3 because of the 3 gifts",
+    "explanation": "",
+    "id": "bec392180dc0"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "How many wives did King Solomon have?",
+    "options": [
+      "1",
+      "100",
+      "700 (plus 300 concubines)",
+      "10"
+    ],
+    "correct": "700 (plus 300 concubines)",
+    "explanation": "",
+    "id": "7661108bb49a"
+  },
+  {
+    "category": "Prophets",
+    "difficulty": "Layperson",
+    "question": "How big was the fish that swallowed Jonah?",
+    "options": [
+      "A whale",
+      "A dolphin",
+      "Big enough to swallow a man \u2014 the Bible says 'great fish'",
+      "A shark"
+    ],
+    "correct": "Big enough to swallow a man \u2014 the Bible says 'great fish'",
+    "explanation": "",
+    "id": "72d2b0029a81"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "How old did people live before the flood?",
+    "options": [
+      "About 100 years",
+      "Hundreds of years \u2014 Methuselah lived 969 years",
+      "Same as today",
+      "About 200 years"
+    ],
+    "correct": "Hundreds of years \u2014 Methuselah lived 969 years",
+    "explanation": "",
+    "id": "c8058b9d3c40"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "Did the Egyptian magicians copy any of Moses' miracles?",
+    "options": [
+      "They copied all 10 plagues",
+      "They only made one",
+      "Yes \u2014 they turned water to blood and made frogs appear",
+      "No \u2014 they couldn't do anything"
+    ],
+    "correct": "Yes \u2014 they turned water to blood and made frogs appear",
+    "explanation": "",
+    "id": "624f2e4e681d"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What language did Jesus speak?",
+    "options": [
+      "Only Hebrew",
+      "English",
+      "Latin",
+      "Aramaic (and likely Hebrew and some Greek)"
+    ],
+    "correct": "Aramaic (and likely Hebrew and some Greek)",
+    "explanation": "",
+    "id": "7af61bc62fbb"
+  },
+  {
+    "category": "Battles & Wars",
+    "difficulty": "Layperson",
+    "question": "How many Philistines did Samson kill with a jawbone?",
+    "options": [
+      "500",
+      "1,000",
+      "100",
+      "50"
+    ],
+    "correct": "1,000",
+    "explanation": "",
+    "id": "b60d83ba65a1"
+  },
+  {
+    "category": "Battles & Wars",
+    "difficulty": "Layperson",
+    "question": "Who was taller \u2014 Goliath or a basketball hoop?",
+    "options": [
+      "Goliath was only 6 feet",
+      "Goliath was taller \u2014 over 9 feet vs 10 feet for a hoop",
+      "They're the same",
+      "The hoop is taller"
+    ],
+    "correct": "Goliath was taller \u2014 over 9 feet vs 10 feet for a hoop",
+    "explanation": "",
+    "id": "d73161b674ea"
+  },
+  {
+    "category": "Women of the Bible",
+    "difficulty": "Layperson",
+    "question": "How old was Sarah when Isaac was born?",
+    "options": [
+      "90 years old",
+      "50",
+      "30",
+      "70"
+    ],
+    "correct": "90 years old",
+    "explanation": "",
+    "id": "eaa0064e12f3"
+  },
+  {
+    "category": "Miracles",
+    "difficulty": "Layperson",
+    "question": "How many people did Jesus raise from the dead?",
+    "options": [
+      "Only Lazarus",
+      "1",
+      "10",
+      "At least 3 (Lazarus, Jairus' daughter, the widow's son)"
+    ],
+    "correct": "At least 3 (Lazarus, Jairus' daughter, the widow's son)",
+    "explanation": "",
+    "id": "24b0bb347615"
+  },
+  {
+    "category": "Angels & Demons",
+    "difficulty": "Layperson",
+    "question": "Do all angels have wings in the Bible?",
+    "options": [
+      "No \u2014 many appear as ordinary-looking men",
+      "None have wings",
+      "Only Gabriel",
+      "Yes \u2014 all of them"
+    ],
+    "correct": "No \u2014 many appear as ordinary-looking men",
+    "explanation": "",
+    "id": "9f089d776996"
+  },
+  {
+    "category": "The Apostles",
+    "difficulty": "Layperson",
+    "question": "Which apostle wrote the most books of the New Testament?",
+    "options": [
+      "John",
+      "James",
+      "Peter",
+      "Paul"
+    ],
+    "correct": "Paul",
+    "explanation": "",
+    "id": "8c2859da264e"
+  },
+  {
+    "category": "The Apostles",
+    "difficulty": "Layperson",
+    "question": "Were all apostles men?",
+    "options": [
+      "We don't know",
+      "No \u2014 there were women too",
+      "Yes \u2014 the 12 apostles were all men",
+      "Only 10 were men"
+    ],
+    "correct": "Yes \u2014 the 12 apostles were all men",
+    "explanation": "",
+    "id": "b781a70c60c4"
+  },
+  {
+    "category": "Places & Lands",
+    "difficulty": "Layperson",
+    "question": "Is the Garden of Eden still on earth?",
+    "options": [
+      "Yes \u2014 in Africa",
+      "The Bible doesn't say \u2014 its location is unknown",
+      "Yes \u2014 in Israel",
+      "Yes \u2014 in Iraq"
+    ],
+    "correct": "The Bible doesn't say \u2014 its location is unknown",
+    "explanation": "",
+    "id": "543925ca56c8"
+  },
+  {
+    "category": "Revelation & End Times",
+    "difficulty": "Layperson",
+    "question": "How many times does the Bible mention heaven?",
+    "options": [
+      "About 100",
+      "Exactly 7",
+      "About 10",
+      "Over 500 times"
+    ],
+    "correct": "Over 500 times",
+    "explanation": "",
+    "id": "b45c2144220e"
+  },
+  {
+    "category": "Dreams & Visions",
+    "difficulty": "Layperson",
+    "question": "Did God ever speak through dreams in the Bible?",
+    "options": [
+      "Only to Daniel",
+      "Yes \u2014 many times to many people",
+      "Only to Joseph",
+      "Never"
+    ],
+    "correct": "Yes \u2014 many times to many people",
+    "explanation": "",
+    "id": "c7088c01fca7"
+  },
+  {
+    "category": "Laws & Commandments",
+    "difficulty": "Layperson",
+    "question": "Can you name all 10 Commandments?",
+    "options": [
+      "There are only 5",
+      "Everyone can",
+      "They're a secret",
+      "Most people can't \u2014 test yourself!"
+    ],
+    "correct": "Most people can't \u2014 test yourself!",
+    "explanation": "",
+    "id": "ea7a92a6119b"
+  },
+  {
+    "category": "Parables",
+    "difficulty": "Layperson",
+    "question": "How many parables did Jesus tell?",
+    "options": [
+      "Over 100",
+      "About 30-40 depending on how you count",
+      "Exactly 7",
+      "Exactly 10"
+    ],
+    "correct": "About 30-40 depending on how you count",
+    "explanation": "",
+    "id": "46651c4bf4b2"
+  },
+  {
+    "category": "Prophecy & Fulfillment",
+    "difficulty": "Layperson",
+    "question": "How many prophecies did Jesus fulfill?",
+    "options": [
+      "About 10",
+      "Over 300",
+      "Exactly 7",
+      "About 50"
+    ],
+    "correct": "Over 300",
+    "explanation": "",
+    "id": "819628261ac1"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Did Jesus ever sin?",
+    "options": [
+      "Yes \u2014 once",
+      "We don't know",
+      "Only small sins",
+      "No \u2014 He lived a perfect life"
+    ],
+    "correct": "No \u2014 He lived a perfect life",
+    "explanation": "",
+    "id": "26ccf7870058"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Was Jesus an only child?",
+    "options": [
+      "We don't know",
+      "Yes",
+      "No \u2014 He had brothers and sisters",
+      "He had 1 sister only"
+    ],
+    "correct": "No \u2014 He had brothers and sisters",
+    "explanation": "",
+    "id": "7db9e4e2d265"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "Did Adam and Eve have children besides Cain and Abel?",
+    "options": [
+      "We don't know",
+      "No \u2014 only Cain and Abel",
+      "Yes \u2014 Seth and many others",
+      "Only one more \u2014 Seth"
+    ],
+    "correct": "Yes \u2014 Seth and many others",
+    "explanation": "",
+    "id": "c6e72c9a1588"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "Did all the Israelites who left Egypt enter the Promised Land?",
+    "options": [
+      "Most of them",
+      "Yes \u2014 all of them",
+      "No \u2014 only Joshua and Caleb from that generation",
+      "Only Moses"
+    ],
+    "correct": "No \u2014 only Joshua and Caleb from that generation",
+    "explanation": "",
+    "id": "6dbf66b4f1ab"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Did Jesus attend weddings?",
+    "options": [
+      "Yes \u2014 He performed His first miracle at one",
+      "Only once",
+      "No \u2014 He avoided parties",
+      "We don't know"
+    ],
+    "correct": "Yes \u2014 He performed His first miracle at one",
+    "explanation": "",
+    "id": "fca02f5326dc"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "Did Jesus have a paying job?",
+    "options": [
+      "He was a farmer",
+      "No \u2014 He was always a preacher",
+      "He was a fisherman",
+      "Yes \u2014 He was a carpenter before His ministry"
+    ],
+    "correct": "Yes \u2014 He was a carpenter before His ministry",
+    "explanation": "",
+    "id": "2159ba40ddb2"
+  },
+  {
+    "category": "The Apostles",
+    "difficulty": "Layperson",
+    "question": "Were there any doctors among Jesus' followers?",
+    "options": [
+      "Paul was a doctor",
+      "No",
+      "Yes \u2014 Luke was a physician",
+      "John was a doctor"
+    ],
+    "correct": "Yes \u2014 Luke was a physician",
+    "explanation": "",
+    "id": "d66d48f18a67"
+  },
+  {
+    "category": "Prophets",
+    "difficulty": "Layperson",
+    "question": "Did Jonah want to go to Nineveh?",
+    "options": [
+      "No \u2014 he ran the opposite direction",
+      "He didn't know where it was",
+      "He had no choice",
+      "Yes \u2014 he went happily"
+    ],
+    "correct": "No \u2014 he ran the opposite direction",
+    "explanation": "",
+    "id": "0d7e09139ac6"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "Did David ever run from danger?",
+    "options": [
+      "Only once",
+      "He never had enemies",
+      "Yes \u2014 he fled from King Saul for years",
+      "No \u2014 he was always brave"
+    ],
+    "correct": "Yes \u2014 he fled from King Saul for years",
+    "explanation": "",
+    "id": "bf8cbbee1c7e"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "Was the forbidden fruit an apple?",
+    "options": [
+      "It was a grape",
+      "Yes \u2014 Genesis says apple",
+      "No \u2014 the Bible doesn't say what fruit it was",
+      "It was a fig"
+    ],
+    "correct": "No \u2014 the Bible doesn't say what fruit it was",
+    "explanation": "",
+    "id": "1e22c21c1ccd"
+  },
+  {
+    "category": "Women of the Bible",
+    "difficulty": "Layperson",
+    "question": "Did women follow Jesus?",
+    "options": [
+      "Only after the resurrection",
+      "No \u2014 only men",
+      "Only Mary",
+      "Yes \u2014 several women were devoted followers and supporters"
+    ],
+    "correct": "Yes \u2014 several women were devoted followers and supporters",
+    "explanation": "",
+    "id": "10fafb34a947"
+  },
+  {
+    "category": "Miracles",
+    "difficulty": "Layperson",
+    "question": "Did Jesus heal on the Sabbath?",
+    "options": [
+      "No \u2014 He rested on the Sabbath",
+      "Only in emergencies",
+      "Yes \u2014 and it made the religious leaders angry",
+      "Only once"
+    ],
+    "correct": "Yes \u2014 and it made the religious leaders angry",
+    "explanation": "",
+    "id": "183eb9c9b612"
+  },
+  {
+    "category": "Angels & Demons",
+    "difficulty": "Layperson",
+    "question": "Did Satan used to be an angel?",
+    "options": [
+      "He was a human",
+      "Yes \u2014 most scholars believe he was a fallen angel",
+      "No \u2014 he was always evil",
+      "We don't know"
+    ],
+    "correct": "Yes \u2014 most scholars believe he was a fallen angel",
+    "explanation": "",
+    "id": "47a9626ddd83"
+  },
+  {
+    "category": "Paul & His Letters",
+    "difficulty": "Layperson",
+    "question": "Did Paul ever visit Rome?",
+    "options": [
+      "Only once, briefly",
+      "No \u2014 he only wrote to them",
+      "He planned to but never made it",
+      "Yes \u2014 he was imprisoned there"
+    ],
+    "correct": "Yes \u2014 he was imprisoned there",
+    "explanation": "",
+    "id": "f0a426d67e94"
+  },
+  {
+    "category": "Kings & Kingdoms",
+    "difficulty": "Layperson",
+    "question": "Did any king of Israel or Judah follow God perfectly?",
+    "options": [
+      "Yes \u2014 Solomon was perfect",
+      "Yes \u2014 David was perfect",
+      "No \u2014 even the best kings had flaws",
+      "Yes \u2014 Hezekiah was perfect"
+    ],
+    "correct": "No \u2014 even the best kings had flaws",
+    "explanation": "",
+    "id": "63ef1bd6608c"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "What color was the sea that Moses parted?",
+    "options": [
+      "The name says 'Red' Sea",
+      "Green",
+      "Blue",
+      "Black"
+    ],
+    "correct": "The name says 'Red' Sea",
+    "explanation": "",
+    "id": "308117c1639e"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What did the wise men follow to find Jesus?",
+    "options": [
+      "A map",
+      "A star",
+      "A cloud",
+      "An angel"
+    ],
+    "correct": "A star",
+    "explanation": "",
+    "id": "5645b29287ae"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What animal did Jesus ride into Jerusalem?",
+    "options": [
+      "A donkey",
+      "A chariot",
+      "A camel",
+      "A horse"
+    ],
+    "correct": "A donkey",
+    "explanation": "",
+    "id": "aec18c807c79"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What kind of boat did Noah build?",
+    "options": [
+      "A raft",
+      "An ark \u2014 a huge wooden ship",
+      "A canoe",
+      "A sailboat"
+    ],
+    "correct": "An ark \u2014 a huge wooden ship",
+    "explanation": "",
+    "id": "e100c663f21d"
+  },
+  {
+    "category": "Battles & Wars",
+    "difficulty": "Layperson",
+    "question": "What part of Goliath's body did the stone hit?",
+    "options": [
+      "His leg",
+      "His arm",
+      "His forehead",
+      "His chest"
+    ],
+    "correct": "His forehead",
+    "explanation": "",
+    "id": "76705296aef5"
+  },
+  {
+    "category": "Miracles",
+    "difficulty": "Layperson",
+    "question": "What did Jesus use to heal the blind man in John 9?",
+    "options": [
+      "A prayer cloth",
+      "Medicine",
+      "Holy water",
+      "Mud made from dirt and spit"
+    ],
+    "correct": "Mud made from dirt and spit",
+    "explanation": "",
+    "id": "dd46d4e44af9"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What did they put on Jesus' shoulders before crucifixion?",
+    "options": [
+      "Gold armor",
+      "A white robe",
+      "A purple/scarlet robe to mock Him as king",
+      "Nothing"
+    ],
+    "correct": "A purple/scarlet robe to mock Him as king",
+    "explanation": "",
+    "id": "1b2de3929f00"
+  },
+  {
+    "category": "Life of Jesus",
+    "difficulty": "Layperson",
+    "question": "What was written on the sign above the cross?",
+    "options": [
+      "'The Messiah'",
+      "'A criminal'",
+      "'He is guilty'",
+      "'Jesus of Nazareth, King of the Jews'"
+    ],
+    "correct": "'Jesus of Nazareth, King of the Jews'",
+    "explanation": "",
+    "id": "42215f82bd21"
+  },
+  {
+    "category": "Genesis & Creation",
+    "difficulty": "Layperson",
+    "question": "What color was Esau when he was born?",
+    "options": [
+      "Dark and tall",
+      "Red and hairy",
+      "Normal looking",
+      "White and smooth"
+    ],
+    "correct": "Red and hairy",
+    "explanation": "",
+    "id": "be128fb7e199"
+  },
+  {
+    "category": "Moses & the Exodus",
+    "difficulty": "Layperson",
+    "question": "What material were the Ten Commandment tablets made of?",
+    "options": [
+      "Stone",
+      "Gold",
+      "Wood",
+      "Clay"
+    ],
+    "correct": "Stone",
+    "explanation": "",
+    "id": "811015e0018d"
   }
 ]
