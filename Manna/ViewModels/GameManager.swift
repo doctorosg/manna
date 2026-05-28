@@ -39,7 +39,7 @@ class GameManager: ObservableObject {
     private let botService = BotService()
     private var timerCancellable: AnyCancellable?
 
-    let roundTimeLimit: Double = 15.0
+    let roundTimeLimit: Double = 20.0
     let questionsPerSession: Int = 5
 
     init() {
