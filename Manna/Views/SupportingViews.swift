@@ -78,7 +78,7 @@ struct ResultView: View {
             }.padding(.horizontal, 20).padding(.bottom, 20)
         }
         .overlay {
-            if gameManager.showDoubleOrNothing { DoubleOrNothingView() }
+            if gameManager.showDoubleOrNothing || gameManager.doubleOrNothingActive { DoubleOrNothingView() }
         }
     }
 }
