@@ -29,8 +29,7 @@ struct ResultView: View {
             ScrollView {
                 VStack(spacing: 20) {
                     Text("Session Complete").font(.system(size: 24, weight: .bold, design: .rounded)).foregroundColor(.white).padding(.top, 24)
-                    
-                    // Score circle
+
                     ZStack {
                         Circle().stroke(Color.white.opacity(0.1), lineWidth: 8).frame(width: 120, height: 120)
                         Circle().trim(from: 0, to: total > 0 ? CGFloat(correct) / CGFloat(total) : 0)
@@ -42,7 +41,6 @@ struct ResultView: View {
                         }
                     }
 
-                    // Token summary
                     HStack(spacing: 8) {
                         Image(systemName: "circle.fill").foregroundColor(.yellow).font(.system(size: 12))
                         Text("\(netTokens > 0 ? "+" : "")\(netTokens) tokens")
@@ -50,7 +48,6 @@ struct ResultView: View {
                             .foregroundColor(netTokens >= 0 ? Color(hex: "#D4A843") ?? .yellow : .red)
                     }.padding(.vertical, 8)
 
-                    // Round breakdown
                     VStack(spacing: 8) {
                         ForEach(Array(gameManager.roundResults.enumerated()), id: \.offset) { i, result in
                             HStack {
@@ -113,8 +110,6 @@ struct LeaderboardView: View {
                             Spacer()
                             VStack(alignment: .trailing) {
                                 Text("\(entry.totalTokens.formatted())").font(.system(size: 14, weight: .bold, design: .rounded)).foregroundColor(Color(hex: "#D4A843") ?? .yellow)
-                                Text("\(entry.weeklyDelta >= 0 ? "+" : "")\(entry.weeklyDelta)")
-                                    .font(.system(size: 11)).foregroundColor(entry.weeklyDelta >= 0 ? .green : .red)
                             }
                         }
                         .padding(.horizontal, 16).padding(.vertical, 12)
@@ -129,7 +124,7 @@ struct LeaderboardView: View {
 // MARK: - Settings
 struct SettingsView: View {
     @EnvironmentObject var gameManager: GameManager
-    @EnvironmentObject var authManager: AuthManager
+    @State private var soundOn = !SoundManager.shared.isMuted
 
     var body: some View {
         VStack(spacing: 0) {
@@ -143,20 +138,48 @@ struct SettingsView: View {
                 Color.clear.frame(width: 24)
             }.padding(.horizontal, 20).padding(.vertical, 16)
 
-            List {
-                Section("Audio") {
-                    Toggle("Sound Effects", isOn: Binding(get: { !SoundManager.shared.isMuted }, set: { _ in SoundManager.shared.toggleMute() }))
+            VStack(spacing: 16) {
+                // Sound toggle
+                HStack {
+                    Image(systemName: soundOn ? "speaker.wave.2.fill" : "speaker.slash.fill")
+                        .foregroundColor(.white.opacity(0.7))
+                    Text("Sound Effects").foregroundColor(.white)
+                    Spacer()
+                    Toggle("", isOn: $soundOn)
+                        .onChange(of: soundOn) { _ in SoundManager.shared.toggleMute() }
+                        .tint(Color(hex: "#D4A843") ?? .yellow)
                 }
-                Section("Account") {
-                    Text("Player: \(authManager.userName)").foregroundColor(.white)
-                    Button("Sign Out", role: .destructive) { authManager.signOut() }
+                .padding(16)
+                .background(Color.white.opacity(0.05))
+                .cornerRadius(12)
+
+                // Questions loaded
+                HStack {
+                    Image(systemName: "book.fill").foregroundColor(.white.opacity(0.7))
+                    Text("Questions loaded").foregroundColor(.white)
+                    Spacer()
+                    Text("\(gameManager.questionService.totalQuestionCount)")
+                        .foregroundColor(Color(hex: "#D4A843") ?? .yellow)
+                        .font(.system(size: 15, weight: .bold, design: .rounded))
                 }
-                Section("About") {
-                    Text("Manna Bible Trivia v1.0").foregroundColor(.white.opacity(0.5))
-                    Text("\(gameManager.questionService.totalQuestionCount) questions loaded").foregroundColor(.white.opacity(0.5))
+                .padding(16)
+                .background(Color.white.opacity(0.05))
+                .cornerRadius(12)
+
+                // App info
+                HStack {
+                    Image(systemName: "info.circle.fill").foregroundColor(.white.opacity(0.7))
+                    Text("Manna Bible Trivia").foregroundColor(.white)
+                    Spacer()
+                    Text("v1.0").foregroundColor(.white.opacity(0.5))
                 }
+                .padding(16)
+                .background(Color.white.opacity(0.05))
+                .cornerRadius(12)
+
+                Spacer()
             }
-            .scrollContentBackground(.hidden)
+            .padding(.horizontal, 16)
         }
     }
 }

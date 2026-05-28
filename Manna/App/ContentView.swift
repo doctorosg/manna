@@ -10,14 +10,22 @@ struct ContentView: View {
                 .ignoresSafeArea()
 
             switch gameManager.appState {
-            case .splash: SplashView()
-            case .home: HomeView()
-            case .categorySelection: PreGameView()
-            case .playing: GameView()
-            case .result: ResultView()
-            case .leaderboard: LeaderboardView()
-            case .settings: SettingsView()
-            case .tokenShop: TokenShopView()
+            case .splash:
+                SplashView()
+            case .home:
+                HomeView()
+            case .categorySelection:
+                PreGameView()
+            case .playing:
+                GameView()
+            case .result:
+                ResultView()
+            case .leaderboard:
+                LeaderboardView()
+            case .settings:
+                SettingsView()
+            case .tokenShop:
+                TokenShopView()
             }
         }
         .animation(.easeInOut(duration: 0.3), value: gameManager.appState)

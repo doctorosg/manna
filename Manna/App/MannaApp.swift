@@ -9,22 +9,12 @@ struct MannaApp: App {
 
     var body: some Scene {
         WindowGroup {
-            RootView()
+            ContentView()
                 .environmentObject(gameManager)
                 .environmentObject(tokenManager)
                 .environmentObject(leaderboardManager)
                 .environmentObject(authManager)
-        }
-    }
-}
-
-struct RootView: View {
-    @EnvironmentObject var authManager: AuthManager
-    var body: some View {
-        switch authManager.authState {
-        case .unknown: SplashView()
-        case .signedOut: SignInView()
-        case .signedIn: ContentView()
+                .preferredColorScheme(.dark)
         }
     }
 }

@@ -11,18 +11,22 @@ class AuthManager: ObservableObject {
     @Published var userId: String = ""
 
     init() {
+        // Check for existing session
         if let saved = UserDefaults.standard.string(forKey: "manna_user_id"), !saved.isEmpty {
             userId = saved
             userName = UserDefaults.standard.string(forKey: "manna_user_name") ?? "Player"
-            authState = .signedIn
-        } else {
-            // Auto sign-in for MVP — skip auth gate
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.authState = .signedIn
-                self.userName = "Player"
-                self.userId = UUID().uuidString
-                UserDefaults.standard.set(self.userId, forKey: "manna_user_id")
-                UserDefaults.standard.set(self.userName, forKey: "manna_user_name")
+            }
+        } else {
+            // Auto sign-in as guest for MVP
+            let newId = UUID().uuidString
+            UserDefaults.standard.set(newId, forKey: "manna_user_id")
+            UserDefaults.standard.set("Player", forKey: "manna_user_name")
+            userId = newId
+            userName = "Player"
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.authState = .signedIn
             }
         }
     }
@@ -47,6 +51,8 @@ class AuthManager: ObservableObject {
     func signOut() {
         UserDefaults.standard.removeObject(forKey: "manna_user_id")
         UserDefaults.standard.removeObject(forKey: "manna_user_name")
+        userId = ""
+        userName = ""
         authState = .signedOut
     }
 }
