@@ -54,6 +54,7 @@ class GameManager: ObservableObject {
     func goHome() { stopTimer(); appState = .home }
     func goToPerformance() { appState = .performance }
     func goToSettings() { appState = .settings }
+    func goToLumina() { appState = .lumina }
 
     // MARK: - Start Session
     func startSession(categories: [MannaCategory], difficulty: DifficultyLevel) {

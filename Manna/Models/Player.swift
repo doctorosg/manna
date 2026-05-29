@@ -17,7 +17,7 @@ struct Player: Codable, Identifiable {
 }
 
 enum AppState {
-    case splash, home, categorySelection, playing, result, performance, settings
+    case splash, home, categorySelection, playing, result, performance, settings, lumina
 }
 
 enum GameMode { case casual, competitive, elite, daily }

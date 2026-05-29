@@ -17,6 +17,7 @@ struct ContentView: View {
             case .result:            ResultView()
             case .performance:       PerformanceView()
             case .settings:          SettingsView()
+            case .lumina:            LuminaView()
             }
         }
     }

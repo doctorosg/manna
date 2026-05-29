@@ -48,8 +48,9 @@ struct HomeView: View {
                 .padding(.horizontal, 40)
                 .padding(.bottom, 16)
 
-                HStack(spacing: 50) {
+                HStack(spacing: 36) {
                     navButton(icon: "chart.bar.fill", label: "My Stats") { gameManager.goToPerformance() }
+                    navButton(icon: "book.closed.fill", label: "Lumina Bible") { gameManager.goToLumina() }
                     navButton(icon: "gearshape.fill", label: "Settings") { gameManager.goToSettings() }
                 }
                 .padding(.bottom, 30)
