@@ -7,8 +7,6 @@ struct LuminaView: View {
     // TODO: replace with the real store listing URLs once Lumina is published.
     private let macAppStoreURL = URL(string: "https://apps.apple.com/app/lumina-bible")!
     private let microsoftStoreURL = URL(string: "https://apps.microsoft.com/detail/lumina-bible")!
-    // Android build → Google Play (also covers Google's Android-based desktop OS, Aluminium OS):
-    private let googlePlayURL = URL(string: "https://play.google.com/store/apps/details?id=com.doctorosg.lumina")!
 
     private let gold = Color(hex: "#D4A843") ?? .yellow
 
@@ -129,7 +127,6 @@ struct LuminaView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             storeRow(icon: "apple.logo", platform: "Mac", store: "App Store", filled: true) { openURL(macAppStoreURL) }
             storeRow(icon: "desktopcomputer", platform: "Windows", store: "Microsoft Store", filled: false) { openURL(microsoftStoreURL) }
-            storeRow(icon: "play.fill", platform: "Android", store: "Google Play", filled: false) { openURL(googlePlayURL) }
         }
     }
 
