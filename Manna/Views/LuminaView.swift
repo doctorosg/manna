@@ -4,9 +4,13 @@ struct LuminaView: View {
     @EnvironmentObject var gameManager: GameManager
     @Environment(\.openURL) private var openURL
 
-    // TODO: replace with the real App Store listing URL once Lumina is published.
-    // The Android build of Manna should point this to the Google Play listing instead.
-    private let storeURL = URL(string: "https://apps.apple.com/app/lumina-bible")!
+    // TODO: replace with the real store listing URLs once Lumina is published.
+    private let macAppStoreURL = URL(string: "https://apps.apple.com/app/lumina-bible")!
+    private let microsoftStoreURL = URL(string: "https://apps.microsoft.com/detail/lumina-bible")!
+    // Google Play distributes Android apps, not native desktop binaries. Enable this
+    // (and the Google Play row in `availableFor`) only once an Android build of Lumina
+    // exists — it would then also cover Google's Android-based desktop OS (Aluminium OS).
+    // private let googlePlayURL = URL(string: "https://play.google.com/store/apps/details?id=com.doctorosg.lumina")!
 
     private let gold = Color(hex: "#D4A843") ?? .yellow
 
@@ -35,7 +39,7 @@ struct LuminaView: View {
                     priceBadge
                     whatsInside
                     howItsDifferent
-                    storeButton
+                    availableFor
                     footnote
                 }
                 .padding(.horizontal, 16)
@@ -118,18 +122,37 @@ struct LuminaView: View {
         .cornerRadius(14)
     }
 
-    // MARK: - Store button
-    private var storeButton: some View {
-        Button(action: { openURL(storeURL) }) {
-            HStack(spacing: 10) {
-                Image(systemName: "apple.logo").font(.system(size: 18, weight: .semibold))
-                Text("Get it on the App Store")
-                    .font(.system(size: 16, weight: .bold, design: .rounded))
+    // MARK: - Available for (per platform)
+    private var availableFor: some View {
+        VStack(spacing: 10) {
+            Text("Available for")
+                .font(.system(size: 16, weight: .bold, design: .rounded))
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            storeRow(icon: "apple.logo", platform: "Mac", store: "App Store", filled: true) { openURL(macAppStoreURL) }
+            storeRow(icon: "desktopcomputer", platform: "Windows", store: "Microsoft Store", filled: false) { openURL(microsoftStoreURL) }
+            // Enable once an Android build exists (covers Android + Google's Aluminium OS desktops):
+            // storeRow(icon: "play.fill", platform: "Android & ChromeOS", store: "Google Play", filled: false) { openURL(googlePlayURL) }
+        }
+    }
+
+    private func storeRow(icon: String, platform: String, store: String, filled: Bool, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack(spacing: 12) {
+                Image(systemName: icon).font(.system(size: 20, weight: .semibold))
+                VStack(alignment: .leading, spacing: 1) {
+                    Text(platform).font(.system(size: 12, weight: .medium, design: .rounded)).opacity(0.7)
+                    Text(store).font(.system(size: 16, weight: .bold, design: .rounded))
+                }
+                Spacer()
+                Image(systemName: "arrow.up.right").font(.system(size: 13, weight: .bold)).opacity(0.6)
             }
-            .foregroundColor(.black)
+            .foregroundColor(filled ? .black : .white)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 14)
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 16)
-            .background(gold)
+            .background(filled ? gold : Color.white.opacity(0.06))
+            .overlay(RoundedRectangle(cornerRadius: 14).stroke(gold.opacity(filled ? 0 : 0.4), lineWidth: 1))
             .cornerRadius(14)
         }
     }
