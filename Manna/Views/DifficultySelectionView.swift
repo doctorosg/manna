@@ -53,6 +53,5 @@ struct DifficultySelectionView: View {
                 }
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 }

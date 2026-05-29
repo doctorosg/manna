@@ -41,7 +41,6 @@ struct PerformanceView: View {
                 }
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 
     // MARK: - Overall Stats
