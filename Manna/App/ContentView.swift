@@ -20,7 +20,7 @@ struct ContentView: View {
                 case .settings: SettingsView()
                 }
             }
-            .frame(maxHeight: .infinity, alignment: .top)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         }
         .animation(.easeInOut(duration: 0.3), value: gameManager.appState)
     }

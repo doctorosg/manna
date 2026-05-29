@@ -93,5 +93,6 @@ struct CategorySelectionView: View {
                 .padding(.horizontal, 20).padding(.bottom, 16)
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 }

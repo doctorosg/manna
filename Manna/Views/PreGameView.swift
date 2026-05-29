@@ -34,7 +34,7 @@ struct PreGameView: View {
                 }
             }
         }
-        .frame(maxHeight: .infinity, alignment: .top)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .animation(.easeInOut(duration: 0.2), value: showDifficulty)
     }
 }
