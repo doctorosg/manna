@@ -11,6 +11,7 @@ class GameManager: ObservableObject {
     @Published var isTimerRunning: Bool = false
     @Published var selectedAnswerIndex: Int? = nil
     @Published var showReveal: Bool = false
+    @Published var timedOut: Bool = false
     @Published var gameMode: GameMode = .competitive
     @Published var sessionComplete: Bool = false
     @Published var currentStreak: Int = 0
@@ -67,7 +68,7 @@ class GameManager: ObservableObject {
 
     func loadNextQuestion() {
         guard currentRoundNumber < questionsPerSession else { endSession(); return }
-        selectedAnswerIndex = nil; showReveal = false
+        selectedAnswerIndex = nil; showReveal = false; timedOut = false
         if let question = questionService.nextQuestion() {
             currentQuestion = question; currentRoundNumber += 1; startTimer()
         } else {
@@ -82,6 +83,10 @@ class GameManager: ObservableObject {
         let timeUsed = roundTimeLimit - timeRemaining
         let isCorrect = index >= 0 && index == question.correctIndex
 
+        // Track for refeeding
+        if isCorrect { questionService.markCorrect(question.id) }
+        else { questionService.markWrong(question.id) }
+
         let playerAnswer = PlayerAnswer(questionId: question.id, selectedIndex: index, isCorrect: isCorrect, timeUsed: timeUsed)
         let botAnswers = botService.simulateAnswers(for: question, bots: botOpponents)
         let result = RoundResult(question: question, playerAnswer: playerAnswer, botAnswers: botAnswers)
@@ -90,7 +95,15 @@ class GameManager: ObservableObject {
         if isCorrect { currentStreak += 1; SoundManager.shared.playCorrect() }
         else { currentStreak = 0; SoundManager.shared.playWrong() }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in self?.showReveal = true }
+        // If timed out, don't show reveal — auto advance
+        if index < 0 {
+            timedOut = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+                self?.advanceToNextRound()
+            }
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in self?.showReveal = true }
+        }
     }
 
     func advanceToNextRound() {

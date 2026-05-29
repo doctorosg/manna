@@ -1,24 +1,30 @@
 import SwiftUI
 
 struct DifficultySelectionView: View {
-    let category: MannaCategory
+    let categories: [MannaCategory]
     let onSelect: (DifficultyLevel) -> Void
 
     var body: some View {
         VStack(spacing: 16) {
-            // Category badge
-            VStack(spacing: 6) {
-                Text(category.emoji).font(.system(size: 40))
-                Text(category.name)
-                    .font(.system(size: 18, weight: .bold, design: .rounded))
-                    .foregroundColor(.white)
-                Text(category.description)
+            // Category badges
+            VStack(spacing: 8) {
+                if categories.count == 1 {
+                    Text(categories[0].emoji).font(.system(size: 40))
+                    Text(categories[0].name)
+                        .font(.system(size: 18, weight: .bold, design: .rounded))
+                        .foregroundColor(.white)
+                } else {
+                    // Show selected category emojis
+                    let emojis = categories.prefix(8).map { $0.emoji }.joined(separator: " ")
+                    Text(emojis).font(.system(size: 28))
+                    Text("\(categories.count) categories selected")
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                        .foregroundColor(.white)
+                }
+                Text("How well do you know your Bible?")
                     .font(.system(size: 13)).foregroundColor(.white.opacity(0.5))
-                    .multilineTextAlignment(.center).padding(.horizontal, 20)
             }
-            .padding(.vertical, 16)
-
-            Spacer()
+            .padding(.top, 16).padding(.bottom, 8)
 
             ForEach(DifficultyLevel.allCases) { level in
                 Button(action: { onSelect(level) }) {
@@ -28,20 +34,15 @@ struct DifficultySelectionView: View {
                             .foregroundColor(level.color)
                             .frame(width: 40)
                         VStack(alignment: .leading, spacing: 4) {
-                            HStack {
-                                Text(level.name)
-                                    .font(.system(size: 18, weight: .bold, design: .rounded))
-                                    .foregroundColor(.white)
-                                Spacer()
-                                Text("+\(level.tokenReward)")
-                                    .font(.system(size: 15, weight: .bold, design: .rounded))
-                                    .foregroundColor(Color(hex: "#D4A843") ?? .yellow)
-                            }
+                            Text(level.name)
+                                .font(.system(size: 18, weight: .bold, design: .rounded))
+                                .foregroundColor(.white)
                             Text(level.description)
                                 .font(.system(size: 12))
                                 .foregroundColor(.white.opacity(0.5))
                                 .lineLimit(2)
                         }
+                        Spacer()
                     }
                     .padding(20)
                     .background(level.color.opacity(0.1))

@@ -7,20 +7,27 @@ struct HomeView: View {
         VStack(spacing: 0) {
             Spacer()
 
-            // Logo
-            VStack(spacing: 8) {
+            // Logo — challah 3x bigger
+            VStack(spacing: 12) {
                 Image("challah")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 120, height: 80)
+                    .frame(width: 300, height: 200)
                 Text("MANNA")
                     .font(.system(size: 44, weight: .black, design: .serif))
                     .foregroundColor(Color(hex: "#D4A843") ?? .yellow)
                     .tracking(6)
-                Text("BIBLE TRIVIA")
-                    .font(.system(size: 14, weight: .semibold, design: .rounded))
-                    .foregroundColor(.white.opacity(0.6))
-                    .tracking(4)
+                // Scripture quote instead of "BIBLE TRIVIA"
+                Text("\"All Scripture is given by inspiration of God and is profitable for doctrine, for reproof, for correction, for instruction in righteousness.\"")
+                    .font(.system(size: 12, weight: .regular, design: .serif))
+                    .foregroundColor(.white.opacity(0.5))
+                    .multilineTextAlignment(.center)
+                    .italic()
+                    .padding(.horizontal, 40)
+                    .padding(.top, 4)
+                Text("— 2 Timothy 3:16")
+                    .font(.system(size: 11, weight: .semibold, design: .serif))
+                    .foregroundColor(.white.opacity(0.35))
             }
 
             Spacer()

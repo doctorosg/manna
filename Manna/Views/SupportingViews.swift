@@ -25,21 +25,42 @@ struct ResultView: View {
 
     private var correct: Int { gameManager.roundResults.filter { $0.playerAnswer.isCorrect }.count }
     private var total: Int { gameManager.roundResults.count }
+    private var pct: Int { total > 0 ? Int(Double(correct) / Double(total) * 100) : 0 }
+
+    private var letterGrade: String {
+        switch pct {
+        case 90...100: return "A"
+        case 80..<90: return "B"
+        case 70..<80: return "C"
+        case 60..<70: return "D"
+        default: return "F"
+        }
+    }
+
+    private var gradeColor: Color {
+        switch letterGrade {
+        case "A": return .green
+        case "B": return Color(hex: "#D4A843") ?? .yellow
+        case "C": return .orange
+        case "D": return .orange
+        default: return .red
+        }
+    }
 
     var body: some View {
         VStack(spacing: 0) {
             ScrollView {
-                VStack(spacing: 20) {
+                VStack(spacing: 16) {
                     Text("Session Complete")
                         .font(.system(size: 24, weight: .bold, design: .rounded))
                         .foregroundColor(.white).padding(.top, 24)
 
                     // Score circle
                     ZStack {
-                        Circle().stroke(Color.white.opacity(0.1), lineWidth: 8).frame(width: 120, height: 120)
+                        Circle().stroke(Color.white.opacity(0.1), lineWidth: 8).frame(width: 130, height: 130)
                         Circle().trim(from: 0, to: total > 0 ? CGFloat(correct) / CGFloat(total) : 0)
-                            .stroke(Color(hex: "#D4A843") ?? .yellow, style: StrokeStyle(lineWidth: 8, lineCap: .round))
-                            .frame(width: 120, height: 120).rotationEffect(.degrees(-90))
+                            .stroke(gradeColor, style: StrokeStyle(lineWidth: 8, lineCap: .round))
+                            .frame(width: 130, height: 130).rotationEffect(.degrees(-90))
                         VStack(spacing: 2) {
                             Text("\(correct)/\(total)")
                                 .font(.system(size: 28, weight: .black, design: .rounded))
@@ -50,11 +71,19 @@ struct ResultView: View {
                         }
                     }
 
-                    // Score percentage
-                    if total > 0 {
-                        Text("\(Int(Double(correct) / Double(total) * 100))% correct")
-                            .font(.system(size: 18, weight: .bold, design: .rounded))
-                            .foregroundColor(correct == total ? .green : correct >= total/2 ? Color(hex: "#D4A843") ?? .yellow : .red)
+                    // BIG percentage + Letter Grade
+                    VStack(spacing: 4) {
+                        Text("\(pct)%")
+                            .font(.system(size: 48, weight: .black, design: .rounded))
+                            .foregroundColor(gradeColor)
+                        HStack(spacing: 8) {
+                            Text("Grade:")
+                                .font(.system(size: 16, weight: .medium))
+                                .foregroundColor(.white.opacity(0.5))
+                            Text(letterGrade)
+                                .font(.system(size: 32, weight: .black, design: .rounded))
+                                .foregroundColor(gradeColor)
+                        }
                     }
 
                     // Round breakdown
@@ -64,7 +93,7 @@ struct ResultView: View {
                                 Text("Q\(i+1)")
                                     .font(.system(size: 13, weight: .bold))
                                     .foregroundColor(.white.opacity(0.5)).frame(width: 30)
-                                Text(result.playerAnswer.isCorrect ? "✅" : "❌").frame(width: 24)
+                                Text(result.playerAnswer.isCorrect ? "✅" : (result.playerAnswer.selectedIndex < 0 ? "⏰" : "❌")).frame(width: 24)
                                 Text(result.question.category)
                                     .font(.system(size: 12))
                                     .foregroundColor(.white.opacity(0.5)).lineLimit(1)
@@ -78,18 +107,15 @@ struct ResultView: View {
                         }
                     }.padding(.horizontal, 16)
 
-                    // Streak
                     if gameManager.currentStreak >= 3 {
                         Text("🔥 \(gameManager.currentStreak) streak!")
                             .font(.system(size: 16, weight: .bold)).foregroundColor(.orange)
                     }
 
-                    // Encouragement
                     encouragement
                 }.padding(.bottom, 20)
             }
 
-            // Buttons
             VStack(spacing: 10) {
                 Button(action: { gameManager.goToPreGame() }) {
                     Text("Play Again")
@@ -106,9 +132,7 @@ struct ResultView: View {
             }
             .padding(.horizontal, 20).padding(.bottom, 20)
         }
-        .onAppear {
-            performanceTracker.recordGameComplete()
-        }
+        .onAppear { performanceTracker.recordGameComplete() }
         .overlay {
             if gameManager.showDoubleOrNothing || gameManager.doubleOrNothingActive { DoubleOrNothingView() }
         }
@@ -117,18 +141,21 @@ struct ResultView: View {
     private var encouragement: some View {
         Group {
             if total > 0 {
-                let pct = Double(correct) / Double(total) * 100
-                if pct == 100 {
-                    Text("🏆 Perfect score! You really know your Bible!")
+                switch letterGrade {
+                case "A":
+                    Text("🏆 Outstanding! You really know your Bible!")
                         .font(.system(size: 14, weight: .semibold)).foregroundColor(.green)
-                } else if pct >= 80 {
-                    Text("🌟 Excellent! You have strong Bible knowledge.")
+                case "B":
+                    Text("🌟 Great job! Strong Bible knowledge.")
                         .font(.system(size: 14, weight: .semibold)).foregroundColor(Color(hex: "#D4A843") ?? .yellow)
-                } else if pct >= 60 {
+                case "C":
                     Text("👍 Good effort! Keep studying to improve.")
                         .font(.system(size: 14, weight: .semibold)).foregroundColor(.white.opacity(0.6))
-                } else {
-                    Text("📖 Check out My Stats for study suggestions!")
+                case "D":
+                    Text("📖 Room to grow! Check My Stats for study tips.")
+                        .font(.system(size: 14, weight: .semibold)).foregroundColor(.white.opacity(0.6))
+                default:
+                    Text("📖 Check out My Stats for study suggestions to improve!")
                         .font(.system(size: 14, weight: .semibold)).foregroundColor(.white.opacity(0.6))
                 }
             }
