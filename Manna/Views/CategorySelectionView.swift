@@ -7,20 +7,7 @@ struct CategorySelectionView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            // Instructions — right at top
-            VStack(spacing: 6) {
-                Text("Select one or more categories")
-                    .font(.system(size: 15, weight: .semibold, design: .rounded))
-                    .foregroundColor(.white.opacity(0.7))
-                Text("Each game is 5 questions scored out of 5. Manna will suggest where to study for topics you need to improve.")
-                    .font(.system(size: 12))
-                    .foregroundColor(.white.opacity(0.4))
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 16)
-            }
-            .padding(.top, 4).padding(.bottom, 10)
-
-            // Select All
+            // Select All — compact strip directly under the page header
             Button(action: {
                 if selectedCategories.count == MannaCategory.all.count { selectedCategories.removeAll() }
                 else { selectedCategories = Set(MannaCategory.all.map { $0.name }) }
@@ -28,7 +15,7 @@ struct CategorySelectionView: View {
                 HStack(spacing: 8) {
                     Image(systemName: selectedCategories.count == MannaCategory.all.count ? "checkmark.square.fill" : "square")
                         .foregroundColor(Color(hex: "#D4A843") ?? .yellow)
-                    Text(selectedCategories.count == MannaCategory.all.count ? "Deselect All" : "Select All Categories")
+                    Text(selectedCategories.count == MannaCategory.all.count ? "Deselect All" : "Select All")
                         .font(.system(size: 14, weight: .semibold, design: .rounded))
                         .foregroundColor(.white.opacity(0.7))
                     Spacer()
@@ -38,10 +25,10 @@ struct CategorySelectionView: View {
                             .foregroundColor(Color(hex: "#D4A843") ?? .yellow)
                     }
                 }
-                .padding(.horizontal, 20).padding(.vertical, 8)
+                .padding(.horizontal, 20).padding(.top, 4).padding(.bottom, 8)
             }
 
-            // Grid — scrollable, starts immediately
+            // Categories grid — starts immediately under the heading
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 10) {
                     ForEach(MannaCategory.all) { category in
@@ -77,6 +64,7 @@ struct CategorySelectionView: View {
                     }
                 }
                 .padding(.horizontal, 16)
+                .padding(.top, 2)
                 .padding(.bottom, 90)
             }
 

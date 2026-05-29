@@ -2,15 +2,9 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var gameManager: GameManager
-    @State private var animateFlakes = false
 
     var body: some View {
         ZStack {
-            // Falling manna particles
-            ForEach(0..<20, id: \.self) { i in
-                MannaFlake(index: i, animate: animateFlakes)
-            }
-
             VStack(spacing: 0) {
                 Spacer()
 
@@ -19,6 +13,10 @@ struct HomeView: View {
                         .font(.system(size: 48, weight: .black, design: .serif))
                         .foregroundColor(Color(hex: "#D4A843") ?? .yellow)
                         .tracking(6)
+                    Text("Volume 1 of 3")
+                        .font(.system(size: 16, weight: .semibold, design: .rounded))
+                        .foregroundColor(.white.opacity(0.55))
+                        .tracking(2)
                     Text("\"All Scripture is given by inspiration of God and is profitable for doctrine, for reproof, for correction, for instruction in righteousness.\"")
                         .font(.system(size: 36, weight: .regular, design: .serif))
                         .foregroundColor(.white.opacity(0.6))
@@ -57,7 +55,6 @@ struct HomeView: View {
                 .padding(.bottom, 30)
             }
         }
-        .onAppear { animateFlakes = true }
     }
 
     private func navButton(icon: String, label: String, action: @escaping () -> Void) -> some View {
@@ -68,42 +65,5 @@ struct HomeView: View {
             }
             .foregroundColor(.white.opacity(0.6))
         }
-    }
-}
-
-// MARK: - Falling Manna Flake
-struct MannaFlake: View {
-    let index: Int
-    let animate: Bool
-
-    private var size: CGFloat { CGFloat.random(in: 8...22) }
-    private var startX: CGFloat { CGFloat.random(in: 20...360) }
-    private var duration: Double { Double.random(in: 4...9) }
-    private var delay: Double { Double.random(in: 0...5) }
-    private var opacity: Double { Double.random(in: 0.15...0.5) }
-    private var drift: CGFloat { CGFloat.random(in: -30...30) }
-
-    @State private var yPos: CGFloat = -50
-    @State private var xOffset: CGFloat = 0
-    @State private var rotation: Double = 0
-
-    var body: some View {
-        Ellipse()
-            .fill(Color(hex: "#D4A843")?.opacity(opacity) ?? .yellow.opacity(opacity))
-            .frame(width: size * 1.4, height: size * 0.8)
-            .offset(x: startX - 200 + xOffset, y: yPos)
-            .rotationEffect(.degrees(rotation))
-            .onAppear {
-                guard animate else { return }
-                withAnimation(
-                    .linear(duration: duration)
-                    .delay(delay)
-                    .repeatForever(autoreverses: false)
-                ) {
-                    yPos = 900
-                    xOffset = drift
-                    rotation = Double.random(in: -180...180)
-                }
-            }
     }
 }
