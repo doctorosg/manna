@@ -32,12 +32,10 @@ class QuestionService {
     }
 
     func nextQuestion() -> MannaQuestion? {
-        guard !availableQuestions.isEmpty else {
-            if !sessionCategories.isEmpty {
-                availableQuestions = cache.smartQuestions(categories: sessionCategories, difficulty: sessionDifficulty)
-            }
-            guard !availableQuestions.isEmpty else { return nil }
+        if availableQuestions.isEmpty && !sessionCategories.isEmpty {
+            availableQuestions = cache.smartQuestions(categories: sessionCategories, difficulty: sessionDifficulty)
         }
+        guard !availableQuestions.isEmpty else { return nil }
         return availableQuestions.removeFirst()
     }
 
