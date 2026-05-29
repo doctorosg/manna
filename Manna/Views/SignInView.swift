@@ -7,7 +7,10 @@ struct SignInView: View {
     var body: some View {
         VStack(spacing: 24) {
             Spacer()
-            Text("🍞").font(.system(size: 72))
+            Image("challah")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 130, height: 85)
             Text("MANNA").font(.system(size: 44, weight: .black, design: .serif))
                 .foregroundColor(Color(hex: "#D4A843") ?? .yellow).tracking(6)
             Text("BIBLE TRIVIA").font(.system(size: 14, weight: .semibold)).foregroundColor(.white.opacity(0.5)).tracking(4)

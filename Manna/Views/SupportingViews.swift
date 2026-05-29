@@ -5,7 +5,10 @@ struct SplashView: View {
     var body: some View {
         VStack(spacing: 16) {
             Spacer()
-            Text("🍞").font(.system(size: 80))
+            Image("challah")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 140, height: 90)
             Text("MANNA").font(.system(size: 48, weight: .black, design: .serif))
                 .foregroundColor(Color(hex: "#D4A843") ?? .yellow).tracking(6)
             Text("BIBLE TRIVIA").font(.system(size: 14, weight: .semibold)).foregroundColor(.white.opacity(0.5)).tracking(4)
