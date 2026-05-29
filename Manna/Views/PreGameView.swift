@@ -22,11 +22,10 @@ struct PreGameView: View {
                     .font(.system(size: 18, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
                 Spacer()
-                Color.clear.frame(width: 24)
+                Color.clear.frame(width: 24, height: 24)
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 10)
-            .border(Color.blue, width: 3)   // DIAGNOSTIC — header box
 
             // Content
             if showDifficulty {
@@ -44,10 +43,8 @@ struct PreGameView: View {
                 CategorySelectionView(selectedCategories: $selectedCategories) {
                     showDifficulty = true
                 }
-                .border(Color.green, width: 3)   // DIAGNOSTIC — category box
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .border(Color.red, width: 4)   // DIAGNOSTIC — PreGameView box
     }
 }

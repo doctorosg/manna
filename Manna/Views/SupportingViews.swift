@@ -181,7 +181,7 @@ struct SettingsView: View {
                 Spacer()
                 Text("Settings").font(.system(size: 18, weight: .bold, design: .rounded)).foregroundColor(.white)
                 Spacer()
-                Color.clear.frame(width: 24)
+                Color.clear.frame(width: 24, height: 24)
             }.padding(.horizontal, 20).padding(.vertical, 16)
 
             VStack(spacing: 16) {
