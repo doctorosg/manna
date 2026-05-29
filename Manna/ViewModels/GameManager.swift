@@ -113,8 +113,13 @@ class GameManager: ObservableObject {
 
     // MARK: - Level Up
     private func shouldOfferLevelUp() -> Bool {
-        guard !levelUpActive, let last = roundResults.last, last.playerAnswer.isCorrect, selectedDifficulty.nextLevel != nil else { return false }
-        return Double.random(in: 0...1) < 0.25
+        guard !levelUpActive, selectedDifficulty.nextLevel != nil else { return false }
+        // Only offer if player is getting 80%+ correct in this session
+        let answered = roundResults.count
+        let correct = roundResults.filter { $0.playerAnswer.isCorrect }.count
+        guard answered >= 3, let last = roundResults.last, last.playerAnswer.isCorrect else { return false }
+        let accuracy = Double(correct) / Double(answered)
+        return accuracy >= 0.80 && Double.random(in: 0...1) < 0.5
     }
     private func offerLevelUp() {
         guard selectedDifficulty.nextLevel != nil else { return }

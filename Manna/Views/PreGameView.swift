@@ -7,7 +7,7 @@ struct PreGameView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            // Header
+            // Header — tight to top, no extra space
             HStack {
                 Button(action: {
                     if showDifficulty { showDifficulty = false }
@@ -21,7 +21,7 @@ struct PreGameView: View {
                 Spacer()
                 Color.clear.frame(width: 24)
             }
-            .padding(.horizontal, 20).padding(.vertical, 12)
+            .padding(.horizontal, 20).padding(.top, 8).padding(.bottom, 8)
 
             if showDifficulty {
                 DifficultySelectionView(categories: Array(selectedCategories).compactMap { name in MannaCategory.all.first { $0.name == name } }) { difficulty in
