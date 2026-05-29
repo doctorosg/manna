@@ -12,7 +12,9 @@ struct ContentView: View {
             switch gameManager.appState {
             case .splash: SplashView()
             case .home: HomeView()
-            case .categorySelection: PreGameView()
+            case .categorySelection:
+                PreGameView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             case .playing: GameView()
             case .result: ResultView()
             case .performance: PerformanceView()

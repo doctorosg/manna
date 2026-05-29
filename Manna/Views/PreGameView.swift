@@ -33,6 +33,8 @@ struct PreGameView: View {
                     showDifficulty = true
                 }
             }
+
+            Spacer(minLength: 0)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .animation(.easeInOut(duration: 0.2), value: showDifficulty)
