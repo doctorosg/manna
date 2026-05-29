@@ -2,7 +2,7 @@ import SwiftUI
 
 struct GameView: View {
     @EnvironmentObject var gameManager: GameManager
-    @EnvironmentObject var tokenManager: TokenManager
+    @EnvironmentObject var performanceTracker: PerformanceTracker
     @State private var showPause = false
 
     var body: some View {
@@ -74,7 +74,12 @@ struct GameView: View {
 
                     // Next button
                     if gameManager.showReveal {
-                        Button(action: { gameManager.advanceToNextRound(); tokenManager.awardRoundTokens(earned: gameManager.roundResults.last?.tokensEarned ?? 0, lost: gameManager.roundResults.last?.tokensLost ?? 0) }) {
+                        Button(action: {
+                            if let last = gameManager.roundResults.last, let q = gameManager.currentQuestion {
+                                performanceTracker.recordAnswer(category: q.category, difficulty: q.difficulty, correct: last.playerAnswer.isCorrect)
+                            }
+                            gameManager.advanceToNextRound()
+                        }) {
                             Text(gameManager.currentRoundNumber >= gameManager.questionsPerSession ? "See Results" : "Next Question")
                                 .font(.system(size: 16, weight: .bold, design: .rounded))
                                 .foregroundColor(.black)
@@ -153,16 +158,8 @@ struct GameView: View {
     private func revealSection(question: MannaQuestion) -> some View {
         if let last = gameManager.roundResults.last {
             VStack(spacing: 12) {
-                HStack {
                     Text(last.playerAnswer.isCorrect ? "✅ Correct!" : "❌ Wrong")
                         .font(.system(size: 16, weight: .bold)).foregroundColor(last.playerAnswer.isCorrect ? .green : .red)
-                    Spacer()
-                    if last.netTokenChange != 0 {
-                        Text("\(last.netTokenChange > 0 ? "+" : "")\(last.netTokenChange)")
-                            .font(.system(size: 14, weight: .bold, design: .rounded))
-                            .foregroundColor(last.netTokenChange > 0 ? Color(hex: "#D4A843") ?? .yellow : .red)
-                    }
-                }
                 if !question.explanation.isEmpty {
                     Text(question.explanation)
                         .font(.system(size: 13)).foregroundColor(.white.opacity(0.5))
@@ -202,10 +199,10 @@ struct GameView: View {
             Color.black.opacity(0.7).ignoresSafeArea()
             VStack(spacing: 16) {
                 Text("⚡️ LEVEL UP CHALLENGE").font(.system(size: 22, weight: .black, design: .rounded)).foregroundColor(Color(hex: "#D4A843") ?? .yellow)
-                Text("Answer a harder question for \(gameManager.levelUpBonusTokens) bonus tokens!")
+                Text("Can you handle a harder question?")
                     .font(.system(size: 14)).foregroundColor(.white.opacity(0.7)).multilineTextAlignment(.center)
-                Text("Risk: -\(gameManager.levelUpPenaltyTokens) if wrong")
-                    .font(.system(size: 13)).foregroundColor(.red.opacity(0.7))
+                Text("Test yourself at the next difficulty level!")
+                    .font(.system(size: 13)).foregroundColor(.white.opacity(0.5))
                 HStack(spacing: 16) {
                     Button(action: { gameManager.declineLevelUp() }) {
                         Text("Skip").foregroundColor(.white.opacity(0.6)).frame(maxWidth: .infinity).padding(.vertical, 14)

@@ -3,16 +3,14 @@ import SwiftUI
 @main
 struct MannaApp: App {
     @StateObject private var gameManager = GameManager()
-    @StateObject private var tokenManager = TokenManager()
-    @StateObject private var leaderboardManager = LeaderboardManager()
+    @StateObject private var performanceTracker = PerformanceTracker()
     @StateObject private var authManager = AuthManager()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(gameManager)
-                .environmentObject(tokenManager)
-                .environmentObject(leaderboardManager)
+                .environmentObject(performanceTracker)
                 .environmentObject(authManager)
                 .preferredColorScheme(.dark)
         }

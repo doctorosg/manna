@@ -2,34 +2,12 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var gameManager: GameManager
-    @EnvironmentObject var tokenManager: TokenManager
 
     var body: some View {
         VStack(spacing: 0) {
-            // Token Bar
-            HStack {
-                Image(systemName: "circle.fill")
-                    .foregroundColor(.yellow)
-                    .font(.system(size: 14))
-                Text(tokenManager.formattedTokens)
-                    .font(.system(size: 16, weight: .bold, design: .rounded))
-                    .foregroundColor(.white)
-                Spacer()
-                Text(tokenManager.formattedDelta)
-                    .font(.system(size: 13, weight: .medium))
-                    .foregroundColor(tokenManager.deltaIsPositive ? .green : .red)
-            }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 12)
-            .background(Color.white.opacity(0.08))
-            .cornerRadius(12)
-            .padding(.horizontal, 20)
-            .padding(.top, 16)
-            .onTapGesture { gameManager.goToTokenShop() }
-
             Spacer()
 
-            // Logo Area
+            // Logo
             VStack(spacing: 8) {
                 Image("challah")
                     .resizable()
@@ -64,10 +42,9 @@ struct HomeView: View {
             .padding(.bottom, 16)
 
             // Bottom Nav
-            HStack(spacing: 40) {
-                navButton(icon: "trophy.fill", label: "Ranks") { gameManager.goToLeaderboard() }
+            HStack(spacing: 50) {
+                navButton(icon: "chart.bar.fill", label: "My Stats") { gameManager.goToPerformance() }
                 navButton(icon: "gearshape.fill", label: "Settings") { gameManager.goToSettings() }
-                navButton(icon: "cart.fill", label: "Shop") { gameManager.goToTokenShop() }
             }
             .padding(.bottom, 30)
         }

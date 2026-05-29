@@ -5,35 +5,32 @@ class GameManager: ObservableObject {
     @Published var appState: AppState = .home
     @Published var currentQuestion: MannaQuestion?
     @Published var currentRoundNumber: Int = 0
-    @Published var totalRoundsInSession: Int = 5
     @Published var roundResults: [RoundResult] = []
     @Published var botOpponents: [BotOpponent] = []
-    @Published var timeRemaining: Double = 15.0
+    @Published var timeRemaining: Double = 20.0
     @Published var isTimerRunning: Bool = false
     @Published var selectedAnswerIndex: Int? = nil
-    @Published var selectedWager: Int = 0
-    @Published var selectedWagerType: WagerType = .none
     @Published var showReveal: Bool = false
     @Published var gameMode: GameMode = .competitive
     @Published var sessionComplete: Bool = false
     @Published var currentStreak: Int = 0
+    @Published var questionsLoaded: Bool = false
 
+    // Bonus Challenge (was Double or Nothing)
     @Published var showDoubleOrNothing: Bool = false
     @Published var doubleOrNothingQuestion: MannaQuestion? = nil
     @Published var doubleOrNothingActive: Bool = false
     @Published var doubleOrNothingResult: Bool? = nil
-    var doubleOrNothingStake: Int = 0
 
+    // Level Up Challenge
     @Published var showLevelUpOffer: Bool = false
     @Published var levelUpActive: Bool = false
     @Published var levelUpQuestion: MannaQuestion? = nil
     @Published var levelUpResult: Bool? = nil
-    var levelUpBonusTokens: Int = 0
-    var levelUpPenaltyTokens: Int = 0
 
+    // Session Config
     @Published var selectedCategories: [MannaCategory] = []
     @Published var selectedDifficulty: DifficultyLevel = .deacon
-    @Published var questionsLoaded: Bool = false
 
     let questionService = QuestionService()
     private let botService = BotService()
@@ -43,7 +40,6 @@ class GameManager: ObservableObject {
     let questionsPerSession: Int = 5
 
     init() {
-        print("🍞 GameManager init — loading questions...")
         Task { @MainActor in
             await questionService.loadQuestions()
             self.questionsLoaded = true
@@ -55,9 +51,8 @@ class GameManager: ObservableObject {
     func goToPreGame(mode: GameMode = .competitive) { gameMode = mode; appState = .categorySelection }
     func cancelPreGame() { appState = .home }
     func goHome() { stopTimer(); appState = .home }
-    func goToLeaderboard() { appState = .leaderboard }
+    func goToPerformance() { appState = .performance }
     func goToSettings() { appState = .settings }
-    func goToTokenShop() { appState = .tokenShop }
 
     // MARK: - Start Session
     func startSession(categories: [MannaCategory], difficulty: DifficultyLevel) {
@@ -72,7 +67,7 @@ class GameManager: ObservableObject {
 
     func loadNextQuestion() {
         guard currentRoundNumber < questionsPerSession else { endSession(); return }
-        selectedAnswerIndex = nil; selectedWager = 0; selectedWagerType = .none; showReveal = false
+        selectedAnswerIndex = nil; showReveal = false
         if let question = questionService.nextQuestion() {
             currentQuestion = question; currentRoundNumber += 1; startTimer()
         } else {
@@ -87,12 +82,14 @@ class GameManager: ObservableObject {
         let timeUsed = roundTimeLimit - timeRemaining
         let isCorrect = index >= 0 && index == question.correctIndex
 
-        let playerAnswer = PlayerAnswer(questionId: question.id, selectedIndex: index, isCorrect: isCorrect, timeUsed: timeUsed, wagerAmount: selectedWager, wagerType: selectedWagerType)
-        let botAnswers = botService.simulateAnswers(for: question, bots: botOpponents, playerTimeUsed: timeUsed)
-        let (earned, lost) = calculateTokens(playerAnswer: playerAnswer, botAnswers: botAnswers, question: question)
-        let result = RoundResult(question: question, playerAnswer: playerAnswer, botAnswers: botAnswers, tokensEarned: earned, tokensLost: lost)
+        let playerAnswer = PlayerAnswer(questionId: question.id, selectedIndex: index, isCorrect: isCorrect, timeUsed: timeUsed)
+        let botAnswers = botService.simulateAnswers(for: question, bots: botOpponents)
+        let result = RoundResult(question: question, playerAnswer: playerAnswer, botAnswers: botAnswers)
         roundResults.append(result)
-        if isCorrect { currentStreak += 1; SoundManager.shared.playCorrect() } else { currentStreak = 0; SoundManager.shared.playWrong() }
+
+        if isCorrect { currentStreak += 1; SoundManager.shared.playCorrect() }
+        else { currentStreak = 0; SoundManager.shared.playWrong() }
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in self?.showReveal = true }
     }
 
@@ -101,13 +98,14 @@ class GameManager: ObservableObject {
         if currentRoundNumber >= questionsPerSession { endSession() } else { loadNextQuestion() }
     }
 
+    // MARK: - Level Up
     private func shouldOfferLevelUp() -> Bool {
         guard !levelUpActive, let last = roundResults.last, last.playerAnswer.isCorrect, selectedDifficulty.nextLevel != nil else { return false }
-        return Double.random(in: 0...1) < 0.30
+        return Double.random(in: 0...1) < 0.25
     }
     private func offerLevelUp() {
-        guard let next = selectedDifficulty.nextLevel else { return }
-        levelUpBonusTokens = next.tokenReward * 3; levelUpPenaltyTokens = next.tokenReward; showLevelUpOffer = true
+        guard selectedDifficulty.nextLevel != nil else { return }
+        showLevelUpOffer = true
     }
     func acceptLevelUp() {
         guard let next = selectedDifficulty.nextLevel else { return }
@@ -121,34 +119,37 @@ class GameManager: ObservableObject {
     func submitLevelUpAnswer(index: Int) {
         guard let q = levelUpQuestion, levelUpActive else { return }
         stopTimer(); selectedAnswerIndex = index; levelUpResult = (index >= 0 && index == q.correctIndex)
-        if levelUpResult == true { SoundManager.shared.playWagerWin() } else { SoundManager.shared.playWrong() }
+        if levelUpResult == true { SoundManager.shared.playCorrect() } else { SoundManager.shared.playWrong() }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) { [weak self] in self?.finalizeLevelUp() }
     }
     private func finalizeLevelUp() { levelUpActive = false; levelUpQuestion = nil; continueAfterLevelUp() }
     private func continueAfterLevelUp() { if currentRoundNumber >= questionsPerSession { endSession() } else { loadNextQuestion() } }
 
+    // MARK: - End Session
     private func endSession() {
         sessionComplete = true; stopTimer(); appState = .result
-        let net = roundResults.reduce(0) { $0 + $1.tokensEarned - $1.tokensLost }
-        if net > 0 { doubleOrNothingStake = net
+        let correctCount = roundResults.filter { $0.playerAnswer.isCorrect }.count
+        // Offer bonus challenge if player did well (3+ correct)
+        if correctCount >= 3 {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in self?.showDoubleOrNothing = true }
         }
     }
 
+    // MARK: - Bonus Challenge
     func acceptDoubleOrNothing() {
         showDoubleOrNothing = false; doubleOrNothingActive = true; doubleOrNothingResult = nil
         if let q = questionService.nextQuestion() { doubleOrNothingQuestion = q; timeRemaining = roundTimeLimit; selectedAnswerIndex = nil; startTimer() }
     }
-    func declineDoubleOrNothing() { showDoubleOrNothing = false; doubleOrNothingStake = 0 }
+    func declineDoubleOrNothing() { showDoubleOrNothing = false }
     func submitDoubleOrNothingAnswer(index: Int) {
         guard let q = doubleOrNothingQuestion, doubleOrNothingActive else { return }
         stopTimer(); selectedAnswerIndex = index; doubleOrNothingResult = (index >= 0 && index == q.correctIndex)
-        if doubleOrNothingResult == true { SoundManager.shared.playWagerWin() } else { SoundManager.shared.playWrong() }
+        if doubleOrNothingResult == true { SoundManager.shared.playCorrect() } else { SoundManager.shared.playWrong() }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) { [weak self] in self?.finalizeDoubleOrNothing() }
     }
-    private func finalizeDoubleOrNothing() { doubleOrNothingActive = false; doubleOrNothingQuestion = nil; doubleOrNothingStake = 0 }
+    private func finalizeDoubleOrNothing() { doubleOrNothingActive = false; doubleOrNothingQuestion = nil }
 
-    // Timer
+    // MARK: - Timer
     private func startTimer() {
         timeRemaining = roundTimeLimit; isTimerRunning = true
         timerCancellable = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
@@ -157,7 +158,7 @@ class GameManager: ObservableObject {
             }
     }
     private func stopTimer() { isTimerRunning = false; timerCancellable?.cancel(); timerCancellable = nil }
-    private func handleTimeOut() { stopTimer(); if doubleOrNothingActive { submitDoubleOrNothingAnswer(index: -1) } else if selectedAnswerIndex == nil { submitAnswer(index: -1) } }
+    private func handleTimeOut() { stopTimer(); if doubleOrNothingActive { submitDoubleOrNothingAnswer(index: -1) } else if levelUpActive { submitLevelUpAnswer(index: -1) } else if selectedAnswerIndex == nil { submitAnswer(index: -1) } }
 
     private var pausedTime: Double = 0
     func pauseGame() { guard isTimerRunning else { return }; pausedTime = timeRemaining; stopTimer() }
@@ -170,22 +171,4 @@ class GameManager: ObservableObject {
             }
     }
     func quitGame() { stopTimer(); appState = .home }
-
-    private func calculateTokens(playerAnswer: PlayerAnswer, botAnswers: [BotAnswer], question: MannaQuestion) -> (earned: Int, lost: Int) {
-        var earned = 0; var lost = 0; let base = question.baseTokenReward
-        if playerAnswer.isCorrect {
-            earned += base
-            if playerAnswer.wagerType == .standard && playerAnswer.wagerAmount > 0 { earned += playerAnswer.wagerAmount }
-            else if playerAnswer.wagerType != .none && playerAnswer.wagerAmount > 0 {
-                let cc = botAnswers.filter { $0.isCorrect }.count + 1
-                let won = evaluateWager(type: playerAnswer.wagerType, correctCount: cc)
-                if won { earned += Int(Double(playerAnswer.wagerAmount) * playerAnswer.wagerType.multiplier) } else { lost += playerAnswer.wagerAmount }
-            }
-        } else { if playerAnswer.wagerAmount > 0 { lost += playerAnswer.wagerAmount } }
-        return (earned, lost)
-    }
-
-    private func evaluateWager(type: WagerType, correctCount: Int) -> Bool {
-        switch type { case .win: return correctCount == 1; case .place: return correctCount <= 2; case .show: return correctCount <= 3; default: return false }
-    }
 }

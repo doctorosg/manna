@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var gameManager: GameManager
-    @EnvironmentObject var tokenManager: TokenManager
+    @EnvironmentObject var performanceTracker: PerformanceTracker
 
     var body: some View {
         ZStack {
@@ -10,22 +10,13 @@ struct ContentView: View {
                 .ignoresSafeArea()
 
             switch gameManager.appState {
-            case .splash:
-                SplashView()
-            case .home:
-                HomeView()
-            case .categorySelection:
-                PreGameView()
-            case .playing:
-                GameView()
-            case .result:
-                ResultView()
-            case .leaderboard:
-                LeaderboardView()
-            case .settings:
-                SettingsView()
-            case .tokenShop:
-                TokenShopView()
+            case .splash: SplashView()
+            case .home: HomeView()
+            case .categorySelection: PreGameView()
+            case .playing: GameView()
+            case .result: ResultView()
+            case .performance: PerformanceView()
+            case .settings: SettingsView()
             }
         }
         .animation(.easeInOut(duration: 0.3), value: gameManager.appState)
