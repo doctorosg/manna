@@ -1,8 +1,8 @@
 name: Manna
 options:
-  bundleIdPrefix: com.doctorosg
+  bundleIdPrefix: com.oddcurrent
   deploymentTarget:
-    iOS: "17.0"
+    iOS: "18.0"
   xcodeVersion: "15.0"
   generateEmptyDirectories: true
   createIntermediateGroups: true
@@ -10,36 +10,43 @@ options:
 settings:
   base:
     SWIFT_VERSION: 5.9
-    IPHONEOS_DEPLOYMENT_TARGET: 17.0
+    IPHONEOS_DEPLOYMENT_TARGET: 18.0
     TARGETED_DEVICE_FAMILY: 1
-    MARKETING_VERSION: 1.0.0
-    CURRENT_PROJECT_VERSION: 1
-    PRODUCT_BUNDLE_IDENTIFIER: com.doctorosg.manna
+    MARKETING_VERSION: 1.0.8
+    CURRENT_PROJECT_VERSION: 13
+    PRODUCT_BUNDLE_IDENTIFIER: com.oddcurrent.manna
     INFOPLIST_FILE: Manna/Supporting/Info.plist
     CODE_SIGN_STYLE: Automatic
     DEVELOPMENT_TEAM: "28WGFPLAHZ"
     SWIFT_OPTIMIZATION_LEVEL: "-Onone"
     DEBUG_INFORMATION_FORMAT: dwarf-with-dsym
 
+packages:
+  GoogleMobileAds:
+    url: https://github.com/googleads/swift-package-manager-google-mobile-ads.git
+    from: 12.0.0
+
 targets:
   Manna:
     type: application
     platform: iOS
-    deploymentTarget: "17.0"
+    deploymentTarget: "18.0"
     sources:
       - path: Manna
         excludes:
           - "Supporting/Info.plist"
     resources:
       - path: Manna/Resources
+    dependencies:
+      - package: GoogleMobileAds
     info:
       path: Manna/Supporting/Info.plist
       properties:
         CFBundleName: Manna
         CFBundleDisplayName: Manna
-        CFBundleIdentifier: com.doctorosg.manna
-        CFBundleVersion: "1"
-        CFBundleShortVersionString: "1.0"
+        CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundlePackageType: APPL
         CFBundleExecutable: $(EXECUTABLE_NAME)
         CFBundleInfoDictionaryVersion: "6.0"
@@ -56,6 +63,18 @@ targets:
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
         UIUserInterfaceStyle: Dark
+        GADApplicationIdentifier: ca-app-pub-9667779972496607~4661362328
+        MannaBannerAdUnitID: ca-app-pub-9667779972496607/6262113408
+        MannaInterstitialAdUnitID: ca-app-pub-9667779972496607/7882316834
+        MannaRewardedAdUnitID: ca-app-pub-9667779972496607/2306661725
+        MannaRemoveAdsProductID: com.oddcurrent.manna.remove_ads
+        NSLocalNetworkUsageDescription: Manna uses your local network to find nearby private Party Mode games.
+        NSBonjourServices:
+          - _manna-party._tcp
+        CFBundleURLTypes:
+          - CFBundleURLName: com.oddcurrent.manna.party
+            CFBundleURLSchemes:
+              - manna
     settings:
       base:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon

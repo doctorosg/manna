@@ -1,3 +1,21 @@
 *.pyc
 __pycache__/
 .DS_Store
+build/
+Manna.xcodeproj/
+Manna 2.xcodeproj/
+Manna 3.xcodeproj/
+Manna 4.xcodeproj/
+Manna/Supporting/Info 2.plist
+Manna/Supporting/Info 3.plist
+android/.gradle/
+android/app/build/
+android/local.properties
+android/keystore/
+android/*.log
+party-backend/node_modules/
+party-backend/.wrangler/
+party-backend/*.cpuprofile
+archive/
+audits/
+video/assets/

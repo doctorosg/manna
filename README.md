@@ -1,12 +1,12 @@
 # Manna — Bible Trivia Game
 
-A Bible trivia iOS app modeled on the Bluff Trivia Game. Players wager tokens on their Bible knowledge across 20 categories and 3 difficulty levels.
+A native iOS and Android Bible trivia game. Players wager tokens on their Bible knowledge across 21 categories and 3 difficulty levels.
 
 ## Game Concept
 
 **Manna** (the bread God provided from heaven) — players earn tokens by answering Bible trivia correctly. Same wagering/bot mechanics as Bluff.
 
-## Categories (20)
+## Categories (21)
 
 1. Genesis & Creation
 2. Moses & the Exodus
@@ -28,6 +28,7 @@ A Bible trivia iOS app modeled on the Bluff Trivia Game. Players wager tokens on
 18. Numbers & Genealogies
 19. Food, Feasts & Offerings
 20. Dreams & Visions
+21. Words of Jesus & OT Roots
 
 ## Difficulty Levels
 
@@ -39,8 +40,8 @@ A Bible trivia iOS app modeled on the Bluff Trivia Game. Players wager tokens on
 
 ## Question Bank
 
-- **2,640 unique questions** in `manna_questions.json`
-- Spread across all 20 categories and 3 difficulty levels
+- **40,000 unique, permanently numbered questions** in the shipping bank
+- Spread across all 21 categories and 3 difficulty levels
 - Each question has: category, difficulty, question text, 4 options, correct answer, optional explanation
 
 ### Question Format
@@ -57,26 +58,23 @@ A Bible trivia iOS app modeled on the Bluff Trivia Game. Players wager tokens on
 }
 ```
 
-## Tech Stack (planned)
+## Tech Stack
 
-- **iOS:** Swift + WKWebView (HTML/JS game engine) — same architecture as Bluff
-- **Backend:** Cloudflare Workers + D1 (same as Bluff)
-- **IAP:** StoreKit 2
+- **iOS:** Native SwiftUI
+- **Android:** Native Kotlin + Jetpack Compose
+- **IAP:** StoreKit 2 and Google Play Billing
 - **Questions:** Bundled JSON
 
 ## Project Status
 
 - [x] Game design & categories
-- [x] Question bank (2,640 questions)
-- [ ] iOS app (adapt from Bluff codebase)
-- [ ] Logo/icon design
-- [ ] StoreKit integration
-- [ ] iCloud sync
-- [ ] Ads
-- [ ] Multiplayer
+- [x] Question bank (40,000 questions)
+- [x] Native iOS and Android apps
+- [x] Logo/icon design
+- [x] One-time Remove Ads purchase integration
+- [x] Advertising integration
 
 ## Generation Scripts
 
-The `scripts/` folder contains the Python scripts used to generate the question bank:
-- `generate_all.py` — Base generation with data tables + templates
-- `expand.py` through `expand5.py` — Expansion scripts adding more questions
+The `scripts/` folder contains the generators, source audit, deterministic bank builder,
+number lookup, and invariant validator. See `BUILDING.md` for the current workflow.

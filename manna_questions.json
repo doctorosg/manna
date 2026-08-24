@@ -2,15 +2,15 @@
   {
     "category": "Numbers & Genealogies",
     "difficulty": "Deacon",
-    "question": "Who was the father of Timothy?",
+    "question": "What is known about Timothy's parents?",
     "options": [
-      "Lamech",
-      "(mother Eunice, father Greek)",
-      "Asa",
-      "Eleazar"
+      "His mother Eunice was Jewish and his father was Greek",
+      "Both parents were Romans",
+      "His father was a priest and his mother was from Judah",
+      "Scripture names neither parent"
     ],
-    "correct": "(mother Eunice, father Greek)",
-    "explanation": "",
+    "correct": "His mother Eunice was Jewish and his father was Greek",
+    "explanation": "Acts 16:1; 2 Timothy 1:5",
     "id": "93ffdeab914c"
   },
   {
@@ -1458,7 +1458,7 @@
   {
     "category": "Numbers & Genealogies",
     "difficulty": "Deacon",
-    "question": "How old was Adam when they died?",
+    "question": "How old was Adam when he died?",
     "options": [
       "120",
       "180",
@@ -1466,7 +1466,7 @@
       "930"
     ],
     "correct": "930",
-    "explanation": "",
+    "explanation": "Genesis 5:5",
     "id": "2c80cee91b9b"
   },
   {
@@ -99281,15 +99281,15 @@
   {
     "category": "Women of the Bible",
     "difficulty": "Layperson",
-    "question": "Which woman had a strong faith and betrayed Samson?",
+    "question": "Which woman betrayed Samson after learning the secret of his strength?",
     "options": [
       "Esther",
       "Deborah",
-      "Delilah tricked him \u2014 she did not have faith",
+      "Delilah",
       "Ruth"
     ],
-    "correct": "Delilah tricked him \u2014 she did not have faith",
-    "explanation": "",
+    "correct": "Delilah",
+    "explanation": "Judges 16:4-21",
     "id": "194e0965dc54"
   },
   {

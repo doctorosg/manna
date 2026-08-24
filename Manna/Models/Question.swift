@@ -4,6 +4,7 @@ import Foundation
 
 struct MannaQuestion: Codable, Identifiable {
     let id: String
+    let number: Int
     let category: String
     let difficulty: String
     let question: String

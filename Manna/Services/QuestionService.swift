@@ -24,10 +24,6 @@ class QuestionService {
         sessionCategories = categories
         sessionDifficulty = difficulty
         availableQuestions = cache.smartQuestions(categories: categories, difficulty: difficulty)
-        if availableQuestions.count < 5 {
-            // Broaden: try all difficulties for selected categories
-            availableQuestions = cache.smartQuestions(categories: categories)
-        }
         print("🎯 Session pool: \(availableQuestions.count) questions (\(cache.stats))")
     }
 
@@ -36,7 +32,9 @@ class QuestionService {
             availableQuestions = cache.smartQuestions(categories: sessionCategories, difficulty: sessionDifficulty)
         }
         guard !availableQuestions.isEmpty else { return nil }
-        return availableQuestions.removeFirst()
+        let question = availableQuestions.removeFirst()
+        cache.markPresented(question.id)
+        return question
     }
 
     func markCorrect(_ id: String) { cache.markCorrect(id) }
@@ -44,4 +42,10 @@ class QuestionService {
 
     var totalQuestionCount: Int { cache.cachedQuestions.count }
     var unseenCount: Int { cache.unseenCount }
+
+    func question(withId id: String) -> MannaQuestion? { cache.question(withId: id) }
+
+    func partyQuestions(category: String?, difficulty: String, count: Int) -> [MannaQuestion] {
+        cache.partyQuestions(category: category, difficulty: difficulty, count: count)
+    }
 }

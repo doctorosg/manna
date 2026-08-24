@@ -16,8 +16,8 @@ struct Player: Codable, Identifiable {
     var bestStreak: Int = 0
 }
 
-enum AppState {
-    case splash, home, categorySelection, playing, result, performance, settings, lumina
+enum AppState: Equatable {
+    case splash, home, categorySelection, playing, result, performance, settings, party
 }
 
 enum GameMode { case casual, competitive, elite, daily }

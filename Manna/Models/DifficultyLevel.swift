@@ -25,14 +25,6 @@ enum DifficultyLevel: Int, CaseIterable, Identifiable, Codable {
         }
     }
 
-    var tokenReward: Int {
-        switch self {
-        case .layperson: return 10
-        case .deacon: return 25
-        case .pastor: return 50
-        }
-    }
-
     var colorHex: String {
         switch self {
         case .layperson: return "#1D9E75"

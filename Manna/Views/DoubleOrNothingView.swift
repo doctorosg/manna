@@ -3,6 +3,8 @@ import SwiftUI
 struct DoubleOrNothingView: View {
     @EnvironmentObject var gameManager: GameManager
     @EnvironmentObject var performanceTracker: PerformanceTracker
+    @EnvironmentObject var monetization: MonetizationManager
+    @State private var isOpeningBonus = false
 
     var body: some View {
         ZStack {
@@ -23,19 +25,34 @@ struct DoubleOrNothingView: View {
                 .foregroundColor(Color(hex: "#D4A843") ?? .yellow)
             Text("Great session! Want to test yourself with one more question?")
                 .font(.system(size: 15)).foregroundColor(.white.opacity(0.7)).multilineTextAlignment(.center)
+            if monetization.shouldShowAds {
+                Text("A voluntary full-screen rewarded ad plays before the bonus. Canceling the offer keeps you on the results screen.")
+                    .font(.system(size: 12)).foregroundColor(.white.opacity(0.55)).multilineTextAlignment(.center)
+            }
             HStack(spacing: 16) {
                 Button(action: { gameManager.declineDoubleOrNothing() }) {
                     Text("I'm Good").foregroundColor(.white.opacity(0.6))
                         .frame(maxWidth: .infinity).padding(.vertical, 14)
                         .background(Color.white.opacity(0.1)).cornerRadius(12)
                 }
-                Button(action: { gameManager.acceptDoubleOrNothing() }) {
-                    Text("Bring It!").font(.system(size: 16, weight: .bold)).foregroundColor(.black)
+                Button(action: { openBonus() }) {
+                    Text(monetization.shouldShowAds ? "Watch Ad & Play" : "Bring It!")
+                        .font(.system(size: 16, weight: .bold)).foregroundColor(.black)
                         .frame(maxWidth: .infinity).padding(.vertical, 14)
                         .background(Color(hex: "#D4A843") ?? .yellow).cornerRadius(12)
                 }
+                .disabled(isOpeningBonus)
             }.padding(.horizontal, 20)
         }.padding(24)
+    }
+
+    private func openBonus() {
+        guard !isOpeningBonus else { return }
+        isOpeningBonus = true
+        monetization.presentBonusAdIfNeeded { earned in
+            isOpeningBonus = false
+            if earned { gameManager.acceptDoubleOrNothing() }
+        }
     }
 
     private func questionPhase(question: MannaQuestion) -> some View {
@@ -43,23 +60,8 @@ struct DoubleOrNothingView: View {
             Text("⚡ BONUS CHALLENGE")
                 .font(.system(size: 18, weight: .black, design: .rounded))
                 .foregroundColor(Color(hex: "#D4A843") ?? .yellow)
-            HStack(spacing: 6) {
-                Image(systemName: "clock.fill").font(.system(size: 12))
-                Text(String(format: "%.0f", max(0, gameManager.timeRemaining)))
-                    .font(.system(size: 18, weight: .bold, design: .monospaced))
-            }
-            .foregroundColor(gameManager.timeRemaining <= 5 ? .red : .white)
-
-            GeometryReader { geo in
-                ZStack(alignment: .leading) {
-                    RoundedRectangle(cornerRadius: 2).fill(Color.white.opacity(0.1)).frame(height: 4)
-                    RoundedRectangle(cornerRadius: 2)
-                        .fill(gameManager.timeRemaining <= 5 ? Color.red : Color(hex: "#D4A843") ?? .yellow)
-                        .frame(width: geo.size.width * max(0, gameManager.timeRemaining / gameManager.roundTimeLimit), height: 4)
-                        .animation(.linear(duration: 0.1), value: gameManager.timeRemaining)
-                }
-            }.frame(height: 4).padding(.horizontal, 24)
-
+            Text("Question #\(question.number)")
+                .font(.system(size: 12, weight: .bold)).foregroundColor(.white.opacity(0.55))
             Text(question.question)
                 .font(.system(size: 17, weight: .semibold, design: .rounded))
                 .foregroundColor(.white).multilineTextAlignment(.center).padding(.horizontal, 20)
@@ -82,7 +84,19 @@ struct DoubleOrNothingView: View {
                     performanceTracker.recordAnswer(category: question.category, difficulty: question.difficulty, correct: result)
                 }
             }
-        }.padding(.vertical, 24)
+
+            if gameManager.doubleOrNothingResult == nil {
+                Button("Show Answer") { gameManager.revealDoubleOrNothingAnswer() }
+                    .foregroundColor(.white).padding(.vertical, 12).frame(maxWidth: .infinity)
+                    .background(Color.white.opacity(0.1)).cornerRadius(12).padding(.horizontal, 20)
+            } else {
+                Button("Done") { gameManager.finishDoubleOrNothing() }
+                    .foregroundColor(.black).fontWeight(.bold).padding(.vertical, 12).frame(maxWidth: .infinity)
+                    .background(Color(hex: "#D4A843") ?? .yellow).cornerRadius(12).padding(.horizontal, 20)
+            }
+        }
+        .padding(.vertical, 24)
+        .onAppear { monetization.recordQuestionPresented(questionID: question.id) }
     }
 
     private func bonusButton(index: Int, text: String, question: MannaQuestion) -> some View {
@@ -93,9 +107,7 @@ struct DoubleOrNothingView: View {
         let borderColor: Color = !hasResult ? (selected ? Color.white.opacity(0.4) : Color.white.opacity(0.12)) : isCorrect ? Color.green.opacity(0.6) : (selected && !isCorrect ? Color.red.opacity(0.6) : Color.clear)
 
         return Button(action: {
-            if gameManager.selectedAnswerIndex == nil && gameManager.doubleOrNothingResult == nil {
-                gameManager.submitDoubleOrNothingAnswer(index: index)
-            }
+            gameManager.selectDoubleOrNothingAnswer(index: index)
         }) {
             HStack {
                 Text(["A","B","C","D"][index]).font(.system(size: 14, weight: .bold)).foregroundColor(.white.opacity(0.4)).frame(width: 28)
@@ -106,6 +118,6 @@ struct DoubleOrNothingView: View {
             }
             .padding(14).background(bgColor)
             .overlay(RoundedRectangle(cornerRadius: 12).stroke(borderColor, lineWidth: 1.5)).cornerRadius(12)
-        }.disabled(gameManager.selectedAnswerIndex != nil)
+        }.disabled(hasResult)
     }
 }

@@ -30,6 +30,11 @@ class QuestionCache {
         saveData()
     }
 
+    func markPresented(_ id: String) {
+        seenIds.insert(id)
+        saveData()
+    }
+
     func markWrong(_ id: String) {
         wrongIds.insert(id)
         seenIds.insert(id)
@@ -41,7 +46,7 @@ class QuestionCache {
     func isCorrect(_ id: String) -> Bool { correctIds.contains(id) }
 
     // MARK: - Smart Question Selection
-    // Priority: 1) Previously wrong questions, 2) Unseen questions, 3) All remaining
+    // Strict deck: present every eligible question once before any repeat.
 
     func smartQuestions(categories: [String], difficulty: String? = nil) -> [MannaQuestion] {
         let categoryFiltered = cachedQuestions.filter { q in
@@ -49,28 +54,15 @@ class QuestionCache {
             (difficulty == nil || q.difficulty == difficulty)
         }
 
-        // First priority: questions they got wrong before (refeed)
-        let wrongOnes = categoryFiltered.filter { wrongIds.contains($0.id) }
+        let unseen = categoryFiltered.filter { !seenIds.contains($0.id) }
+        if !unseen.isEmpty { return unseen.shuffled() }
 
-        // Second priority: never seen
-        let unseenOnes = categoryFiltered.filter { !seenIds.contains($0.id) }
-
-        // Third: seen but not correctly answered
-        let remaining = categoryFiltered.filter { !correctIds.contains($0.id) && !wrongIds.contains($0.id) }
-
-        // Mix: 40% wrong (refeed), 40% unseen, 20% remaining
-        var pool: [MannaQuestion] = []
-        pool.append(contentsOf: wrongOnes.shuffled())
-        pool.append(contentsOf: unseenOnes.shuffled())
-        pool.append(contentsOf: remaining.shuffled())
-
-        // If pool is empty, reset and use everything
-        if pool.isEmpty {
-            resetSeen(forCategories: categories)
-            return categoryFiltered.shuffled()
-        }
-
-        return pool
+        // Every currently eligible question has been presented. Start a new cycle
+        // without erasing correctness history.
+        let eligibleIds = Set(categoryFiltered.map(\.id))
+        seenIds.subtract(eligibleIds)
+        saveData()
+        return categoryFiltered.shuffled()
     }
 
     func resetSeen(forCategories categories: [String]) {
@@ -93,6 +85,16 @@ class QuestionCache {
     var unseenCount: Int { cachedQuestions.filter { !seenIds.contains($0.id) }.count }
     var wrongCount: Int { wrongIds.count }
     var stats: String { "Total: \(cachedQuestions.count), Seen: \(seenIds.count), Wrong: \(wrongIds.count), Correct: \(correctIds.count)" }
+
+    func question(withId id: String) -> MannaQuestion? {
+        cachedQuestions.first { $0.id == id }
+    }
+
+    func partyQuestions(category: String?, difficulty: String, count: Int) -> [MannaQuestion] {
+        cachedQuestions.filter { question in
+            (category == nil || question.category == category) && question.difficulty == difficulty
+        }.shuffled().prefix(count).map { $0 }
+    }
 
     // MARK: - Persistence
     private func loadData() {
