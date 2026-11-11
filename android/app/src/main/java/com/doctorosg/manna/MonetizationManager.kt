@@ -7,7 +7,7 @@ import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkCapabilities
 import android.net.NetworkRequest
-import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
@@ -35,6 +35,7 @@ import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.RequestConfiguration
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.gms.ads.rewarded.RewardedAd
@@ -42,13 +43,20 @@ import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import com.google.android.ump.ConsentInformation
 import com.google.android.ump.ConsentRequestParameters
 import com.google.android.ump.UserMessagingPlatform
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
 
 class MonetizationManager(
     private val activity: Activity,
-    private val preferences: SharedPreferences
+    private val preferences: SharedPreferences,
+    private val onQuestionPackInstalled: (List<Question>) -> Unit = {}
 ) {
     companion object {
         const val REMOVE_ADS_PRODUCT_ID = "com.oddcurrent.manna.remove_ads"
+        const val QUESTION_PACK_PRODUCT_ID = "com.oddcurrent.manna.question_pack_10000"
+        const val QUESTION_PACK_URL = "https://downloads.oddcurrent.com/manna/question-pack-10000-v1.json"
         private const val PRODUCTION_BANNER_ID = "ca-app-pub-9667779972496607/8779786915"
         private const val PRODUCTION_INTERSTITIAL_ID = "ca-app-pub-9667779972496607/5124396753"
         private const val PRODUCTION_REWARDED_ID = "ca-app-pub-9667779972496607/9873376734"
@@ -64,11 +72,15 @@ class MonetizationManager(
 
     var hasPurchasedAdFree by mutableStateOf(false)
         private set
+    var hasPurchasedQuestionPack by mutableStateOf(false)
+        private set
     var purchaseMessage by mutableStateOf<String?>(null)
         private set
     var isPurchasing by mutableStateOf(false)
         private set
     var removeAdsPrice by mutableStateOf("one-time purchase")
+        private set
+    var questionPackPrice by mutableStateOf("one-time purchase")
         private set
     var privacyOptionsRequired by mutableStateOf(false)
         private set
@@ -76,8 +88,12 @@ class MonetizationManager(
         private set
     var freeQuestionsUsed by mutableIntStateOf(0)
         private set
+    var isChildDirectedSession by mutableStateOf(false)
+        private set
 
     private var removeAdsProduct: ProductDetails? = null
+    private var questionPackProduct: ProductDetails? = null
+    private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
     private var rewardedAd: RewardedAd? = null
     private var interstitialAd: InterstitialAd? = null
     private val billingClient: BillingClient
@@ -96,8 +112,36 @@ class MonetizationManager(
     val requiresInternetAccess: Boolean
         get() = shouldShowAds && !isOnline
 
+    fun configureChildDirectedSession(enabled: Boolean) {
+        if (isChildDirectedSession == enabled) return
+        isChildDirectedSession = enabled
+        val configuration = MobileAds.getRequestConfiguration().toBuilder()
+            .setTagForChildDirectedTreatment(
+                if (enabled) RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE
+                else RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_UNSPECIFIED
+            )
+            .setTagForUnderAgeOfConsent(
+                if (enabled) RequestConfiguration.TAG_FOR_UNDER_AGE_OF_CONSENT_TRUE
+                else RequestConfiguration.TAG_FOR_UNDER_AGE_OF_CONSENT_UNSPECIFIED
+            )
+            .setMaxAdContentRating(
+                if (enabled) RequestConfiguration.MAX_AD_CONTENT_RATING_G
+                else RequestConfiguration.MAX_AD_CONTENT_RATING_UNSPECIFIED
+            )
+        MobileAds.setRequestConfiguration(configuration.build())
+
+        // Never carry an ad loaded for one audience into the other audience.
+        interstitialAd = null
+        rewardedAd = null
+        if (shouldShowAds) {
+            loadInterstitial()
+            loadRewarded()
+        }
+    }
+
     init {
         hasPurchasedAdFree = preferences.getBoolean("verified_ad_free_purchase", false)
+        hasPurchasedQuestionPack = preferences.getBoolean("verified_question_pack_purchase", false)
         freeQuestionsUsed = if (preferences.contains("free_questions_used")) {
             preferences.getInt("free_questions_used", 0)
         } else {
@@ -146,6 +190,29 @@ class MonetizationManager(
         }
     }
 
+    val isQuestionPackOfferAvailable: Boolean get() = questionPackProduct != null
+    val isQuestionPackInstalled: Boolean get() = QuestionPackStore.isInstalled(activity)
+
+    fun purchaseQuestionPack() {
+        val product = questionPackProduct
+        if (product == null) {
+            purchaseMessage = "The extra question pack is not available yet."
+            connectBilling()
+            return
+        }
+        isPurchasing = true
+        val params = BillingFlowParams.newBuilder().setProductDetailsParamsList(
+            listOf(BillingFlowParams.ProductDetailsParams.newBuilder().setProductDetails(product).build())
+        ).build()
+        val result = billingClient.launchBillingFlow(activity, params)
+        if (result.responseCode != BillingClient.BillingResponseCode.OK) {
+            isPurchasing = false
+            purchaseMessage = result.debugMessage
+        }
+    }
+
+    fun retryQuestionPackDownload() = downloadQuestionPack(showMessage = true)
+
     fun restorePurchases() {
         if (!billingClient.isReady) {
             purchaseMessage = "Connecting to Google Play…"
@@ -160,18 +227,21 @@ class MonetizationManager(
             QueryPurchasesParams.newBuilder().setProductType(BillingClient.ProductType.INAPP).build()
         ) { result, purchases ->
             if (result.responseCode == BillingClient.BillingResponseCode.OK) {
-                val activePurchases = purchases.filter {
-                    REMOVE_ADS_PRODUCT_ID in it.products &&
-                        it.purchaseState == com.android.billingclient.api.Purchase.PurchaseState.PURCHASED
-                }
+                val activePurchases = purchases.filter { it.purchaseState == com.android.billingclient.api.Purchase.PurchaseState.PURCHASED }
                 activePurchases.forEach { processPurchase(it, showMessage = false) }
-                if (activePurchases.isEmpty()) {
+                if (activePurchases.none { REMOVE_ADS_PRODUCT_ID in it.products }) {
                     hasPurchasedAdFree = false
                     preferences.edit().putBoolean("verified_ad_free_purchase", false).apply()
                 }
+                if (activePurchases.none { QUESTION_PACK_PRODUCT_ID in it.products }) {
+                    hasPurchasedQuestionPack = false
+                    preferences.edit().putBoolean("verified_question_pack_purchase", false).apply()
+                } else if (!QuestionPackStore.isInstalled(activity)) {
+                    downloadQuestionPack(showMessage = false)
+                }
                 if (showResult) {
-                    purchaseMessage = if (hasPurchasedAdFree) "Your ad-free purchase has been restored."
-                        else "No previous ad-free purchase was found."
+                    purchaseMessage = if (hasPurchasedAdFree || hasPurchasedQuestionPack) "Your purchases have been restored."
+                        else "No previous purchases were found."
                 }
             } else if (showResult) purchaseMessage = result.debugMessage
         }
@@ -255,30 +325,55 @@ class MonetizationManager(
     }
 
     private fun queryProductsAndEntitlement() {
-        val product = QueryProductDetailsParams.Product.newBuilder()
-            .setProductId(REMOVE_ADS_PRODUCT_ID)
-            .setProductType(BillingClient.ProductType.INAPP)
-            .build()
+        val products = listOf(REMOVE_ADS_PRODUCT_ID, QUESTION_PACK_PRODUCT_ID).map { id ->
+            QueryProductDetailsParams.Product.newBuilder().setProductId(id)
+                .setProductType(BillingClient.ProductType.INAPP).build()
+        }
         billingClient.queryProductDetailsAsync(
-            QueryProductDetailsParams.newBuilder().setProductList(listOf(product)).build()
+            QueryProductDetailsParams.newBuilder().setProductList(products).build()
         ) { _, result ->
-            removeAdsProduct = result.productDetailsList.firstOrNull()
+            removeAdsProduct = result.productDetailsList.firstOrNull { it.productId == REMOVE_ADS_PRODUCT_ID }
+            questionPackProduct = result.productDetailsList.firstOrNull { it.productId == QUESTION_PACK_PRODUCT_ID }
             removeAdsPrice = removeAdsProduct?.oneTimePurchaseOfferDetailsList?.firstOrNull()?.formattedPrice
+                ?: "one-time purchase"
+            questionPackPrice = questionPackProduct?.oneTimePurchaseOfferDetailsList?.firstOrNull()?.formattedPrice
                 ?: "one-time purchase"
         }
         queryExistingPurchases(showResult = false)
     }
 
     private fun processPurchase(purchase: com.android.billingclient.api.Purchase, showMessage: Boolean) {
-        if (REMOVE_ADS_PRODUCT_ID !in purchase.products ||
-            purchase.purchaseState != com.android.billingclient.api.Purchase.PurchaseState.PURCHASED) return
-        hasPurchasedAdFree = true
-        preferences.edit().putBoolean("verified_ad_free_purchase", true).apply()
-        if (showMessage) purchaseMessage = "Advertising has been removed permanently."
+        if (purchase.purchaseState != com.android.billingclient.api.Purchase.PurchaseState.PURCHASED) return
+        if (REMOVE_ADS_PRODUCT_ID in purchase.products) {
+            hasPurchasedAdFree = true
+            preferences.edit().putBoolean("verified_ad_free_purchase", true).apply()
+            if (showMessage) purchaseMessage = "Advertising has been removed permanently."
+        }
+        if (QUESTION_PACK_PRODUCT_ID in purchase.products) {
+            hasPurchasedQuestionPack = true
+            preferences.edit().putBoolean("verified_question_pack_purchase", true).apply()
+            downloadQuestionPack(showMessage)
+        }
         if (!purchase.isAcknowledged) {
             billingClient.acknowledgePurchase(
                 AcknowledgePurchaseParams.newBuilder().setPurchaseToken(purchase.purchaseToken).build()
             ) { }
+        }
+    }
+
+    private fun downloadQuestionPack(showMessage: Boolean) {
+        if (!hasPurchasedQuestionPack) return
+        if (QuestionPackStore.isInstalled(activity)) {
+            if (showMessage) purchaseMessage = "10,000 extra questions are installed and ready to play."
+            return
+        }
+        scope.launch {
+            runCatching { QuestionPackStore.downloadAndInstall(activity, QUESTION_PACK_URL) }
+                .onSuccess {
+                    onQuestionPackInstalled(it)
+                    if (showMessage) purchaseMessage = "10,000 extra questions are installed and ready to play."
+                }
+                .onFailure { if (showMessage) purchaseMessage = it.message ?: "The question pack could not be downloaded." }
         }
     }
 
@@ -360,7 +455,7 @@ class MonetizationManager(
 @Composable
 fun MannaBannerAd(modifier: Modifier = Modifier) {
     val context = LocalContext.current
-    BoxWithConstraints(modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+    Box(modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
         AndroidView(
             modifier = Modifier.fillMaxWidth().height(50.dp),
             factory = {

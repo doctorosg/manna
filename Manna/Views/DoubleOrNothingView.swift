@@ -20,23 +20,23 @@ struct DoubleOrNothingView: View {
 
     private var offerPhase: some View {
         VStack(spacing: 20) {
-            Text("⚡ BONUS CHALLENGE")
+            MannaText("⚡ BONUS CHALLENGE")
                 .font(.system(size: 22, weight: .black, design: .rounded))
                 .foregroundColor(Color(hex: "#D4A843") ?? .yellow)
-            Text("Great session! Want to test yourself with one more question?")
+            MannaText("Great session! Want to test yourself with one more question?")
                 .font(.system(size: 15)).foregroundColor(.white.opacity(0.7)).multilineTextAlignment(.center)
             if monetization.shouldShowAds {
-                Text("A voluntary full-screen rewarded ad plays before the bonus. Canceling the offer keeps you on the results screen.")
+                MannaText("A voluntary full-screen rewarded ad plays before the bonus. Canceling the offer keeps you on the results screen.")
                     .font(.system(size: 12)).foregroundColor(.white.opacity(0.55)).multilineTextAlignment(.center)
             }
             HStack(spacing: 16) {
                 Button(action: { gameManager.declineDoubleOrNothing() }) {
-                    Text("I'm Good").foregroundColor(.white.opacity(0.6))
+                    MannaText("I'm Good").foregroundColor(.white.opacity(0.6))
                         .frame(maxWidth: .infinity).padding(.vertical, 14)
                         .background(Color.white.opacity(0.1)).cornerRadius(12)
                 }
                 Button(action: { openBonus() }) {
-                    Text(monetization.shouldShowAds ? "Watch Ad & Play" : "Bring It!")
+                    MannaText(monetization.shouldShowAds ? "Watch Ad & Play" : "Bring It!")
                         .font(.system(size: 16, weight: .bold)).foregroundColor(.black)
                         .frame(maxWidth: .infinity).padding(.vertical, 14)
                         .background(Color(hex: "#D4A843") ?? .yellow).cornerRadius(12)
@@ -57,12 +57,12 @@ struct DoubleOrNothingView: View {
 
     private func questionPhase(question: MannaQuestion) -> some View {
         VStack(spacing: 16) {
-            Text("⚡ BONUS CHALLENGE")
+            MannaText("⚡ BONUS CHALLENGE")
                 .font(.system(size: 18, weight: .black, design: .rounded))
                 .foregroundColor(Color(hex: "#D4A843") ?? .yellow)
-            Text("Question #\(question.number)")
+            MannaText("Question #\(question.number)")
                 .font(.system(size: 12, weight: .bold)).foregroundColor(.white.opacity(0.55))
-            Text(question.question)
+            MannaText(question.question)
                 .font(.system(size: 17, weight: .semibold, design: .rounded))
                 .foregroundColor(.white).multilineTextAlignment(.center).padding(.horizontal, 20)
 
@@ -74,10 +74,10 @@ struct DoubleOrNothingView: View {
 
             if let result = gameManager.doubleOrNothingResult {
                 VStack(spacing: 8) {
-                    Text(result ? "🎉 NAILED IT!" : "❌ Not quite!")
+                    MannaText(result ? "🎉 NAILED IT!" : "❌ Not quite!")
                         .font(.system(size: 28, weight: .black, design: .rounded))
                         .foregroundColor(result ? .green : .red)
-                    Text("✅ Answer: \(question.correct)")
+                    MannaText("✅ Answer: \(question.correct)")
                         .font(.system(size: 13, weight: .semibold)).foregroundColor(.green.opacity(0.8))
                 }.padding(.top, 8)
                 .onAppear {
@@ -86,13 +86,17 @@ struct DoubleOrNothingView: View {
             }
 
             if gameManager.doubleOrNothingResult == nil {
-                Button("Show Answer") { gameManager.revealDoubleOrNothingAnswer() }
-                    .foregroundColor(.white).padding(.vertical, 12).frame(maxWidth: .infinity)
-                    .background(Color.white.opacity(0.1)).cornerRadius(12).padding(.horizontal, 20)
+                Button(action: { gameManager.revealDoubleOrNothingAnswer() }) {
+                    MannaText("Show Answer")
+                }
+                .foregroundColor(.white).padding(.vertical, 12).frame(maxWidth: .infinity)
+                .background(Color.white.opacity(0.1)).cornerRadius(12).padding(.horizontal, 20)
             } else {
-                Button("Done") { gameManager.finishDoubleOrNothing() }
-                    .foregroundColor(.black).fontWeight(.bold).padding(.vertical, 12).frame(maxWidth: .infinity)
-                    .background(Color(hex: "#D4A843") ?? .yellow).cornerRadius(12).padding(.horizontal, 20)
+                Button(action: { gameManager.finishDoubleOrNothing() }) {
+                    MannaText("Done")
+                }
+                .foregroundColor(.black).fontWeight(.bold).padding(.vertical, 12).frame(maxWidth: .infinity)
+                .background(Color(hex: "#D4A843") ?? .yellow).cornerRadius(12).padding(.horizontal, 20)
             }
         }
         .padding(.vertical, 24)
@@ -111,7 +115,7 @@ struct DoubleOrNothingView: View {
         }) {
             HStack {
                 Text(["A","B","C","D"][index]).font(.system(size: 14, weight: .bold)).foregroundColor(.white.opacity(0.4)).frame(width: 28)
-                Text(text).font(.system(size: 14, weight: .medium)).foregroundColor(.white).multilineTextAlignment(.leading)
+                MannaText(text).font(.system(size: 14, weight: .medium)).foregroundColor(.white).multilineTextAlignment(.leading)
                 Spacer()
                 if hasResult && isCorrect { Image(systemName: "checkmark.circle.fill").foregroundColor(.green) }
                 if hasResult && selected && !isCorrect { Image(systemName: "xmark.circle.fill").foregroundColor(.red) }

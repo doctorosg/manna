@@ -28,6 +28,7 @@ class GameManager: ObservableObject {
     // Session Config
     @Published var selectedCategories: [MannaCategory] = []
     @Published var selectedDifficulty: DifficultyLevel = .deacon
+    @Published var selectedChildAgeGroup: ChildAgeGroup?
 
     let questionService = QuestionService()
     private let botService = BotService()
@@ -53,9 +54,21 @@ class GameManager: ObservableObject {
     func startSession(categories: [MannaCategory], difficulty: DifficultyLevel) {
         selectedCategories = categories
         selectedDifficulty = difficulty
+        selectedChildAgeGroup = nil
         currentRoundNumber = 0; roundResults = []; sessionComplete = false
         botOpponents = botService.generateOpponents(count: 4, mode: gameMode)
         questionService.prepareSession(categories: categories.map { $0.name }, difficulty: difficulty.name)
+        appState = .playing
+        loadNextQuestion()
+    }
+
+    func startChildrenSession(ageGroup: ChildAgeGroup) {
+        selectedCategories = []
+        selectedDifficulty = ageGroup.difficulty
+        selectedChildAgeGroup = ageGroup
+        currentRoundNumber = 0; roundResults = []; sessionComplete = false
+        botOpponents = botService.generateOpponents(count: 4, mode: gameMode)
+        questionService.prepareChildrenSession(ageGroup: ageGroup)
         appState = .playing
         loadNextQuestion()
     }
@@ -109,7 +122,7 @@ class GameManager: ObservableObject {
 
     // MARK: - Level Up
     private func shouldOfferLevelUp() -> Bool {
-        guard !levelUpActive, selectedDifficulty.nextLevel != nil else { return false }
+        guard selectedChildAgeGroup == nil, !levelUpActive, selectedDifficulty.nextLevel != nil else { return false }
         // Only offer if player is getting 80%+ correct in this session
         let answered = roundResults.count
         let correct = roundResults.filter { $0.playerAnswer.isCorrect }.count

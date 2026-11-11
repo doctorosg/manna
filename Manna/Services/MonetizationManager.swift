@@ -24,12 +24,15 @@ final class MonetizationManager: NSObject, ObservableObject, FullScreenContentDe
     }
 
     @Published private(set) var hasPurchasedAdFree = false
+    @Published private(set) var hasPurchasedQuestionPack = false
     @Published private(set) var removeAdsProduct: Product?
+    @Published private(set) var questionPackProduct: Product?
     @Published private(set) var purchaseMessage: String?
     @Published private(set) var isPurchasing = false
     @Published private(set) var privacyOptionsRequired = false
     @Published private(set) var isOnline = true
     @Published private(set) var freeQuestionsUsed = 0
+    @Published private(set) var isChildDirectedSession = false
 
     private let defaults = UserDefaults.standard
     private let freeQuestionsUsedKey = "manna.freeQuestionsUsed"
@@ -37,7 +40,10 @@ final class MonetizationManager: NSObject, ObservableObject, FullScreenContentDe
     private let regularAnswerCountKey = "manna.regularAnswerCount"
     private let adSupportedAnswerCountKey = "manna.adSupportedAnswerCount"
     private let purchasedEntitlementKey = "manna.hasVerifiedAdFreePurchase"
+    private let questionPackEntitlementKey = "manna.hasVerifiedQuestionPackPurchase"
     private let productID: String
+    private let questionPackProductID: String
+    private let questionPackURL: URL?
     private var rewardedAd: RewardedAd?
     private var interstitialAd: InterstitialAd?
     private var pendingFullScreenCompletion: ((Bool) -> Void)?
@@ -59,8 +65,12 @@ final class MonetizationManager: NSObject, ObservableObject, FullScreenContentDe
     override init() {
         productID = Bundle.main.object(forInfoDictionaryKey: "MannaRemoveAdsProductID") as? String
             ?? "com.oddcurrent.manna.remove_ads"
+        questionPackProductID = Bundle.main.object(forInfoDictionaryKey: "MannaQuestionPackProductID") as? String
+            ?? "com.oddcurrent.manna.question_pack_10000"
+        questionPackURL = (Bundle.main.object(forInfoDictionaryKey: "MannaQuestionPackURL") as? String).flatMap(URL.init(string:))
         super.init()
         hasPurchasedAdFree = defaults.bool(forKey: purchasedEntitlementKey)
+        hasPurchasedQuestionPack = defaults.bool(forKey: questionPackEntitlementKey)
         if defaults.object(forKey: freeQuestionsUsedKey) != nil {
             freeQuestionsUsed = defaults.integer(forKey: freeQuestionsUsedKey)
         } else {
@@ -81,9 +91,63 @@ final class MonetizationManager: NSObject, ObservableObject, FullScreenContentDe
         transactionListener = listenForTransactions()
         Task {
             await refreshEntitlement()
-            await loadProduct()
+            await loadProducts()
             if shouldShowAds { await gatherConsentAndStartAds() }
         }
+    }
+
+    var questionPackPrice: String { questionPackProduct?.displayPrice ?? "one-time purchase" }
+    var isQuestionPackOfferAvailable: Bool { questionPackProduct != nil && questionPackURL != nil }
+    var isQuestionPackInstalled: Bool { QuestionPackStore.isInstalled }
+
+    func setChildDirectedSession(_ enabled: Bool) {
+        guard isChildDirectedSession != enabled else { return }
+        isChildDirectedSession = enabled
+        let configuration = MobileAds.shared.requestConfiguration
+        configuration.tagForChildDirectedTreatment = enabled ? true : nil
+        configuration.tagForUnderAgeOfConsent = enabled ? true : nil
+        configuration.maxAdContentRating = enabled ? .general : nil
+        configuration.publisherPrivacyPersonalizationState = enabled ? .disabled : .default
+
+        // Never carry an ad loaded for one audience into the other audience.
+        rewardedAd = nil
+        interstitialAd = nil
+        if shouldShowAds {
+            Task {
+                await loadRewarded()
+                await loadInterstitial()
+            }
+        }
+    }
+
+    func purchaseQuestionPack() async {
+        guard let product = questionPackProduct, questionPackURL != nil else {
+            purchaseMessage = "The extra question pack is not available yet."
+            return
+        }
+        isPurchasing = true
+        defer { isPurchasing = false }
+        do {
+            switch try await product.purchase() {
+            case let .success(result):
+                guard case let .verified(transaction) = result else {
+                    purchaseMessage = "The App Store could not verify this purchase."
+                    return
+                }
+                await transaction.finish()
+                await refreshEntitlement()
+                if hasPurchasedQuestionPack { await downloadQuestionPack(showMessage: true) }
+            case .pending: purchaseMessage = "The purchase is awaiting approval."
+            case .userCancelled: purchaseMessage = nil
+            @unknown default: purchaseMessage = "The purchase could not be completed."
+            }
+        } catch {
+            purchaseMessage = error.localizedDescription
+        }
+    }
+
+    func retryQuestionPackDownload() async {
+        await downloadQuestionPack(showMessage: true)
     }
 
     deinit {
@@ -126,9 +190,12 @@ final class MonetizationManager: NSObject, ObservableObject, FullScreenContentDe
         do {
             try await AppStore.sync()
             await refreshEntitlement()
-            purchaseMessage = hasPurchasedAdFree
-                ? "Your ad-free purchase has been restored."
-                : "No previous ad-free purchase was found."
+            if hasPurchasedQuestionPack && !QuestionPackStore.isInstalled {
+                await downloadQuestionPack(showMessage: false)
+            }
+            purchaseMessage = (hasPurchasedAdFree || hasPurchasedQuestionPack)
+                ? "Your purchases have been restored."
+                : "No previous purchases were found."
         } catch {
             purchaseMessage = error.localizedDescription
         }
@@ -247,8 +314,10 @@ final class MonetizationManager: NSObject, ObservableObject, FullScreenContentDe
         interstitialAd = try? await InterstitialAd.load(with: id, request: Request())
     }
 
-    private func loadProduct() async {
-        removeAdsProduct = try? await Product.products(for: [productID]).first
+    private func loadProducts() async {
+        let products = (try? await Product.products(for: [productID, questionPackProductID])) ?? []
+        removeAdsProduct = products.first { $0.id == productID }
+        questionPackProduct = products.first { $0.id == questionPackProductID }
     }
 
     private func gatherConsentAndStartAds() async {
@@ -264,16 +333,39 @@ final class MonetizationManager: NSObject, ObservableObject, FullScreenContentDe
 
     private func refreshEntitlement() async {
         var purchased = false
+        var purchasedPack = false
         for await result in Transaction.currentEntitlements {
             if case let .verified(transaction) = result,
-               transaction.productID == productID,
                transaction.revocationDate == nil {
-                purchased = true
+                if transaction.productID == productID { purchased = true }
+                if transaction.productID == questionPackProductID { purchasedPack = true }
             }
         }
         if purchased || (networkStatusKnown && isOnline) {
             hasPurchasedAdFree = purchased
             defaults.set(purchased, forKey: purchasedEntitlementKey)
+        }
+        if purchasedPack || (networkStatusKnown && isOnline) {
+            hasPurchasedQuestionPack = purchasedPack
+            defaults.set(purchasedPack, forKey: questionPackEntitlementKey)
+        }
+        if purchasedPack && !QuestionPackStore.isInstalled {
+            await downloadQuestionPack(showMessage: false)
+        }
+    }
+
+    private func downloadQuestionPack(showMessage: Bool) async {
+        guard hasPurchasedQuestionPack, let questionPackURL else { return }
+        if QuestionPackStore.isInstalled {
+            if showMessage { purchaseMessage = "10,000 extra questions are installed and ready to play." }
+            return
+        }
+        do {
+            let questions = try await QuestionPackStore.downloadAndInstall(from: questionPackURL)
+            QuestionCache.shared.addToCache(questions)
+            if showMessage { purchaseMessage = "10,000 extra questions are installed and ready to play." }
+        } catch {
+            if showMessage { purchaseMessage = error.localizedDescription }
         }
     }
 
@@ -306,7 +398,7 @@ struct MannaBannerAd: View {
             .frame(maxWidth: .infinity)
             .frame(height: 100)
             .clipped()
-        .accessibilityLabel("Advertisement")
+        .mannaAccessibilityLabel("Advertisement")
         .opacity(monetization.shouldShowAds ? 1 : 0)
     }
 }

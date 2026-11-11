@@ -41,6 +41,10 @@
 	<string>ca-app-pub-9667779972496607/7882316834</string>
 	<key>MannaRemoveAdsProductID</key>
 	<string>com.oddcurrent.manna.remove_ads</string>
+	<key>MannaQuestionPackProductID</key>
+	<string>com.oddcurrent.manna.question_pack_10000</string>
+	<key>MannaQuestionPackURL</key>
+	<string>https://downloads.oddcurrent.com/manna/question-pack-10000-v1.json</string>
 	<key>MannaRewardedAdUnitID</key>
 	<string>ca-app-pub-9667779972496607/2306661725</string>
 	<key>NSBonjourServices</key>
@@ -62,6 +66,8 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

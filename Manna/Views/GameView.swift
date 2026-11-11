@@ -10,14 +10,14 @@ struct GameView: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack {
-                Text("\(gameManager.currentRoundNumber)/\(gameManager.questionsPerSession)  •  Question #\(gameManager.currentQuestion?.number ?? 0)")
+                MannaText("\(gameManager.currentRoundNumber)/\(gameManager.questionsPerSession)  •  Question #\(gameManager.currentQuestion?.number ?? 0)")
                     .font(.system(size: 14, weight: .bold, design: .rounded))
                     .foregroundColor(.white.opacity(0.7))
                 Spacer()
                 Button(action: { gameManager.quitGame() }) {
                     Image(systemName: "xmark").foregroundColor(.white.opacity(0.7))
                 }
-                .accessibilityLabel("Quit")
+                .mannaAccessibilityLabel("Quit")
             }
             .padding(.horizontal, 20).padding(.vertical, 14)
 
@@ -29,7 +29,7 @@ struct GameView: View {
                             Text(localized?.category ?? question.category)
                                 .font(.system(size: 12, weight: .medium)).foregroundColor(.white.opacity(0.5))
                             Text("•").foregroundColor(.white.opacity(0.3))
-                            Text(question.difficulty).font(.system(size: 12, weight: .bold))
+                            MannaText(question.audienceLevelLabel).font(.system(size: 12, weight: .bold))
                                 .foregroundColor(question.difficultyLevel.color)
                         }.padding(.top, 8)
 
@@ -52,13 +52,13 @@ struct GameView: View {
                         if gameManager.showReveal {
                             revealSection(question: question, localized: localized)
                         } else if gameManager.selectedAnswerIndex != nil {
-                            Text("Answer selected. You can change it until you reveal the answer or continue.")
+                            MannaText("Answer selected. You can change it until you reveal the answer or continue.")
                                 .font(.system(size: 13)).foregroundColor(.white.opacity(0.5))
                                 .multilineTextAlignment(.center).padding(.horizontal, 20)
                         }
 
                         if let error = languageManager.translationError {
-                            Text("Translation unavailable: \(error)")
+                            MannaText("Translation unavailable: \(error)")
                                 .font(.system(size: 12)).foregroundColor(.orange.opacity(0.8))
                                 .multilineTextAlignment(.center).padding(.horizontal, 20)
                         }
@@ -66,7 +66,7 @@ struct GameView: View {
                         if monetization.shouldShowAds {
                             VStack(spacing: 7) {
                                 Divider().overlay(Color.white.opacity(0.10))
-                                Text("Advertisement")
+                                MannaText("Advertisement")
                                     .font(.system(size: 9, weight: .medium, design: .rounded))
                                     .foregroundColor(.white.opacity(0.42))
                                     .textCase(.uppercase)
@@ -152,9 +152,9 @@ struct GameView: View {
         let selected = gameManager.selectedAnswerIndex ?? -1
         let correctText = localized?.options[safe: question.correctIndex] ?? question.correct
         return VStack(spacing: 12) {
-            Text("Question #\(question.number)")
+            MannaText("Question #\(question.number)")
                 .font(.system(size: 12, weight: .bold)).foregroundColor(.white.opacity(0.5))
-            Text(selected == question.correctIndex ? "✅ Correct!" : "❌ Not correct")
+            MannaText(selected == question.correctIndex ? "✅ Correct!" : "❌ Not correct")
                 .font(.system(size: 16, weight: .bold))
                 .foregroundColor(selected == question.correctIndex ? .green : .red)
             Text("✅ \(correctText)").font(.system(size: 14, weight: .semibold)).foregroundColor(.green.opacity(0.9))

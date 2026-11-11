@@ -1,0 +1,231 @@
+{
+  "bank": "/Users/silvanoguzzo/Documents/MY APPS/manna/Manna/Resources/manna_questions.json",
+  "adult_question_count": 40020,
+  "rubric_version": "content-difficulty-v2",
+  "thresholds": {
+    "Layperson": "0-42",
+    "Deacon": "43-67",
+    "Pastor": "68-100"
+  },
+  "strictly_increasing_medians": true,
+  "minimum_adjacent_median_gap": 16.0,
+  "minimum_category_tier_pool": 20,
+  "summary": [
+    {
+      "tier": "Layperson",
+      "count": 2074,
+      "median": 42.0,
+      "p25": 39.0,
+      "p75": 48.0,
+      "min": 23,
+      "max": 53,
+      "agreement_count": 2074,
+      "agreement_rate": 1.0,
+      "two_tier_mismatches": 0
+    },
+    {
+      "tier": "Deacon",
+      "count": 14929,
+      "median": 58,
+      "p25": 53.0,
+      "p75": 64.0,
+      "min": 16,
+      "max": 79,
+      "agreement_count": 14929,
+      "agreement_rate": 1.0,
+      "two_tier_mismatches": 0
+    },
+    {
+      "tier": "Pastor",
+      "count": 23017,
+      "median": 80,
+      "p25": 76.0,
+      "p75": 84.0,
+      "min": 33,
+      "max": 97,
+      "agreement_count": 23017,
+      "agreement_rate": 1.0,
+      "two_tier_mismatches": 0
+    }
+  ],
+  "confusion": [
+    {
+      "assigned": "Deacon",
+      "recommended": "Deacon",
+      "count": 14929
+    },
+    {
+      "assigned": "Layperson",
+      "recommended": "Layperson",
+      "count": 2074
+    },
+    {
+      "assigned": "Pastor",
+      "recommended": "Pastor",
+      "count": 23017
+    }
+  ],
+  "family_mix": [
+    {
+      "assigned": "Deacon",
+      "family": "Book-level cross-reference",
+      "count": 5141
+    },
+    {
+      "assigned": "Deacon",
+      "family": "Chronology",
+      "count": 93
+    },
+    {
+      "assigned": "Deacon",
+      "family": "Direct recall",
+      "count": 689
+    },
+    {
+      "assigned": "Deacon",
+      "family": "Doctrine or theological term",
+      "count": 23
+    },
+    {
+      "assigned": "Deacon",
+      "family": "Exact completion",
+      "count": 5333
+    },
+    {
+      "assigned": "Deacon",
+      "family": "Genealogy",
+      "count": 164
+    },
+    {
+      "assigned": "Deacon",
+      "family": "Other",
+      "count": 176
+    },
+    {
+      "assigned": "Deacon",
+      "family": "Specific-detail recall",
+      "count": 175
+    },
+    {
+      "assigned": "Deacon",
+      "family": "Study terminology",
+      "count": 214
+    },
+    {
+      "assigned": "Deacon",
+      "family": "Symbolism or interpretation",
+      "count": 29
+    },
+    {
+      "assigned": "Deacon",
+      "family": "Verse location/book",
+      "count": 2892
+    },
+    {
+      "assigned": "Layperson",
+      "family": "Book-level cross-reference",
+      "count": 1
+    },
+    {
+      "assigned": "Layperson",
+      "family": "Direct recall",
+      "count": 1346
+    },
+    {
+      "assigned": "Layperson",
+      "family": "Doctrine or theological term",
+      "count": 1
+    },
+    {
+      "assigned": "Layperson",
+      "family": "Exact completion",
+      "count": 231
+    },
+    {
+      "assigned": "Layperson",
+      "family": "Genealogy",
+      "count": 39
+    },
+    {
+      "assigned": "Layperson",
+      "family": "Other",
+      "count": 449
+    },
+    {
+      "assigned": "Layperson",
+      "family": "Specific-detail recall",
+      "count": 7
+    },
+    {
+      "assigned": "Pastor",
+      "family": "Academic biblical studies",
+      "count": 57
+    },
+    {
+      "assigned": "Pastor",
+      "family": "Book-level cross-reference",
+      "count": 466
+    },
+    {
+      "assigned": "Pastor",
+      "family": "Chronology",
+      "count": 122
+    },
+    {
+      "assigned": "Pastor",
+      "family": "Church Father attribution",
+      "count": 5080
+    },
+    {
+      "assigned": "Pastor",
+      "family": "Connection classification",
+      "count": 1579
+    },
+    {
+      "assigned": "Pastor",
+      "family": "Direct recall",
+      "count": 7
+    },
+    {
+      "assigned": "Pastor",
+      "family": "Doctrine or theological term",
+      "count": 2
+    },
+    {
+      "assigned": "Pastor",
+      "family": "Exact completion",
+      "count": 910
+    },
+    {
+      "assigned": "Pastor",
+      "family": "Exact cross-reference",
+      "count": 8998
+    },
+    {
+      "assigned": "Pastor",
+      "family": "Original-language lexicon",
+      "count": 5431
+    },
+    {
+      "assigned": "Pastor",
+      "family": "Specific-detail recall",
+      "count": 121
+    },
+    {
+      "assigned": "Pastor",
+      "family": "Symbolism or interpretation",
+      "count": 98
+    },
+    {
+      "assigned": "Pastor",
+      "family": "Verse location/book",
+      "count": 146
+    }
+  ],
+  "mismatch_count": 0,
+  "mismatch_rate": 0.0,
+  "score_band_disagreement_count": 3951,
+  "score_band_disagreement_rate": 0.0987,
+  "two_tier_score_band_disagreement_count": 16,
+  "allocation_drift_count": 0
+}

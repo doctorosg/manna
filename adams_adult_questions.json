@@ -1,0 +1,302 @@
+[
+  {
+    "id": "adams-guide-v1-d70cef32f167d1b279",
+    "category": "Moses & the Exodus",
+    "difficulty": "Deacon",
+    "question": "How many elders did God tell Moses to gather to help carry Israel's leadership burden?",
+    "options": [
+      "Joshua and Caleb",
+      "Twenty-four priests",
+      "Twelve tribal leaders",
+      "Seventy elders"
+    ],
+    "correct": "Seventy elders",
+    "explanation": "Numbers 11:16 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-ed3544aba389d6aaeb",
+    "category": "Moses & the Exodus",
+    "difficulty": "Deacon",
+    "question": "Whose staff sprouted, blossomed, and produced almonds as God's sign of the chosen priesthood?",
+    "options": [
+      "Joshua's staff",
+      "Aaron's staff",
+      "Moses's staff",
+      "Eleazar's staff"
+    ],
+    "correct": "Aaron's staff",
+    "explanation": "Numbers 17:8 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-dba90016597b3a64ef",
+    "category": "Moses & the Exodus",
+    "difficulty": "Deacon",
+    "question": "Who received Aaron's priestly garments on Mount Hor?",
+    "options": [
+      "Ithamar",
+      "Phinehas",
+      "Moses",
+      "Eleazar"
+    ],
+    "correct": "Eleazar",
+    "explanation": "Numbers 20:25-28 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-d2e2004d80093091cc",
+    "category": "Prophets",
+    "difficulty": "Deacon",
+    "question": "Which historical book names Jonah son of Amittai outside the book of Jonah?",
+    "options": [
+      "2 Kings",
+      "Ezra",
+      "1 Chronicles",
+      "Nehemiah"
+    ],
+    "correct": "2 Kings",
+    "explanation": "2 Kings 14:25 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-4c6678911360aed830",
+    "category": "Prophecy & Fulfillment",
+    "difficulty": "Deacon",
+    "question": "Which prophet did Peter identify as the source of the Pentecost prophecy?",
+    "options": [
+      "Micah",
+      "Joel",
+      "Zechariah",
+      "Amos"
+    ],
+    "correct": "Joel",
+    "explanation": "Acts 2:16-21 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-c36fc40ddd1d9f4096",
+    "category": "The Apostles",
+    "difficulty": "Deacon",
+    "question": "Which married couple explained God's way more fully to Apollos?",
+    "options": [
+      "Aquila and Priscilla",
+      "Felix and Drusilla",
+      "Herod and Bernice",
+      "Ananias and Sapphira"
+    ],
+    "correct": "Aquila and Priscilla",
+    "explanation": "Acts 18:24-26 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-48b5e279d57a56a8af",
+    "category": "The Apostles",
+    "difficulty": "Deacon",
+    "question": "From which level did Eutychus fall while Paul was speaking at Troas?",
+    "options": [
+      "The second story",
+      "The fourth story",
+      "The rooftop",
+      "The third story"
+    ],
+    "correct": "The third story",
+    "explanation": "Acts 20:9 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-8bede9a2cd925b06cd",
+    "category": "The Apostles",
+    "difficulty": "Deacon",
+    "question": "Which relative warned Paul about the plot to ambush him?",
+    "options": [
+      "His sister's son",
+      "His brother",
+      "His cousin Barnabas",
+      "His father"
+    ],
+    "correct": "His sister's son",
+    "explanation": "Acts 23:16-22 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-b76764e0da82c5660e",
+    "category": "The Apostles",
+    "difficulty": "Deacon",
+    "question": "What was the name of the spokesman who presented the leaders' case against Paul to Felix?",
+    "options": [
+      "Tertullus",
+      "Ananias",
+      "Festus",
+      "Lysias"
+    ],
+    "correct": "Tertullus",
+    "explanation": "Acts 24:1 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-96309f5539f87bd52b",
+    "category": "Life of Jesus",
+    "difficulty": "Deacon",
+    "question": "Who was promised that he would see the Lord's Christ before he died?",
+    "options": [
+      "Simeon",
+      "Nicodemus",
+      "Joseph",
+      "Zacharias"
+    ],
+    "correct": "Simeon",
+    "explanation": "Luke 2:25-26 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-9a17474c9668d533da",
+    "category": "Laws & Commandments",
+    "difficulty": "Pastor",
+    "question": "What color cord were the Israelites commanded to place on the tassels of their garments?",
+    "options": [
+      "White",
+      "Blue",
+      "Purple",
+      "Scarlet"
+    ],
+    "correct": "Blue",
+    "explanation": "Numbers 15:38-40 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-f9b8a6876a54ad2ec7",
+    "category": "Food, Feasts & Offerings",
+    "difficulty": "Pastor",
+    "question": "What became of the bronze censers used by Korah's company?",
+    "options": [
+      "They were melted into a new lampstand",
+      "They were hammered into plates to cover the altar",
+      "They were stored inside the ark",
+      "They were buried outside the camp"
+    ],
+    "correct": "They were hammered into plates to cover the altar",
+    "explanation": "Numbers 16:36-40 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-18169d268fa1d67a7c",
+    "category": "Kings & Kingdoms",
+    "difficulty": "Pastor",
+    "question": "What material was used for the bedstead of Og king of Bashan?",
+    "options": [
+      "Cedar",
+      "Stone",
+      "Iron",
+      "Bronze"
+    ],
+    "correct": "Iron",
+    "explanation": "Deuteronomy 3:11 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-7cf7e9d2331c6b1b64",
+    "category": "Prophecy & Fulfillment",
+    "difficulty": "Pastor",
+    "question": "Which earlier prophet's warning about Zion did Jeremiah's defenders quote?",
+    "options": [
+      "Zephaniah",
+      "Micah",
+      "Habakkuk",
+      "Nahum"
+    ],
+    "correct": "Micah",
+    "explanation": "Jeremiah 26:18 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-94bef89b72f2868843",
+    "category": "The Apostles",
+    "difficulty": "Pastor",
+    "question": "What total value does Acts assign to the magic books burned by the Ephesian believers?",
+    "options": [
+      "Ten thousand drachmas",
+      "Fifty thousand pieces of silver",
+      "One hundred talents of gold",
+      "Thirty pieces of silver"
+    ],
+    "correct": "Fifty thousand pieces of silver",
+    "explanation": "Acts 19:18-19 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-165bbe50368d5fd8fe",
+    "category": "The Apostles",
+    "difficulty": "Pastor",
+    "question": "How many unmarried daughters of Philip the evangelist prophesied?",
+    "options": [
+      "Three",
+      "Seven",
+      "Two",
+      "Four"
+    ],
+    "correct": "Four",
+    "explanation": "Acts 21:8-9 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-d60a37183a4b672951",
+    "category": "The Apostles",
+    "difficulty": "Pastor",
+    "question": "Which prophet used Paul's belt to demonstrate how Paul would be bound in Jerusalem?",
+    "options": [
+      "Agabus",
+      "Silas",
+      "Philip",
+      "Judas Barsabas"
+    ],
+    "correct": "Agabus",
+    "explanation": "Acts 21:10-11 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-54e966559260598087",
+    "category": "The Apostles",
+    "difficulty": "Pastor",
+    "question": "What improper motive did Felix have for repeatedly summoning Paul?",
+    "options": [
+      "He wanted Paul to debate Tertullus",
+      "He hoped Paul would offer him money",
+      "He wanted Paul to write a legal defense",
+      "He hoped Paul would join his court"
+    ],
+    "correct": "He hoped Paul would offer him money",
+    "explanation": "Acts 24:24-26 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-2573542b481ce7c2e6",
+    "category": "The Apostles",
+    "difficulty": "Pastor",
+    "question": "Which Macedonian from Thessalonica sailed with Paul when he departed for Rome?",
+    "options": [
+      "Sopater",
+      "Secundus",
+      "Aristarchus",
+      "Gaius"
+    ],
+    "correct": "Aristarchus",
+    "explanation": "Acts 27:1-2 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  },
+  {
+    "id": "adams-guide-v1-3672a44949b2e1dfb8",
+    "category": "Numbers & Genealogies",
+    "difficulty": "Pastor",
+    "question": "How many people were aboard the ship carrying Paul toward Rome?",
+    "options": [
+      "120",
+      "153",
+      "276",
+      "300"
+    ],
+    "correct": "276",
+    "explanation": "Acts 27:37 (KJV).",
+    "sourceGuide": "https://archive.org/details/4000questionsans00adam"
+  }
+]

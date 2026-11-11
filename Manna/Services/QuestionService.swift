@@ -5,6 +5,7 @@ class QuestionService {
     private let cache = QuestionCache.shared
     private var sessionCategories: [String] = []
     private var sessionDifficulty: String = ""
+    private var sessionAgeGroup: String?
 
     func loadQuestions() async {
         if cache.cachedQuestions.isEmpty {
@@ -15,6 +16,7 @@ class QuestionService {
                 let data = try Data(contentsOf: url)
                 let questions = try JSONDecoder().decode([MannaQuestion].self, from: data)
                 cache.addToCache(questions)
+                cache.addToCache(QuestionPackStore.loadInstalledQuestions())
                 print("✅ Loaded \(questions.count) questions from bundle")
             } catch { print("❌ Failed to load questions: \(error)") }
         }
@@ -23,13 +25,26 @@ class QuestionService {
     func prepareSession(categories: [String], difficulty: String) {
         sessionCategories = categories
         sessionDifficulty = difficulty
+        sessionAgeGroup = nil
         availableQuestions = cache.smartQuestions(categories: categories, difficulty: difficulty)
         print("🎯 Session pool: \(availableQuestions.count) questions (\(cache.stats))")
     }
 
+    func prepareChildrenSession(ageGroup: ChildAgeGroup) {
+        sessionCategories = []
+        sessionDifficulty = ageGroup.difficulty.name
+        sessionAgeGroup = ageGroup.rawValue
+        availableQuestions = cache.childrenQuestions(ageGroup: ageGroup.rawValue)
+        print("🧒 Children session pool: \(availableQuestions.count) questions (\(ageGroup.title))")
+    }
+
     func nextQuestion() -> MannaQuestion? {
-        if availableQuestions.isEmpty && !sessionCategories.isEmpty {
-            availableQuestions = cache.smartQuestions(categories: sessionCategories, difficulty: sessionDifficulty)
+        if availableQuestions.isEmpty {
+            if let sessionAgeGroup {
+                availableQuestions = cache.childrenQuestions(ageGroup: sessionAgeGroup)
+            } else if !sessionCategories.isEmpty {
+                availableQuestions = cache.smartQuestions(categories: sessionCategories, difficulty: sessionDifficulty)
+            }
         }
         guard !availableQuestions.isEmpty else { return nil }
         let question = availableQuestions.removeFirst()
@@ -47,5 +62,9 @@ class QuestionService {
 
     func partyQuestions(category: String?, difficulty: String, count: Int) -> [MannaQuestion] {
         cache.partyQuestions(category: category, difficulty: difficulty, count: count)
+    }
+
+    func partyQuestions(ageGroup: ChildAgeGroup, count: Int) -> [MannaQuestion] {
+        cache.partyQuestions(ageGroup: ageGroup.rawValue, count: count)
     }
 }

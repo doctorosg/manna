@@ -7,7 +7,15 @@ enum PartyPhase: String, Codable { case lobby, question, reveal, finished }
 struct PartySettings: Codable {
     let category: String
     let difficulty: String
+    let ageGroup: String?
     let questionCount: Int
+
+    var selectionSummary: String {
+        if let ageGroup, let group = ChildAgeGroup(rawValue: ageGroup) {
+            return "Children · \(group.title) · \(questionCount) questions"
+        }
+        return "\(category) · \(difficulty) · \(questionCount) questions"
+    }
 }
 
 struct PartyPlayer: Codable, Identifiable {
@@ -127,8 +135,12 @@ final class PartyManager: ObservableObject {
         screen = .join
     }
 
-    func createRoom(hostName: String, category: String?, difficulty: String, questionCount: Int, questionService: QuestionService) async {
-        let questions = questionService.partyQuestions(category: category, difficulty: difficulty, count: questionCount)
+    func createRoom(hostName: String, category: String?, difficulty: String, ageGroup: ChildAgeGroup? = nil, questionCount: Int, questionService: QuestionService) async {
+        let questions = if let ageGroup {
+            questionService.partyQuestions(ageGroup: ageGroup, count: questionCount)
+        } else {
+            questionService.partyQuestions(category: category, difficulty: difficulty, count: questionCount)
+        }
         guard questions.count == questionCount else {
             errorMessage = "There are not enough matching questions. Try All Categories or another difficulty."
             return
@@ -141,7 +153,12 @@ final class PartyManager: ObservableObject {
         let code = Self.randomCode()
         localRoom = LocalPartyRoom(
             code: code, hostPlayerId: host.id,
-            settings: PartySettings(category: category ?? "All Categories", difficulty: difficulty, questionCount: questionCount),
+            settings: PartySettings(
+                category: ageGroup == nil ? (category ?? "All Categories") : "Children",
+                difficulty: ageGroup?.title ?? difficulty,
+                ageGroup: ageGroup?.rawValue,
+                questionCount: questionCount
+            ),
             questions: questions.map { PartyQuestionPayload(id: $0.id, correctIndex: $0.correctIndex) },
             phase: .lobby, currentIndex: -1, players: [host], version: 1
         )

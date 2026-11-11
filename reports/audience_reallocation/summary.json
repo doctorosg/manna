@@ -1,0 +1,1453 @@
+{
+  "rubric_version": "audience-readiness-v1",
+  "boundary_question_count": 8741,
+  "target_counts": {
+    "11-17": 6667,
+    "Layperson": 2074
+  },
+  "changed_question_count": 3822,
+  "changed_question_rate": 0.4372,
+  "layperson_content_ceiling": 53,
+  "deacon_content_median": 58.0,
+  "minimum_layperson_to_deacon_median_gap": 5,
+  "actual_layperson_to_deacon_median_gap": 16.0,
+  "operational_readiness_cutoff": 51,
+  "minimum_layperson_category_pool": 20,
+  "minimum_actual_layperson_category_pool": 20,
+  "safety_lock_count": 15,
+  "operational_floor_adjustment_count": 148,
+  "rejected_source_rows": {
+    "duplicate text": 10,
+    "duplicate options": 62
+  },
+  "before": [
+    {
+      "cohort": "11-17",
+      "count": 6667,
+      "readiness_median": 50,
+      "readiness_p25": 38.0,
+      "readiness_p75": 59.0,
+      "readiness_min": 20,
+      "readiness_max": 81,
+      "adult_content_median": 41,
+      "adult_content_p25": 35.0,
+      "adult_content_p75": 50.0,
+      "adult_content_min": 19,
+      "adult_content_max": 80
+    },
+    {
+      "cohort": "Layperson",
+      "count": 2074,
+      "readiness_median": 35.0,
+      "readiness_p25": 32.0,
+      "readiness_p75": 38.0,
+      "readiness_min": 17,
+      "readiness_max": 51,
+      "adult_content_median": 35.0,
+      "adult_content_p25": 31.0,
+      "adult_content_p75": 38.0,
+      "adult_content_min": 14,
+      "adult_content_max": 65
+    }
+  ],
+  "after": [
+    {
+      "cohort": "11-17",
+      "count": 6667,
+      "readiness_median": 38,
+      "readiness_p25": 33.0,
+      "readiness_p75": 49.0,
+      "readiness_min": 17,
+      "readiness_max": 81,
+      "adult_content_median": 37,
+      "adult_content_p25": 33.0,
+      "adult_content_p75": 47.0,
+      "adult_content_min": 14,
+      "adult_content_max": 80
+    },
+    {
+      "cohort": "Layperson",
+      "count": 2074,
+      "readiness_median": 56.0,
+      "readiness_p25": 53.0,
+      "readiness_p75": 59.0,
+      "readiness_min": 24,
+      "readiness_max": 71,
+      "adult_content_median": 42.0,
+      "adult_content_p25": 39.0,
+      "adult_content_p75": 48.0,
+      "adult_content_min": 23,
+      "adult_content_max": 53
+    }
+  ],
+  "readiness_median_gap_before": -15.0,
+  "readiness_median_gap_after": 18.0,
+  "transitions": [
+    {
+      "before": "11-17",
+      "after": "11-17",
+      "count": 4756
+    },
+    {
+      "before": "11-17",
+      "after": "Layperson",
+      "count": 1911
+    },
+    {
+      "before": "Layperson",
+      "after": "11-17",
+      "count": 1911
+    },
+    {
+      "before": "Layperson",
+      "after": "Layperson",
+      "count": 163
+    }
+  ],
+  "format_transitions": [
+    {
+      "before": "11-17",
+      "after": "11-17",
+      "format": "book-context",
+      "count": 643
+    },
+    {
+      "before": "11-17",
+      "after": "11-17",
+      "format": "missing-word",
+      "count": 1790
+    },
+    {
+      "before": "11-17",
+      "after": "11-17",
+      "format": "section-context",
+      "count": 276
+    },
+    {
+      "before": "11-17",
+      "after": "11-17",
+      "format": "story-context",
+      "count": 533
+    },
+    {
+      "before": "11-17",
+      "after": "11-17",
+      "format": "teen-trivia",
+      "count": 114
+    },
+    {
+      "before": "11-17",
+      "after": "11-17",
+      "format": "word-recognition",
+      "count": 1400
+    },
+    {
+      "before": "11-17",
+      "after": "Layperson",
+      "format": "book-context",
+      "count": 957
+    },
+    {
+      "before": "11-17",
+      "after": "Layperson",
+      "format": "missing-word",
+      "count": 610
+    },
+    {
+      "before": "11-17",
+      "after": "Layperson",
+      "format": "section-context",
+      "count": 340
+    },
+    {
+      "before": "11-17",
+      "after": "Layperson",
+      "format": "teen-trivia",
+      "count": 4
+    },
+    {
+      "before": "Layperson",
+      "after": "11-17",
+      "format": "adult-standard",
+      "count": 1911
+    },
+    {
+      "before": "Layperson",
+      "after": "Layperson",
+      "format": "adult-standard",
+      "count": 163
+    }
+  ],
+  "layperson_category_counts": [
+    {
+      "category": "Angels & Demons",
+      "count": 20
+    },
+    {
+      "category": "Battles & Wars",
+      "count": 20
+    },
+    {
+      "category": "Dreams & Visions",
+      "count": 56
+    },
+    {
+      "category": "Food, Feasts & Offerings",
+      "count": 20
+    },
+    {
+      "category": "Genesis & Creation",
+      "count": 51
+    },
+    {
+      "category": "Kings & Kingdoms",
+      "count": 246
+    },
+    {
+      "category": "Laws & Commandments",
+      "count": 154
+    },
+    {
+      "category": "Life of Jesus",
+      "count": 104
+    },
+    {
+      "category": "Miracles",
+      "count": 20
+    },
+    {
+      "category": "Moses & the Exodus",
+      "count": 56
+    },
+    {
+      "category": "Numbers & Genealogies",
+      "count": 25
+    },
+    {
+      "category": "Parables",
+      "count": 20
+    },
+    {
+      "category": "Paul & His Letters",
+      "count": 446
+    },
+    {
+      "category": "Places & Lands",
+      "count": 20
+    },
+    {
+      "category": "Prophecy & Fulfillment",
+      "count": 20
+    },
+    {
+      "category": "Prophets",
+      "count": 299
+    },
+    {
+      "category": "Psalms & Proverbs",
+      "count": 78
+    },
+    {
+      "category": "Revelation & End Times",
+      "count": 64
+    },
+    {
+      "category": "The Apostles",
+      "count": 235
+    },
+    {
+      "category": "Women of the Bible",
+      "count": 100
+    },
+    {
+      "category": "Words of Jesus & OT Roots",
+      "count": 20
+    }
+  ],
+  "floor_adjustments": [
+    {
+      "incoming_id": "785f666d70a5",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 42,
+      "outgoing_id": "76fbc7aa1d8b",
+      "outgoing_category": "Revelation & End Times",
+      "outgoing_score": 50
+    },
+    {
+      "incoming_id": "5edcf4c3349a",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "0e419529e878",
+      "outgoing_category": "Revelation & End Times",
+      "outgoing_score": 50
+    },
+    {
+      "incoming_id": "68b026e0f58c",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-fb88bd0575b86109b2",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "3304d8b87741",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-a2d4241d8235f1f3e3",
+      "outgoing_category": "The Apostles",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "6557020561c6",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-2b515d8d485316bb91",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "b755ab756c2c",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-aa044819060dae0502",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "9c5ad8479156",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-2f658b90662ecef0f5",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "52d91b9f2225",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-13a8bc0d33376593dd",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "b39c3bbb296d",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-c735f15826239d8c1b",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "4b3760548ea5",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-bd26564278e2835a89",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "6e898f9593dd",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-9e5c8f6d00114fa63e",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "1c42fa1c7e37",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-7fdde041d75430767d",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "89659d0f01ef",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-281d787ad1356b4e1f",
+      "outgoing_category": "Moses & the Exodus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "2d61d3191bb0",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-13906a54c59f6b1fee",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "96577f1ccd58",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-deb1fd9fa8ea4908bc",
+      "outgoing_category": "Prophets",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "5e873ce02b8c",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-2468b9b96b313c1bfd",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "8b5540425b2d",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-ced8d060f4f4517164",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "75be4bcb68a6",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-46ef1c8e34ba601773",
+      "outgoing_category": "Genesis & Creation",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "5bb8f469087a",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-d13a2af5702a6f3183",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "d99cf611d1c9",
+      "incoming_category": "Angels & Demons",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-1e625b75eb06056090",
+      "outgoing_category": "Moses & the Exodus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "85a572c0c7db",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-e2d98f1252f7b52175",
+      "outgoing_category": "Dreams & Visions",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "6304f01c9cd9",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 40,
+      "outgoing_id": "child-v4-11-17-09c762fa6b9da7d062",
+      "outgoing_category": "Psalms & Proverbs",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "ce59efe7e555",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 40,
+      "outgoing_id": "child-v4-11-17-cda422c82ea566a0f0",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "5ee6cebc7247",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 40,
+      "outgoing_id": "child-v4-11-17-f47649ac64d4bed51b",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "f744e033516c",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 40,
+      "outgoing_id": "child-v4-11-17-1ace19d5cd21b4f2d6",
+      "outgoing_category": "Genesis & Creation",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "04cf9cfcc652",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 40,
+      "outgoing_id": "child-v4-11-17-782515038b23e8c8cf",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "2d20cd61fbd6",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 40,
+      "outgoing_id": "child-v4-11-17-9b185a5de873519c66",
+      "outgoing_category": "Moses & the Exodus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "f75cfa94af7f",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-9c97b45e18c7c7e762",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "d565726b735e",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-9679b300e72a864705",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "d98547a5538f",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-88ff19c96bcc129218",
+      "outgoing_category": "The Apostles",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "7e8f6c165aa2",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-a5992b6db35fa6d5e1",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "7dab7a62f825",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-dda1a6ec289a0633e0",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "594fabde0a49",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-92d37ad7ea1ebefcb6",
+      "outgoing_category": "Moses & the Exodus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "8c3a29f2ef0a",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-bc78c29450b5369b4a",
+      "outgoing_category": "Dreams & Visions",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "9735f773bd52",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-5e86bec311960a0edf",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "bd34cef5ffed",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-bf9a2c490d69eda6d1",
+      "outgoing_category": "The Apostles",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "4dabe7d5f697",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-b73fe7a0f6772a02c2",
+      "outgoing_category": "Genesis & Creation",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "859c3686031f",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-b661d5fd62dd4d82e5",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "343f059b38ee",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-b3f1018482eb8ecda0",
+      "outgoing_category": "Dreams & Visions",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "f4904f6588cf",
+      "incoming_category": "Battles & Wars",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-0a90dab7478d43bf59",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "f6f99828bdb1",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 40,
+      "outgoing_id": "child-v4-11-17-90baaea5077d9989f1",
+      "outgoing_category": "The Apostles",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "05f205e23c69",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 39,
+      "outgoing_id": "child-v4-11-17-3c3f74142b8d487e5d",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "64ff92521e18",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-7e6f3546680867a453",
+      "outgoing_category": "Dreams & Visions",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "e3d27c9e5e56",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-540d9cfb0fde3ca787",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "4460964e206c",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-fec8175096861f02ce",
+      "outgoing_category": "Genesis & Creation",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "1621393e81ee",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-da40a63d45fe52e644",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "035d62d591bf",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-a9fa2b3d110b368999",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "82a50781d34d",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-21709b7691fc5ade25",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "999869283e30",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-1786c1ebe5e278ed04",
+      "outgoing_category": "Psalms & Proverbs",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "bce52ba544c3",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-3cf07d4ee074f187d5",
+      "outgoing_category": "Prophets",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "196cff8be64b",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-77122d917527f65ac5",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "93ba2aa9aeda",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-370e5b445d2537ac7b",
+      "outgoing_category": "Psalms & Proverbs",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "bc504cd70679",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-2c9919853b5917ebd3",
+      "outgoing_category": "Genesis & Creation",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "a8134a3eb52d",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-6f50bcc43e3bf25284",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "1fbb424f1655",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-1fee73866aa36c6744",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "a7290695d785",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 37,
+      "outgoing_id": "child-v4-11-17-e478a2951367c3608a",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "9e1393d9e209",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 37,
+      "outgoing_id": "child-v4-11-17-2e76a8d4e19c05d033",
+      "outgoing_category": "Psalms & Proverbs",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "3f8f25ab37ec",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 37,
+      "outgoing_id": "child-v4-11-17-f5e6256aa5877ae322",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "8692ed7d9a26",
+      "incoming_category": "Food, Feasts & Offerings",
+      "incoming_score": 37,
+      "outgoing_id": "child-v4-11-17-20cf31e3972c17cdf4",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "1f93283f8f8e",
+      "incoming_category": "Miracles",
+      "incoming_score": 42,
+      "outgoing_id": "child-v4-11-17-3943665f106ee72aaf",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "24f4a16c46b0",
+      "incoming_category": "Miracles",
+      "incoming_score": 40,
+      "outgoing_id": "child-v4-11-17-368488315ea9ab2783",
+      "outgoing_category": "Moses & the Exodus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "c4a98154fdfd",
+      "incoming_category": "Miracles",
+      "incoming_score": 40,
+      "outgoing_id": "child-v4-11-17-b2687ebd1898c484dd",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "82808f2822dd",
+      "incoming_category": "Miracles",
+      "incoming_score": 39,
+      "outgoing_id": "child-v4-11-17-ac29aa8c321dff5444",
+      "outgoing_category": "Dreams & Visions",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "6180c0573cff",
+      "incoming_category": "Miracles",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-c763de8b92ee8cbdb8",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "587cdb885066",
+      "incoming_category": "Miracles",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-56e4b4b6630215cb9b",
+      "outgoing_category": "Psalms & Proverbs",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "5b804575254f",
+      "incoming_category": "Miracles",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-1efdf837016af9634b",
+      "outgoing_category": "Prophets",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "a7de09fdc653",
+      "incoming_category": "Miracles",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-573584bcdbb4abb2b4",
+      "outgoing_category": "The Apostles",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "81d17ab8f340",
+      "incoming_category": "Miracles",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-73dd475a68b848d0a8",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "928470bcf0c4",
+      "incoming_category": "Miracles",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-ae166e50f9b630758c",
+      "outgoing_category": "Genesis & Creation",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "bdb832aa632f",
+      "incoming_category": "Miracles",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-d45d411290491b83e6",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "bba19fc63f04",
+      "incoming_category": "Miracles",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-045590e431e42b84e4",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "89d652799fa5",
+      "incoming_category": "Miracles",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-ad1fc2eed5ddfe29d3",
+      "outgoing_category": "Dreams & Visions",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "71b81b164ab6",
+      "incoming_category": "Miracles",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-0e961e8eb7a83d5489",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "a7ba9837d374",
+      "incoming_category": "Miracles",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-840b3db55e7f622014",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "022fb14b9f16",
+      "incoming_category": "Miracles",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-41925917eb2d59ddcf",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "ec7afaf0f64f",
+      "incoming_category": "Miracles",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-1503f098573498343a",
+      "outgoing_category": "Moses & the Exodus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "ef0235a76eff",
+      "incoming_category": "Miracles",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-94ca40169826285eab",
+      "outgoing_category": "Dreams & Visions",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "231375f2cfff",
+      "incoming_category": "Parables",
+      "incoming_score": 49,
+      "outgoing_id": "child-v4-11-17-28da0921a15d3f9f9b",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "0294c1f345f6",
+      "incoming_category": "Parables",
+      "incoming_score": 47,
+      "outgoing_id": "child-v4-11-17-a979f45a4be91336f2",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "f00b12df3437",
+      "incoming_category": "Parables",
+      "incoming_score": 47,
+      "outgoing_id": "child-v4-11-17-bd4912ac624019153b",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "ef1974d3ae3f",
+      "incoming_category": "Parables",
+      "incoming_score": 47,
+      "outgoing_id": "child-v4-11-17-6b948764f80d8bc7ad",
+      "outgoing_category": "Psalms & Proverbs",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "6cffb939162d",
+      "incoming_category": "Parables",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-48c10e257e97bd8993",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "492114148a76",
+      "incoming_category": "Parables",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-2ee666afe101c7835f",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "bbf7b5022192",
+      "incoming_category": "Parables",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-70ce2fac2298f26b75",
+      "outgoing_category": "Moses & the Exodus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "498ed88cf316",
+      "incoming_category": "Parables",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-68494a6e66178dedee",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "df2b7098ce3a",
+      "incoming_category": "Parables",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-de16c41d141bb07b94",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "f5c5c198f738",
+      "incoming_category": "Parables",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-3a57e29d724868cfa8",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "c1b4a1981574",
+      "incoming_category": "Parables",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-461cea144dfe68d06b",
+      "outgoing_category": "Genesis & Creation",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "b0693c4f7da3",
+      "incoming_category": "Parables",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-c4fbad2e371477e347",
+      "outgoing_category": "Dreams & Visions",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "f5bf39baf0fe",
+      "incoming_category": "Parables",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-8dbf93a4fd79e20f30",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "b0882b16e0d0",
+      "incoming_category": "Parables",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-b0e6916f1706b15927",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "c234b6fb3a6a",
+      "incoming_category": "Parables",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-7efbfabdaadc699ff6",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "964e111c4dc5",
+      "incoming_category": "Parables",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-c1c46fbe0e70f1dcd1",
+      "outgoing_category": "The Apostles",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "6e9d0ffbeadf",
+      "incoming_category": "Parables",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-8717e57c96d74bc8ea",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "4a458d8f5627",
+      "incoming_category": "Parables",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-74b044f8055aea0207",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "8ee0b2893dd4",
+      "incoming_category": "Parables",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-f2bc493e7789463b6d",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "70fc32202f41",
+      "incoming_category": "Places & Lands",
+      "incoming_score": 47,
+      "outgoing_id": "child-v4-11-17-f27dc45a447b8c07a2",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "12e1f48d098a",
+      "incoming_category": "Places & Lands",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-acde8b9361612ac9fb",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "d9a8da68ecb8",
+      "incoming_category": "Places & Lands",
+      "incoming_score": 45,
+      "outgoing_id": "child-v4-11-17-5d6047ca0553634382",
+      "outgoing_category": "Moses & the Exodus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "child-v3-11-17-a3a8af806c8c63970d",
+      "incoming_category": "Places & Lands",
+      "incoming_score": 44,
+      "outgoing_id": "child-v4-11-17-9576873a97f78e7600",
+      "outgoing_category": "Dreams & Visions",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "2234e4b75cc1",
+      "incoming_category": "Places & Lands",
+      "incoming_score": 42,
+      "outgoing_id": "child-v4-11-17-7d225d377266f4d8ae",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "2dcb9322cf46",
+      "incoming_category": "Places & Lands",
+      "incoming_score": 42,
+      "outgoing_id": "child-v4-11-17-3a7eda18ff4c21b0a3",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "ed1cb18db96e",
+      "incoming_category": "Places & Lands",
+      "incoming_score": 41,
+      "outgoing_id": "child-v4-11-17-4d3e1706536617f7f4",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "ec80905d4c9b",
+      "incoming_category": "Places & Lands",
+      "incoming_score": 41,
+      "outgoing_id": "child-v4-11-17-511e6a73c6a1e8974e",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "bc4a42b8ff28",
+      "incoming_category": "Places & Lands",
+      "incoming_score": 41,
+      "outgoing_id": "child-v4-11-17-7b11de83439a0252ee",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "9cccf915edd3",
+      "incoming_category": "Places & Lands",
+      "incoming_score": 40,
+      "outgoing_id": "child-v4-11-17-93702f2450c496c6c0",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "ba8fc6ea4ae8",
+      "incoming_category": "Places & Lands",
+      "incoming_score": 40,
+      "outgoing_id": "child-v4-11-17-b131a7042a2a235541",
+      "outgoing_category": "Psalms & Proverbs",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "7b312f3df82c",
+      "incoming_category": "Places & Lands",
+      "incoming_score": 40,
+      "outgoing_id": "child-v4-11-17-da5d05c00b278b2a4c",
+      "outgoing_category": "Prophets",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "746221a4e48e",
+      "incoming_category": "Places & Lands",
+      "incoming_score": 40,
+      "outgoing_id": "child-v4-11-17-3bbde1974e56a57877",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "bdc3d8d7e737",
+      "incoming_category": "Places & Lands",
+      "incoming_score": 40,
+      "outgoing_id": "child-v4-11-17-5fa68064f941b6296c",
+      "outgoing_category": "The Apostles",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "3b09a23e56df",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 47,
+      "outgoing_id": "child-v4-11-17-8b6586166b279e992c",
+      "outgoing_category": "Genesis & Creation",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "e074ea4c95ad",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 44,
+      "outgoing_id": "child-v4-11-17-e8d6ede2d6f4803df7",
+      "outgoing_category": "Dreams & Visions",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "bd682e508735",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 43,
+      "outgoing_id": "child-v4-11-17-873325f7913520a6c2",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "b6583c394c84",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 42,
+      "outgoing_id": "child-v4-11-17-62f9dce73af9f2e4b0",
+      "outgoing_category": "Psalms & Proverbs",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "b0a7f728041c",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 42,
+      "outgoing_id": "child-v4-11-17-30904464e6a10a214c",
+      "outgoing_category": "Prophets",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "73ce9f9ede4e",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 42,
+      "outgoing_id": "child-v4-11-17-83764572c8c2b6d93b",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "d72aefef2c6c",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 42,
+      "outgoing_id": "child-v4-11-17-e0ef5f2316245391c3",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "2cf34e9e1b77",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 41,
+      "outgoing_id": "child-v4-11-17-64ac7800433a4f4e2e",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "35184a44f1bb",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 40,
+      "outgoing_id": "child-v4-11-17-730d178fed11c03330",
+      "outgoing_category": "Moses & the Exodus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "6698bee8993b",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 40,
+      "outgoing_id": "child-v4-11-17-3d9983612445a4c964",
+      "outgoing_category": "Prophets",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "f36c903c4c48",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 39,
+      "outgoing_id": "child-v4-11-17-e183885c8fd750836f",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "d024891a6410",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-a2d9e43cd5e3cdfd20",
+      "outgoing_category": "Moses & the Exodus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "82314fb6fbaa",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-79a85baca833a9f69b",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "17b735ccd6c1",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-560ca97f5a9da3f640",
+      "outgoing_category": "Dreams & Visions",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "5ce2855015ce",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-35952b47b8c4512660",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "01fcefb7d6aa",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-47dbe3b8187b61a03a",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "be4e203d485c",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 37,
+      "outgoing_id": "child-v4-11-17-bde6b8ef7dc64f98f0",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "05c01101adea",
+      "incoming_category": "Prophecy & Fulfillment",
+      "incoming_score": 36,
+      "outgoing_id": "child-v4-11-17-71512d57959aa49043",
+      "outgoing_category": "The Apostles",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "6a8235b0f781",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 43,
+      "outgoing_id": "child-v4-11-17-46e8e58319c7d5f33c",
+      "outgoing_category": "Psalms & Proverbs",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "d458c0247f0a",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 40,
+      "outgoing_id": "child-v4-11-17-fa254b55724c6e0657",
+      "outgoing_category": "Genesis & Creation",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "375cad808ee8",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 39,
+      "outgoing_id": "child-v4-11-17-955f19ab52157e6520",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "22dfa08d7ae9",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 39,
+      "outgoing_id": "child-v4-11-17-619d45a4c15dc674ef",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "844e7439974e",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 39,
+      "outgoing_id": "child-v4-11-17-dcdc3f69f2487448d1",
+      "outgoing_category": "Moses & the Exodus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "407f11e6e99f",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 39,
+      "outgoing_id": "child-v4-11-17-c651d89bfc53b8966d",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "c4eab1904338",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-0e9a2b3c2171e44c96",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "b3d95f39f5af",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-142b7ff702f4d51d9b",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "30fff90d0d7b",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 38,
+      "outgoing_id": "child-v4-11-17-3034b66c981c5c89c0",
+      "outgoing_category": "Psalms & Proverbs",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "3324767b525e",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 37,
+      "outgoing_id": "child-v4-11-17-aa8c99013ad8c63027",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "8adae27111e7",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 37,
+      "outgoing_id": "child-v4-11-17-145660090db3b697a1",
+      "outgoing_category": "Genesis & Creation",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "3700717743cf",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 37,
+      "outgoing_id": "child-v4-11-17-796eb101341fcccac9",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "fb15bc43d453",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 35,
+      "outgoing_id": "child-v4-11-17-e3e383b4892fe4930b",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "1c9a0484c6c3",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 34,
+      "outgoing_id": "child-v4-11-17-605d9f122c64333441",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "de1b9393ef7c",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 34,
+      "outgoing_id": "child-v4-11-17-00cc79880a612d2462",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "d7ea05ec967e",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 34,
+      "outgoing_id": "child-v4-11-17-d8dbfbe4e870f15869",
+      "outgoing_category": "Kings & Kingdoms",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "37db27d55462",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 34,
+      "outgoing_id": "child-v4-11-17-724fa61fca7027eebe",
+      "outgoing_category": "Life of Jesus",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "42c240cbe6cc",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 34,
+      "outgoing_id": "child-v4-11-17-36c73be4b701f35116",
+      "outgoing_category": "Genesis & Creation",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "fff13257c10a",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 33,
+      "outgoing_id": "child-v4-11-17-a31639a98045c8b685",
+      "outgoing_category": "Women of the Bible",
+      "outgoing_score": 51
+    },
+    {
+      "incoming_id": "eedd63c5d1b4",
+      "incoming_category": "Words of Jesus & OT Roots",
+      "incoming_score": 31,
+      "outgoing_id": "child-v4-11-17-a8f126f826b824910e",
+      "outgoing_category": "Moses & the Exodus",
+      "outgoing_score": 51
+    }
+  ]
+}

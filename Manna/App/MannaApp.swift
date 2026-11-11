@@ -11,13 +11,20 @@ struct MannaApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                if languageManager.hasCompletedLanguageSetup {
+                    ContentView()
+                } else {
+                    LanguageSetupView()
+                }
+            }
                 .environmentObject(gameManager)
                 .environmentObject(performanceTracker)
                 .environmentObject(authManager)
                 .environmentObject(languageManager)
                 .environmentObject(monetizationManager)
                 .environmentObject(partyManager)
+                .environment(\.layoutDirection, languageManager.selected == .arabic ? .rightToLeft : .leftToRight)
                 .preferredColorScheme(.dark)
                 .onOpenURL { url in
                     guard url.scheme == "manna", url.host == "party",

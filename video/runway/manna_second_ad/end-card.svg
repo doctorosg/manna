@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1022"/>
+      <stop offset="1" stop-color="#1b2140"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-20%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="18"/>
+      <feOffset dy="16"/>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1080" height="1920" fill="url(#bg)"/>
+  <circle cx="920" cy="180" r="300" fill="#d6a93e" opacity=".05"/>
+  <circle cx="80" cy="1590" r="390" fill="#d6a93e" opacity=".035"/>
+
+  <text x="540" y="170" text-anchor="middle" fill="#d6a93e" font-family="Georgia" font-weight="700" font-size="124" letter-spacing="5">MANNA</text>
+  <text x="540" y="232" text-anchor="middle" fill="#ffffff" font-family="Arial" font-weight="700" font-size="43" letter-spacing="8">BIBLE TRIVIA</text>
+
+  <g filter="url(#shadow)">
+    <rect x="260" y="290" width="560" height="1060" rx="76" fill="#d6a93e"/>
+    <rect x="273" y="303" width="534" height="1034" rx="66" fill="#05060a"/>
+    <rect x="300" y="344" width="480" height="960" rx="42" fill="#0b1022"/>
+    <rect x="465" y="320" width="150" height="11" rx="6" fill="#3a3d48"/>
+  </g>
+
+  <text x="540" y="1432" text-anchor="middle" fill="#ffffff" font-family="Arial" font-weight="700" font-size="35" letter-spacing="5">THE ANSWER</text>
+  <text x="540" y="1514" text-anchor="middle" fill="#d6a93e" font-family="Georgia" font-weight="700" font-size="78" letter-spacing="3">EUTYCHUS</text>
+  <text x="540" y="1564" text-anchor="middle" fill="#ffffff" font-family="Arial" font-weight="700" font-size="30" letter-spacing="5">ACTS 20:9</text>
+  <text x="540" y="1636" text-anchor="middle" fill="#d6a93e" font-family="Arial" font-weight="700" font-size="50" letter-spacing="3">PLAY MANNA</text>
+  <text x="540" y="1692" text-anchor="middle" fill="#ffffff" font-family="Arial" font-weight="700" font-size="28" letter-spacing="3">40,000 BIBLE QUESTIONS</text>
+  <text x="540" y="1738" text-anchor="middle" fill="#a6aabd" font-family="Arial" font-weight="700" font-size="25" letter-spacing="3">ANDROID + APPLE</text>
+</svg>

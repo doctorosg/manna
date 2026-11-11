@@ -219,7 +219,11 @@ internal class LocalPartyCoordinator(
         val sorted = room.players.sortedWith(compareByDescending<LocalPlayer> { it.score }.thenBy { it.name.lowercase() })
         return JSONObject()
             .put("code", room.code).put("phase", room.phase)
-            .put("settings", JSONObject().put("category", room.settings.category).put("difficulty", room.settings.difficulty).put("questionCount", room.settings.questionCount))
+            .put("settings", JSONObject()
+                .put("category", room.settings.category)
+                .put("difficulty", room.settings.difficulty)
+                .put("questionCount", room.settings.questionCount)
+                .apply { room.settings.ageGroup?.let { put("ageGroup", it) } })
             .put("currentIndex", room.currentIndex)
             .put("questionId", room.questions.getOrNull(room.currentIndex)?.id ?: JSONObject.NULL)
             .put("questionNumber", room.currentIndex + 1)
@@ -252,7 +256,12 @@ internal fun parsePartyRoom(json: JSONObject): PartyRoom {
     } }
     return PartyRoom(
         json.getString("code"), json.getString("phase"),
-        PartySettings(settings.getString("category"), settings.getString("difficulty"), settings.getInt("questionCount")),
+        PartySettings(
+            settings.getString("category"),
+            settings.getString("difficulty"),
+            settings.getInt("questionCount"),
+            settings.optString("ageGroup").takeIf { it.isNotBlank() && it != "null" }
+        ),
         json.getInt("currentIndex"), if (json.isNull("questionId")) null else json.getString("questionId"),
         json.getInt("questionNumber"), players, json.getInt("answeredCount"), json.getString("myPlayerId"),
         if (json.isNull("myAnswer")) null else json.getInt("myAnswer"), json.getBoolean("isHost"), json.getInt("version")

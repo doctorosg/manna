@@ -15,12 +15,12 @@ struct CategorySelectionView: View {
                 HStack(spacing: 8) {
                     Image(systemName: selectedCategories.count == MannaCategory.all.count ? "checkmark.square.fill" : "square")
                         .foregroundColor(Color(hex: "#D4A843") ?? .yellow)
-                    Text(selectedCategories.count == MannaCategory.all.count ? "Deselect All" : "Select All")
+                    MannaText(selectedCategories.count == MannaCategory.all.count ? "Deselect All" : "Select All")
                         .font(.system(size: 14, weight: .semibold, design: .rounded))
                         .foregroundColor(.white.opacity(0.7))
                     Spacer()
                     if !selectedCategories.isEmpty {
-                        Text("\(selectedCategories.count) selected")
+                        MannaText("\(selectedCategories.count) selected")
                             .font(.system(size: 12, weight: .medium))
                             .foregroundColor(Color(hex: "#D4A843") ?? .yellow)
                     }
@@ -39,7 +39,7 @@ struct CategorySelectionView: View {
                         }) {
                             VStack(spacing: 6) {
                                 Text(category.emoji).font(.system(size: 28))
-                                Text(category.name)
+                                MannaText(category.name)
                                     .font(.system(size: 12, weight: .semibold, design: .rounded))
                                     .foregroundColor(.white)
                                     .multilineTextAlignment(.center)
@@ -71,7 +71,7 @@ struct CategorySelectionView: View {
             // Continue button — fixed at bottom
             if !selectedCategories.isEmpty {
                 Button(action: onContinue) {
-                    Text("Continue (\(selectedCategories.count) \(selectedCategories.count == 1 ? "category" : "categories"))")
+                    MannaText("Continue (\(selectedCategories.count) \(selectedCategories.count == 1 ? "category" : "categories"))")
                         .font(.system(size: 16, weight: .bold, design: .rounded))
                         .foregroundColor(.black)
                         .frame(maxWidth: .infinity).padding(.vertical, 16)

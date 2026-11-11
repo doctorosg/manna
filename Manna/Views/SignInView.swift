@@ -13,7 +13,7 @@ struct SignInView: View {
                 .frame(width: 130, height: 85)
             Text("MANNA").font(.system(size: 44, weight: .black, design: .serif))
                 .foregroundColor(Color(hex: "#D4A843") ?? .yellow).tracking(6)
-            Text("BIBLE TRIVIA").font(.system(size: 14, weight: .semibold)).foregroundColor(.white.opacity(0.5)).tracking(4)
+            MannaText("BIBLE TRIVIA").font(.system(size: 14, weight: .semibold)).foregroundColor(.white.opacity(0.5)).tracking(4)
             Spacer()
 
             SignInWithAppleButton(.signIn) { request in
@@ -34,7 +34,7 @@ struct SignInView: View {
                 UserDefaults.standard.set(authManager.userName, forKey: "manna_user_name")
                 authManager.authState = .signedIn
             }) {
-                Text("Continue as Guest")
+                MannaText("Continue as Guest")
                     .font(.system(size: 15, weight: .medium)).foregroundColor(.white.opacity(0.5))
             }
             .padding(.bottom, 40)

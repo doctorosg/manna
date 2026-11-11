@@ -8,7 +8,7 @@ The creative opens with a playable Bible question, delivers a surprising answer,
 
 ## Exact product claims
 
-- 40,000 permanently numbered questions
+- 50,000 permanently numbered questions, including 10,000 children's questions
 - 21 categories
 - Three difficulty levels: Layperson, Deacon, Pastor
 - Five questions per session
@@ -96,10 +96,10 @@ Record clean clips without notification banners or touch indicators:
 
 **Time:** 0:15–0:21.5  
 **Visual:** Three rapid real-app clips: category grid, difficulty levels, performance/study suggestions. Use gold match cuts.  
-**Voiceover:** “Test yourself with 40,000 questions, 21 categories, and three levels—from Layperson to Pastor.”  
+**Voiceover:** “Test yourself with 50,000 questions, including new games for children, plus 21 adult categories and three adult levels.”
 **On-screen text, one card at a time:**
 
-- `40,000 QUESTIONS`
+- `50,000 QUESTIONS`
 - `21 CATEGORIES`
 - `LAYPERSON • DEACON • PASTOR`
 
@@ -185,8 +185,8 @@ Text: `PASTOR LEVEL STARTS NOW`
 
 **Time:** 0:51–0:59  
 **Visual:** Home-screen count, quick mosaic of category icons, then language picker. Finish with Apple and Android devices side by side.  
-**Voiceover:** “With 40,000 permanently numbered questions and 22 supported languages, there is always more Scripture to explore.”  
-**On-screen text:** `40,000 QUESTIONS • 22 LANGUAGES`
+**Voiceover:** “With 50,000 permanently numbered questions and 22 supported languages, there is always more Scripture to explore.”
+**On-screen text:** `50,000 QUESTIONS • 22 LANGUAGES`
 
 ### Scene 8 — Invitation and CTA
 
@@ -202,7 +202,7 @@ Text: `PASTOR LEVEL STARTS NOW`
 **Thumbnail text:** `CAN YOU GET 5/5?`  
 **Description opener:**
 
-> Test your Bible knowledge across 40,000 questions, 21 categories, and three difficulty levels. Download Manna for iPhone and Android and discover what you know—and what to study next.
+> Test your Bible knowledge across 50,000 questions, including 10,000 questions for children, plus 21 adult categories and three difficulty levels. Download Manna for iPhone and Android and discover what you know—and what to study next.
 
 ---
 
@@ -223,7 +223,7 @@ Text: `PASTOR LEVEL STARTS NOW`
 
 - Manna is pronounced MAN-uh
 - “Layperson,” “Deacon,” and “Pastor” are spelled correctly
-- Exact figures are 40,000 questions, 21 categories, 22 languages
+- Exact figures are 50,000 questions, 21 adult categories, three children's age groups, and 22 languages
 - No timer is shown or implied
 - No unsupported testimonial, rating, download count, or endorsement appears
 - All app footage is from the real current build

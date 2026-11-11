@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		090196BE5097FB298172A4C1 /* DifficultyLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D935F934544558FAA2E70BDD /* DifficultyLevel.swift */; };
+		0F19053212EC82B360EEBA67 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160E6F293932C0D79922821 /* Player.swift */; };
+		1BEB427528287FED6B20ED7A /* Info 2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A0B431B531D87D185424C39 /* Info 2.plist */; };
+		24D0D133CD7286F684BC4A64 /* BotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8EDD94F7BD4983BDA3D8B6 /* BotService.swift */; };
+		2AD0B9783E6848B0E713AA44 /* PerformanceTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1B04E92A8F7A4B155A1AD /* PerformanceTracker.swift */; };
+		3038A203B61A92AAD57F6218 /* UpdateChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D08C3385E25C568EB09543 /* UpdateChecker.swift */; };
+		314D6415EED283B6CEABC446 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = B209798E422CFF10A8AE2B01 /* Question.swift */; };
+		3343B994FD4B2259FA370C92 /* PartyViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA35743F0DF5DB1EB031F0D7 /* PartyViews.swift */; };
+		3CDF6EF67E73EE8AC83594B6 /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31F34E949AF15C6F84B4173 /* QuestionService.swift */; };
+		4A15F5BA0ED68349B3618221 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5778AA602179A1C301C34E2E /* HomeView.swift */; };
+		55494F0300BCED56C86D7A96 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D93B1B664540DECD0768EE9 /* GameView.swift */; };
+		60954C026346500098C85FB2 /* DoubleOrNothingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1C90AE33E5C232309D104 /* DoubleOrNothingView.swift */; };
+		6F5E06C72B9B16219BE2C866 /* MonetizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B3C25C9B3BD90C9457CEA /* MonetizationManager.swift */; };
+		7B0639C5D9CF72DD621AC44C /* MannaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFED0115EED17A0D2039CE2 /* MannaApp.swift */; };
+		7F11065FB3E912B9AC853153 /* manna_questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 637AB4664820552D88F1631B /* manna_questions.json */; };
+		80443A4816AFF5A68F64EFBA /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1596F9028C48D00C33BF1 /* SoundManager.swift */; };
+		90FED9E656FE268BD69B97CE /* PartyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644146693827F7A9311D9C26 /* PartyManager.swift */; };
+		959E41202219C557B25E0C1D /* PerformanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58786E412E6019BD6727BB /* PerformanceView.swift */; };
+		9AB588A194D9744352925C9C /* DifficultySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57BEE2DA8127245F746F14D /* DifficultySelectionView.swift */; };
+		A0E8FAEFB6C04DFEF197EA0A /* QuestionCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C133717EB5E4A25705099 /* QuestionCache.swift */; };
+		A14627617A7653D201DBAB33 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEFE27EDC771945851DFD8F /* Category.swift */; };
+		ADAFB0A239DDD93EC9552FC6 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A67AC81D715FF9C440B976 /* AuthManager.swift */; };
+		B01D55CE26A3367DB40DEE85 /* CategorySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41633C049D9FA9936799FCD5 /* CategorySelectionView.swift */; };
+		C4A06BA288FE469C4C9F7200 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F909625837DD2B5CF584593A /* LanguageManager.swift */; };
+		C7467D81F408E4BEBE99BFD4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF2A5E5B55815D25C214258 /* ContentView.swift */; };
+		CF4701F45F93975DDDBE948F /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9043EFEE337343F702C9EEE /* GameManager.swift */; };
+		DB938FF394BAEBB2E1272D75 /* SupportingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F9A403BF9708E993C99707 /* SupportingViews.swift */; };
+		DC2A9A88D416F1BC1F154B9F /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = F835AFAB3CA9A5F9D95C5D0E /* GoogleMobileAds */; };
+		DCF209C9AC6ADF2BCE98735A /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FD9181DB9EB75C03138B2 /* SignInView.swift */; };
+		F9056EF1ECEE81B2D00663D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CB028433FC45D5E4AFEC1 /* Assets.xcassets */; };
+		FAD276025FDBB4D6C8CCAFBE /* PreGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990FFDF149695749DE52B3B /* PreGameView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0AFED0115EED17A0D2039CE2 /* MannaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MannaApp.swift; sourceTree = "<group>"; };
+		11E1596F9028C48D00C33BF1 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		19E1C90AE33E5C232309D104 /* DoubleOrNothingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleOrNothingView.swift; sourceTree = "<group>"; };
+		1D2FD9181DB9EB75C03138B2 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		1D93B1B664540DECD0768EE9 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		3B58786E412E6019BD6727BB /* PerformanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceView.swift; sourceTree = "<group>"; };
+		41633C049D9FA9936799FCD5 /* CategorySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionView.swift; sourceTree = "<group>"; };
+		4A0B431B531D87D185424C39 /* Info 2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Info 2.plist"; sourceTree = "<group>"; };
+		4D3CB028433FC45D5E4AFEC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		51F9A403BF9708E993C99707 /* SupportingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportingViews.swift; sourceTree = "<group>"; };
+		53D08C3385E25C568EB09543 /* UpdateChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateChecker.swift; sourceTree = "<group>"; };
+		5778AA602179A1C301C34E2E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		637AB4664820552D88F1631B /* manna_questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manna_questions.json; sourceTree = "<group>"; };
+		644146693827F7A9311D9C26 /* PartyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyManager.swift; sourceTree = "<group>"; };
+		6FEFE27EDC771945851DFD8F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		88A1B04E92A8F7A4B155A1AD /* PerformanceTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTracker.swift; sourceTree = "<group>"; };
+		89A67AC81D715FF9C440B976 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		A160E6F293932C0D79922821 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		A57BEE2DA8127245F746F14D /* DifficultySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultySelectionView.swift; sourceTree = "<group>"; };
+		AA35743F0DF5DB1EB031F0D7 /* PartyViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViews.swift; sourceTree = "<group>"; };
+		B209798E422CFF10A8AE2B01 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		B31F34E949AF15C6F84B4173 /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
+		B81B3C25C9B3BD90C9457CEA /* MonetizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonetizationManager.swift; sourceTree = "<group>"; };
+		B9043EFEE337343F702C9EEE /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		C990FFDF149695749DE52B3B /* PreGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreGameView.swift; sourceTree = "<group>"; };
+		D6F70F11E5FAEE5EC91B9D0B /* Manna.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Manna.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D935F934544558FAA2E70BDD /* DifficultyLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevel.swift; sourceTree = "<group>"; };
+		DB8EDD94F7BD4983BDA3D8B6 /* BotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotService.swift; sourceTree = "<group>"; };
+		DC7C133717EB5E4A25705099 /* QuestionCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCache.swift; sourceTree = "<group>"; };
+		DEF2A5E5B55815D25C214258 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F909625837DD2B5CF584593A /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		23642D00EB4B6F13023E7857 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC2A9A88D416F1BC1F154B9F /* GoogleMobileAds in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24664B7DEFF461C53AD3C56A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6FEFE27EDC771945851DFD8F /* Category.swift */,
+				D935F934544558FAA2E70BDD /* DifficultyLevel.swift */,
+				A160E6F293932C0D79922821 /* Player.swift */,
+				B209798E422CFF10A8AE2B01 /* Question.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		370145B91F8EA2D93943B357 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				4A0B431B531D87D185424C39 /* Info 2.plist */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		6130C40CD9A677E13387F5CA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				89A67AC81D715FF9C440B976 /* AuthManager.swift */,
+				DB8EDD94F7BD4983BDA3D8B6 /* BotService.swift */,
+				F909625837DD2B5CF584593A /* LanguageManager.swift */,
+				B81B3C25C9B3BD90C9457CEA /* MonetizationManager.swift */,
+				644146693827F7A9311D9C26 /* PartyManager.swift */,
+				88A1B04E92A8F7A4B155A1AD /* PerformanceTracker.swift */,
+				DC7C133717EB5E4A25705099 /* QuestionCache.swift */,
+				B31F34E949AF15C6F84B4173 /* QuestionService.swift */,
+				11E1596F9028C48D00C33BF1 /* SoundManager.swift */,
+				53D08C3385E25C568EB09543 /* UpdateChecker.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6D57D8030FA05081D69840BB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4D3CB028433FC45D5E4AFEC1 /* Assets.xcassets */,
+				637AB4664820552D88F1631B /* manna_questions.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7C46D7E03F4B6346ED80F123 /* Manna */ = {
+			isa = PBXGroup;
+			children = (
+				FB95879F26440E8B2B86EB9F /* App */,
+				24664B7DEFF461C53AD3C56A /* Models */,
+				6D57D8030FA05081D69840BB /* Resources */,
+				6130C40CD9A677E13387F5CA /* Services */,
+				370145B91F8EA2D93943B357 /* Supporting */,
+				FC527B354859FFA873A78FBE /* ViewModels */,
+				A7F4AD4A5823C5DF35806121 /* Views */,
+			);
+			path = Manna;
+			sourceTree = "<group>";
+		};
+		8154FF26A68D3BB2E778BA3F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D6F70F11E5FAEE5EC91B9D0B /* Manna.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7F4AD4A5823C5DF35806121 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				41633C049D9FA9936799FCD5 /* CategorySelectionView.swift */,
+				A57BEE2DA8127245F746F14D /* DifficultySelectionView.swift */,
+				19E1C90AE33E5C232309D104 /* DoubleOrNothingView.swift */,
+				1D93B1B664540DECD0768EE9 /* GameView.swift */,
+				5778AA602179A1C301C34E2E /* HomeView.swift */,
+				AA35743F0DF5DB1EB031F0D7 /* PartyViews.swift */,
+				3B58786E412E6019BD6727BB /* PerformanceView.swift */,
+				C990FFDF149695749DE52B3B /* PreGameView.swift */,
+				1D2FD9181DB9EB75C03138B2 /* SignInView.swift */,
+				51F9A403BF9708E993C99707 /* SupportingViews.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BDDFA757EBCF302F93712850 = {
+			isa = PBXGroup;
+			children = (
+				7C46D7E03F4B6346ED80F123 /* Manna */,
+				8154FF26A68D3BB2E778BA3F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FB95879F26440E8B2B86EB9F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DEF2A5E5B55815D25C214258 /* ContentView.swift */,
+				0AFED0115EED17A0D2039CE2 /* MannaApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FC527B354859FFA873A78FBE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B9043EFEE337343F702C9EEE /* GameManager.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3BDC3C8A73FA436FB858684E /* Manna */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58C41DDBD86885BF12D64B39 /* Build configuration list for PBXNativeTarget "Manna" */;
+			buildPhases = (
+				9B92588D3249A282DBA2E871 /* Sources */,
+				57F897498CE3D9D22C398E11 /* Resources */,
+				23642D00EB4B6F13023E7857 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Manna;
+			packageProductDependencies = (
+				F835AFAB3CA9A5F9D95C5D0E /* GoogleMobileAds */,
+			);
+			productName = Manna;
+			productReference = D6F70F11E5FAEE5EC91B9D0B /* Manna.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB070DC656F9E9490115BB1E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					3BDC3C8A73FA436FB858684E = {
+						DevelopmentTeam = 28WGFPLAHZ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8F78C24296A35CA723FC5A72 /* Build configuration list for PBXProject "Manna" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = BDDFA757EBCF302F93712850;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8ECEC4B24846BF2518BF019F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 8154FF26A68D3BB2E778BA3F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3BDC3C8A73FA436FB858684E /* Manna */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		57F897498CE3D9D22C398E11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9056EF1ECEE81B2D00663D5 /* Assets.xcassets in Resources */,
+				1BEB427528287FED6B20ED7A /* Info 2.plist in Resources */,
+				7F11065FB3E912B9AC853153 /* manna_questions.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B92588D3249A282DBA2E871 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADAFB0A239DDD93EC9552FC6 /* AuthManager.swift in Sources */,
+				24D0D133CD7286F684BC4A64 /* BotService.swift in Sources */,
+				A14627617A7653D201DBAB33 /* Category.swift in Sources */,
+				B01D55CE26A3367DB40DEE85 /* CategorySelectionView.swift in Sources */,
+				C7467D81F408E4BEBE99BFD4 /* ContentView.swift in Sources */,
+				090196BE5097FB298172A4C1 /* DifficultyLevel.swift in Sources */,
+				9AB588A194D9744352925C9C /* DifficultySelectionView.swift in Sources */,
+				60954C026346500098C85FB2 /* DoubleOrNothingView.swift in Sources */,
+				CF4701F45F93975DDDBE948F /* GameManager.swift in Sources */,
+				55494F0300BCED56C86D7A96 /* GameView.swift in Sources */,
+				4A15F5BA0ED68349B3618221 /* HomeView.swift in Sources */,
+				C4A06BA288FE469C4C9F7200 /* LanguageManager.swift in Sources */,
+				7B0639C5D9CF72DD621AC44C /* MannaApp.swift in Sources */,
+				6F5E06C72B9B16219BE2C866 /* MonetizationManager.swift in Sources */,
+				90FED9E656FE268BD69B97CE /* PartyManager.swift in Sources */,
+				3343B994FD4B2259FA370C92 /* PartyViews.swift in Sources */,
+				2AD0B9783E6848B0E713AA44 /* PerformanceTracker.swift in Sources */,
+				959E41202219C557B25E0C1D /* PerformanceView.swift in Sources */,
+				0F19053212EC82B360EEBA67 /* Player.swift in Sources */,
+				FAD276025FDBB4D6C8CCAFBE /* PreGameView.swift in Sources */,
+				314D6415EED283B6CEABC446 /* Question.swift in Sources */,
+				A0E8FAEFB6C04DFEF197EA0A /* QuestionCache.swift in Sources */,
+				3CDF6EF67E73EE8AC83594B6 /* QuestionService.swift in Sources */,
+				DCF209C9AC6ADF2BCE98735A /* SignInView.swift in Sources */,
+				80443A4816AFF5A68F64EFBA /* SoundManager.swift in Sources */,
+				DB938FF394BAEBB2E1272D75 /* SupportingViews.swift in Sources */,
+				3038A203B61A92AAD57F6218 /* UpdateChecker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0F4CF63C20E9E73BBB146741 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 13;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 28WGFPLAHZ;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Manna/Supporting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0.8;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oddcurrent.manna;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		5BD881C3A5A556C1B67AAB73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Manna/Supporting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CA2D93004CCC2F29BF3C5540 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 13;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 28WGFPLAHZ;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Manna/Supporting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0.8;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oddcurrent.manna;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		DF080B344D52109D8512C7AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Manna/Supporting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		58C41DDBD86885BF12D64B39 /* Build configuration list for PBXNativeTarget "Manna" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF080B344D52109D8512C7AC /* Debug */,
+				5BD881C3A5A556C1B67AAB73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8F78C24296A35CA723FC5A72 /* Build configuration list for PBXProject "Manna" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F4CF63C20E9E73BBB146741 /* Debug */,
+				CA2D93004CCC2F29BF3C5540 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8ECEC4B24846BF2518BF019F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F835AFAB3CA9A5F9D95C5D0E /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ECEC4B24846BF2518BF019F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = CB070DC656F9E9490115BB1E /* Project object */;
+}

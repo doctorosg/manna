@@ -17,5 +17,11 @@ party-backend/node_modules/
 party-backend/.wrangler/
 party-backend/*.cpuprofile
 archive/
+!archive/
+archive/*
+!archive/questions/
+archive/questions/*
+!archive/questions/README.md
+!archive/questions/children_questions_legacy_kjv_template_2026-09-01.json
 audits/
 video/assets/

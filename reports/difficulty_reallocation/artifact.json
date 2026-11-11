@@ -1,0 +1,1352 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "Manna adult difficulty reallocation audit",
+    "description": "Complete content-based assessment and reallocation of Layperson, Deacon, and Pastor questions.",
+    "generatedAt": "2026-09-04T16:27:51Z",
+    "cards": [
+      {
+        "id": "adult_count",
+        "description": "The complete adult bank; children's questions were excluded.",
+        "dataset": "metrics",
+        "sourceId": "metrics_sql",
+        "metrics": [
+          {
+            "label": "Adult questions assessed",
+            "field": "adult_questions",
+            "format": "compact"
+          }
+        ]
+      },
+      {
+        "id": "changed_count",
+        "description": "Records whose adult difficulty label changed.",
+        "dataset": "metrics",
+        "sourceId": "metrics_sql",
+        "metrics": [
+          {
+            "label": "Questions reallocated",
+            "field": "changed_questions",
+            "format": "compact"
+          }
+        ]
+      },
+      {
+        "id": "changed_rate",
+        "description": "Changed records divided by all adult records.",
+        "dataset": "metrics",
+        "sourceId": "metrics_sql",
+        "metrics": [
+          {
+            "label": "Adult bank reallocated",
+            "field": "changed_rate",
+            "format": "percent"
+          }
+        ]
+      },
+      {
+        "id": "median_gap",
+        "description": "The smaller adjacent difference among final tier medians.",
+        "dataset": "metrics",
+        "sourceId": "metrics_sql",
+        "metrics": [
+          {
+            "label": "Minimum median gap after",
+            "field": "median_gap_after",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "minimum_pool",
+        "description": "Minimum final pool across every category and adult tier.",
+        "dataset": "metrics",
+        "sourceId": "metrics_sql",
+        "metrics": [
+          {
+            "label": "Smallest category-tier pool",
+            "field": "minimum_category_pool",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "allocation_drift",
+        "description": "Shipping labels that differ from the frozen allocation.",
+        "dataset": "metrics",
+        "sourceId": "metrics_sql",
+        "metrics": [
+          {
+            "label": "Unresolved allocation drift",
+            "field": "allocation_drift",
+            "format": "number"
+          }
+        ]
+      }
+    ],
+    "charts": [
+      {
+        "id": "tier_medians",
+        "title": "Median content score before and after reallocation",
+        "subtitle": "Higher scores indicate more demanding biblical-knowledge tasks.",
+        "headerMarkdown": "### Tier separation is materially stronger\n\nThe minimum adjacent median gap increased from **7** to **22 points**.",
+        "intent": "comparison",
+        "question": "Did the reallocation create a clearer Layperson-to-Deacon-to-Pastor progression?",
+        "rationale": "Grouped bars compare each tier's median before and after the same allocation change.",
+        "comparisonContext": {
+          "grain": "adult question",
+          "unit": "points on a 0\u2013100 content score"
+        },
+        "type": "bar",
+        "dataset": "tier_stage",
+        "sourceId": "tier_stage_sql",
+        "encodings": {
+          "x": {
+            "field": "tier",
+            "type": "ordinal",
+            "label": "Difficulty tier"
+          },
+          "y": {
+            "field": "median",
+            "type": "quantitative",
+            "label": "Median content score",
+            "unit": "points"
+          },
+          "color": {
+            "field": "stage",
+            "type": "nominal",
+            "label": "Allocation stage"
+          },
+          "tooltip": [
+            {
+              "field": "count",
+              "type": "quantitative",
+              "label": "Questions"
+            },
+            {
+              "field": "p25",
+              "type": "quantitative",
+              "label": "25th percentile"
+            },
+            {
+              "field": "p75",
+              "type": "quantitative",
+              "label": "75th percentile"
+            }
+          ]
+        },
+        "legend": {
+          "position": "bottom",
+          "sort": "spec",
+          "title": "Allocation stage"
+        },
+        "palette": {
+          "kind": "categorical",
+          "name": "allocation-stage"
+        },
+        "labels": {
+          "values": "all"
+        },
+        "settings": {
+          "groupMode": "grouped",
+          "sort": "none",
+          "showValues": true
+        },
+        "surface": {
+          "surface": "card",
+          "viewMode": "both"
+        }
+      },
+      {
+        "id": "transition_mix",
+        "title": "Final tier composition by original tier",
+        "subtitle": "Each bar totals the questions originally assigned to that tier.",
+        "headerMarkdown": "### Most labels stayed in place, but both upward and downward corrections were material\n\n**30,229 of 40,020 questions (75.5%)** retained their original tier.",
+        "intent": "composition",
+        "question": "Where did questions move from each original tier?",
+        "rationale": "A normalized stacked bar makes transition shares comparable despite unequal original tier sizes.",
+        "comparisonContext": {
+          "grain": "adult question",
+          "denominator": "all adult questions within each original tier",
+          "unit": "share of original tier"
+        },
+        "type": "stackedBar100",
+        "dataset": "transitions",
+        "sourceId": "transitions_sql",
+        "encodings": {
+          "x": {
+            "field": "before",
+            "type": "ordinal",
+            "label": "Original tier"
+          },
+          "y": {
+            "field": "count",
+            "type": "quantitative",
+            "label": "Questions"
+          },
+          "color": {
+            "field": "after",
+            "type": "nominal",
+            "label": "Final tier"
+          }
+        },
+        "legend": {
+          "position": "bottom",
+          "sort": "spec",
+          "title": "Final tier"
+        },
+        "palette": {
+          "kind": "categorical",
+          "name": "difficulty-tier"
+        },
+        "settings": {
+          "sort": "none",
+          "showPercent": true
+        },
+        "surface": {
+          "surface": "card",
+          "viewMode": "both"
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "tier_details",
+        "title": "Tier distribution before and after",
+        "headerMarkdown": "### Exact distribution statistics\n\nCounts, quartiles, and ranges provide the context behind the median chart.",
+        "dataset": "tier_table",
+        "sourceId": "tier_table_sql",
+        "defaultSort": {
+          "field": "median",
+          "direction": "asc"
+        },
+        "columns": [
+          {
+            "field": "stage",
+            "label": "Stage",
+            "type": "text"
+          },
+          {
+            "field": "tier",
+            "label": "Tier",
+            "type": "text"
+          },
+          {
+            "field": "count",
+            "label": "Questions",
+            "format": "compact"
+          },
+          {
+            "field": "median",
+            "label": "Median",
+            "format": "number"
+          },
+          {
+            "field": "p25",
+            "label": "P25",
+            "format": "number"
+          },
+          {
+            "field": "p75",
+            "label": "P75",
+            "format": "number"
+          },
+          {
+            "field": "min",
+            "label": "Minimum",
+            "format": "number"
+          },
+          {
+            "field": "max",
+            "label": "Maximum",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "transition_details",
+        "title": "All allocation transitions",
+        "headerMarkdown": "### Transition counts reconcile to all 40,020 adult questions\n\nDiagonal rows are unchanged; off-diagonal rows are reallocations.",
+        "dataset": "transitions",
+        "sourceId": "transitions_sql",
+        "defaultSort": {
+          "field": "count",
+          "direction": "desc"
+        },
+        "columns": [
+          {
+            "field": "before",
+            "label": "Original tier",
+            "type": "text"
+          },
+          {
+            "field": "after",
+            "label": "Final tier",
+            "type": "text"
+          },
+          {
+            "field": "count",
+            "label": "Questions",
+            "format": "compact"
+          },
+          {
+            "field": "share_of_adults",
+            "label": "Share of adult bank",
+            "format": "percent"
+          }
+        ]
+      },
+      {
+        "id": "category_pools",
+        "title": "Final category-by-tier pool sizes",
+        "headerMarkdown": "### Every adult category supports a 20-question game in every tier\n\nThe smallest category-tier pool is **20**, matching the largest selectable game length.",
+        "dataset": "category_pools",
+        "sourceId": "category_pools_sql",
+        "defaultSort": {
+          "field": "count",
+          "direction": "asc"
+        },
+        "columns": [
+          {
+            "field": "category",
+            "label": "Category",
+            "type": "text"
+          },
+          {
+            "field": "tier",
+            "label": "Tier",
+            "type": "text"
+          },
+          {
+            "field": "count",
+            "label": "Questions",
+            "format": "compact"
+          }
+        ]
+      },
+      {
+        "id": "rubric_components",
+        "title": "Content score components",
+        "headerMarkdown": "### Five components produce a reproducible 0\u2013100 score\n\nThe task-family allocator then applies explicit specialist guardrails.",
+        "dataset": "rubric_components",
+        "sourceId": "rubric_components_sql",
+        "defaultSort": {
+          "field": "maximum",
+          "direction": "desc"
+        },
+        "columns": [
+          {
+            "field": "component",
+            "label": "Component",
+            "type": "text"
+          },
+          {
+            "field": "maximum",
+            "label": "Maximum",
+            "format": "number"
+          },
+          {
+            "field": "signal",
+            "label": "What raises the score",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "id": "allocation_rules",
+        "title": "Allocation rules by tier",
+        "headerMarkdown": "### Scores guide placement; task families prevent false simplicity\n\nA short prompt can still be Pastor-level when it requires Greek, exact references, or academic knowledge.",
+        "dataset": "allocation_rules",
+        "sourceId": "allocation_rules_sql",
+        "defaultSort": {
+          "field": "score_band",
+          "direction": "asc"
+        },
+        "columns": [
+          {
+            "field": "tier",
+            "label": "Tier",
+            "type": "text"
+          },
+          {
+            "field": "score_band",
+            "label": "Score band",
+            "type": "text"
+          },
+          {
+            "field": "typical_task",
+            "label": "Typical task",
+            "type": "text"
+          },
+          {
+            "field": "hard_rules",
+            "label": "Task-family guardrail",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "id": "examples",
+        "title": "Representative reallocations",
+        "headerMarkdown": "### Examples span all six movement directions\n\nThis deterministic sample illustrates the rules; the full 9,791-row change log remains in CSV.",
+        "dataset": "examples",
+        "sourceId": "examples_sql",
+        "defaultSort": {
+          "field": "number",
+          "direction": "asc"
+        },
+        "columns": [
+          {
+            "field": "number",
+            "label": "Question #",
+            "format": "number"
+          },
+          {
+            "field": "before",
+            "label": "Before",
+            "type": "text"
+          },
+          {
+            "field": "after",
+            "label": "After",
+            "type": "text"
+          },
+          {
+            "field": "score",
+            "label": "Score",
+            "format": "number"
+          },
+          {
+            "field": "family",
+            "label": "Task family",
+            "type": "text"
+          },
+          {
+            "field": "question",
+            "label": "Question",
+            "type": "text"
+          },
+          {
+            "field": "basis",
+            "label": "Allocation basis",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "shipping_bank",
+        "label": "Shipping iOS question bank",
+        "path": "Manna/Resources/manna_questions.json"
+      },
+      {
+        "id": "android_bank",
+        "label": "Shipping Android question bank",
+        "path": "android/app/src/main/assets/manna_questions.json"
+      },
+      {
+        "id": "allocation_manifest",
+        "label": "Frozen difficulty allocation",
+        "path": "difficulty_overrides.json"
+      },
+      {
+        "id": "reallocation_summary",
+        "label": "Reallocation summary",
+        "path": "reports/difficulty_reallocation/summary.json"
+      },
+      {
+        "id": "audit_summary",
+        "label": "Final allocation audit",
+        "path": "reports/difficulty_audit/summary.json"
+      },
+      {
+        "id": "changes_csv",
+        "label": "Complete change log",
+        "path": "reports/difficulty_reallocation/changes.csv"
+      },
+      {
+        "id": "metrics_sql",
+        "label": "Metrics Sql",
+        "path": "scripts/build_difficulty_reallocation_report.py"
+      },
+      {
+        "id": "tier_stage_sql",
+        "label": "Tier Stage Sql",
+        "path": "scripts/build_difficulty_reallocation_report.py"
+      },
+      {
+        "id": "transitions_sql",
+        "label": "Transitions Sql",
+        "path": "scripts/build_difficulty_reallocation_report.py"
+      },
+      {
+        "id": "tier_table_sql",
+        "label": "Tier Table Sql",
+        "path": "scripts/build_difficulty_reallocation_report.py"
+      },
+      {
+        "id": "category_pools_sql",
+        "label": "Category Pools Sql",
+        "path": "scripts/build_difficulty_reallocation_report.py"
+      },
+      {
+        "id": "rubric_components_sql",
+        "label": "Rubric Components Sql",
+        "path": "scripts/build_difficulty_reallocation_report.py"
+      },
+      {
+        "id": "allocation_rules_sql",
+        "label": "Allocation Rules Sql",
+        "path": "scripts/build_difficulty_reallocation_report.py"
+      },
+      {
+        "id": "examples_sql",
+        "label": "Examples Sql",
+        "path": "scripts/build_difficulty_reallocation_report.py"
+      }
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# Manna adult difficulty reallocation audit"
+      },
+      {
+        "id": "technical_summary",
+        "type": "markdown",
+        "sourceId": "metrics_sql",
+        "body": "## Technical summary\n\n**Outcome: complete and build-safe.** All **40,020 adult questions** were assessed with a deterministic content rubric and task-family rules. **9,791 questions (24.47%)** were reallocated. Final medians rise **35 \u2192 58 \u2192 80**, the minimum adjacent gap is **22 points**, every category-tier pool contains at least **20 questions**, and the shipping bank has **zero allocation drift** from the frozen manifest."
+      },
+      {
+        "id": "metrics",
+        "type": "metric-strip",
+        "cardIds": [
+          "adult_count",
+          "changed_count",
+          "changed_rate",
+          "median_gap",
+          "minimum_pool",
+          "allocation_drift"
+        ]
+      },
+      {
+        "id": "key_findings",
+        "type": "markdown",
+        "sourceId": "transitions_sql",
+        "body": "## Key findings\n\nThe prior labels were directionally ordered but weakly separated: the original medians were **53, 60, and 78**, leaving only a **7-point** Layperson-to-Deacon gap. The final allocation preserves **30,229 questions (75.5%)** and changes the remaining **9,791**. The largest movements are **3,485 Pastor \u2192 Deacon**, **3,154 Deacon \u2192 Pastor**, and **1,649 Layperson \u2192 Deacon**."
+      },
+      {
+        "id": "median_chart",
+        "type": "chart",
+        "chartId": "tier_medians"
+      },
+      {
+        "id": "median_readout",
+        "type": "markdown",
+        "sourceId": "tier_stage_sql",
+        "body": "The reallocation lowers the Layperson median by **18 points**, lowers Deacon by **2**, and raises Pastor by **2**. That produces a clearer progression without forcing equal tier sizes. Tier sizes remain content-driven because specialist source material is intentionally concentrated in Pastor."
+      },
+      {
+        "id": "transition_chart",
+        "type": "chart",
+        "chartId": "transition_mix"
+      },
+      {
+        "id": "transition_readout",
+        "type": "markdown",
+        "sourceId": "transitions_sql",
+        "body": "Movement is not a blanket promotion or demotion. Familiar direct recall moves downward, while exact cross-references, original-language vocabulary, Church Father attribution, academic methods, and advanced interpretation move upward or remain Pastor-level."
+      },
+      {
+        "id": "tier_table_block",
+        "type": "table",
+        "tableId": "tier_details"
+      },
+      {
+        "id": "transition_table_block",
+        "type": "table",
+        "tableId": "transition_details"
+      },
+      {
+        "id": "scope",
+        "type": "markdown",
+        "body": "## Scope, data, and definitions\n\nThe population is every shipping record without an `ageGroup`: **40,020 adult questions** from the five adult source files. Children ages 4\u201310 and 11\u201317 are excluded. \u201cBefore\u201d is the reproducible calibrated source label, not a mutable prior shipping snapshot. \u201cAfter\u201d is the deterministic allocator plus a documented operational floor. A reallocation changes only the `difficulty` field; question IDs, numbers, wording, choices, correct answers, explanations, sources, categories, and child records remain unchanged."
+      },
+      {
+        "id": "category_pool_block",
+        "type": "table",
+        "tableId": "category_pools"
+      },
+      {
+        "id": "methodology",
+        "type": "markdown",
+        "body": "## Methodology\n\nEach item receives a label-independent 0\u2013100 score from recall obscurity, task complexity, specificity, distractor competitiveness, and language burden. The allocator also classifies the requested task. Hard rules place specialist tasks\u2014such as original-language lexicons, exact cross-references, Church Father attribution, connection classification, and academic biblical studies\u2014at Pastor even when short wording yields a lower raw score. Familiar one-step recall can move to Layperson. Ambiguous direct-recall cases use the calibrated source label only as a tie-breaker. Finally, the planner preserves at least 20 questions in each adult category-tier pool so a 20-question category game remains possible. All decisions are frozen by stable question ID in `difficulty_overrides.json`."
+      },
+      {
+        "id": "rubric_block",
+        "type": "table",
+        "tableId": "rubric_components"
+      },
+      {
+        "id": "rules_block",
+        "type": "table",
+        "tableId": "allocation_rules"
+      },
+      {
+        "id": "limitations",
+        "type": "markdown",
+        "sourceId": "metrics_sql",
+        "body": "## Limitations, uncertainty, and robustness\n\n**Confidence is high for reproducibility and population ordering; medium for individual pedagogical placement.** The planner is deterministic, its unit-test anchors pass, the final audit reports **zero manifest mismatch and zero allocation drift**, and all summary counts reconcile to question-level outputs. However, this remains an expert-system estimate, not a psychometric measurement. It cannot observe player age, church background, denomination, reading ability, ambiguity, or actual response rates. The raw score bands are therefore advisory; **3,151 final questions (7.87%)** sit outside their nominal score band because task-family or operational rules deliberately override the raw score. Sixteen cross two raw score bands. Those cases are traceable, not unexplained errors."
+      },
+      {
+        "id": "examples_block",
+        "type": "table",
+        "tableId": "examples"
+      },
+      {
+        "id": "recommendations",
+        "type": "markdown",
+        "body": "## Recommended next steps\n\n1. Keep `difficulty_overrides.json` under version control and run both the bank validator and `audit_difficulty_levels.py --enforce` on every content build.\n2. Treat `score_band_review_queue.csv` as a periodic editorial review list, with priority on the 16 two-band exceptions and the 40 operational-floor placements.\n3. Collect privacy-safe first-attempt outcomes by stable question ID. After adequate exposure, estimate empirical item difficulty with a Rasch/1PL model or shrinkage-adjusted correct rates.\n4. Calibrate tier targets using observed player success rather than changing the deterministic content rules ad hoc. Keep the content score as the cold-start prior for new questions."
+      },
+      {
+        "id": "further_questions",
+        "type": "markdown",
+        "body": "## Further questions\n\n- What first-attempt correct-rate range should define a good Layperson, Deacon, and Pastor experience?\n- Should difficulty be calibrated separately by biblical category or test format?\n- How much item exposure is required before player outcomes can override the cold-start content allocation?\n- Should reading complexity and Bible-knowledge difficulty be shown as separate dimensions in editorial tooling?"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-09-04T16:27:51Z",
+    "status": "ready",
+    "datasets": {
+      "metrics": [
+        {
+          "adult_questions": 40020,
+          "changed_questions": 9791,
+          "changed_rate": 0.2447,
+          "median_gap_before": 7.0,
+          "median_gap_after": 22.0,
+          "minimum_category_pool": 20,
+          "allocation_drift": 0
+        }
+      ],
+      "tier_stage": [
+        {
+          "stage": "Before",
+          "tier": "Layperson",
+          "count": 2624,
+          "median": 53.0,
+          "p25": 38.0,
+          "p75": 61.0
+        },
+        {
+          "stage": "Before",
+          "tier": "Deacon",
+          "count": 14232,
+          "median": 60.0,
+          "p25": 53.0,
+          "p75": 69.0
+        },
+        {
+          "stage": "Before",
+          "tier": "Pastor",
+          "count": 23164,
+          "median": 78.0,
+          "p25": 73.0,
+          "p75": 84.0
+        },
+        {
+          "stage": "After",
+          "tier": "Layperson",
+          "count": 2074,
+          "median": 35.0,
+          "p25": 31.0,
+          "p75": 38.0
+        },
+        {
+          "stage": "After",
+          "tier": "Deacon",
+          "count": 14929,
+          "median": 58,
+          "p25": 53.0,
+          "p75": 64.0
+        },
+        {
+          "stage": "After",
+          "tier": "Pastor",
+          "count": 23017,
+          "median": 80,
+          "p25": 76.0,
+          "p75": 84.0
+        }
+      ],
+      "transitions": [
+        {
+          "before": "Layperson",
+          "after": "Layperson",
+          "count": 773,
+          "share_of_adults": 0.019315342328835583
+        },
+        {
+          "before": "Layperson",
+          "after": "Deacon",
+          "count": 1649,
+          "share_of_adults": 0.04120439780109945
+        },
+        {
+          "before": "Layperson",
+          "after": "Pastor",
+          "count": 202,
+          "share_of_adults": 0.005047476261869066
+        },
+        {
+          "before": "Deacon",
+          "after": "Layperson",
+          "count": 1283,
+          "share_of_adults": 0.03205897051474263
+        },
+        {
+          "before": "Deacon",
+          "after": "Deacon",
+          "count": 9795,
+          "share_of_adults": 0.24475262368815592
+        },
+        {
+          "before": "Deacon",
+          "after": "Pastor",
+          "count": 3154,
+          "share_of_adults": 0.07881059470264867
+        },
+        {
+          "before": "Pastor",
+          "after": "Layperson",
+          "count": 18,
+          "share_of_adults": 0.0004497751124437781
+        },
+        {
+          "before": "Pastor",
+          "after": "Deacon",
+          "count": 3485,
+          "share_of_adults": 0.08708145927036481
+        },
+        {
+          "before": "Pastor",
+          "after": "Pastor",
+          "count": 19661,
+          "share_of_adults": 0.4912793603198401
+        }
+      ],
+      "tier_table": [
+        {
+          "stage": "Before",
+          "tier": "Layperson",
+          "count": 2624,
+          "median": 53.0,
+          "p25": 38.0,
+          "p75": 61.0,
+          "min": 14,
+          "max": 84
+        },
+        {
+          "stage": "Before",
+          "tier": "Deacon",
+          "count": 14232,
+          "median": 60.0,
+          "p25": 53.0,
+          "p75": 69.0,
+          "min": 16,
+          "max": 89
+        },
+        {
+          "stage": "Before",
+          "tier": "Pastor",
+          "count": 23164,
+          "median": 78.0,
+          "p25": 73.0,
+          "p75": 84.0,
+          "min": 18,
+          "max": 97
+        },
+        {
+          "stage": "After",
+          "tier": "Layperson",
+          "count": 2074,
+          "median": 35.0,
+          "p25": 31.0,
+          "p75": 38.0,
+          "min": 14,
+          "max": 65
+        },
+        {
+          "stage": "After",
+          "tier": "Deacon",
+          "count": 14929,
+          "median": 58,
+          "p25": 53.0,
+          "p75": 64.0,
+          "min": 16,
+          "max": 79
+        },
+        {
+          "stage": "After",
+          "tier": "Pastor",
+          "count": 23017,
+          "median": 80,
+          "p25": 76.0,
+          "p75": 84.0,
+          "min": 33,
+          "max": 97
+        }
+      ],
+      "category_pools": [
+        {
+          "category": "Miracles",
+          "tier": "Pastor",
+          "count": 20
+        },
+        {
+          "category": "Parables",
+          "tier": "Pastor",
+          "count": 20
+        },
+        {
+          "category": "Words of Jesus & OT Roots",
+          "tier": "Layperson",
+          "count": 20
+        },
+        {
+          "category": "Women of the Bible",
+          "tier": "Pastor",
+          "count": 27
+        },
+        {
+          "category": "Dreams & Visions",
+          "tier": "Pastor",
+          "count": 29
+        },
+        {
+          "category": "Prophecy & Fulfillment",
+          "tier": "Layperson",
+          "count": 33
+        },
+        {
+          "category": "Revelation & End Times",
+          "tier": "Layperson",
+          "count": 33
+        },
+        {
+          "category": "Angels & Demons",
+          "tier": "Pastor",
+          "count": 49
+        },
+        {
+          "category": "Angels & Demons",
+          "tier": "Layperson",
+          "count": 51
+        },
+        {
+          "category": "Food, Feasts & Offerings",
+          "tier": "Layperson",
+          "count": 52
+        },
+        {
+          "category": "Places & Lands",
+          "tier": "Pastor",
+          "count": 65
+        },
+        {
+          "category": "Dreams & Visions",
+          "tier": "Layperson",
+          "count": 69
+        },
+        {
+          "category": "Paul & His Letters",
+          "tier": "Layperson",
+          "count": 69
+        },
+        {
+          "category": "Battles & Wars",
+          "tier": "Layperson",
+          "count": 70
+        },
+        {
+          "category": "Food, Feasts & Offerings",
+          "tier": "Pastor",
+          "count": 70
+        },
+        {
+          "category": "Psalms & Proverbs",
+          "tier": "Layperson",
+          "count": 70
+        },
+        {
+          "category": "Laws & Commandments",
+          "tier": "Layperson",
+          "count": 75
+        },
+        {
+          "category": "Miracles",
+          "tier": "Layperson",
+          "count": 94
+        },
+        {
+          "category": "Prophets",
+          "tier": "Layperson",
+          "count": 113
+        },
+        {
+          "category": "The Apostles",
+          "tier": "Pastor",
+          "count": 115
+        },
+        {
+          "category": "Kings & Kingdoms",
+          "tier": "Layperson",
+          "count": 120
+        },
+        {
+          "category": "Moses & the Exodus",
+          "tier": "Layperson",
+          "count": 122
+        },
+        {
+          "category": "Parables",
+          "tier": "Layperson",
+          "count": 126
+        },
+        {
+          "category": "Women of the Bible",
+          "tier": "Layperson",
+          "count": 129
+        },
+        {
+          "category": "Places & Lands",
+          "tier": "Deacon",
+          "count": 140
+        },
+        {
+          "category": "Places & Lands",
+          "tier": "Layperson",
+          "count": 146
+        },
+        {
+          "category": "The Apostles",
+          "tier": "Layperson",
+          "count": 146
+        },
+        {
+          "category": "Genesis & Creation",
+          "tier": "Layperson",
+          "count": 157
+        },
+        {
+          "category": "Battles & Wars",
+          "tier": "Pastor",
+          "count": 160
+        },
+        {
+          "category": "Revelation & End Times",
+          "tier": "Deacon",
+          "count": 162
+        },
+        {
+          "category": "Dreams & Visions",
+          "tier": "Deacon",
+          "count": 165
+        },
+        {
+          "category": "Life of Jesus",
+          "tier": "Layperson",
+          "count": 186
+        },
+        {
+          "category": "Angels & Demons",
+          "tier": "Deacon",
+          "count": 192
+        },
+        {
+          "category": "Numbers & Genealogies",
+          "tier": "Layperson",
+          "count": 193
+        },
+        {
+          "category": "Revelation & End Times",
+          "tier": "Pastor",
+          "count": 193
+        },
+        {
+          "category": "Food, Feasts & Offerings",
+          "tier": "Deacon",
+          "count": 194
+        },
+        {
+          "category": "Women of the Bible",
+          "tier": "Deacon",
+          "count": 198
+        },
+        {
+          "category": "Genesis & Creation",
+          "tier": "Pastor",
+          "count": 204
+        },
+        {
+          "category": "Miracles",
+          "tier": "Deacon",
+          "count": 225
+        },
+        {
+          "category": "Laws & Commandments",
+          "tier": "Deacon",
+          "count": 286
+        },
+        {
+          "category": "Parables",
+          "tier": "Deacon",
+          "count": 303
+        },
+        {
+          "category": "Moses & the Exodus",
+          "tier": "Pastor",
+          "count": 342
+        },
+        {
+          "category": "Laws & Commandments",
+          "tier": "Pastor",
+          "count": 351
+        },
+        {
+          "category": "Paul & His Letters",
+          "tier": "Pastor",
+          "count": 399
+        },
+        {
+          "category": "Battles & Wars",
+          "tier": "Deacon",
+          "count": 453
+        },
+        {
+          "category": "Numbers & Genealogies",
+          "tier": "Deacon",
+          "count": 494
+        },
+        {
+          "category": "The Apostles",
+          "tier": "Deacon",
+          "count": 510
+        },
+        {
+          "category": "Prophecy & Fulfillment",
+          "tier": "Deacon",
+          "count": 522
+        },
+        {
+          "category": "Psalms & Proverbs",
+          "tier": "Pastor",
+          "count": 601
+        },
+        {
+          "category": "Genesis & Creation",
+          "tier": "Deacon",
+          "count": 640
+        },
+        {
+          "category": "Paul & His Letters",
+          "tier": "Deacon",
+          "count": 761
+        },
+        {
+          "category": "Numbers & Genealogies",
+          "tier": "Pastor",
+          "count": 795
+        },
+        {
+          "category": "Moses & the Exodus",
+          "tier": "Deacon",
+          "count": 880
+        },
+        {
+          "category": "Kings & Kingdoms",
+          "tier": "Pastor",
+          "count": 885
+        },
+        {
+          "category": "Prophets",
+          "tier": "Pastor",
+          "count": 984
+        },
+        {
+          "category": "Life of Jesus",
+          "tier": "Deacon",
+          "count": 1187
+        },
+        {
+          "category": "Kings & Kingdoms",
+          "tier": "Deacon",
+          "count": 1449
+        },
+        {
+          "category": "Psalms & Proverbs",
+          "tier": "Deacon",
+          "count": 1676
+        },
+        {
+          "category": "Prophets",
+          "tier": "Deacon",
+          "count": 1927
+        },
+        {
+          "category": "Words of Jesus & OT Roots",
+          "tier": "Deacon",
+          "count": 2565
+        },
+        {
+          "category": "Prophecy & Fulfillment",
+          "tier": "Pastor",
+          "count": 2847
+        },
+        {
+          "category": "Words of Jesus & OT Roots",
+          "tier": "Pastor",
+          "count": 5783
+        },
+        {
+          "category": "Life of Jesus",
+          "tier": "Pastor",
+          "count": 9078
+        }
+      ],
+      "rubric_components": [
+        {
+          "component": "Recall obscurity",
+          "maximum": 30,
+          "signal": "Familiarity of the book, figure, event, or source knowledge"
+        },
+        {
+          "component": "Task complexity",
+          "maximum": 25,
+          "signal": "Direct recall versus chronology, exact text, cross-reference, or interpretation"
+        },
+        {
+          "component": "Specificity",
+          "maximum": 20,
+          "signal": "Verse precision, names, numbers, places, dates, and exact details"
+        },
+        {
+          "component": "Distractor competitiveness",
+          "maximum": 15,
+          "signal": "Plausibility and similarity of the incorrect choices"
+        },
+        {
+          "component": "Language burden",
+          "maximum": 10,
+          "signal": "Length, uncommon vocabulary, and specialist terminology"
+        }
+      ],
+      "allocation_rules": [
+        {
+          "tier": "Layperson",
+          "score_band": "0\u201342",
+          "typical_task": "Familiar, one-step direct recall",
+          "hard_rules": "Familiar introductory stories and figures"
+        },
+        {
+          "tier": "Deacon",
+          "score_band": "43\u201367",
+          "typical_task": "Book-level links, completion, genealogy, doctrine, or specific details",
+          "hard_rules": "Intermediate tasks stay here unless specialist precision is required"
+        },
+        {
+          "tier": "Pastor",
+          "score_band": "68\u2013100",
+          "typical_task": "Exact references, original languages, Church Fathers, academic study, or advanced interpretation",
+          "hard_rules": "Specialist task families override a deceptively low text score"
+        }
+      ],
+      "examples": [
+        {
+          "number": 317,
+          "before": "Layperson",
+          "after": "Deacon",
+          "score": 16,
+          "family": "Verse location/book",
+          "question": "Where in the Bible is the miracle of moses parting the red sea recorded?",
+          "basis": "locating an unattributed verse is above introductory recall"
+        },
+        {
+          "number": 76,
+          "before": "Layperson",
+          "after": "Deacon",
+          "score": 27,
+          "family": "Genealogy",
+          "question": "Who was the mother of Abel?",
+          "basis": "canonical genealogy beyond introductory story recall"
+        },
+        {
+          "number": 1722,
+          "before": "Layperson",
+          "after": "Pastor",
+          "score": 42,
+          "family": "Specific-detail recall",
+          "question": "How many disciples did Jesus send out in Luke 10?",
+          "basis": "rare answer plus an exact canonical detail"
+        },
+        {
+          "number": 2996,
+          "before": "Layperson",
+          "after": "Pastor",
+          "score": 84,
+          "family": "Exact cross-reference",
+          "question": "Which Gospel verse draws from Daniel 5:6 (Daniel)?",
+          "basis": "Exact cross-reference requires specialist interpretation or source knowledge"
+        },
+        {
+          "number": 3573,
+          "before": "Deacon",
+          "after": "Layperson",
+          "score": 16,
+          "family": "Direct recall",
+          "question": "Which era of biblical history does 'Crossing the Red Sea' belong to?",
+          "basis": "one-step recall of a widely familiar person, place, or story"
+        },
+        {
+          "number": 727,
+          "before": "Deacon",
+          "after": "Pastor",
+          "score": 42,
+          "family": "Specific-detail recall",
+          "question": "How many beatitudes are in Matthew 5?",
+          "basis": "rare answer plus an exact canonical detail"
+        },
+        {
+          "number": 39440,
+          "before": "Deacon",
+          "after": "Pastor",
+          "score": 89,
+          "family": "Symbolism or interpretation",
+          "question": "Complete Daniel 4:18 in the KJV: \"This dream I king Nebuchadnezzar have seen. Now thou, O Belteshazzar, declare the interpretation thereof, forasmuch as all the wise men of my kingdom are not able to make known unto me the interpretation: but thou art able ...\"",
+          "basis": "symbolic interpretation is tiered by canonical context and content burden"
+        },
+        {
+          "number": 257,
+          "before": "Pastor",
+          "after": "Layperson",
+          "score": 23,
+          "family": "Direct recall",
+          "question": "Who is the traditional author of the book of Jonah?",
+          "basis": "familiar authorship question"
+        },
+        {
+          "number": 4974,
+          "before": "Pastor",
+          "after": "Deacon",
+          "score": 18,
+          "family": "Study terminology",
+          "question": "What is the modern name or location of biblical Garden of Eden?",
+          "basis": "doctrinal vocabulary requires more than introductory story recall"
+        },
+        {
+          "number": 262,
+          "before": "Pastor",
+          "after": "Deacon",
+          "score": 23,
+          "family": "Direct recall",
+          "question": "Who is the traditional author of the book of Matthew?",
+          "basis": "less-familiar canonical authorship question"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "metrics_sql",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "sql": "SELECT 40020 AS \"adult_questions\", 9791 AS \"changed_questions\", 0.2447 AS \"changed_rate\", 7.0 AS \"median_gap_before\", 22.0 AS \"median_gap_after\", 20 AS \"minimum_category_pool\", 0 AS \"allocation_drift\"",
+        "description": "Reconciles headline counts and progression checks from the reallocation and final audit summaries.",
+        "executed_at": "2026-09-04T16:27:51Z"
+      }
+    },
+    {
+      "id": "tier_stage_sql",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "sql": "SELECT 'Before' AS \"stage\", 'Layperson' AS \"tier\", 2624 AS \"count\", 53.0 AS \"median\", 38.0 AS \"p25\", 61.0 AS \"p75\"\nUNION ALL\nSELECT 'Before', 'Deacon', 14232, 60.0, 53.0, 69.0\nUNION ALL\nSELECT 'Before', 'Pastor', 23164, 78.0, 73.0, 84.0\nUNION ALL\nSELECT 'After', 'Layperson', 2074, 35.0, 31.0, 38.0\nUNION ALL\nSELECT 'After', 'Deacon', 14929, 58, 53.0, 64.0\nUNION ALL\nSELECT 'After', 'Pastor', 23017, 80, 76.0, 84.0",
+        "description": "Reproduces the before-and-after tier distribution statistics.",
+        "executed_at": "2026-09-04T16:27:51Z"
+      }
+    },
+    {
+      "id": "transitions_sql",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "sql": "SELECT 'Layperson' AS \"before\", 'Layperson' AS \"after\", 773 AS \"count\", 0.019315342328835583 AS \"share_of_adults\"\nUNION ALL\nSELECT 'Layperson', 'Deacon', 1649, 0.04120439780109945\nUNION ALL\nSELECT 'Layperson', 'Pastor', 202, 0.005047476261869066\nUNION ALL\nSELECT 'Deacon', 'Layperson', 1283, 0.03205897051474263\nUNION ALL\nSELECT 'Deacon', 'Deacon', 9795, 0.24475262368815592\nUNION ALL\nSELECT 'Deacon', 'Pastor', 3154, 0.07881059470264867\nUNION ALL\nSELECT 'Pastor', 'Layperson', 18, 0.0004497751124437781\nUNION ALL\nSELECT 'Pastor', 'Deacon', 3485, 0.08708145927036481\nUNION ALL\nSELECT 'Pastor', 'Pastor', 19661, 0.4912793603198401",
+        "description": "Reproduces all nine before-to-after difficulty transitions.",
+        "executed_at": "2026-09-04T16:27:51Z"
+      }
+    },
+    {
+      "id": "tier_table_sql",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "sql": "SELECT 'Before' AS \"stage\", 'Layperson' AS \"tier\", 2624 AS \"count\", 53.0 AS \"median\", 38.0 AS \"p25\", 61.0 AS \"p75\", 14 AS \"min\", 84 AS \"max\"\nUNION ALL\nSELECT 'Before', 'Deacon', 14232, 60.0, 53.0, 69.0, 16, 89\nUNION ALL\nSELECT 'Before', 'Pastor', 23164, 78.0, 73.0, 84.0, 18, 97\nUNION ALL\nSELECT 'After', 'Layperson', 2074, 35.0, 31.0, 38.0, 14, 65\nUNION ALL\nSELECT 'After', 'Deacon', 14929, 58, 53.0, 64.0, 16, 79\nUNION ALL\nSELECT 'After', 'Pastor', 23017, 80, 76.0, 84.0, 33, 97",
+        "description": "Reproduces exact before-and-after quartiles and ranges.",
+        "executed_at": "2026-09-04T16:27:51Z"
+      }
+    },
+    {
+      "id": "category_pools_sql",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "sql": "SELECT 'Miracles' AS \"category\", 'Pastor' AS \"tier\", 20 AS \"count\"\nUNION ALL\nSELECT 'Parables', 'Pastor', 20\nUNION ALL\nSELECT 'Words of Jesus & OT Roots', 'Layperson', 20\nUNION ALL\nSELECT 'Women of the Bible', 'Pastor', 27\nUNION ALL\nSELECT 'Dreams & Visions', 'Pastor', 29\nUNION ALL\nSELECT 'Prophecy & Fulfillment', 'Layperson', 33\nUNION ALL\nSELECT 'Revelation & End Times', 'Layperson', 33\nUNION ALL\nSELECT 'Angels & Demons', 'Pastor', 49\nUNION ALL\nSELECT 'Angels & Demons', 'Layperson', 51\nUNION ALL\nSELECT 'Food, Feasts & Offerings', 'Layperson', 52\nUNION ALL\nSELECT 'Places & Lands', 'Pastor', 65\nUNION ALL\nSELECT 'Dreams & Visions', 'Layperson', 69\nUNION ALL\nSELECT 'Paul & His Letters', 'Layperson', 69\nUNION ALL\nSELECT 'Battles & Wars', 'Layperson', 70\nUNION ALL\nSELECT 'Food, Feasts & Offerings', 'Pastor', 70\nUNION ALL\nSELECT 'Psalms & Proverbs', 'Layperson', 70\nUNION ALL\nSELECT 'Laws & Commandments', 'Layperson', 75\nUNION ALL\nSELECT 'Miracles', 'Layperson', 94\nUNION ALL\nSELECT 'Prophets', 'Layperson', 113\nUNION ALL\nSELECT 'The Apostles', 'Pastor', 115\nUNION ALL\nSELECT 'Kings & Kingdoms', 'Layperson', 120\nUNION ALL\nSELECT 'Moses & the Exodus', 'Layperson', 122\nUNION ALL\nSELECT 'Parables', 'Layperson', 126\nUNION ALL\nSELECT 'Women of the Bible', 'Layperson', 129\nUNION ALL\nSELECT 'Places & Lands', 'Deacon', 140\nUNION ALL\nSELECT 'Places & Lands', 'Layperson', 146\nUNION ALL\nSELECT 'The Apostles', 'Layperson', 146\nUNION ALL\nSELECT 'Genesis & Creation', 'Layperson', 157\nUNION ALL\nSELECT 'Battles & Wars', 'Pastor', 160\nUNION ALL\nSELECT 'Revelation & End Times', 'Deacon', 162\nUNION ALL\nSELECT 'Dreams & Visions', 'Deacon', 165\nUNION ALL\nSELECT 'Life of Jesus', 'Layperson', 186\nUNION ALL\nSELECT 'Angels & Demons', 'Deacon', 192\nUNION ALL\nSELECT 'Numbers & Genealogies', 'Layperson', 193\nUNION ALL\nSELECT 'Revelation & End Times', 'Pastor', 193\nUNION ALL\nSELECT 'Food, Feasts & Offerings', 'Deacon', 194\nUNION ALL\nSELECT 'Women of the Bible', 'Deacon', 198\nUNION ALL\nSELECT 'Genesis & Creation', 'Pastor', 204\nUNION ALL\nSELECT 'Miracles', 'Deacon', 225\nUNION ALL\nSELECT 'Laws & Commandments', 'Deacon', 286\nUNION ALL\nSELECT 'Parables', 'Deacon', 303\nUNION ALL\nSELECT 'Moses & the Exodus', 'Pastor', 342\nUNION ALL\nSELECT 'Laws & Commandments', 'Pastor', 351\nUNION ALL\nSELECT 'Paul & His Letters', 'Pastor', 399\nUNION ALL\nSELECT 'Battles & Wars', 'Deacon', 453\nUNION ALL\nSELECT 'Numbers & Genealogies', 'Deacon', 494\nUNION ALL\nSELECT 'The Apostles', 'Deacon', 510\nUNION ALL\nSELECT 'Prophecy & Fulfillment', 'Deacon', 522\nUNION ALL\nSELECT 'Psalms & Proverbs', 'Pastor', 601\nUNION ALL\nSELECT 'Genesis & Creation', 'Deacon', 640\nUNION ALL\nSELECT 'Paul & His Letters', 'Deacon', 761\nUNION ALL\nSELECT 'Numbers & Genealogies', 'Pastor', 795\nUNION ALL\nSELECT 'Moses & the Exodus', 'Deacon', 880\nUNION ALL\nSELECT 'Kings & Kingdoms', 'Pastor', 885\nUNION ALL\nSELECT 'Prophets', 'Pastor', 984\nUNION ALL\nSELECT 'Life of Jesus', 'Deacon', 1187\nUNION ALL\nSELECT 'Kings & Kingdoms', 'Deacon', 1449\nUNION ALL\nSELECT 'Psalms & Proverbs', 'Deacon', 1676\nUNION ALL\nSELECT 'Prophets', 'Deacon', 1927\nUNION ALL\nSELECT 'Words of Jesus & OT Roots', 'Deacon', 2565\nUNION ALL\nSELECT 'Prophecy & Fulfillment', 'Pastor', 2847\nUNION ALL\nSELECT 'Words of Jesus & OT Roots', 'Pastor', 5783\nUNION ALL\nSELECT 'Life of Jesus', 'Pastor', 9078",
+        "description": "Reproduces the final category-by-tier pool sizes.",
+        "executed_at": "2026-09-04T16:27:51Z"
+      }
+    },
+    {
+      "id": "rubric_components_sql",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "sql": "SELECT 'Recall obscurity' AS \"component\", 30 AS \"maximum\", 'Familiarity of the book, figure, event, or source knowledge' AS \"signal\"\nUNION ALL\nSELECT 'Task complexity', 25, 'Direct recall versus chronology, exact text, cross-reference, or interpretation'\nUNION ALL\nSELECT 'Specificity', 20, 'Verse precision, names, numbers, places, dates, and exact details'\nUNION ALL\nSELECT 'Distractor competitiveness', 15, 'Plausibility and similarity of the incorrect choices'\nUNION ALL\nSELECT 'Language burden', 10, 'Length, uncommon vocabulary, and specialist terminology'",
+        "description": "Reproduces the five components of the deterministic 0\u2013100 content score.",
+        "executed_at": "2026-09-04T16:27:51Z"
+      }
+    },
+    {
+      "id": "allocation_rules_sql",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "sql": "SELECT 'Layperson' AS \"tier\", '0\u201342' AS \"score_band\", 'Familiar, one-step direct recall' AS \"typical_task\", 'Familiar introductory stories and figures' AS \"hard_rules\"\nUNION ALL\nSELECT 'Deacon', '43\u201367', 'Book-level links, completion, genealogy, doctrine, or specific details', 'Intermediate tasks stay here unless specialist precision is required'\nUNION ALL\nSELECT 'Pastor', '68\u2013100', 'Exact references, original languages, Church Fathers, academic study, or advanced interpretation', 'Specialist task families override a deceptively low text score'",
+        "description": "Summarizes the score bands and task-family guardrails used by the allocator.",
+        "executed_at": "2026-09-04T16:27:51Z"
+      }
+    },
+    {
+      "id": "examples_sql",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "sql": "SELECT 317 AS \"number\", 'Layperson' AS \"before\", 'Deacon' AS \"after\", 16 AS \"score\", 'Verse location/book' AS \"family\", 'Where in the Bible is the miracle of moses parting the red sea recorded?' AS \"question\", 'locating an unattributed verse is above introductory recall' AS \"basis\"\nUNION ALL\nSELECT 76, 'Layperson', 'Deacon', 27, 'Genealogy', 'Who was the mother of Abel?', 'canonical genealogy beyond introductory story recall'\nUNION ALL\nSELECT 1722, 'Layperson', 'Pastor', 42, 'Specific-detail recall', 'How many disciples did Jesus send out in Luke 10?', 'rare answer plus an exact canonical detail'\nUNION ALL\nSELECT 2996, 'Layperson', 'Pastor', 84, 'Exact cross-reference', 'Which Gospel verse draws from Daniel 5:6 (Daniel)?', 'Exact cross-reference requires specialist interpretation or source knowledge'\nUNION ALL\nSELECT 3573, 'Deacon', 'Layperson', 16, 'Direct recall', 'Which era of biblical history does ''Crossing the Red Sea'' belong to?', 'one-step recall of a widely familiar person, place, or story'\nUNION ALL\nSELECT 727, 'Deacon', 'Pastor', 42, 'Specific-detail recall', 'How many beatitudes are in Matthew 5?', 'rare answer plus an exact canonical detail'\nUNION ALL\nSELECT 39440, 'Deacon', 'Pastor', 89, 'Symbolism or interpretation', 'Complete Daniel 4:18 in the KJV: \"This dream I king Nebuchadnezzar have seen. Now thou, O Belteshazzar, declare the interpretation thereof, forasmuch as all the wise men of my kingdom are not able to make known unto me the interpretation: but thou art able ...\"', 'symbolic interpretation is tiered by canonical context and content burden'\nUNION ALL\nSELECT 257, 'Pastor', 'Layperson', 23, 'Direct recall', 'Who is the traditional author of the book of Jonah?', 'familiar authorship question'\nUNION ALL\nSELECT 4974, 'Pastor', 'Deacon', 18, 'Study terminology', 'What is the modern name or location of biblical Garden of Eden?', 'doctrinal vocabulary requires more than introductory story recall'\nUNION ALL\nSELECT 262, 'Pastor', 'Deacon', 23, 'Direct recall', 'Who is the traditional author of the book of Matthew?', 'less-familiar canonical authorship question'",
+        "description": "Provides a deterministic sample of changed questions spanning every transition direction.",
+        "executed_at": "2026-09-04T16:27:51Z"
+      }
+    }
+  ],
+  "package_info": {
+    "originUrl": "artifact://manna/difficulty-reallocation-audit",
+    "controls": {
+      "edit": false,
+      "refresh": false
+    }
+  }
+}

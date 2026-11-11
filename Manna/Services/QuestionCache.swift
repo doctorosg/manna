@@ -50,19 +50,29 @@ class QuestionCache {
 
     func smartQuestions(categories: [String], difficulty: String? = nil) -> [MannaQuestion] {
         let categoryFiltered = cachedQuestions.filter { q in
+            q.ageGroup == nil &&
             categories.contains(q.category) &&
             (difficulty == nil || q.difficulty == difficulty)
         }
 
         let unseen = categoryFiltered.filter { !seenIds.contains($0.id) }
-        if !unseen.isEmpty { return unseen.shuffled() }
+        if !unseen.isEmpty { return ordered(unseen, difficulty: difficulty) }
 
         // Every currently eligible question has been presented. Start a new cycle
         // without erasing correctness history.
         let eligibleIds = Set(categoryFiltered.map(\.id))
         seenIds.subtract(eligibleIds)
         saveData()
-        return categoryFiltered.shuffled()
+        return ordered(categoryFiltered, difficulty: difficulty)
+    }
+
+    func childrenQuestions(ageGroup: String) -> [MannaQuestion] {
+        let eligible = cachedQuestions.filter { $0.ageGroup == ageGroup }
+        let unseen = eligible.filter { !seenIds.contains($0.id) }
+        if !unseen.isEmpty { return unseen.shuffled() }
+        seenIds.subtract(Set(eligible.map(\.id)))
+        saveData()
+        return eligible.shuffled()
     }
 
     func resetSeen(forCategories categories: [String]) {
@@ -91,9 +101,15 @@ class QuestionCache {
     }
 
     func partyQuestions(category: String?, difficulty: String, count: Int) -> [MannaQuestion] {
-        cachedQuestions.filter { question in
+        let eligible = cachedQuestions.filter { question in
+            question.ageGroup == nil &&
             (category == nil || question.category == category) && question.difficulty == difficulty
-        }.shuffled().prefix(count).map { $0 }
+        }
+        return ordered(eligible, difficulty: difficulty).prefix(count).map { $0 }
+    }
+
+    func partyQuestions(ageGroup: String, count: Int) -> [MannaQuestion] {
+        cachedQuestions.filter { $0.ageGroup == ageGroup }.shuffled().prefix(count).map { $0 }
     }
 
     // MARK: - Persistence
@@ -109,4 +125,11 @@ class QuestionCache {
     }
 
     func checkAndReplenish() { print("📦 Cache: \(stats)") }
+
+    private func ordered(_ questions: [MannaQuestion], difficulty: String?) -> [MannaQuestion] {
+        if difficulty == DifficultyLevel.pastor.name {
+            return PastorSessionBalancer.balanced(questions)
+        }
+        return questions.shuffled()
+    }
 }

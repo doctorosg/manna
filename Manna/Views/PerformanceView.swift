@@ -13,7 +13,7 @@ struct PerformanceView: View {
                     Image(systemName: "chevron.left").foregroundColor(.white)
                 }
                 Spacer()
-                Text("My Performance").font(.system(size: 18, weight: .bold, design: .rounded)).foregroundColor(.white)
+                MannaText("My Performance").font(.system(size: 18, weight: .bold, design: .rounded)).foregroundColor(.white)
                 Spacer()
                 Color.clear.frame(width: 24, height: 24)
             }.padding(.horizontal, 20).padding(.vertical, 16)
@@ -23,9 +23,9 @@ struct PerformanceView: View {
 
             // Tab picker
             Picker("", selection: $selectedTab) {
-                Text("Categories").tag(0)
-                Text("Difficulty").tag(1)
-                Text("Improve").tag(2)
+                MannaText("Categories").tag(0)
+                MannaText("Difficulty").tag(1)
+                MannaText("Improve").tag(2)
             }
             .pickerStyle(.segmented)
             .padding(.horizontal, 16)
@@ -61,7 +61,7 @@ struct PerformanceView: View {
     private func statBox(value: String, label: String, color: Color) -> some View {
         VStack(spacing: 4) {
             Text(value).font(.system(size: 20, weight: .black, design: .rounded)).foregroundColor(color)
-            Text(label).font(.system(size: 10, weight: .medium)).foregroundColor(.white.opacity(0.5))
+            MannaText(label).font(.system(size: 10, weight: .medium)).foregroundColor(.white.opacity(0.5))
         }.frame(maxWidth: .infinity)
     }
 
@@ -87,7 +87,7 @@ struct PerformanceView: View {
             
             VStack(alignment: .leading, spacing: 4) {
                 HStack {
-                    Text(cat.category)
+                    MannaText(cat.category)
                         .font(.system(size: 13, weight: .semibold, design: .rounded))
                         .foregroundColor(.white)
                         .lineLimit(1)
@@ -112,7 +112,7 @@ struct PerformanceView: View {
                     }
                 }.frame(height: 6)
                 
-                Text("\(cat.totalCorrect)/\(cat.totalAnswered) correct")
+                MannaText("\(cat.totalCorrect)/\(cat.totalAnswered) correct")
                     .font(.system(size: 11))
                     .foregroundColor(.white.opacity(0.4))
             }
@@ -140,16 +140,16 @@ struct PerformanceView: View {
                let deacon = performanceTracker.difficultyStats["Deacon"],
                pastor.totalAnswered >= 5 && deacon.totalAnswered >= 5 {
                 VStack(spacing: 8) {
-                    Text("💡 Recommendation")
+                    MannaText("💡 Recommendation")
                         .font(.system(size: 15, weight: .bold)).foregroundColor(Color(hex: "#D4A843") ?? .yellow)
                     if pastor.score < 40 {
-                        Text("Focus on Deacon level to build a strong foundation before tackling Pastor questions.")
+                        MannaText("Focus on Deacon level to build a strong foundation before tackling Pastor questions.")
                             .font(.system(size: 13)).foregroundColor(.white.opacity(0.6)).multilineTextAlignment(.center)
                     } else if deacon.score > 80 {
-                        Text("You're crushing Deacon level! You're ready for more Pastor questions.")
+                        MannaText("You're crushing Deacon level! You're ready for more Pastor questions.")
                             .font(.system(size: 13)).foregroundColor(.white.opacity(0.6)).multilineTextAlignment(.center)
                     } else {
-                        Text("Keep practicing across all levels. Variety builds the deepest knowledge.")
+                        MannaText("Keep practicing across all levels. Variety builds the deepest knowledge.")
                             .font(.system(size: 13)).foregroundColor(.white.opacity(0.6)).multilineTextAlignment(.center)
                     }
                 }
@@ -170,10 +170,10 @@ struct PerformanceView: View {
                     .foregroundColor(level?.color ?? .white)
                     .font(.system(size: 22))
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(stat.difficulty)
+                    MannaText(stat.difficulty)
                         .font(.system(size: 17, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
-                    Text("\(stat.totalCorrect)/\(stat.totalAnswered) correct")
+                    MannaText("\(stat.totalCorrect)/\(stat.totalAnswered) correct")
                         .font(.system(size: 12))
                         .foregroundColor(.white.opacity(0.5))
                 }
@@ -204,7 +204,7 @@ struct PerformanceView: View {
             if suggestions.isEmpty {
                 emptyState("Play more games to get personalized study suggestions!")
             } else {
-                Text("Based on your results, here's where to focus:")
+                MannaText("Based on your results, here's where to focus:")
                     .font(.system(size: 13))
                     .foregroundColor(.white.opacity(0.5))
                     .multilineTextAlignment(.center)
@@ -218,12 +218,12 @@ struct PerformanceView: View {
                         
                         VStack(alignment: .leading, spacing: 6) {
                             HStack {
-                                Text(suggestion.title)
+                                MannaText(suggestion.title)
                                     .font(.system(size: 14, weight: .bold, design: .rounded))
                                     .foregroundColor(.white)
                                 Spacer()
                                 if suggestion.priority == 1 {
-                                    Text("Priority")
+                                    MannaText("Priority")
                                         .font(.system(size: 10, weight: .bold))
                                         .foregroundColor(.black)
                                         .padding(.horizontal, 8)
@@ -232,7 +232,7 @@ struct PerformanceView: View {
                                         .cornerRadius(6)
                                 }
                             }
-                            Text(suggestion.detail)
+                            MannaText(suggestion.detail)
                                 .font(.system(size: 13))
                                 .foregroundColor(.white.opacity(0.6))
                                 .fixedSize(horizontal: false, vertical: true)
@@ -268,7 +268,7 @@ struct PerformanceView: View {
     private func emptyState(_ message: String) -> some View {
         VStack(spacing: 12) {
             Text("📊").font(.system(size: 48)).padding(.top, 40)
-            Text(message)
+            MannaText(message)
                 .font(.system(size: 15))
                 .foregroundColor(.white.opacity(0.5))
                 .multilineTextAlignment(.center)

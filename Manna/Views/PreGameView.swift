@@ -76,8 +76,12 @@ final class DiagnosticRecorder {
 
 struct PreGameView: View {
     @EnvironmentObject var gameManager: GameManager
+    @EnvironmentObject var monetization: MonetizationManager
+    @EnvironmentObject var languageManager: LanguageManager
     @State private var selectedCategories: Set<String> = []
     @State private var showDifficulty = false
+    @State private var audience: PlayAudience = .adults
+    @State private var selectedAgeGroup: ChildAgeGroup = .ages4to10
     @State private var showEmailUnavailable = false
 
     var body: some View {
@@ -93,7 +97,7 @@ struct PreGameView: View {
                         .foregroundColor(.white)
                 }
                 Spacer()
-                Text(showDifficulty ? "Choose Difficulty" : "Choose Categories")
+                MannaText(headerTitle)
                     .font(.system(size: 18, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
                 Spacer()
@@ -103,7 +107,7 @@ struct PreGameView: View {
             .padding(.vertical, 10)
 
             // Content
-            if showDifficulty {
+            if showDifficulty && audience == .adults {
                 DifficultySelectionView(
                     categories: Array(selectedCategories).compactMap { name in
                         MannaCategory.all.first { $0.name == name }
@@ -113,12 +117,35 @@ struct PreGameView: View {
                         MannaCategory.all.first { $0.name == name }
                     }
                     DiagnosticRecorder.shared.record("setup_difficulty=\(difficulty.name) categories=\(cats.count)")
+                    monetization.setChildDirectedSession(false)
                     gameManager.startSession(categories: cats, difficulty: difficulty)
                 }
             } else {
-                CategorySelectionView(selectedCategories: $selectedCategories) {
-                    DiagnosticRecorder.shared.record("setup_categories_confirmed count=\(selectedCategories.count)")
-                    showDifficulty = true
+                VStack(spacing: 0) {
+                    Picker(languageManager.interfaceString("Audience"), selection: $audience) {
+                        ForEach(PlayAudience.allCases) { value in
+                            MannaText(value.rawValue).tag(value)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .padding(.horizontal, 20)
+                    .padding(.top, 4)
+                    .padding(.bottom, 10)
+                    .onChange(of: audience) { _, _ in showDifficulty = false }
+                    .background { MannaText("Audience").hidden() }
+
+                    if audience == .adults {
+                        CategorySelectionView(selectedCategories: $selectedCategories) {
+                            DiagnosticRecorder.shared.record("setup_categories_confirmed count=\(selectedCategories.count)")
+                            showDifficulty = true
+                        }
+                    } else {
+                        ChildrenSelectionView(selectedAgeGroup: $selectedAgeGroup) {
+                            DiagnosticRecorder.shared.record("setup_children_age=\(selectedAgeGroup.rawValue)")
+                            monetization.setChildDirectedSession(true)
+                            gameManager.startChildrenSession(ageGroup: selectedAgeGroup)
+                        }
+                    }
                 }
             }
 
@@ -128,9 +155,9 @@ struct PreGameView: View {
                 }
             } label: {
                 VStack(spacing: 3) {
-                    Label("Report a Problem", systemImage: "envelope.badge")
+                    MannaLabel("Report a Problem", systemImage: "envelope.badge")
                         .font(.system(size: 14, weight: .bold, design: .rounded))
-                    Text("Includes privacy-safe diagnostics from the last 20 seconds")
+                    MannaText("Includes privacy-safe diagnostics from the last 20 seconds")
                         .font(.system(size: 10, weight: .medium, design: .rounded))
                 }
                 .foregroundColor(.white.opacity(0.78))
@@ -141,13 +168,22 @@ struct PreGameView: View {
             }
             .padding(.horizontal, 20)
             .padding(.bottom, 8)
+            .background {
+                MannaText("No Email App Available").hidden()
+                MannaText("OK").hidden()
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .onAppear { DiagnosticRecorder.shared.record("screen=session_setup") }
-        .alert("No Email App Available", isPresented: $showEmailUnavailable) {
-            Button("OK", role: .cancel) {}
+        .alert(languageManager.interfaceString("No Email App Available"), isPresented: $showEmailUnavailable) {
+            Button(role: .cancel, action: {}) { MannaText("OK") }
         } message: {
-            Text("The diagnostic report was copied. Paste it into an email to support@oddcurrent.com and add your description.")
+            MannaText("The diagnostic report was copied. Paste it into an email to support@oddcurrent.com and add your description.")
         }
+    }
+
+    private var headerTitle: String {
+        if showDifficulty && audience == .adults { return "Choose Difficulty" }
+        return audience == .children ? "Children" : "Choose Categories"
     }
 }

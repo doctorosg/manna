@@ -1,0 +1,890 @@
+{
+  "rubric_version": "content-difficulty-v2",
+  "adult_question_count": 40020,
+  "changed_question_count": 9791,
+  "changed_question_rate": 0.2447,
+  "minimum_category_tier_pool": 20,
+  "operational_floor_adjustment_count": 40,
+  "before": [
+    {
+      "tier": "Layperson",
+      "count": 2624,
+      "median": 53.0,
+      "p25": 38.0,
+      "p75": 61.0,
+      "min": 14,
+      "max": 84
+    },
+    {
+      "tier": "Deacon",
+      "count": 14232,
+      "median": 60.0,
+      "p25": 53.0,
+      "p75": 69.0,
+      "min": 16,
+      "max": 89
+    },
+    {
+      "tier": "Pastor",
+      "count": 23164,
+      "median": 78.0,
+      "p25": 73.0,
+      "p75": 84.0,
+      "min": 18,
+      "max": 97
+    }
+  ],
+  "after": [
+    {
+      "tier": "Layperson",
+      "count": 2074,
+      "median": 35.0,
+      "p25": 31.0,
+      "p75": 38.0,
+      "min": 14,
+      "max": 65
+    },
+    {
+      "tier": "Deacon",
+      "count": 14929,
+      "median": 58,
+      "p25": 53.0,
+      "p75": 64.0,
+      "min": 16,
+      "max": 79
+    },
+    {
+      "tier": "Pastor",
+      "count": 23017,
+      "median": 80,
+      "p25": 76.0,
+      "p75": 84.0,
+      "min": 33,
+      "max": 97
+    }
+  ],
+  "minimum_adjacent_median_gap_after": 22.0,
+  "transitions": [
+    {
+      "before": "Layperson",
+      "after": "Layperson",
+      "count": 773
+    },
+    {
+      "before": "Layperson",
+      "after": "Deacon",
+      "count": 1649
+    },
+    {
+      "before": "Layperson",
+      "after": "Pastor",
+      "count": 202
+    },
+    {
+      "before": "Deacon",
+      "after": "Layperson",
+      "count": 1283
+    },
+    {
+      "before": "Deacon",
+      "after": "Deacon",
+      "count": 9795
+    },
+    {
+      "before": "Deacon",
+      "after": "Pastor",
+      "count": 3154
+    },
+    {
+      "before": "Pastor",
+      "after": "Layperson",
+      "count": 18
+    },
+    {
+      "before": "Pastor",
+      "after": "Deacon",
+      "count": 3485
+    },
+    {
+      "before": "Pastor",
+      "after": "Pastor",
+      "count": 19661
+    }
+  ],
+  "family_mix_after": [
+    {
+      "family": "Academic biblical studies",
+      "tier": "Pastor",
+      "count": 57
+    },
+    {
+      "family": "Book-level cross-reference",
+      "tier": "Deacon",
+      "count": 5141
+    },
+    {
+      "family": "Book-level cross-reference",
+      "tier": "Pastor",
+      "count": 466
+    },
+    {
+      "family": "Chronology",
+      "tier": "Deacon",
+      "count": 93
+    },
+    {
+      "family": "Chronology",
+      "tier": "Layperson",
+      "count": 7
+    },
+    {
+      "family": "Chronology",
+      "tier": "Pastor",
+      "count": 122
+    },
+    {
+      "family": "Church Father attribution",
+      "tier": "Pastor",
+      "count": 5080
+    },
+    {
+      "family": "Connection classification",
+      "tier": "Pastor",
+      "count": 1579
+    },
+    {
+      "family": "Direct recall",
+      "tier": "Deacon",
+      "count": 689
+    },
+    {
+      "family": "Direct recall",
+      "tier": "Layperson",
+      "count": 1985
+    },
+    {
+      "family": "Direct recall",
+      "tier": "Pastor",
+      "count": 7
+    },
+    {
+      "family": "Doctrine or theological term",
+      "tier": "Deacon",
+      "count": 23
+    },
+    {
+      "family": "Doctrine or theological term",
+      "tier": "Pastor",
+      "count": 2
+    },
+    {
+      "family": "Exact completion",
+      "tier": "Deacon",
+      "count": 5333
+    },
+    {
+      "family": "Exact completion",
+      "tier": "Pastor",
+      "count": 910
+    },
+    {
+      "family": "Exact cross-reference",
+      "tier": "Pastor",
+      "count": 8998
+    },
+    {
+      "family": "Genealogy",
+      "tier": "Deacon",
+      "count": 164
+    },
+    {
+      "family": "Original-language lexicon",
+      "tier": "Pastor",
+      "count": 5431
+    },
+    {
+      "family": "Other",
+      "tier": "Deacon",
+      "count": 176
+    },
+    {
+      "family": "Other",
+      "tier": "Layperson",
+      "count": 82
+    },
+    {
+      "family": "Specific-detail recall",
+      "tier": "Deacon",
+      "count": 175
+    },
+    {
+      "family": "Specific-detail recall",
+      "tier": "Pastor",
+      "count": 121
+    },
+    {
+      "family": "Study terminology",
+      "tier": "Deacon",
+      "count": 214
+    },
+    {
+      "family": "Symbolism or interpretation",
+      "tier": "Deacon",
+      "count": 29
+    },
+    {
+      "family": "Symbolism or interpretation",
+      "tier": "Pastor",
+      "count": 98
+    },
+    {
+      "family": "Verse location/book",
+      "tier": "Deacon",
+      "count": 2892
+    },
+    {
+      "family": "Verse location/book",
+      "tier": "Pastor",
+      "count": 146
+    }
+  ],
+  "category_mix_after": [
+    {
+      "category": "Angels & Demons",
+      "tier": "Layperson",
+      "count": 51
+    },
+    {
+      "category": "Angels & Demons",
+      "tier": "Deacon",
+      "count": 192
+    },
+    {
+      "category": "Angels & Demons",
+      "tier": "Pastor",
+      "count": 49
+    },
+    {
+      "category": "Battles & Wars",
+      "tier": "Layperson",
+      "count": 70
+    },
+    {
+      "category": "Battles & Wars",
+      "tier": "Deacon",
+      "count": 453
+    },
+    {
+      "category": "Battles & Wars",
+      "tier": "Pastor",
+      "count": 160
+    },
+    {
+      "category": "Dreams & Visions",
+      "tier": "Layperson",
+      "count": 69
+    },
+    {
+      "category": "Dreams & Visions",
+      "tier": "Deacon",
+      "count": 165
+    },
+    {
+      "category": "Dreams & Visions",
+      "tier": "Pastor",
+      "count": 29
+    },
+    {
+      "category": "Food, Feasts & Offerings",
+      "tier": "Layperson",
+      "count": 52
+    },
+    {
+      "category": "Food, Feasts & Offerings",
+      "tier": "Deacon",
+      "count": 194
+    },
+    {
+      "category": "Food, Feasts & Offerings",
+      "tier": "Pastor",
+      "count": 70
+    },
+    {
+      "category": "Genesis & Creation",
+      "tier": "Layperson",
+      "count": 157
+    },
+    {
+      "category": "Genesis & Creation",
+      "tier": "Deacon",
+      "count": 640
+    },
+    {
+      "category": "Genesis & Creation",
+      "tier": "Pastor",
+      "count": 204
+    },
+    {
+      "category": "Kings & Kingdoms",
+      "tier": "Layperson",
+      "count": 120
+    },
+    {
+      "category": "Kings & Kingdoms",
+      "tier": "Deacon",
+      "count": 1449
+    },
+    {
+      "category": "Kings & Kingdoms",
+      "tier": "Pastor",
+      "count": 885
+    },
+    {
+      "category": "Laws & Commandments",
+      "tier": "Layperson",
+      "count": 75
+    },
+    {
+      "category": "Laws & Commandments",
+      "tier": "Deacon",
+      "count": 286
+    },
+    {
+      "category": "Laws & Commandments",
+      "tier": "Pastor",
+      "count": 351
+    },
+    {
+      "category": "Life of Jesus",
+      "tier": "Layperson",
+      "count": 186
+    },
+    {
+      "category": "Life of Jesus",
+      "tier": "Deacon",
+      "count": 1187
+    },
+    {
+      "category": "Life of Jesus",
+      "tier": "Pastor",
+      "count": 9078
+    },
+    {
+      "category": "Miracles",
+      "tier": "Layperson",
+      "count": 94
+    },
+    {
+      "category": "Miracles",
+      "tier": "Deacon",
+      "count": 225
+    },
+    {
+      "category": "Miracles",
+      "tier": "Pastor",
+      "count": 20
+    },
+    {
+      "category": "Moses & the Exodus",
+      "tier": "Layperson",
+      "count": 122
+    },
+    {
+      "category": "Moses & the Exodus",
+      "tier": "Deacon",
+      "count": 880
+    },
+    {
+      "category": "Moses & the Exodus",
+      "tier": "Pastor",
+      "count": 342
+    },
+    {
+      "category": "Numbers & Genealogies",
+      "tier": "Layperson",
+      "count": 193
+    },
+    {
+      "category": "Numbers & Genealogies",
+      "tier": "Deacon",
+      "count": 494
+    },
+    {
+      "category": "Numbers & Genealogies",
+      "tier": "Pastor",
+      "count": 795
+    },
+    {
+      "category": "Parables",
+      "tier": "Layperson",
+      "count": 126
+    },
+    {
+      "category": "Parables",
+      "tier": "Deacon",
+      "count": 303
+    },
+    {
+      "category": "Parables",
+      "tier": "Pastor",
+      "count": 20
+    },
+    {
+      "category": "Paul & His Letters",
+      "tier": "Layperson",
+      "count": 69
+    },
+    {
+      "category": "Paul & His Letters",
+      "tier": "Deacon",
+      "count": 761
+    },
+    {
+      "category": "Paul & His Letters",
+      "tier": "Pastor",
+      "count": 399
+    },
+    {
+      "category": "Places & Lands",
+      "tier": "Layperson",
+      "count": 146
+    },
+    {
+      "category": "Places & Lands",
+      "tier": "Deacon",
+      "count": 140
+    },
+    {
+      "category": "Places & Lands",
+      "tier": "Pastor",
+      "count": 65
+    },
+    {
+      "category": "Prophecy & Fulfillment",
+      "tier": "Layperson",
+      "count": 33
+    },
+    {
+      "category": "Prophecy & Fulfillment",
+      "tier": "Deacon",
+      "count": 522
+    },
+    {
+      "category": "Prophecy & Fulfillment",
+      "tier": "Pastor",
+      "count": 2847
+    },
+    {
+      "category": "Prophets",
+      "tier": "Layperson",
+      "count": 113
+    },
+    {
+      "category": "Prophets",
+      "tier": "Deacon",
+      "count": 1927
+    },
+    {
+      "category": "Prophets",
+      "tier": "Pastor",
+      "count": 984
+    },
+    {
+      "category": "Psalms & Proverbs",
+      "tier": "Layperson",
+      "count": 70
+    },
+    {
+      "category": "Psalms & Proverbs",
+      "tier": "Deacon",
+      "count": 1676
+    },
+    {
+      "category": "Psalms & Proverbs",
+      "tier": "Pastor",
+      "count": 601
+    },
+    {
+      "category": "Revelation & End Times",
+      "tier": "Layperson",
+      "count": 33
+    },
+    {
+      "category": "Revelation & End Times",
+      "tier": "Deacon",
+      "count": 162
+    },
+    {
+      "category": "Revelation & End Times",
+      "tier": "Pastor",
+      "count": 193
+    },
+    {
+      "category": "The Apostles",
+      "tier": "Layperson",
+      "count": 146
+    },
+    {
+      "category": "The Apostles",
+      "tier": "Deacon",
+      "count": 510
+    },
+    {
+      "category": "The Apostles",
+      "tier": "Pastor",
+      "count": 115
+    },
+    {
+      "category": "Women of the Bible",
+      "tier": "Layperson",
+      "count": 129
+    },
+    {
+      "category": "Women of the Bible",
+      "tier": "Deacon",
+      "count": 198
+    },
+    {
+      "category": "Women of the Bible",
+      "tier": "Pastor",
+      "count": 27
+    },
+    {
+      "category": "Words of Jesus & OT Roots",
+      "tier": "Layperson",
+      "count": 20
+    },
+    {
+      "category": "Words of Jesus & OT Roots",
+      "tier": "Deacon",
+      "count": 2565
+    },
+    {
+      "category": "Words of Jesus & OT Roots",
+      "tier": "Pastor",
+      "count": 5783
+    }
+  ],
+  "floor_adjustments": [
+    {
+      "id": "v4-0c969b458e2f669f",
+      "category": "Miracles",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 62,
+      "family": "Exact completion"
+    },
+    {
+      "id": "v4-e3ab4421ffbc1575",
+      "category": "Miracles",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 62,
+      "family": "Exact completion"
+    },
+    {
+      "id": "v4-f778e3e0f5efeeb5",
+      "category": "Miracles",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 62,
+      "family": "Exact completion"
+    },
+    {
+      "id": "v4-c29d120bfda6ae9b",
+      "category": "Miracles",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 62,
+      "family": "Exact completion"
+    },
+    {
+      "id": "v4-d1a8afaede129006",
+      "category": "Miracles",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 62,
+      "family": "Exact completion"
+    },
+    {
+      "id": "v4-d2d5a140044927ee",
+      "category": "Miracles",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 62,
+      "family": "Exact completion"
+    },
+    {
+      "id": "v4-abef8bf3a46d59c3",
+      "category": "Miracles",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 62,
+      "family": "Exact completion"
+    },
+    {
+      "id": "v4-ef6a9becf8154515",
+      "category": "Miracles",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 62,
+      "family": "Exact completion"
+    },
+    {
+      "id": "v4-4b020c6928ac9507",
+      "category": "Miracles",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 62,
+      "family": "Exact completion"
+    },
+    {
+      "id": "v4-d168c3b250d69c92",
+      "category": "Miracles",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 62,
+      "family": "Exact completion"
+    },
+    {
+      "id": "v4-ffdf367cfd04d7c3",
+      "category": "Miracles",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 60,
+      "family": "Exact completion"
+    },
+    {
+      "id": "v4-b0663fce38c39277",
+      "category": "Miracles",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 60,
+      "family": "Exact completion"
+    },
+    {
+      "id": "v4-1d766110a6ba5fba",
+      "category": "Miracles",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 60,
+      "family": "Exact completion"
+    },
+    {
+      "id": "v4-8d37afd5608026d6",
+      "category": "Miracles",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 60,
+      "family": "Exact completion"
+    },
+    {
+      "id": "019f2d993d65",
+      "category": "Parables",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 67,
+      "family": "Symbolism or interpretation"
+    },
+    {
+      "id": "v4-f0122cc7229ef996",
+      "category": "Parables",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 62,
+      "family": "Exact completion"
+    },
+    {
+      "id": "v4-6c1a3eec24459f1f",
+      "category": "Parables",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 62,
+      "family": "Exact completion"
+    },
+    {
+      "id": "77341088d155",
+      "category": "Parables",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 62,
+      "family": "Symbolism or interpretation"
+    },
+    {
+      "id": "b11a53736190",
+      "category": "Parables",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 62,
+      "family": "Symbolism or interpretation"
+    },
+    {
+      "id": "27d20c880747",
+      "category": "Parables",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 62,
+      "family": "Symbolism or interpretation"
+    },
+    {
+      "id": "a3ef384a6094",
+      "category": "Parables",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 62,
+      "family": "Symbolism or interpretation"
+    },
+    {
+      "id": "956c2e7eeb50",
+      "category": "Parables",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 61,
+      "family": "Verse location/book"
+    },
+    {
+      "id": "93aed06278ca",
+      "category": "Parables",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 61,
+      "family": "Symbolism or interpretation"
+    },
+    {
+      "id": "1799fbecfdfb",
+      "category": "Parables",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 61,
+      "family": "Chronology"
+    },
+    {
+      "id": "v4-4a3c139c1b7ee246",
+      "category": "Parables",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 60,
+      "family": "Exact completion"
+    },
+    {
+      "id": "v4-8f51d67b5f09b262",
+      "category": "Parables",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 60,
+      "family": "Exact completion"
+    },
+    {
+      "id": "v4-f83fb3c601e4f398",
+      "category": "Parables",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 60,
+      "family": "Exact completion"
+    },
+    {
+      "id": "v4-bc7e86b1dffb7925",
+      "category": "Parables",
+      "from": "Deacon",
+      "to": "Pastor",
+      "score": 60,
+      "family": "Exact completion"
+    },
+    {
+      "id": "eedd63c5d1b4",
+      "category": "Words of Jesus & OT Roots",
+      "from": "Deacon",
+      "to": "Layperson",
+      "score": 34,
+      "family": "Other"
+    },
+    {
+      "id": "fb15bc43d453",
+      "category": "Words of Jesus & OT Roots",
+      "from": "Deacon",
+      "to": "Layperson",
+      "score": 36,
+      "family": "Other"
+    },
+    {
+      "id": "3700717743cf",
+      "category": "Words of Jesus & OT Roots",
+      "from": "Deacon",
+      "to": "Layperson",
+      "score": 39,
+      "family": "Other"
+    },
+    {
+      "id": "37db27d55462",
+      "category": "Words of Jesus & OT Roots",
+      "from": "Deacon",
+      "to": "Layperson",
+      "score": 39,
+      "family": "Direct recall"
+    },
+    {
+      "id": "42c240cbe6cc",
+      "category": "Words of Jesus & OT Roots",
+      "from": "Deacon",
+      "to": "Layperson",
+      "score": 39,
+      "family": "Direct recall"
+    },
+    {
+      "id": "c4eab1904338",
+      "category": "Words of Jesus & OT Roots",
+      "from": "Deacon",
+      "to": "Layperson",
+      "score": 40,
+      "family": "Direct recall"
+    },
+    {
+      "id": "30fff90d0d7b",
+      "category": "Words of Jesus & OT Roots",
+      "from": "Deacon",
+      "to": "Layperson",
+      "score": 40,
+      "family": "Direct recall"
+    },
+    {
+      "id": "375cad808ee8",
+      "category": "Words of Jesus & OT Roots",
+      "from": "Deacon",
+      "to": "Layperson",
+      "score": 42,
+      "family": "Direct recall"
+    },
+    {
+      "id": "22dfa08d7ae9",
+      "category": "Words of Jesus & OT Roots",
+      "from": "Deacon",
+      "to": "Layperson",
+      "score": 42,
+      "family": "Direct recall"
+    },
+    {
+      "id": "844e7439974e",
+      "category": "Words of Jesus & OT Roots",
+      "from": "Deacon",
+      "to": "Layperson",
+      "score": 44,
+      "family": "Other"
+    },
+    {
+      "id": "407f11e6e99f",
+      "category": "Words of Jesus & OT Roots",
+      "from": "Deacon",
+      "to": "Layperson",
+      "score": 44,
+      "family": "Other"
+    },
+    {
+      "id": "b3d95f39f5af",
+      "category": "Words of Jesus & OT Roots",
+      "from": "Deacon",
+      "to": "Layperson",
+      "score": 45,
+      "family": "Other"
+    }
+  ]
+}

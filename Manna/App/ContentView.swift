@@ -28,6 +28,7 @@ struct ContentView: View {
         .onAppear { DiagnosticRecorder.shared.record("app_visible screen=\(screenName(gameManager.appState))") }
         .onChange(of: gameManager.appState) { state in
             DiagnosticRecorder.shared.record("screen=\(screenName(state))")
+            if state == .home { monetization.setChildDirectedSession(false) }
         }
     }
 
@@ -51,10 +52,10 @@ private struct InternetRequiredView: View {
             Image(systemName: "wifi.exclamationmark")
                 .font(.system(size: 52, weight: .semibold))
                 .foregroundColor(Color(hex: "#D4A843") ?? .yellow)
-            Text("Internet Required")
+            MannaText("Internet Required")
                 .font(.system(size: 28, weight: .bold, design: .rounded))
                 .foregroundColor(.white)
-            Text("The free version of Manna needs an active Wi-Fi or cellular internet connection so advertising can be delivered. Reconnect to continue, or purchase Remove Ads while online for permanent offline access.")
+            MannaText("The free version of Manna needs an active Wi-Fi or cellular internet connection so advertising can be delivered. Reconnect to continue, or purchase Remove Ads while online for permanent offline access.")
                 .font(.system(size: 16, weight: .medium, design: .rounded))
                 .foregroundColor(.white.opacity(0.72))
                 .multilineTextAlignment(.center)

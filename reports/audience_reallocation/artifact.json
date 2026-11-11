@@ -1,0 +1,949 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "Manna 11–17 to Layperson boundary audit",
+    "description": "Complete question-level readiness analysis and reallocation across the ages 11–17 and adult Layperson boundary.",
+    "generatedAt": "2026-09-04T18:16:07Z",
+    "cards": [
+      {
+        "id": "boundary_count",
+        "description": "Every question in the ages 11–17 and adult Layperson boundary pool.",
+        "dataset": "metrics",
+        "sourceId": "metrics_sql",
+        "metrics": [
+          {
+            "label": "Questions assessed",
+            "field": "boundary_questions",
+            "format": "compact"
+          }
+        ]
+      },
+      {
+        "id": "changed_count",
+        "description": "Records that crossed the boundary; half moved in each direction.",
+        "dataset": "metrics",
+        "sourceId": "metrics_sql",
+        "metrics": [
+          {
+            "label": "Questions reallocated",
+            "field": "changed_questions",
+            "format": "compact"
+          }
+        ]
+      },
+      {
+        "id": "gap_after",
+        "description": "Layperson median minus ages 11–17 median after allocation.",
+        "dataset": "metrics",
+        "sourceId": "metrics_sql",
+        "metrics": [
+          {
+            "label": "Readiness gap after",
+            "field": "gap_after",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "adult_gap",
+        "description": "Adult content-score median difference after the boundary change.",
+        "dataset": "metrics",
+        "sourceId": "metrics_sql",
+        "metrics": [
+          {
+            "label": "Layperson-to-Deacon gap",
+            "field": "layperson_deacon_gap",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "category_pool",
+        "description": "Minimum playable Layperson pool across all 21 categories.",
+        "dataset": "metrics",
+        "sourceId": "metrics_sql",
+        "metrics": [
+          {
+            "label": "Smallest Layperson category",
+            "field": "minimum_category_pool",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "drift",
+        "description": "Shipping adult labels that differ from the frozen allocation.",
+        "dataset": "metrics",
+        "sourceId": "metrics_sql",
+        "metrics": [
+          {
+            "label": "Unresolved adult drift",
+            "field": "adult_allocation_drift",
+            "format": "number"
+          }
+        ]
+      }
+    ],
+    "charts": [
+      {
+        "id": "readiness_medians",
+        "title": "Median readiness score before and after reallocation",
+        "subtitle": "The prior ordering was inverted; the revised Layperson median is 18 points above ages 11–17.",
+        "headerMarkdown": "### The age-to-adult boundary now rises in difficulty\n\nThe median gap changed from **−15** to **+18 points**.",
+        "intent": "comparison",
+        "question": "Did reallocation create a clear ages 11–17 to Layperson progression?",
+        "rationale": "Grouped bars compare both cohorts before and after the same allocation.",
+        "comparisonContext": {
+          "grain": "boundary question",
+          "unit": "points on a 0–100 readiness score"
+        },
+        "type": "bar",
+        "dataset": "cohort_stage",
+        "sourceId": "cohort_stage_sql",
+        "encodings": {
+          "x": {
+            "field": "cohort",
+            "type": "ordinal",
+            "label": "Audience"
+          },
+          "y": {
+            "field": "readiness_median",
+            "type": "quantitative",
+            "label": "Median readiness score",
+            "unit": "points"
+          },
+          "color": {
+            "field": "stage",
+            "type": "nominal",
+            "label": "Allocation stage"
+          },
+          "tooltip": [
+            {
+              "field": "count",
+              "type": "quantitative",
+              "label": "Questions"
+            },
+            {
+              "field": "readiness_p25",
+              "type": "quantitative",
+              "label": "25th percentile"
+            },
+            {
+              "field": "readiness_p75",
+              "type": "quantitative",
+              "label": "75th percentile"
+            }
+          ]
+        },
+        "legend": {
+          "position": "bottom",
+          "sort": "spec",
+          "title": "Allocation stage"
+        },
+        "palette": {
+          "kind": "categorical",
+          "name": "allocation-stage"
+        },
+        "labels": {
+          "values": "all"
+        },
+        "settings": {
+          "groupMode": "grouped",
+          "sort": "none",
+          "showValues": true
+        },
+        "surface": {
+          "surface": "card",
+          "viewMode": "both"
+        }
+      },
+      {
+        "id": "transition_mix",
+        "title": "Final audience composition by original audience",
+        "subtitle": "Exactly 1,911 questions moved in each direction, so audience sizes did not change.",
+        "headerMarkdown": "### Reallocation is balanced, not a size change\n\n**4,919** questions retained their original audience and **3,822** crossed the boundary.",
+        "intent": "composition",
+        "question": "How much of each original audience stayed or moved?",
+        "rationale": "A normalized stacked bar compares the retained and moved shares of unequal pools.",
+        "comparisonContext": {
+          "grain": "boundary question",
+          "unit": "share of original audience"
+        },
+        "type": "stackedBar100",
+        "dataset": "transitions",
+        "sourceId": "transitions_sql",
+        "encodings": {
+          "x": {
+            "field": "before",
+            "type": "ordinal",
+            "label": "Original audience"
+          },
+          "y": {
+            "field": "count",
+            "type": "quantitative",
+            "label": "Questions"
+          },
+          "color": {
+            "field": "after",
+            "type": "nominal",
+            "label": "Final audience"
+          }
+        },
+        "legend": {
+          "position": "bottom",
+          "sort": "spec",
+          "title": "Final audience"
+        },
+        "palette": {
+          "kind": "categorical",
+          "name": "audience"
+        },
+        "settings": {
+          "sort": "none",
+          "showPercent": true
+        },
+        "surface": {
+          "surface": "card",
+          "viewMode": "both"
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "format_movements",
+        "title": "Question formats that crossed the boundary",
+        "headerMarkdown": "### Template difficulty—not hand-written teen trivia—drove the inversion\n\nBook inference and exact-word completion account for most moves into Layperson.",
+        "dataset": "format_movements",
+        "sourceId": "format_movements_sql",
+        "defaultSort": {
+          "field": "count",
+          "direction": "desc"
+        },
+        "columns": [
+          {
+            "field": "before",
+            "label": "Before",
+            "type": "text"
+          },
+          {
+            "field": "after",
+            "label": "After",
+            "type": "text"
+          },
+          {
+            "field": "format",
+            "label": "Original format",
+            "type": "text"
+          },
+          {
+            "field": "count",
+            "label": "Questions",
+            "format": "compact"
+          }
+        ]
+      },
+      {
+        "id": "rubric",
+        "title": "Readiness score components",
+        "headerMarkdown": "### Five label-independent components produce a reproducible 0–100 score\n\nHigher scores signal greater independent Bible-study skill.",
+        "dataset": "rubric",
+        "sourceId": "rubric_sql",
+        "defaultSort": {
+          "field": "maximum",
+          "direction": "desc"
+        },
+        "columns": [
+          {
+            "field": "component",
+            "label": "Component",
+            "type": "text"
+          },
+          {
+            "field": "maximum",
+            "label": "Maximum",
+            "format": "number"
+          },
+          {
+            "field": "signal",
+            "label": "What raises the score",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "id": "safeguards",
+        "title": "Post-allocation safeguards",
+        "headerMarkdown": "### Every build and progression guardrail passed\n\nThe boundary changed without reducing audience sizes or adult gameplay coverage.",
+        "dataset": "safeguards",
+        "sourceId": "safeguards_sql",
+        "defaultSort": {
+          "field": "safeguard",
+          "direction": "asc"
+        },
+        "columns": [
+          {
+            "field": "safeguard",
+            "label": "Safeguard",
+            "type": "text"
+          },
+          {
+            "field": "result",
+            "label": "Result",
+            "type": "text"
+          },
+          {
+            "field": "value",
+            "label": "Evidence",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "id": "category_pools",
+        "title": "Final Layperson questions by category",
+        "headerMarkdown": "### Every Layperson category still supports a 20-question game\n\nThere were **148 deterministic floor swaps** to preserve category coverage.",
+        "dataset": "category_pools",
+        "sourceId": "category_pools_sql",
+        "defaultSort": {
+          "field": "count",
+          "direction": "asc"
+        },
+        "columns": [
+          {
+            "field": "category",
+            "label": "Category",
+            "type": "text"
+          },
+          {
+            "field": "count",
+            "label": "Layperson questions",
+            "format": "compact"
+          }
+        ]
+      },
+      {
+        "id": "examples",
+        "title": "Representative reallocated questions",
+        "headerMarkdown": "### Examples show both directions\n\nThe complete **3,822-row** decision log is retained in CSV.",
+        "dataset": "examples",
+        "sourceId": "examples_sql",
+        "defaultSort": {
+          "field": "number",
+          "direction": "asc"
+        },
+        "columns": [
+          {
+            "field": "number",
+            "label": "Question #",
+            "format": "number"
+          },
+          {
+            "field": "before",
+            "label": "Before",
+            "type": "text"
+          },
+          {
+            "field": "after",
+            "label": "After",
+            "type": "text"
+          },
+          {
+            "field": "readiness_score",
+            "label": "Readiness",
+            "format": "number"
+          },
+          {
+            "field": "adult_content_score",
+            "label": "Adult content",
+            "format": "number"
+          },
+          {
+            "field": "format",
+            "label": "Format",
+            "type": "text"
+          },
+          {
+            "field": "question",
+            "label": "Question",
+            "type": "text"
+          },
+          {
+            "field": "correct",
+            "label": "Answer",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "ios_bank",
+        "label": "Shipping iOS bank",
+        "path": "Manna/Resources/manna_questions.json"
+      },
+      {
+        "id": "android_bank",
+        "label": "Shipping Android bank",
+        "path": "android/app/src/main/assets/manna_questions.json"
+      },
+      {
+        "id": "audience_manifest",
+        "label": "Frozen audience reallocation",
+        "path": "audience_overrides.json"
+      },
+      {
+        "id": "boundary_summary",
+        "label": "Boundary audit summary",
+        "path": "reports/audience_reallocation/summary.json"
+      },
+      {
+        "id": "boundary_changes",
+        "label": "Complete boundary change log",
+        "path": "reports/audience_reallocation/changes.csv"
+      },
+      {
+        "id": "adult_audit",
+        "label": "Adult difficulty audit",
+        "path": "reports/difficulty_audit/summary.json"
+      },
+      {
+        "id": "metrics_sql",
+        "label": "Metrics Sql",
+        "path": "scripts/build_audience_reallocation_report.py"
+      },
+      {
+        "id": "cohort_stage_sql",
+        "label": "Cohort Stage Sql",
+        "path": "scripts/build_audience_reallocation_report.py"
+      },
+      {
+        "id": "transitions_sql",
+        "label": "Transitions Sql",
+        "path": "scripts/build_audience_reallocation_report.py"
+      },
+      {
+        "id": "format_movements_sql",
+        "label": "Format Movements Sql",
+        "path": "scripts/build_audience_reallocation_report.py"
+      },
+      {
+        "id": "category_pools_sql",
+        "label": "Category Pools Sql",
+        "path": "scripts/build_audience_reallocation_report.py"
+      },
+      {
+        "id": "rubric_sql",
+        "label": "Rubric Sql",
+        "path": "scripts/build_audience_reallocation_report.py"
+      },
+      {
+        "id": "safeguards_sql",
+        "label": "Safeguards Sql",
+        "path": "scripts/build_audience_reallocation_report.py"
+      },
+      {
+        "id": "examples_sql",
+        "label": "Examples Sql",
+        "path": "scripts/build_audience_reallocation_report.py"
+      }
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# Manna 11–17 to Layperson boundary audit"
+      },
+      {
+        "id": "technical_summary",
+        "type": "markdown",
+        "sourceId": "metrics_sql",
+        "body": "## Technical summary\n\n**Outcome: corrected and build-safe.** The audit assessed all **8,741** questions in the ages 11–17 and adult Layperson boundary. Before reallocation, ages 11–17 were **15 points harder at the median**. After balanced two-way swaps, the Layperson median is **18 points higher**. Exactly **1,911 questions moved each way**, both audience sizes are unchanged, and Layperson remains **16 adult-content points below Deacon**."
+      },
+      {
+        "id": "metrics",
+        "type": "metric-strip",
+        "cardIds": [
+          "boundary_count",
+          "changed_count",
+          "gap_after",
+          "adult_gap",
+          "category_pool",
+          "drift"
+        ]
+      },
+      {
+        "id": "findings",
+        "type": "markdown",
+        "sourceId": "format_movements_sql",
+        "body": "## Key findings\n\nThe inversion was structural. Of the teen questions moved to Layperson, **957** require identifying a Bible book from an unattributed passage, **610** require an exact missing word, and **340** require classifying an unattributed passage by canon section. By contrast, all **1,400 word-recognition** questions and all **533 familiar story-context** questions remained in ages 11–17. Only **4 of 118 hand-written teen trivia** questions moved, so the curated trivia was not the problem."
+      },
+      {
+        "id": "median_chart",
+        "type": "chart",
+        "chartId": "readiness_medians"
+      },
+      {
+        "id": "transition_chart",
+        "type": "chart",
+        "chartId": "transition_mix"
+      },
+      {
+        "id": "format_table",
+        "type": "table",
+        "tableId": "format_movements"
+      },
+      {
+        "id": "scope",
+        "type": "markdown",
+        "body": "## Scope and definitions\n\nThe population is the complete union of the **6,667** ages 11–17 questions and **2,074** adult Layperson questions after the existing adult-difficulty audit. Ages 4–10, Deacon, and Pastor questions were not candidates for this move. ‘Before’ is reconstructed from repository source banks plus the frozen adult difficulty manifest, so rerunning the analysis does not depend on a mutable shipping snapshot. ‘After’ changes audience metadata only; stable question IDs, support numbers, wording, choices, answers, explanations, and categories are preserved."
+      },
+      {
+        "id": "methodology",
+        "type": "markdown",
+        "body": "## Methodology\n\nEach question receives a label-independent **0–100 readiness score** from canonical knowledge (30), task abstraction (25), reading burden (20), answer specificity (15), and distractor competitiveness (10). Higher scores indicate more independent Bible-study skill and therefore stronger adult readiness. Allocation ranks the combined pool while preserving its original audience sizes. An adult-content ceiling of **53** prevents a question from entering Layperson when doing so would compress the next Layperson-to-Deacon boundary. Deterministic tie-breakers favor the original audience to minimize churn."
+      },
+      {
+        "id": "rubric_table",
+        "type": "table",
+        "tableId": "rubric"
+      },
+      {
+        "id": "safeguard_notes",
+        "type": "markdown",
+        "sourceId": "safeguards_sql",
+        "body": "## Safeguards and edge cases\n\nEvery question moved into ages 11–17 has four choices and passes the existing archaic, sexual-content, and graphic-wording screen. **15** records were locked adult-only by that screen. After the primary rank allocation, **148** category-floor swaps preserved at least **20** adult Layperson questions in every category. The full adult audit then passed with medians **42 → 58 → 80**, zero manifest mismatch, and zero allocation drift."
+      },
+      {
+        "id": "safeguards_table",
+        "type": "table",
+        "tableId": "safeguards"
+      },
+      {
+        "id": "category_table",
+        "type": "table",
+        "tableId": "category_pools"
+      },
+      {
+        "id": "examples_table",
+        "type": "table",
+        "tableId": "examples"
+      },
+      {
+        "id": "limitations",
+        "type": "markdown",
+        "body": "## Limitations and uncertainty\n\n**Confidence is high for reproducibility and population ordering, and medium for individual pedagogical placement.** This is a deterministic editorial cold-start model, not an item-response study. It cannot observe reading fluency, church background, denomination, ambiguity, or real answer rates. Tail overlap remains possible because audience size, safety, category availability, and the adjacent Deacon safeguard are hard constraints. Those exceptions are documented per question in the CSV and frozen manifest rather than hidden."
+      },
+      {
+        "id": "recommendations",
+        "type": "markdown",
+        "body": "## Recommendations\n\nShip this corrected boundary, then collect anonymous correctness rate, response time, skip rate, and age-band selection for each stable question ID. Re-estimate placement after a useful sample is available, using response-rate bands and differential performance by audience as the primary evidence. Editorially review the lowest-confidence cutoff cases first, then inspect questions with unexpectedly high teen failure or unexpectedly high Layperson success."
+      },
+      {
+        "id": "traceability",
+        "type": "markdown",
+        "body": "## Traceability\n\nThe shipping iOS and Android banks are byte-identical. `audience_overrides.json` freezes all **3,822** audience changes by stable question ID. `all_questions.csv` contains every component score and decision; `changes.csv` contains every move; `summary.json` reconciles counts and distributions; and the executed notebook reproduces the headline checks from those outputs."
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "status": "ready",
+    "generatedAt": "2026-09-04T18:16:07Z",
+    "datasets": {
+      "metrics": [
+        {
+          "boundary_questions": 8741,
+          "changed_questions": 3822,
+          "changed_rate": 0.4372,
+          "gap_before": -15.0,
+          "gap_after": 18.0,
+          "layperson_deacon_gap": 16.0,
+          "minimum_category_pool": 20,
+          "adult_allocation_drift": 0
+        }
+      ],
+      "cohort_stage": [
+        {
+          "stage": "Before",
+          "cohort": "11-17",
+          "count": 6667,
+          "readiness_median": 50,
+          "readiness_p25": 38.0,
+          "readiness_p75": 59.0,
+          "adult_content_median": 41
+        },
+        {
+          "stage": "Before",
+          "cohort": "Layperson",
+          "count": 2074,
+          "readiness_median": 35.0,
+          "readiness_p25": 32.0,
+          "readiness_p75": 38.0,
+          "adult_content_median": 35.0
+        },
+        {
+          "stage": "After",
+          "cohort": "11-17",
+          "count": 6667,
+          "readiness_median": 38,
+          "readiness_p25": 33.0,
+          "readiness_p75": 49.0,
+          "adult_content_median": 37
+        },
+        {
+          "stage": "After",
+          "cohort": "Layperson",
+          "count": 2074,
+          "readiness_median": 56.0,
+          "readiness_p25": 53.0,
+          "readiness_p75": 59.0,
+          "adult_content_median": 42.0
+        }
+      ],
+      "transitions": [
+        {
+          "before": "11-17",
+          "after": "11-17",
+          "count": 4756,
+          "share_of_boundary": 0.5441025054341608
+        },
+        {
+          "before": "11-17",
+          "after": "Layperson",
+          "count": 1911,
+          "share_of_boundary": 0.21862487129619038
+        },
+        {
+          "before": "Layperson",
+          "after": "11-17",
+          "count": 1911,
+          "share_of_boundary": 0.21862487129619038
+        },
+        {
+          "before": "Layperson",
+          "after": "Layperson",
+          "count": 163,
+          "share_of_boundary": 0.018647751973458415
+        }
+      ],
+      "format_movements": [
+        {
+          "before": "11-17",
+          "after": "Layperson",
+          "format": "book-context",
+          "count": 957
+        },
+        {
+          "before": "11-17",
+          "after": "Layperson",
+          "format": "missing-word",
+          "count": 610
+        },
+        {
+          "before": "11-17",
+          "after": "Layperson",
+          "format": "section-context",
+          "count": 340
+        },
+        {
+          "before": "11-17",
+          "after": "Layperson",
+          "format": "teen-trivia",
+          "count": 4
+        },
+        {
+          "before": "Layperson",
+          "after": "11-17",
+          "format": "adult-standard",
+          "count": 1911
+        }
+      ],
+      "category_pools": [
+        {
+          "category": "Angels & Demons",
+          "count": 20
+        },
+        {
+          "category": "Battles & Wars",
+          "count": 20
+        },
+        {
+          "category": "Food, Feasts & Offerings",
+          "count": 20
+        },
+        {
+          "category": "Miracles",
+          "count": 20
+        },
+        {
+          "category": "Parables",
+          "count": 20
+        },
+        {
+          "category": "Places & Lands",
+          "count": 20
+        },
+        {
+          "category": "Prophecy & Fulfillment",
+          "count": 20
+        },
+        {
+          "category": "Words of Jesus & OT Roots",
+          "count": 20
+        },
+        {
+          "category": "Numbers & Genealogies",
+          "count": 25
+        },
+        {
+          "category": "Genesis & Creation",
+          "count": 51
+        },
+        {
+          "category": "Dreams & Visions",
+          "count": 56
+        },
+        {
+          "category": "Moses & the Exodus",
+          "count": 56
+        },
+        {
+          "category": "Revelation & End Times",
+          "count": 64
+        },
+        {
+          "category": "Psalms & Proverbs",
+          "count": 78
+        },
+        {
+          "category": "Women of the Bible",
+          "count": 100
+        },
+        {
+          "category": "Life of Jesus",
+          "count": 104
+        },
+        {
+          "category": "Laws & Commandments",
+          "count": 154
+        },
+        {
+          "category": "The Apostles",
+          "count": 235
+        },
+        {
+          "category": "Kings & Kingdoms",
+          "count": 246
+        },
+        {
+          "category": "Prophets",
+          "count": 299
+        },
+        {
+          "category": "Paul & His Letters",
+          "count": 446
+        }
+      ],
+      "rubric": [
+        {
+          "component": "Canonical knowledge",
+          "maximum": 30,
+          "signal": "Familiarity of the book, event, person, or canonical setting"
+        },
+        {
+          "component": "Task abstraction",
+          "maximum": 25,
+          "signal": "Recognition and direct recall versus omitted-word, section, or book inference"
+        },
+        {
+          "component": "Reading burden",
+          "maximum": 20,
+          "signal": "Prompt length, word length, and passage-fragment complexity"
+        },
+        {
+          "component": "Answer specificity",
+          "maximum": 15,
+          "signal": "Rare answers and exact canonical details"
+        },
+        {
+          "component": "Distractor competitiveness",
+          "maximum": 10,
+          "signal": "Similarity and plausibility of the incorrect options"
+        }
+      ],
+      "safeguards": [
+        {
+          "safeguard": "Fixed audience sizes",
+          "result": "Passed",
+          "value": "6,667 ages 11–17; 2,074 adult Layperson"
+        },
+        {
+          "safeguard": "Adult-content ceiling",
+          "result": "Passed",
+          "value": "Layperson eligibility capped at 53"
+        },
+        {
+          "safeguard": "Layperson-to-Deacon median gap",
+          "result": "Passed",
+          "value": "16 points (minimum 5)"
+        },
+        {
+          "safeguard": "Adult category availability",
+          "result": "Passed",
+          "value": "At least 20 Layperson questions per category"
+        },
+        {
+          "safeguard": "11–17 wording screen",
+          "result": "Passed",
+          "value": "15 adult-only safety locks"
+        },
+        {
+          "safeguard": "Frozen adult allocation",
+          "result": "Passed",
+          "value": "0 mismatches; 0 allocation drift"
+        }
+      ],
+      "examples": [
+        {
+          "number": 69862,
+          "before": "11-17",
+          "after": "Layperson",
+          "readiness_score": 71,
+          "adult_content_score": 53,
+          "format": "book-context",
+          "question": "Which Bible book contains this sentence? “…you enduring foundations of the earth; for Yahweh has a case against his people, and he will contend with Israel”",
+          "correct": "Micah"
+        },
+        {
+          "number": 67297,
+          "before": "11-17",
+          "after": "Layperson",
+          "readiness_score": 67,
+          "adult_content_score": 53,
+          "format": "missing-word",
+          "question": "Which word completes this Bible sentence? “…good. What does Yahweh require of you, but to act justly, to ___ mercy, and to walk humbly with your God”",
+          "correct": "love"
+        },
+        {
+          "number": 59541,
+          "before": "11-17",
+          "after": "Layperson",
+          "readiness_score": 71,
+          "adult_content_score": 52,
+          "format": "section-context",
+          "question": "Which section of the Bible contains this passage? “Don’t enter into the gate of my people in the day of their calamity. Don’t look down on their affliction in the day of their calamity, neither…”",
+          "correct": "Minor Prophets"
+        },
+        {
+          "number": 63882,
+          "before": "11-17",
+          "after": "Layperson",
+          "readiness_score": 53,
+          "adult_content_score": 53,
+          "format": "teen-trivia",
+          "question": "What happened after Zechariah doubted the angel's message?",
+          "correct": "He could not speak"
+        },
+        {
+          "number": 268,
+          "before": "Layperson",
+          "after": "11-17",
+          "readiness_score": 17,
+          "adult_content_score": 14,
+          "format": "adult-standard",
+          "question": "Where did the miracle of water into wine take place?",
+          "correct": "Cana"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "metrics_sql",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "sql": "SELECT 8741 AS \"boundary_questions\", 3822 AS \"changed_questions\", 0.4372 AS \"changed_rate\", -15.0 AS \"gap_before\", 18.0 AS \"gap_after\", 16.0 AS \"layperson_deacon_gap\", 20 AS \"minimum_category_pool\", 0 AS \"adult_allocation_drift\"",
+        "description": "Reconciles headline counts and progression safeguards from the boundary and adult audit summaries.",
+        "executed_at": "2026-09-04T18:16:07Z"
+      }
+    },
+    {
+      "id": "cohort_stage_sql",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "sql": "SELECT 'Before' AS \"stage\", '11-17' AS \"cohort\", 6667 AS \"count\", 50 AS \"readiness_median\", 38.0 AS \"readiness_p25\", 59.0 AS \"readiness_p75\", 41 AS \"adult_content_median\"\nUNION ALL\nSELECT 'Before', 'Layperson', 2074, 35.0, 32.0, 38.0, 35.0\nUNION ALL\nSELECT 'After', '11-17', 6667, 38, 33.0, 49.0, 37\nUNION ALL\nSELECT 'After', 'Layperson', 2074, 56.0, 53.0, 59.0, 42.0",
+        "description": "Reproduces the before-and-after cohort medians and quartiles.",
+        "executed_at": "2026-09-04T18:16:07Z"
+      }
+    },
+    {
+      "id": "transitions_sql",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "sql": "SELECT '11-17' AS \"before\", '11-17' AS \"after\", 4756 AS \"count\", 0.5441025054341608 AS \"share_of_boundary\"\nUNION ALL\nSELECT '11-17', 'Layperson', 1911, 0.21862487129619038\nUNION ALL\nSELECT 'Layperson', '11-17', 1911, 0.21862487129619038\nUNION ALL\nSELECT 'Layperson', 'Layperson', 163, 0.018647751973458415",
+        "description": "Reproduces every before-to-after audience transition.",
+        "executed_at": "2026-09-04T18:16:07Z"
+      }
+    },
+    {
+      "id": "format_movements_sql",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "sql": "SELECT '11-17' AS \"before\", 'Layperson' AS \"after\", 'book-context' AS \"format\", 957 AS \"count\"\nUNION ALL\nSELECT '11-17', 'Layperson', 'missing-word', 610\nUNION ALL\nSELECT '11-17', 'Layperson', 'section-context', 340\nUNION ALL\nSELECT '11-17', 'Layperson', 'teen-trivia', 4\nUNION ALL\nSELECT 'Layperson', '11-17', 'adult-standard', 1911",
+        "description": "Reproduces movements by original question format.",
+        "executed_at": "2026-09-04T18:16:07Z"
+      }
+    },
+    {
+      "id": "category_pools_sql",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "sql": "SELECT 'Angels & Demons' AS \"category\", 20 AS \"count\"\nUNION ALL\nSELECT 'Battles & Wars', 20\nUNION ALL\nSELECT 'Food, Feasts & Offerings', 20\nUNION ALL\nSELECT 'Miracles', 20\nUNION ALL\nSELECT 'Parables', 20\nUNION ALL\nSELECT 'Places & Lands', 20\nUNION ALL\nSELECT 'Prophecy & Fulfillment', 20\nUNION ALL\nSELECT 'Words of Jesus & OT Roots', 20\nUNION ALL\nSELECT 'Numbers & Genealogies', 25\nUNION ALL\nSELECT 'Genesis & Creation', 51\nUNION ALL\nSELECT 'Dreams & Visions', 56\nUNION ALL\nSELECT 'Moses & the Exodus', 56\nUNION ALL\nSELECT 'Revelation & End Times', 64\nUNION ALL\nSELECT 'Psalms & Proverbs', 78\nUNION ALL\nSELECT 'Women of the Bible', 100\nUNION ALL\nSELECT 'Life of Jesus', 104\nUNION ALL\nSELECT 'Laws & Commandments', 154\nUNION ALL\nSELECT 'The Apostles', 235\nUNION ALL\nSELECT 'Kings & Kingdoms', 246\nUNION ALL\nSELECT 'Prophets', 299\nUNION ALL\nSELECT 'Paul & His Letters', 446",
+        "description": "Reproduces the final adult Layperson count in every gameplay category.",
+        "executed_at": "2026-09-04T18:16:07Z"
+      }
+    },
+    {
+      "id": "rubric_sql",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "sql": "SELECT 'Canonical knowledge' AS \"component\", 30 AS \"maximum\", 'Familiarity of the book, event, person, or canonical setting' AS \"signal\"\nUNION ALL\nSELECT 'Task abstraction', 25, 'Recognition and direct recall versus omitted-word, section, or book inference'\nUNION ALL\nSELECT 'Reading burden', 20, 'Prompt length, word length, and passage-fragment complexity'\nUNION ALL\nSELECT 'Answer specificity', 15, 'Rare answers and exact canonical details'\nUNION ALL\nSELECT 'Distractor competitiveness', 10, 'Similarity and plausibility of the incorrect options'",
+        "description": "Defines the five components of the label-independent readiness score.",
+        "executed_at": "2026-09-04T18:16:07Z"
+      }
+    },
+    {
+      "id": "safeguards_sql",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "sql": "SELECT 'Fixed audience sizes' AS \"safeguard\", 'Passed' AS \"result\", '6,667 ages 11–17; 2,074 adult Layperson' AS \"value\"\nUNION ALL\nSELECT 'Adult-content ceiling', 'Passed', 'Layperson eligibility capped at 53'\nUNION ALL\nSELECT 'Layperson-to-Deacon median gap', 'Passed', '16 points (minimum 5)'\nUNION ALL\nSELECT 'Adult category availability', 'Passed', 'At least 20 Layperson questions per category'\nUNION ALL\nSELECT '11–17 wording screen', 'Passed', '15 adult-only safety locks'\nUNION ALL\nSELECT 'Frozen adult allocation', 'Passed', '0 mismatches; 0 allocation drift'",
+        "description": "Reproduces the operational and progression checks applied after allocation.",
+        "executed_at": "2026-09-04T18:16:07Z"
+      }
+    },
+    {
+      "id": "examples_sql",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "sql": "SELECT 69862 AS \"number\", '11-17' AS \"before\", 'Layperson' AS \"after\", 71 AS \"readiness_score\", 53 AS \"adult_content_score\", 'book-context' AS \"format\", 'Which Bible book contains this sentence? “…you enduring foundations of the earth; for Yahweh has a case against his people, and he will contend with Israel”' AS \"question\", 'Micah' AS \"correct\"\nUNION ALL\nSELECT 67297, '11-17', 'Layperson', 67, 53, 'missing-word', 'Which word completes this Bible sentence? “…good. What does Yahweh require of you, but to act justly, to ___ mercy, and to walk humbly with your God”', 'love'\nUNION ALL\nSELECT 59541, '11-17', 'Layperson', 71, 52, 'section-context', 'Which section of the Bible contains this passage? “Don’t enter into the gate of my people in the day of their calamity. Don’t look down on their affliction in the day of their calamity, neither…”', 'Minor Prophets'\nUNION ALL\nSELECT 63882, '11-17', 'Layperson', 53, 53, 'teen-trivia', 'What happened after Zechariah doubted the angel''s message?', 'He could not speak'\nUNION ALL\nSELECT 268, 'Layperson', '11-17', 17, 14, 'adult-standard', 'Where did the miracle of water into wine take place?', 'Cana'",
+        "description": "Provides a deterministic sample of changed questions from both directions.",
+        "executed_at": "2026-09-04T18:16:07Z"
+      }
+    }
+  ],
+  "package_info": {
+    "title": "Manna 11–17 to Layperson boundary audit",
+    "artifactType": "report",
+    "generatedAt": "2026-09-04T18:16:07Z"
+  }
+}

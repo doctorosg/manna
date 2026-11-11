@@ -12,11 +12,18 @@ python3 scripts/build_question_bank.py
 python3 scripts/validate_question_bank.py
 ```
 
-The builder combines the four repository banks, de-duplicates normalized question text,
+The builder combines the repository banks, de-duplicates normalized question text,
 rejects repeated answer choices, validates categories and difficulty labels, and writes the
 matching iOS and Android assets. Permanent support numbers are stored in
 `question_number_registry.json`; never delete or renumber entries in that registry. New
 questions receive the next unused number.
+
+The curated adult source contains original KJV-verified Deacon and Pastor
+questions selected with A. Dana Adams's Bible quiz book as a research guide:
+
+```bash
+python3 scripts/generate_adams_adult_questions.py
+```
 
 Volume 4 contains 565 KJV-source-verified questions for the eight least-populated
 categories. Recreate it deterministically before rebuilding the shipping bank with:

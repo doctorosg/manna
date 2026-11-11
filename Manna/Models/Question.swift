@@ -7,6 +7,8 @@ struct MannaQuestion: Codable, Identifiable {
     let number: Int
     let category: String
     let difficulty: String
+    let ageGroup: String?
+    let pastorFormat: String?
     let question: String
     let options: [String]
     let correct: String
@@ -14,6 +16,8 @@ struct MannaQuestion: Codable, Identifiable {
 
     var correctIndex: Int { options.firstIndex(of: correct) ?? 0 }
     var difficultyLevel: DifficultyLevel { DifficultyLevel.fromString(difficulty) ?? .layperson }
+    var childAgeGroup: ChildAgeGroup? { ageGroup.flatMap(ChildAgeGroup.init(rawValue:)) }
+    var audienceLevelLabel: String { childAgeGroup?.title ?? difficulty }
 }
 
 // MARK: - Player Answer

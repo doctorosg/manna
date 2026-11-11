@@ -12,8 +12,9 @@ android {
         applicationId = "com.oddcurrent.manna"
         minSdk = 23
         targetSdk = 36
-        versionCode = 14
-        versionName = "1.0.9"
+        versionCode = 19
+        versionName = "1.0.12"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
         create("release") {
@@ -57,5 +58,8 @@ dependencies {
     implementation("com.android.billingclient:billing-ktx:8.0.0")
     implementation("com.google.android.ump:user-messaging-platform:4.0.0")
     implementation("com.google.zxing:core:3.5.4")
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test:runner:1.6.2")
     debugImplementation("androidx.compose.ui:ui-tooling")
 }
